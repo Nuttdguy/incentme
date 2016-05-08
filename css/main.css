@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0;}
+
+div, nav, section, footer { border: 1px solid red; margin: 1px 0; }
+
+.clear {
+	content: ".";
+	clear: both;
+}
+
+.ad-single {
+	float: left;
+}
