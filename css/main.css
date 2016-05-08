@@ -2,11 +2,132 @@
 
 div, nav, section, footer { border: 1px solid red; margin: 1px 0; }
 
+body {
+	position: absolute;
+	width: 100%;
+	
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+/* div wrapper for centering content */
+.div-wrapper {
+	display: block;
+	position: relative;
+	
+	height: 65vh;
+	width: 1080px;
+	margin: auto;
+}
+
 .clear {
 	content: ".";
+	height: 100%;
 	clear: both;
 }
 
 .ad-single {
 	float: left;
 }
+
+
+
+/*==================================*/
+/*--- MAIN IMAGE SLIDER 
+/*==================================*/
+
+.main-slider {
+	background-image: url(http://lorempixel.com/image_output/food-q-c-1080-520-6.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 520px;
+	width: 100%;
+	
+	position: absolute;
+	top: 140px;
+	text-align: center;
+	z-index: -1;
+}
+
+/*==================================*/
+/*--- MAIN MENU 
+/*==================================*/
+
+.main-menu {
+	position: absolute;
+	top: 80px;	
+	float: left;
+	
+	width: 100%;
+	
+}
+
+.main-menu li {
+	text-align: center;
+	text-transform: uppercase;
+	
+	display: block;
+	float: left;
+	width: calc(100% / 6);
+	
+}
+
+.main-menu li:nth-child(3),
+.main-menu li:nth-child(4) {
+	visibility: hidden;
+}
+
+.main-logo {
+	display: block;
+	
+	position: relative;
+	top: 10px;
+	width: 1080px;
+}
+
+.main-logo > span {
+	height: 160px;
+	width: 160px;
+	text-align: center;
+	
+	display: block;
+	position: relative;
+	background-color: rgba(255, 168, 28, 0.85);
+	border-radius: 50%;
+	margin: auto;
+}
+
+.main-logo > h1 {
+	font-size: 2.1em;
+	text-align: center;
+	line-height: 160px;
+	
+	display: block;
+	width: 100%;
+	
+	position: absolute;
+	top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
