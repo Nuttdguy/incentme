@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0;}
 
-div, nav, section, footer { border: 1px solid red; margin: 1px 0; }
+/*div, nav, section, footer { border: 1px solid red; }*/
 
 body {
 	position: absolute;
@@ -22,22 +22,23 @@ li {
 	display: block;
 	position: relative;
 	
-	height: 65vh;
 	width: 1080px;
 	margin: auto;
 }
 
-.clear {
-	content: ".";
-	height: 100%;
-	clear: both;
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
-.ad-single {
-	float: left;
+.cf:after {
+    clear: both;
 }
 
-
+.cf {
+    *zoom: 1;
+}
 
 /*==================================*/
 /*--- MAIN IMAGE SLIDER 
@@ -57,8 +58,12 @@ li {
 }
 
 /*==================================*/
-/*--- MAIN MENU 
+/*--- MAIN MENU & MAIN NAVBAR
 /*==================================*/
+
+header {
+	height: 64.5vh;
+}
 
 .main-menu {
 	position: absolute;
@@ -86,9 +91,9 @@ li {
 
 .main-logo {
 	display: block;
+	padding-top: 10px;
 	
 	position: relative;
-	top: 10px;
 	width: 1080px;
 }
 
@@ -113,8 +118,307 @@ li {
 	width: 100%;
 	
 	position: absolute;
-	top: 0;
+	top: 10px;
 }
+
+
+/*==================================*/
+/*--- SECTION - SIDEBAR MENU ( CATEGORY SEARCHES )
+/*==================================*/
+
+
+/*==================================*/
+/*--- AD SEARCH & PAGE NAVIGATION
+/*==================================*/
+
+
+.ad-section-nav {
+	display: block;
+	position: relative;
+	left: 50%;
+	width: 50%;
+
+	text-align: right;
+	
+}
+
+.ad-section-nav input {
+	height: 24px;
+	width: 33%;
+	
+	margin-right: 12px;
+	margin-bottom: 6px;
+	
+	border: 2px solid rgba(60, 60, 60, 0.81);
+}
+
+.ad-section-nav ul {
+	width: 100%;	
+}
+
+.ad-section-nav p  {
+	display: inline-block;
+	
+	text-align: left;
+	text-transform: capitalize;
+}
+
+.ad-section-nav li {
+	display: inline-block;
+	width: calc(12% / 6);
+	
+	margin-right: 12px;
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD ROWS
+/*==================================*/
+
+.ad-row {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	margin-bottom: 12px;
+	
+	height: 258px;
+	width: 100%;
+	
+	overflow: hidden;
+}
+
+.ad-row-two {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	margin-bottom: 12px;
+	
+	height: 258px;
+	width: 100%;
+	
+	overflow: hidden;
+}
+
+.ad-row-three {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	margin-bottom: 12px;
+	
+	height: 258px;
+	width: 100%;
+	
+	overflow: hidden;
+}
+
+.ad-row-four {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	margin-bottom: 12px;
+	
+	height: 258px;
+	width: 100%;
+	
+	overflow: hidden;
+}
+
+
+/*==================================*/
+/*--- AD SECTION >> AD CONTAINER
+/*==================================*/
+
+
+.ad-container {
+	display: block;
+	height: 258px;
+	width: calc(100% /3);
+	
+	border: 6px solid #fff;
+	overflow: hidden;
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD ROW #1 IMAGES
+/*==================================*/
+
+.ad-one {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-9.jpg);
+	position: absolute;
+	left: 0;
+}
+
+.ad-two {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-1.jpg);
+	position: absolute;
+	left: 33.33%;
+}
+
+.ad-three {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-5.jpg);
+	position: absolute;
+	left: 66.66%;
+}
+
+
+/*==================================*/
+/*--- AD SECTION >> AD ROW #2 IMAGES
+/*==================================*/
+
+.ad-4 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-8.jpg);
+	position: absolute;
+	left: 0;
+}
+
+.ad-5 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-7.jpg);
+	position: absolute;
+	left: 33.33%;
+}
+
+.ad-6 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-3.jpg);
+	position: absolute;
+	left: 66.66%;
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD ROW #3 IMAGES
+/*==================================*/
+
+.ad-7 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-4.jpg);
+	position: absolute;
+	left: 0;
+}
+
+.ad-8 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-2.jpg);
+	position: absolute;
+	left: 33.33%;
+}
+
+.ad-9 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-6.jpg);
+	position: absolute;
+	left: 66.66%;
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD ROW #4 IMAGES
+/*==================================*/
+
+.ad-10 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-10.jpg);
+	position: absolute;
+	left: 0;
+}
+
+.ad-11 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-8.jpg);
+	position: absolute;
+	left: 33.33%;
+}
+
+.ad-12 {
+	background: url(http://lorempixel.com/image_output/food-q-c-360-270-5.jpg);
+	position: absolute;
+	left: 66.66%;
+}
+
+
+/*==================================*/
+/*--- AD SECTION >> AD CONTAINER (OUTER STORE NAME)
+/*==================================*/
+
+.ad-store-name {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.ad-store-name:hover {
+	opacity: 0;
+}
+
+.ad-store-name p {	
+	box-sizing: border-box;
+	margin: 16px 0;
+	
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+/*	border: 1px solid red;*/
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD CONTAINER (INNER OVERLAY)
+/*==================================*/
+
+.ad-store-info:hover {
+	transform: translateY(258px);
+	opacity: 1;
+	transition: all .6s ease-in;
+}
+
+.ad-store-info {
+	display: inline-block;
+	background-color: rgba(56, 55, 55, 0.9);
+	opacity: .3; /* set opacity back to 0 */
+	
+	height: 516px;
+	width: 100%;
+	
+	position: absolute;
+	top: -258px;
+}
+
+.ad-store-info p:first-child {
+	margin-top: 12%;
+}
+
+.ad-store-info p {
+	box-sizing: border-box;
+	padding: 8px 0;
+	
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+/*	border: 1px solid red;*/
+}
+
+.ad-store-info button {
+	display: block;
+	margin: 12px auto;
+	
+	height: 32px;
+	width: 60%;
+	
+	background-color: rgba(255, 168, 28, 0.85);
+	border: 1px solid rgba(255, 168, 28, 0.85);
+}
+
+/*==================================*/
+/*--- AD SECTION >> AD CONTAINER (AD STORE PAGE OVERLAY)
+/*==================================*/
+
+/*=?????????  COME BACK TO WORK ON  ???????????  ======*/
+.ad-store-offer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	background-color: rgba(56, 55, 55, 0.9);
+	visibility: hidden;
+	height: 100vh;
+	width: 100vw;
+}
+
+
 
 
 

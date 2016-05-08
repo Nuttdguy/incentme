@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>IncentMe</title>
+		<link rel="stylesheet" type="text/css" href="normalize/main.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<script type="text/javascript" href="js/main.js"></script>
 	</head>
@@ -33,6 +34,7 @@
 		
 		<div class="clear"></div>
 		
+		<div class="div-wrapper cf">
 		<div class="ad-section-nav">  
 			<input type="text" placeholder="search" >
 			<ul>
@@ -44,33 +46,241 @@
 				<li><a href="#"> 5</a></li>
 			</ul>
 		</div> <!-- Pagination and navigation of advertisements will go here -->
+		</div>
 		
-		<section> This is hidden and extracted from sidebar </section> <!-- Categories and search functionality will go here -->
+		<section>
+			<div class="sidebar-menu">
+				
+			</div>
+		
+		</section> <!-- Categories and search functionality will go here -->
+		
+		<!-- ============================    AD SECTION START ============ -->
 		
 		<section> 
 			<!-- This section will contain all advertisements -->
-			<div class="ad-row">
-				<div class="ad-single">
-					<img src="http://lorempixel.com/image_output/food-q-c-360-270-9.jpg" alt="">
-					<!-- will display buttons and call-to-action stuff below -->
-					<div class="ad-store-info">
-						<p>point value</p>
-						<p># of offers</p>
-						<p>time left</p>
-						<p>distance</p>
-					</div>
-				</div>				
-				<div class="ad-store-offer">
-					<!-- onclick will show darkened overlay with details for a single offer -- provides greatest exposure for advertisers products/services || will convert into store view in future -->
+			<div class="div-wrapper cf">
+				<div class="ad-row">
+					<div class="ad-container ad-one">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #1 == ROW #1" ===-->
+					
+					<div class="ad-container ad-two">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #2 == ROW #1" ===-->
+					
+					<div class="ad-container ad-three">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #3 == ROW #1" ===-->
 				</div>
-				
-				<div class="ad-single"><img src="http://lorempixel.com/image_output/food-q-c-360-270-1.jpg" alt=""></div>
-				<div class="ad-single"><img src="http://lorempixel.com/image_output/food-q-c-360-270-5.jpg" alt=""></div>
-			</div>
-			
+			</div> <!--=== end of "AD ROW #1" ===-->			
+		</section> 
+		
+		<section>
+			<div class="div-wrapper cf">
+				<div class="ad-row-two">
+					<div class="ad-container ad-4">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #1 == ROW #2" ===-->
+					
+					<div class="ad-container ad-5">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #2 == ROW #2" ===-->
+					
+					<div class="ad-container ad-6">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #3 == ROW #2" ===-->
+				</div>
+			</div> <!--=== end of "AD ROW #2" ===-->
 		</section>
 		
-		<div class="clear"></div>
+		<section>
+			<div class="div-wrapper cf">
+				<div class="ad-row-three">
+					<div class="ad-container ad-7">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #1 == ROW #3" ===-->
+					
+					<div class="ad-container ad-8">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #2 == ROW #3" ===-->
+					
+					<div class="ad-container ad-9">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #3 == ROW #3" ===-->
+				</div>
+			</div> <!--=== end of "AD ROW #3" ===-->
+		</section>
+		
+		<section>
+			<div class="div-wrapper cf">
+				<div class="ad-row-four">
+					<div class="ad-container ad-10">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #1 == ROW #3" ===-->
+					
+					<div class="ad-container ad-11">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #2 == ROW #3" ===-->
+					
+					<div class="ad-container ad-12">
+						<!-- will display buttons and call-to-action stuff below -->
+						<div class="ad-store-name">
+							<p>Store Name</p>
+							<p>Distance 3.5 miles</p>
+							<p>Point value</p>
+							<p># of Offers</p>
+							<p>Time Left</p>
+						</div>
+						<div class="ad-store-info">
+							<p class="ad-number-of-offers"># of offers</p>
+							<p class="ad-time-left">time left</p>
+							<button class="ad-get-info-button"> Get Info </button>
+						</div>
+					</div> <!--=== end of "AD #3 == ROW #3" ===-->
+				</div>
+			</div> <!--=== end of "AD ROW #3" ===-->
+		</section>
+		
+		<!-- ============================    AD SECTION END ============== -->
+		
+		<div class="ad-store-offer">
+			<!-- onclick will show darkened overlay with details for a single offer -- provides greatest exposure for advertisers products/services || will convert into store view in future -->
+		</div>
+		
+<!--		<div class="clear"></div>-->
 		
 		<footer> Footer and site navigation will go here </footer>
 		
