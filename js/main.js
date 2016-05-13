@@ -205,11 +205,12 @@ $(document).ready(function() {
 		intializeClock('clock', adEndTime);
 		
 	}
-
+	
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
   //=========================================================\\
+	
 	var adPointMax;
 	var adPointMidPercentage;
 	var adBasePercentageDiscountAverage;
@@ -249,27 +250,28 @@ $(document).ready(function() {
 	
 	function getXAdPointSpectrum() {
 		var axisMax = 1;
-		var xAxis = 0.0001;
+		var xAxis = 0.01;
 		var iCount = 0; // scale x range is 0.01% to 1
 		
 		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
 		for (var i = xAxis; i <= axisMax; i = i + xAxis ) {
-			xAdPointSpectrum[iCount] = Number(i.toFixed(4));
+			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2));
 			iCount++;
 		}
 	}
 	
-	getXAdPointSpectrum(); // verified to contain index count of 10000 
+	getXAdPointSpectrum(); // verified to contain index count of 10000
+	// Changed to contain index of 99 >> Web Browser Freezing with Large Number
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING Y TABLE SPECTRUM ===//
-  //=========================================================\\
+  	//=========================================================\\
 	
 	var yAdPointSpectrum = [];
 	
 	function getYAdPointSpectrum() {
 		var axisMax = 1;
-		var yAxis = 0.0001;
+		var yAxis = 0.001; 
 		var kCount = 0; // scale y range is 0.0001 to 1
 		
 		for (var k = yAxis; k <= axisMax; k = k + yAxis ) {
@@ -279,25 +281,26 @@ $(document).ready(function() {
 	}
 		
 	getYAdPointSpectrum(); // verified to contain index count of 10000
+	// Changed to contain index of 999 >> Web Browser Freezing with Large Number
 	
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING **CALCULATED Y** TABLE MULTIPLIER ===//
   //=========================================================\\
-	var yPlus = []; // Validated correct values returned
-	var yMinus = []; // Validated correct values returned
+	var yPlus = []; // Validated correct values returned >> changed result === 880
+	var yMinus = []; // Validated correct values returned >> changed result === 119
 
 	function getYPivotPointValues() {
 		// var pivotPoint = yAdPointSpectrum[1199]; // this is equivelant to 12.00% within the array
 
 		var y1Count = 0;
-		for (var y = 1198; y < yAdPointSpectrum.length; y++ ) {
+		for (var y = 119; y < yAdPointSpectrum.length; y++ ) {
 			yPlus[y1Count] = Number((1 + parseFloat(yAdPointSpectrum[y])).toFixed(4));
 			y1Count++;
 		}
 
 		var y2Count = 0;
-		for (var x = 1199; x > 0; x-- ) {
+		for (var x = 119; x > 0; x-- ) {
 			yMinus[y2Count] = Number((1 - parseFloat(yAdPointSpectrum[x])).toFixed(4));
 			y2Count++;
 		}
@@ -311,57 +314,90 @@ $(document).ready(function() {
 	
 	
 	//+++++ GETTING ACTIVE DR TO MULTIPLY AGAINST X & Y SPECTRUM TABLES
-	var baseDrPlus = []; // Verified to have an array length of 8801
-	var baseDrMinus = []; // Verified to have an array length of 1198
+	var baseDrPlus = []; // Verified to have an array length of 880
+	var baseDrMinus = []; // Verified to have an array length of 119
+	var combinedBaseDr = [];
 	var baseMidStartValue = Number((adBaseDiscountConvertRate / 100).toFixed(4));
 
 	function getBaseDr() {
 		
-		for (var a = 0; a < yPlus.length - 1; a++ ) {
+		for (var a = 0; a < yPlus.length; a++ ) {
 			baseDrPlus[a] = Number((yPlus[a] * baseMidStartValue).toFixed(4));
 		}
 
-		for (var b = 0; b < yMinus.length - 1; b++ ) {
+		for (var b = 0; b <= yMinus.length - 1; b++ ) {
 			baseDrMinus[b] = Number((yMinus[b] * baseMidStartValue).toFixed(4)); 
-		}	
+		}
+	}
+	
+	function combineDr() {
+		for ( var i in baseDrMinus ) {
+			combinedBaseDr.push(baseDrMinus[i]);
+		}
+	
+		for ( var k in baseDrPlus ) {
+			combinedBaseDr.push(baseDrPlus[k]);
+		}
 	}
 	
 	getBaseDr();
+	combineDr();
+	
 	
 	//=========================================================\\
 	//=== START CODE FOR ** FINAL CALCULATED X AND Y ** TO APPLY AS TABLE MULTIPLIER FOR AD LEDGER ===//
-  //=========================================================\\
-			
-	var yAxisCalculated = [];
-	var xAxisCalculated = [];
+    //=========================================================\\
+    //=== THE BELOW LOOP FREEZES DUE TO RECORD/TABLE SIZE OF (99*999)x2 = 197,802 VALUES
+    //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
+    //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
+    //=== FOR EXAMPLE STEPS:
+    //=== (1). CHECK AD LEDGER AVERAGE % ==> get from yAdPointSpectrum
+    //=== (2). LOCATE BASEDR FOR CURRENT VALUE ==> get from BaseDrPlus Or Minus
+    //=== (3). CHECK APPLIED DISCOUNT PERCENTAGE OF OFFER
+    //=== (4). MULTIPLY BASEDR VALUE & DISCOUNT PERCENTAGE OF AD OFFER
+    //=== (5). RETURN FINAL RESULT; THIS IS ADS ACTIVE CONVERT POINT VALUE FOR ORIGINATING DISCOUNT AT TIME OF AD CREATION
+		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
 	
+	var axisCalculated = [];
+	var negIndex = baseDrMinus.length-1;
+	var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
+
 	function getFinalAdLedgerTable() {
 		
-		var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
-		var negIndex = baseDrMinus.length-1;
-		
-		for (var ya = 0; ya < yAdPointSpectrum.length; ya++ ) {
-			//  INNER LOOP FOR MULITPLYING ROWS
-			for (var ya1 = 0; ya1 < xAdPointSpectrum.length; ya1++ ) {
-		
-				if (ya1 > 1198 && ya1 < yAdPointSpectrum.length ) {
-					// axisCalculated[ya] = Number( ( yAdPointSpectrum[ya] * xAdPointSpectrum[ya] * baseDrPlus[plusIndex]).toFixed(4) );
-					axisCalculated[ya1] = parseFloat( (xAdPointSpectrum[ya1] * baseDrPlus[plusIndex]).toFixed(8) ) + " ++ " + xAdPointSpectrum[ya1] + " %=== " + yAdPointSpectrum[ya];
-					plusIndex++;
-					
-					// console.log((xAdPointSpectrum[ya] + "=====" + baseDrPlus[ya]) + "=== LOOP 1 === " + ya );
+		for (var ya = 0; ya < xAdPointSpectrum.length; ya++ ) {  // length === 99	
+			for (var ya1 = 0; ya1 < yAdPointSpectrum.length; ya1++ ) { // length === 999
+				if (ya1 > 0 && ya1 < 119 ) {
+					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrMinus[negIndex] + "==== FIRST LOOP =====XXXX " + xAdPointSpectrum[ya] + " %"); // VERIFIED RESULT === 118 Outer 118 0.002 Y-Informative-Only==0.0249==== FIRST LOOP =====XXXX 1 %
+					// axisCalculated.push(Number(xAdPointSpectrum[ya]).toFixed(4), Number(baseDrMinus[negIndex]).toFixed(4));
+					// axisCalculated.push(Number(xAdPointSpectrum[ya]).toFixed(4));
 				}
-				
-				if (negIndex > 0 ) {
-					axisCalculated[ya1] = parseFloat( (xAdPointSpectrum[ya1] * baseDrMinus[negIndex]).toFixed(8) ) + " ++ " + xAdPointSpectrum[ya1] + " %=== " + yAdPointSpectrum[ya];
-					// console.log(parseFloat( (xAdPointSpectrum[ya1] * baseDrMinus[negIndex]).toFixed(8) )) + " ++ " + xAdPointSpectrum[ya1] + " %=== " + yAdPointSpectrum[ya];
-					negIndex--;
+				if (ya1 >= 119 && ya1 < yAdPointSpectrum.length ) {
+					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrPlus[plusIndex] + "====" + plusIndex + "===== XXXX >" + xAdPointSpectrum[ya] + " %  == " + ya1); // This Line Correct >>==  0.12 Y-Informative-Only==0.028====0===== XXXX >1 %  == 1	
+					// axisCalculated.push(Number(yAdPointSpectrum[ya1]).toFixed(4), Number(baseDrPlus[plusIndex]).toFixed(4) );
+				}
+				if (plusIndex > (baseDrPlus.length - 1) ) {
+					plusIndex = 0;
+				}
+				if (ya1 > 119 ) {
+					plusIndex++;
 				}
 			}
+			negIndex--;
+			
 		}
-	}	
+	}		
 
 	getFinalAdLedgerTable();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
