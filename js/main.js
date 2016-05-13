@@ -3,154 +3,153 @@ $(document).ready(function() {
 	
 	//=== HARD CODE STORES INTO OBJECT ===// 
 	
-	var store_1 = {
-		name: "Fresh Wok",
-		address: "112 Fresh Wok Street",
-		city: "Minneapolis",
-		state: "MN",
-		zip: "55411",
-		discount: 19.00,
-		rank: 1,
-		adOffers: 49
-	};
-
-	var store_2 = {
-		name: "Organic Grill",
-		address: "23 Organic Grill Street",
-		city: "MN",
-		zip: "55411",
-		discount: 20.00,
-		rank: .99,
-		adOffers: 48
-	};
-
-	var store_3 = {
-		name: "Pizza Joint",
-		address: "999 Pizza Joint Ave",
-		city: "MN",
-		zip: "55404",
-		discount: 20.00,
-		rank: .98,
-		adOffers: 47
-	};
-
-	var store_4 = {
-		name: "Take Out Sushi",
-		address: "672 Take Out Sushi Rd",
-		city: "MN",
-		zip: "55409",
-		discount: 20.00,
-		rank: .97,
-		adOffers: 46
-	};
-
-	var store_5 = {
-		name: "Get Me My Veggies",
-		address: "43 Veggie Street",
-		city: "MN",
-		zip: "55444",
-		discount: 20.00,
-		rank: .96,
-		adOffers: 45
-	};
-
-	var store_6 = {
-		name: "Good Stuff Grill",
-		address: "783 Good Stuff Grill",
-		city: "MN",
-		zip: "55416",
-		discount: 20.00,
-		rank: .95,
-		adOffers: 44
-	};
-
-	var store_7 = {
-		name: "The Good Bake",
-		address: "11 Good Bake Street",
-		city: "MN",
-		zip: "55411",
-		discount: 20.00,
-		rank: .94,
-		adOffers: 43
-	};
-
-	var store_8 = {
-		name: "Sushi Dine",
-		address: "409 Sushi Dine Drive",
-		city: "MN",
-		zip: "55410",
-		discount: 20.00,
-		rank: .93,
-		adOffers: 42
-	};
-
-	var store_9 = {
-		name: "Burger Burger",
-		address: "335 Burger Street",
-		city: "MN",
-		zip: "55422",
-		discount: 20.00,
-		rank: .92,
-		adOffers: 41
-	};
-
-	var store_10 = {
-		name: "Cheesy Grill",
-		address: "78 Cheesy Grill Rd",
-		city: "MN",
-		zip: "55422",
-		discount: 20.00,
-		rank: .91,
-		adOffers: 50
-	};
-
-	var store_11 = {
-		name: "The Hot Pot",
-		address: "466 Hot Pot Street",
-		city: "MN",
-		zip: "55430",
-		discount: 20.00,
-		rank: .9,
-		adOffers: 50
-	};
-
-	var store_12 = {
-		name: "Green House",
-		address: "567 Green House Rd",
-		city: "MN",
-		zip: "55444",
-		discount: 20.00,
-		rank: .89,
-		adOffers: 50
-	};
+	var stores = {
 		
-	//===== END HARD CODE STORES INTO OBJECTS =====//
+		store_1: {
+			name: "Fresh Wok",
+			address: "112 Fresh Wok Street",
+			city: "Minneapolis",
+			state: "MN",
+			zip: "55411",
+			discount: 20.00,
+			rank: 1,
+			adOffers: 49
+		},
+		
+		store_2: {
+			name: "Organic Grill",
+			address: "23 Organic Grill Street",
+			city: "MN",
+			zip: "55411",
+			discount: 19.00,
+			rank: .99,
+			adOffers: 48
+		},
+		
+		store_3: {
+			name: "Pizza Joint",
+			address: "999 Pizza Joint Ave",
+			city: "MN",
+			zip: "55404",
+			discount: 18.00,
+			rank: .98,
+			adOffers: 47
+		},
+
+		store_4: {
+			name: "Take Out Sushi",
+			address: "672 Take Out Sushi Rd",
+			city: "MN",
+			zip: "55409",
+			discount: 17.00,
+			rank: .97,
+			adOffers: 46
+		},
+
+		store_5: {
+			name: "Get Me My Veggies",
+			address: "43 Veggie Street",
+			city: "MN",
+			zip: "55444",
+			discount: 16.00,
+			rank: .96,
+			adOffers: 45
+		},
+
+		store_6: {
+			name: "Good Stuff Grill",
+			address: "783 Good Stuff Grill",
+			city: "MN",
+			zip: "55416",
+			discount: 15.00,
+			rank: .95,
+			adOffers: 44
+		},
+
+		store_7: {
+			name: "The Good Bake",
+			address: "11 Good Bake Street",
+			city: "MN",
+			zip: "55411",
+			discount: 14.00,
+			rank: .94,
+			adOffers: 43
+		},
+
+		store_8: {
+			name: "Sushi Dine",
+			address: "409 Sushi Dine Drive",
+			city: "MN",
+			zip: "55410",
+			discount: 13.00,
+			rank: .93,
+			adOffers: 42
+		},
+
+		store_9: {
+			name: "Burger Burger",
+			address: "335 Burger Street",
+			city: "MN",
+			zip: "55422",
+			discount: 12.00,
+			rank: .92,
+			adOffers: 41
+		},
+
+		store_10: {
+			name: "Cheesy Grill",
+			address: "78 Cheesy Grill Rd",
+			city: "MN",
+			zip: "55422",
+			discount: 11.00,
+			rank: .91,
+			adOffers: 40
+		},
+
+		store_11: {
+			name: "The Hot Pot",
+			address: "466 Hot Pot Street",
+			city: "MN",
+			zip: "55430",
+			discount: 10.00,
+			rank: .9,
+			adOffers: 39
+		},
+
+		store_12: {
+			name: "Green House",
+			address: "567 Green House Rd",
+			city: "MN",
+			zip: "55444",
+			discount: 30.00,
+			rank: .89,
+			adOffers: 38
+		}
+		
+	} //===== END HARD CODE STORES INTO OBJECTS =====//
 	
 	
 	//=========================================================\\
 	//=== START CODE FOR INSERTING NAME WITHIN DISPLAYED AD ===//
   //=========================================================\\
 	
-	compileAdList();
-	calculateTime();
-//	getAdPointValue();
 	
-
 	function compileAdList() {
 		
-		$('.js-storeName-1').text(store_1.name);
-		$('.js-storeAddress-1').text(store_1.address);
-		$('.js-storeCity-1').text(store_1.city + "\n" + store_1.zip);
+		$('.js-storeName-1').text(stores.store_1.name);
+		$('.js-storeAddress-1').text(stores.store_1.address);
+		$('.js-storeCity-1').text(stores.store_1.city + "\n" + stores.store_1.zip);
 		
 		
 		$('.js-distance-1').text("12.44 miles"); // This needs to be dynamic/function
 		// $('.js-pointValue-1').text(store_1.); // This needs to be dynamic/function
-		$('.js-numberOfOffers-1').text(store_1.adOffers); // This needs to be dynamic/function
+		$('.js-numberOfOffers-1').text(stores.store_1.adOffers); // This needs to be dynamic/function
 		
 	}
 	
-	// Need to tie this into point system // 
+	compileAdList();
 	
+	// Need to tie this into point system // 
 	
 	
 	function calculateTime() {
@@ -179,11 +178,9 @@ $(document).ready(function() {
 				if (t.minutes <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
 				} 
-				
 				if (t.seconds <= 9) {
 						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
 					}
-				
 				if (t.seconds <= 9) {
 						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
 					} 
@@ -191,7 +188,6 @@ $(document).ready(function() {
 				if (t.minutes <= 9 && t.seconds <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':0' + t.seconds );
 				} 
-
 				if (t.minutes > 9 && t.seconds > 9) {
 					clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':' + t.seconds );
 				}
@@ -206,6 +202,7 @@ $(document).ready(function() {
 		
 	}
 	
+	calculateTime();
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
@@ -227,11 +224,6 @@ $(document).ready(function() {
 		//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5 
 		adBaseDiscountConvertRate = (calculatedMidPoint/(adBasePercentageDiscountAverage*adPointMax));
 		calculatedAdPointMax = (adBaseDiscountConvertRate * 100); // 100 == 100%
-		
-		function getStoreAdPointValue() {
-			var store1 = (store_1.discount * adBaseDiscountConvertRate).toFixed(2);
-			$('.js-pointValue-1').text(store1);
-		}
 		
 	}
 	
@@ -386,10 +378,47 @@ $(document).ready(function() {
 			
 		}
 	}		
+	
+	 getFinalAdLedgerTable();
+	
+	
+	//=========================================================\\
+	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
+  //=========================================================\\
+	
+	function getTotalAdOffers(obj) {
+		var storeObjects = arguments;
+		var discountAvg = 0;
+		var totalOffers = 0;
 
-	getFinalAdLedgerTable();
+		for (var i in storeObjects ) {
+			var currentStore = storeObjects[i];
+			
+			for (var k in currentStore ) {
+				discountAvg += (currentStore[k].discount * currentStore[k].discount);
+				totalOffers += currentStore[k].adOffers;
+			}
+		}
+		
+		return ( totalOffers / discountAvg).toFixed(2);
+	};
+
+	var totalAdOffers = getTotalAdOffers(stores);
 	
+	//=========================================================\\
+	//=== START CODE FOR ** GETTING DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
+  //=========================================================\\
 	
+	function getStoreAdPointValue() {
+		var store1 = (stores.store_1.discount * adBaseDiscountConvertRate).toFixed(2);
+		$('.js-pointValue-1').text(store1);
+	}
+	
+	getStoreAdPointValue();
+	
+	//=========================================================\\
+	//=== GET CURRENT COLLECTIVE AD DISCOUNT PERCENTAGE OF ALL ADS ** FOR AD LEDGER 
+  //=========================================================\\
 	
 	
 	
