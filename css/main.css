@@ -385,18 +385,18 @@ header {
 /*	background-color: rgba(126, 82, 11, 0.72);*/
 }
 
-.store-name-1 {	
+.store-name {	
 	font-size: 27px;
 	text-align: center;
 }
 
-.store-address-1,
-.store-city-1 {	
+.store-address,
+.store-city {	
 	font-size: 21px;
 	text-align: center;
 }
 
-.distance-1 {
+.distance {
 	position: absolute;
 	bottom: 18px;
 	
@@ -405,7 +405,7 @@ header {
 	font-size: 18px;
 }
 
-.point-value-1 {
+.point-value {
 	position: absolute;
 	left: 32%;
 	top: 44%;
@@ -423,7 +423,7 @@ header {
 	cursor: pointer;
 }
 
-.number-of-offers-1 {
+.number-of-offers {
 	position: absolute;
 	top: 60%;
 	right: 32%;
@@ -432,11 +432,11 @@ header {
 	font-size: 14px;
 }
 
-.number-of-offers-1 span {
+.number-of-offers span {
 	border-bottom: 1px solid #fff;;
 }
 
-.time-left-1 {
+.time-left {
 	position: absolute;
 	bottom: 18px;
 	left: 12px;

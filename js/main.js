@@ -13,7 +13,8 @@ $(document).ready(function() {
 			zip: "55411",
 			discount: 20.00,
 			rank: 1,
-			adOffers: 49
+			adOffers: 49,
+			adCreateTime: "June 12 2016" // add 
 		},
 		
 		store_2: {
@@ -140,7 +141,6 @@ $(document).ready(function() {
 		$('.js-storeAddress-1').text(stores.store_1.address);
 		$('.js-storeCity-1').text(stores.store_1.city + "\n" + stores.store_1.zip);
 		
-		
 		$('.js-distance-1').text("12.44 miles"); // This needs to be dynamic/function
 		// $('.js-pointValue-1').text(store_1.); // This needs to be dynamic/function
 		$('.js-numberOfOffers-1').text(stores.store_1.adOffers); // This needs to be dynamic/function
@@ -170,8 +170,8 @@ $(document).ready(function() {
 			};
 		}
 		
-		function intializeClock(id, adEndTime) {
-			var clock = $('.js-timeLeft-1');
+		function intializeClock(id, n, adEndTime) {
+			var clock = $('.js-timeLeft-'+ n);
 			var timeInterval = setInterval(function() {
 				var t = getAdTime(adEndTime);
 				
@@ -198,7 +198,10 @@ $(document).ready(function() {
 			}, 1000); // 1000 is equal to 1 second // 
 		}
 		
-		intializeClock('clock', adEndTime);
+		intializeClock('clock', 1, adEndTime);
+		intializeClock('clock', 2, adEndTime);
+		intializeClock('clock', 3, adEndTime);
+		intializeClock('clock', 4, adEndTime);
 		
 	}
 	
@@ -351,6 +354,7 @@ $(document).ready(function() {
 		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
 	
 	var axisCalculated = [];
+	var xyAxisCalculated = [];
 	var negIndex = baseDrMinus.length-1;
 	var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
 
@@ -360,12 +364,13 @@ $(document).ready(function() {
 			for (var ya1 = 0; ya1 < yAdPointSpectrum.length; ya1++ ) { // length === 999
 				if (ya1 > 0 && ya1 < 119 ) {
 					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrMinus[negIndex] + "==== FIRST LOOP =====XXXX " + xAdPointSpectrum[ya] + " %"); // VERIFIED RESULT === 118 Outer 118 0.002 Y-Informative-Only==0.0249==== FIRST LOOP =====XXXX 1 %
-					// axisCalculated.push(Number(xAdPointSpectrum[ya]).toFixed(4), Number(baseDrMinus[negIndex]).toFixed(4));
-					// axisCalculated.push(Number(xAdPointSpectrum[ya]).toFixed(4));
+					axisCalculated.push(Number(baseDrMinus[negIndex]).toFixed(4) );
+					xyAxisCalculated.push(Number(yAdPointSpectrum[ya]).toFixed(4) );
 				}
 				if (ya1 >= 119 && ya1 < yAdPointSpectrum.length ) {
 					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrPlus[plusIndex] + "====" + plusIndex + "===== XXXX >" + xAdPointSpectrum[ya] + " %  == " + ya1); // This Line Correct >>==  0.12 Y-Informative-Only==0.028====0===== XXXX >1 %  == 1	
-					// axisCalculated.push(Number(yAdPointSpectrum[ya1]).toFixed(4), Number(baseDrPlus[plusIndex]).toFixed(4) );
+					axisCalculated.push(Number(baseDrPlus[plusIndex]).toFixed(4) );
+					xyAxisCalculated.push( Number(yAdPointSpectrum[ya]).toFixed(4) );
 				}
 				if (plusIndex > (baseDrPlus.length - 1) ) {
 					plusIndex = 0;
@@ -380,7 +385,6 @@ $(document).ready(function() {
 	}		
 	
 	 getFinalAdLedgerTable();
-	
 	
 	//=========================================================\\
 	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
@@ -401,24 +405,79 @@ $(document).ready(function() {
 		}
 		
 		return ( totalOffers / discountAvg).toFixed(2);
-	};
+	}
 
 	var totalAdOffers = getTotalAdOffers(stores);
 	
 	//=========================================================\\
-	//=== START CODE FOR ** GETTING DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
+	//=== GET THE POINT CONVERSION VALUE FOR A SINGLE PERCENTAGE POINT
+	//=== EXAMPLE ** (1% === 1.43PTS) >> 20% DISCOUNT * 1.43PTS = 28.6PTS WILL DIPLAY WITHIN AD OFFER ===//
   //=========================================================\\
 	
-	function getStoreAdPointValue() {
-		var store1 = (stores.store_1.discount * adBaseDiscountConvertRate).toFixed(2);
-		$('.js-pointValue-1').text(store1);
-	}
+	// == Need stores originating discount percent
+	// == Each button/ad will have its own unique class, therefore identifying which one is not really relevant at this time
+	// (1). Need to match the correct "Y" to TotalAdOffers returned Value 
+	// (2). Need to Match RETURNED Value to "yAdPointSpectrum"
+	// (3). Get the BASEDR convert value using the RETURNED Index Value
+	// (4). Multiply the STORE DISCOUNT PERCENT by the Matched BASE DR Value
+	//  combinedBaseDr === yAdPointSpectrum
 	
-	getStoreAdPointValue();
+	function getOriginatingDiscountPercent(s) {
+		var store_1 = parseFloat(s.store_1.discount/100).toFixed(4);
+		var numberMultiplier = 0;
+		var yIndex = 1;
+		var yIncrement = 0.001;
+		var t = getTotalAdOffers(stores);
+		
+		// (1). Find Y Value of adjusted Discount Percent (.20) > vertical (999)
+		// (2). Find X Value of Stores Percent (20) > horizontal (99)
+		// (3). Find DR Value of Y position. > horizontal (98,802)
+		function getYIndex() {
+			var count = 0;
+			for (var i = yIncrement; i < t; i = i + yIncrement ) {
+				// console.log(count + " +++ " + i.toFixed(4) + " === " + combinedBaseDr[count] + " +++ " + yAdPointSpectrum[count]);
+				
+				if ( yAdPointSpectrum[count] <= t ) {
+					yIndex = count;
+				}
+				count++;
+			}
+		}
+		
+		getYIndex();
+	
+		// console.log(t);
+		// console.log(store_1 * 100);
+		// console.log(yIndex);
+		// console.log(combinedBaseDr[yIndex]);
+		// console.log((store_1 * 100) * combinedBaseDr[yIndex] * adBaseDiscountConvertRate).toFixed(2);
+		
+		return ((store_1 * 100) * combinedBaseDr[yIndex] * adBaseDiscountConvertRate).toFixed(2);
+	}
+		
+	var storeOneOriginatingDiscount = getOriginatingDiscountPercent(stores);
+	
 	
 	//=========================================================\\
-	//=== GET CURRENT COLLECTIVE AD DISCOUNT PERCENTAGE OF ALL ADS ** FOR AD LEDGER 
+	//=== APPLY STORES LIVE POINT VALUE TO ADVERTISEMENT ===//
+	//=== AD-LEDGER ADJUSTMENT USED TO VARY OFFER ===//
+	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
   //=========================================================\\
+	
+	
+	function getStoreAdPointValue(v) {
+		// var v = storeOneOriginatingDiscount;
+		var store1 = (stores.store_1.discount * v).toFixed(2);
+		$('.js-pointValue-1').text(store1);
+		
+		var store2 = (stores.store_2.discount * v).toFixed(2);
+		$('.js-pointValue-2').text(store2);
+		
+		var store3 = (stores.store_3.discount * v).toFixed(2);
+		$('.js-pointValue-3').text(store3);
+	}
+	
+	getStoreAdPointValue(storeOneOriginatingDiscount);
 	
 	
 	
