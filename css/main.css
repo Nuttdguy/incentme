@@ -45,7 +45,7 @@ li {
 /*==================================*/
 
 .main-slider {
-	background-image: url(http://lorempixel.com/image_output/food-q-c-1080-520-6.jpg);
+	background-image: url(img/food-q-c-1080-520-6.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 520px;
@@ -125,6 +125,22 @@ header {
 /*==================================*/
 /*--- SECTION - SIDEBAR MENU ( CATEGORY SEARCHES )
 /*==================================*/
+
+/* ========== RETURN AND DO AFTER INTERACTIVE COMPONENTS */
+.sidebar-menu {
+	visibility: hidden;
+	
+	position: fixed;
+	top: 0;
+/*	left: -20%;*/
+	z-index: 10;
+	
+	background-color: black;
+	color: #fff;
+	
+	width: 20%;
+	height: 100vh;
+}
 
 
 /*==================================*/
@@ -246,19 +262,19 @@ header {
 /*==================================*/
 
 .ad-one {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-9.jpg);
+	background: url(img/food-q-c-360-270-1.jpg);
 	position: absolute;
 	left: 0;
 }
 
 .ad-two {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-1.jpg);
+	background: url(img/food-q-c-360-270-2.jpg);
 	position: absolute;
 	left: 33.33%;
 }
 
 .ad-three {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-5.jpg);
+	background: url(img/food-q-c-360-270-3.jpg);
 	position: absolute;
 	left: 66.66%;
 }
@@ -269,19 +285,19 @@ header {
 /*==================================*/
 
 .ad-4 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-8.jpg);
+	background: url(img/food-q-c-360-270-4.jpg);
 	position: absolute;
 	left: 0;
 }
 
 .ad-5 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-7.jpg);
+	background: url(img/food-q-c-360-270-5.jpg);
 	position: absolute;
 	left: 33.33%;
 }
 
 .ad-6 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-3.jpg);
+	background: url(img/food-q-c-360-270-6.jpg);
 	position: absolute;
 	left: 66.66%;
 }
@@ -291,19 +307,19 @@ header {
 /*==================================*/
 
 .ad-7 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-4.jpg);
+	background: url(img/food-q-c-360-270-7.jpg);
 	position: absolute;
 	left: 0;
 }
 
 .ad-8 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-2.jpg);
+	background: url(img/food-q-c-360-270-8.jpg);
 	position: absolute;
 	left: 33.33%;
 }
 
 .ad-9 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-6.jpg);
+	background: url(img/food-q-c-360-270-9.jpg);
 	position: absolute;
 	left: 66.66%;
 }
@@ -313,19 +329,19 @@ header {
 /*==================================*/
 
 .ad-10 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-10.jpg);
+	background: url(img/food-q-c-360-270-3.jpg);
 	position: absolute;
 	left: 0;
 }
 
 .ad-11 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-8.jpg);
+	background: url(img/food-q-c-360-270-1.jpg);
 	position: absolute;
 	left: 33.33%;
 }
 
 .ad-12 {
-	background: url(http://lorempixel.com/image_output/food-q-c-360-270-5.jpg);
+	background: url(img/food-q-c-360-270-5.jpg);
 	position: absolute;
 	left: 66.66%;
 }
@@ -337,38 +353,114 @@ header {
 
 .ad-store-name {
 	position: absolute;
+	top: 0;
+	
 	width: 100%;
 	height: 100%;
 }
 
+/*== Temporary disable overlay ==*/
+
+/*
 .ad-store-name:hover {
 	opacity: 0;
 }
+*/
 
-.ad-store-name p {	
+/*== Temporary disable overlay ==*/
+
+.ad-store-name p {
+	color: #ffffff;
+}
+
+.ad-store-name-bg {
+	position: absolute;
+		
+	width: 100%;
+	height: 100%;
 	box-sizing: border-box;
-	margin: 16px 0;
+	padding: 30px 12px;
 	
-	color: #fff;
-	font-size: 24px;
+	background-color: rgba(60, 30, 30, 0.70);
+/*	background-color: rgba(126, 82, 11, 0.72);*/
+}
+
+.store-name-1 {	
+	font-size: 27px;
 	text-align: center;
-/*	border: 1px solid red;*/
+}
+
+.store-address-1,
+.store-city-1 {	
+	font-size: 21px;
+	text-align: center;
+}
+
+.distance-1 {
+	position: absolute;
+	bottom: 18px;
+	
+	width: 93%;
+	text-align: right;
+	font-size: 18px;
+}
+
+.point-value-1 {
+	position: absolute;
+	left: 32%;
+	top: 44%;
+	min-width: 120px;
+	
+	padding: 5px;
+	
+	font-size: 21px;
+	font-weight: 500;
+	
+	text-align: center;
+	background-color: rgba(255, 168, 28, 0.85);
+	border: 1px solid #580606;
+	
+	cursor: pointer;
+}
+
+.number-of-offers-1 {
+	position: absolute;
+	top: 60%;
+	right: 32%;
+	
+	font-style: italic;
+	font-size: 14px;
+}
+
+.number-of-offers-1 span {
+	border-bottom: 1px solid #fff;;
+}
+
+.time-left-1 {
+	position: absolute;
+	bottom: 18px;
+	left: 12px;
+	
+	font-size: 18px;
 }
 
 /*==================================*/
 /*--- AD SECTION >> AD CONTAINER (INNER OVERLAY)
 /*==================================*/
 
-.ad-store-info:hover {
+/*
+.ad-store-detail:hover {
 	transform: translateY(258px);
 	opacity: 1;
 	transition: all .6s ease-in;
 }
+*/
 
-.ad-store-info {
-	display: inline-block;
-	background-color: rgba(56, 55, 55, 0.9);
-	opacity: .3; /* set opacity back to 0 */
+/*
+.ad-store-detail {
+	display: block;
+	background-color: rgba(56, 55, 55, 0.95);
+	opacity: .3;  set opacity back to 0 
 	
 	height: 516px;
 	width: 100%;
@@ -376,22 +468,24 @@ header {
 	position: absolute;
 	top: -258px;
 }
+*/
 
-.ad-store-info p:first-child {
+/*
+.ad-store-detail p:first-child {
 	margin-top: 12%;
 }
 
-.ad-store-info p {
+.ad-store-detail p {
 	box-sizing: border-box;
 	padding: 8px 0;
 	
 	color: #fff;
 	font-size: 24px;
 	text-align: center;
-/*	border: 1px solid red;*/
+	border: 1px solid red;
 }
 
-.ad-store-info button {
+.ad-store-detail button {
 	display: block;
 	margin: 12px auto;
 	
@@ -401,6 +495,7 @@ header {
 	background-color: rgba(255, 168, 28, 0.85);
 	border: 1px solid rgba(255, 168, 28, 0.85);
 }
+*/
 
 /*==================================*/
 /*--- AD SECTION >> AD CONTAINER (AD STORE PAGE OVERLAY)
