@@ -11,10 +11,11 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			state: "MN",
 			zip: "55411",
-			discount: 20.00,
+			discount: 17.00,
 			rank: 1,
-			adOffers: 49,
-			adCreateTime: "June 12 2016" // add 
+			adOffers: 9,
+//			adCreateTime: new Date(),// Needs a definded date for reference only
+			adEndTime: "May 23 2016" // this is used for the ad clock and ad-algorithm
 		},
 		
 		store_2: {
@@ -22,9 +23,10 @@ $(document).ready(function() {
 			address: "23 Organic Grill Street",
 			city: "Minneapolis",
 			zip: "55411",
-			discount: 19.00,
+			discount: 21.30,
 			rank: .99,
-			adOffers: 48
+			adOffers: 48,
+			adEndTime: "June 23 2016"
 		},
 		
 		store_3: {
@@ -34,7 +36,8 @@ $(document).ready(function() {
 			zip: "55404",
 			discount: 18.00,
 			rank: .98,
-			adOffers: 47
+			adOffers: 47,
+			adEndTime: "June 07 2016"
 		},
 
 		store_4: {
@@ -44,7 +47,8 @@ $(document).ready(function() {
 			zip: "55409",
 			discount: 17.00,
 			rank: .97,
-			adOffers: 46
+			adOffers: 46,
+			adEndTime: "June 07 2016"
 		},
 
 		store_5: {
@@ -54,7 +58,8 @@ $(document).ready(function() {
 			zip: "55444",
 			discount: 16.00,
 			rank: .96,
-			adOffers: 45
+			adOffers: 45,
+			adEndTime: "June 07 2016"
 		},
 
 		store_6: {
@@ -64,7 +69,8 @@ $(document).ready(function() {
 			zip: "55416",
 			discount: 15.00,
 			rank: .95,
-			adOffers: 44
+			adOffers: 44,
+			adEndTime: "June 07 2016"
 		},
 
 		store_7: {
@@ -74,7 +80,8 @@ $(document).ready(function() {
 			zip: "55411",
 			discount: 14.00,
 			rank: .94,
-			adOffers: 43
+			adOffers: 43,
+			adEndTime: "June 07 2016"
 		},
 
 		store_8: {
@@ -84,7 +91,8 @@ $(document).ready(function() {
 			zip: "55410",
 			discount: 13.00,
 			rank: .93,
-			adOffers: 42
+			adOffers: 42,
+			adEndTime: "June 07 2016"
 		},
 
 		store_9: {
@@ -94,7 +102,8 @@ $(document).ready(function() {
 			zip: "55422",
 			discount: 12.00,
 			rank: .92,
-			adOffers: 41
+			adOffers: 41,
+			adEndTime: "June 07 2016"
 		},
 
 		store_10: {
@@ -104,7 +113,8 @@ $(document).ready(function() {
 			zip: "55422",
 			discount: 11.00,
 			rank: .91,
-			adOffers: 40
+			adOffers: 40,
+			adEndTime: "June 07 2016"
 		},
 
 		store_11: {
@@ -114,7 +124,8 @@ $(document).ready(function() {
 			zip: "55430",
 			discount: 10.00,
 			rank: .9,
-			adOffers: 39
+			adOffers: 39,
+			adEndTime: "June 07 2016"
 		},
 
 		store_12: {
@@ -124,7 +135,8 @@ $(document).ready(function() {
 			zip: "55444",
 			discount: 30.00,
 			rank: .89,
-			adOffers: 38
+			adOffers: 38,
+			adEndTime: "June 07 2016"
 		}
 		
 	} //===== END HARD CODE STORES INTO OBJECTS =====//
@@ -168,10 +180,12 @@ $(document).ready(function() {
 	// 
 	
 	//== ID-2 ==\\
-	function calculateTime() {
-		var adEndTime = 'June 12 2016'; // Set endtime for ad -- this needs to be within store object
+//	var s1EndTime = stores.store_1.adEndTime;
+	
+	function calculateTime(s) {
 		
 		function getAdTime(endTime) {
+//			var time = Date.parse(endTime) - Date.parse(new Date());
 			var time = Date.parse(endTime) - Date.parse(new Date());
 			var seconds = Math.floor( (time/1000) % 60 );
 			var minutes = Math.floor( (time/1000/60) % 60 );
@@ -186,11 +200,12 @@ $(document).ready(function() {
 			};
 		}
 		
-		function intializeClock(id, n, adEndTime) {
-			var clock = $('.js-timeLeft-'+ n);
+		function intializeClock(id, c, et) {
+			var clock = $('.js-timeLeft-'+ c);
+			console.log(clock);
 			var timeInterval = setInterval(function() {
-				var t = getAdTime(adEndTime);
 				
+				var t = getAdTime(et);
 				if (t.minutes <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
 				} 
@@ -214,14 +229,21 @@ $(document).ready(function() {
 			}, 1000); // 1000 is equal to 1 second // 
 		}
 		
-		intializeClock('clock', 1, adEndTime);
-		intializeClock('clock', 2, adEndTime);
-		intializeClock('clock', 3, adEndTime);
-		intializeClock('clock', 4, adEndTime);
+		var count = 1;
+		for (var i in stores ) {
+			intializeClock('clock', count, stores[i].adEndTime);
+			count++;
+			console.log(stores[i].adEndTime);
+		}
+		
+//		// intializeClock('clock', 1, endTime);
+//		intializeClock('clock', 2, endTime);
+//		intializeClock('clock', 3, endTime);
+//		intializeClock('clock', 4, endTime);
 		
 	}
 	
-	calculateTime();
+	calculateTime(stores);
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
