@@ -134,8 +134,8 @@ $(document).ready(function() {
 	//=== START CODE FOR INSERTING NAME WITHIN DISPLAYED AD ===//
   //=========================================================\\
 	
-	
-	function compileAdList1(n, m, o) {
+	//== ID-1 ==\\
+	function compileAdList(n, m, o) {
 			
 		$('.js-storeName-' + n).text(stores.store_1.name);
 		$('.js-storeAddress-' + n).text(stores.store_1.address);
@@ -148,23 +148,28 @@ $(document).ready(function() {
 		$('.js-storeName-' + m).text(stores.store_2.name);
 		$('.js-storeAddress-' + m).text(stores.store_2.address);
 		$('.js-storeCity-' + m).text(stores.store_2.city + "\n" + stores.store_2.zip);
-		$('.js-distance-' + m ).text("12.44 miles");
+		$('.js-distance-' + m ).text("2.44 miles");
 		$('.js-numberOfOffers-' + m).text(stores.store_2.adOffers);	
 		
 		$('.js-storeName-' + o).text(stores.store_3.name);
 		$('.js-storeAddress-' + o).text(stores.store_3.address);
 		$('.js-storeCity-' + o).text(stores.store_3.city + "\n" + stores.store_3.zip);
-		$('.js-distance-' + o ).text("12.44 miles");
+		$('.js-distance-' + o ).text("3.74 miles");
 		$('.js-numberOfOffers-' + o).text(stores.store_3.adOffers);	
 	}
 	
-	compileAdList1(1, 2, 3 );
+	compileAdList(1, 2, 3 );
 	
 	// Need to tie this into point system // 
 	
+	//=========================================================\\
+	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
+  //=========================================================\\
+	// 
 	
+	//== ID-2 ==\\
 	function calculateTime() {
-		var adEndTime = 'June 12 2016'; // Set endtime for ad
+		var adEndTime = 'June 12 2016'; // Set endtime for ad -- this needs to be within store object
 		
 		function getAdTime(endTime) {
 			var time = Date.parse(endTime) - Date.parse(new Date());
@@ -222,6 +227,7 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
   //=========================================================\\
 	
+	//== ID-3 ==\\
 	var adPointMax;
 	var adPointMidPercentage;
 	var adBasePercentageDiscountAverage;
@@ -251,8 +257,10 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING x TABLE SPECTRUM ===//
   //=========================================================\\
 	
+	
+	//== ID-4 ==\\
 	//+++++ VARIABLES FOR GETTING X TABLE VALUES FOR AD LEDGER DIVVIATION
-	var xAdPointSpectrum = []; 
+	var xAdPointSpectrum = []; 	
 	
 	function getXAdPointSpectrum() {
 		var axisMax = 1;
@@ -273,6 +281,8 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING Y TABLE SPECTRUM ===//
   	//=========================================================\\
 	
+	
+	//== ID-5 ==\\
 	var yAdPointSpectrum = [];
 	
 	function getYAdPointSpectrum() {
@@ -293,6 +303,8 @@ $(document).ready(function() {
 	//=========================================================\\
 	//=== START CODE FOR GENERATING **CALCULATED Y** TABLE MULTIPLIER ===//
   //=========================================================\\
+	
+	//== ID-6 ==\\
 	var yPlus = []; // Validated correct values returned >> changed result === 880
 	var yMinus = []; // Validated correct values returned >> changed result === 119
 
@@ -318,7 +330,7 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING CALCULATED VALUES FOR GENERATING STEP DIVVIATION MULTIPLIER ===//
   //=========================================================\\
 	
-	
+	//== ID-7 ==\\
 	//+++++ GETTING ACTIVE DR TO MULTIPLY AGAINST X & Y SPECTRUM TABLES
 	var baseDrPlus = []; // Verified to have an array length of 880
 	var baseDrMinus = []; // Verified to have an array length of 119
@@ -336,6 +348,8 @@ $(document).ready(function() {
 		}
 	}
 	
+	
+	//== ID-8 ==\\
 	function combineDr() {
 		for ( var i in baseDrMinus ) {
 			combinedBaseDr.push(baseDrMinus[i]);
@@ -352,7 +366,9 @@ $(document).ready(function() {
 	
 	//=========================================================\\
 	//=== START CODE FOR ** FINAL CALCULATED X AND Y ** TO APPLY AS TABLE MULTIPLIER FOR AD LEDGER ===//
-    //=========================================================\\
+	//=========================================================\\
+	
+	//== ID-9 ==\\
     //=== THE BELOW LOOP FREEZES DUE TO RECORD/TABLE SIZE OF (99*999)x2 = 197,802 VALUES
     //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
     //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
@@ -363,6 +379,7 @@ $(document).ready(function() {
     //=== (4). MULTIPLY BASEDR VALUE & DISCOUNT PERCENTAGE OF AD OFFER
     //=== (5). RETURN FINAL RESULT; THIS IS ADS ACTIVE CONVERT POINT VALUE FOR ORIGINATING DISCOUNT AT TIME OF AD CREATION
 		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
+	
 	
 	var axisCalculated = [];
 	var xyAxisCalculated = [];
@@ -396,11 +413,17 @@ $(document).ready(function() {
 	}		
 	
 	 getFinalAdLedgerTable();
+	console.log(axisCalculated[98801]);
+	console.log(xyAxisCalculated[98801]);
+	console.log(axisCalculated.length);
+	console.log(xyAxisCalculated.length);
 	
 	//=========================================================\\
 	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
   //=========================================================\\
 	
+	
+	//== ID-10 ==\\	
 	function getTotalAdOffers(obj) {
 		var storeObjects = arguments;
 		var discountAvg = 0;
@@ -425,6 +448,8 @@ $(document).ready(function() {
 	//=== EXAMPLE ** (1% === 1.43PTS) >> 20% DISCOUNT * 1.43PTS = 28.6PTS WILL DIPLAY WITHIN AD OFFER ===//
   //=========================================================\\
 	
+	
+	//== ID-11 ==\\	
 	// == Need stores originating discount percent
 	// == Each button/ad will have its own unique class, therefore identifying which one is not really relevant at this time
 	// (1). Need to match the correct "Y" to TotalAdOffers returned Value 
@@ -475,7 +500,7 @@ $(document).ready(function() {
 	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
   //=========================================================\\
 	
-	
+	//== ID-12 ==\\	
 	function getStoreAdPointValue(v) {
 		// var v = storeOneOriginatingDiscount;
 		var store1 = (stores.store_1.discount * v).toFixed(2);
