@@ -11,10 +11,10 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			state: "MN",
 			zip: "55411",
-			discount: 17.00,
+			discount: 0.1700,
 			rank: 1,
 			adOffers: 9,
-//			adCreateTime: new Date(),// Needs a definded date for reference only
+			adCreateTime: "May 10 2016",// Needs a definded date for reference only
 			adEndTime: "May 23 2016" // this is used for the ad clock and ad-algorithm
 		},
 		
@@ -23,9 +23,10 @@ $(document).ready(function() {
 			address: "23 Organic Grill Street",
 			city: "Minneapolis",
 			zip: "55411",
-			discount: 21.30,
-			rank: .99,
+			discount: 0.2130,
+			rank: 0.99,
 			adOffers: 48,
+			adCreateTime: "May 11 2016",
 			adEndTime: "June 23 2016"
 		},
 		
@@ -34,9 +35,10 @@ $(document).ready(function() {
 			address: "999 Pizza Joint Ave",
 			city: "Minneapolis",
 			zip: "55404",
-			discount: 18.00,
-			rank: .98,
+			discount: 0.1800,
+			rank: 0.98,
 			adOffers: 47,
+			adCreateTime: "May 09 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -45,10 +47,11 @@ $(document).ready(function() {
 			address: "672 Take Out Sushi Rd",
 			city: "Minneapolis",
 			zip: "55409",
-			discount: 17.00,
-			rank: .97,
+			discount: 0.1700,
+			rank: 0.97,
 			adOffers: 46,
-			adEndTime: "June 07 2016"
+			adCreateTime: "May 08 2016",
+			adEndTime: "June 02 2016"
 		},
 
 		store_5: {
@@ -56,10 +59,11 @@ $(document).ready(function() {
 			address: "43 Veggie Street",
 			city: "Minneapolis",
 			zip: "55444",
-			discount: 16.00,
-			rank: .96,
+			discount: 0.1600,
+			rank: 0.96,
 			adOffers: 45,
-			adEndTime: "June 07 2016"
+			adCreateTime: "May 07 2016",
+			adEndTime: "June 04 2016"
 		},
 
 		store_6: {
@@ -67,9 +71,10 @@ $(document).ready(function() {
 			address: "783 Good Stuff Grill",
 			city: "Minneapolis",
 			zip: "55416",
-			discount: 15.00,
-			rank: .95,
+			discount: 0.1500,
+			rank: 0.95,
 			adOffers: 44,
+			adCreateTime: "May 10 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -78,9 +83,10 @@ $(document).ready(function() {
 			address: "11 Good Bake Street",
 			city: "Minneapolis",
 			zip: "55411",
-			discount: 14.00,
-			rank: .94,
+			discount: 0.1400,
+			rank: 0.94,
 			adOffers: 43,
+			adCreateTime: "May 01 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -89,9 +95,10 @@ $(document).ready(function() {
 			address: "409 Sushi Dine Drive",
 			city: "Minneapolis",
 			zip: "55410",
-			discount: 13.00,
-			rank: .93,
+			discount: 0.1300,
+			rank: 0.93,
 			adOffers: 42,
+			adCreateTime: "May 06 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -100,9 +107,10 @@ $(document).ready(function() {
 			address: "335 Burger Street",
 			city: "Minneapolis",
 			zip: "55422",
-			discount: 12.00,
-			rank: .92,
+			discount: 0.1200,
+			rank: 0.92,
 			adOffers: 41,
+			adCreateTime: "May 09 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -111,9 +119,10 @@ $(document).ready(function() {
 			address: "78 Cheesy Grill Rd",
 			city: "Minneapolis",
 			zip: "55422",
-			discount: 11.00,
-			rank: .91,
+			discount: 0.1100,
+			rank: 0.91,
 			adOffers: 40,
+			adCreateTime: "May 13 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -122,9 +131,10 @@ $(document).ready(function() {
 			address: "466 Hot Pot Street",
 			city: "Minneapolis",
 			zip: "55430",
-			discount: 10.00,
-			rank: .9,
+			discount: 0.1000,
+			rank: 0.9,
 			adOffers: 39,
+			adCreateTime: "May 12 2016",
 			adEndTime: "June 07 2016"
 		},
 
@@ -133,9 +143,10 @@ $(document).ready(function() {
 			address: "567 Green House Rd",
 			city: "Minneapolis",
 			zip: "55444",
-			discount: 30.00,
-			rank: .89,
+			discount: 0.3000,
+			rank: 0.89,
 			adOffers: 38,
+			adCreateTime: "May 11 2016",
 			adEndTime: "June 07 2016"
 		}
 		
@@ -143,56 +154,26 @@ $(document).ready(function() {
 	
 	
 	//=========================================================\\
-	//=== START CODE FOR INSERTING NAME WITHIN DISPLAYED AD ===//
-  //=========================================================\\
-	
-	//== ID-1 ==\\
-	function compileAdList(n, m, o) {
-			
-		$('.js-storeName-' + n).text(stores.store_1.name);
-		$('.js-storeAddress-' + n).text(stores.store_1.address);
-		$('.js-storeCity-' + n).text(stores.store_1.city + "\n" + stores.store_1.zip);
-		$('.js-distance-' + n ).text("12.44 miles");
-		$('.js-numberOfOffers-' + n).text(stores.store_1.adOffers);	
-//		$('.js-distance-1').text("12.44 miles"); // This needs to be dynamic/function
-//		$('.js-numberOfOffers-1').text(stores.store_1.adOffers); // This needs to be dynamic/function
-		
-		$('.js-storeName-' + m).text(stores.store_2.name);
-		$('.js-storeAddress-' + m).text(stores.store_2.address);
-		$('.js-storeCity-' + m).text(stores.store_2.city + "\n" + stores.store_2.zip);
-		$('.js-distance-' + m ).text("2.44 miles");
-		$('.js-numberOfOffers-' + m).text(stores.store_2.adOffers);	
-		
-		$('.js-storeName-' + o).text(stores.store_3.name);
-		$('.js-storeAddress-' + o).text(stores.store_3.address);
-		$('.js-storeCity-' + o).text(stores.store_3.city + "\n" + stores.store_3.zip);
-		$('.js-distance-' + o ).text("3.74 miles");
-		$('.js-numberOfOffers-' + o).text(stores.store_3.adOffers);	
-	}
-	
-	compileAdList(1, 2, 3 );
-	
-	// Need to tie this into point system // 
-	
-	//=========================================================\\
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
   //=========================================================\\
 	// 
 	
 	//== ID-2 ==\\
-//	var s1EndTime = stores.store_1.adEndTime;
 	
 	function calculateTime(s) {
 		
-		function getAdTime(endTime) {
+		function getAdTime(et, ct) {
 //			var time = Date.parse(endTime) - Date.parse(new Date());
-			var time = Date.parse(endTime) - Date.parse(new Date());
+			var time = Date.parse(et) - Date.parse(new Date()) ;
+			var sTime = Date.parse(ct) - Date.parse(new Date());
+			var rTime = time - sTime; // required to determine # of days 
+			
 			var seconds = Math.floor( (time/1000) % 60 );
 			var minutes = Math.floor( (time/1000/60) % 60 );
 			var hours = Math.floor( (time/(1000*60*60)) % 24 );
-			var days = Math.floor( time/(1000*60*60*24) );	
+			var days = Math.floor( rTime/(1000*60*60*24) );
 			return {
-				'total': time,
+				'total': rTime,
 				'days': days,
 				'hours': hours,
 				'minutes': minutes,
@@ -200,12 +181,12 @@ $(document).ready(function() {
 			};
 		}
 		
-		function intializeClock(id, c, et) {
+		function intializeClock(id, c, et, ct) {
 			var clock = $('.js-timeLeft-'+ c);
-			console.log(clock);
+			// console.log(clock);
 			var timeInterval = setInterval(function() {
 				
-				var t = getAdTime(et);
+				var t = getAdTime(et, ct); // this is the function calling the new time
 				if (t.minutes <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
 				} 
@@ -231,15 +212,9 @@ $(document).ready(function() {
 		
 		var count = 1;
 		for (var i in stores ) {
-			intializeClock('clock', count, stores[i].adEndTime);
+			intializeClock('clock', count, stores[i].adEndTime, stores[i].adCreateTime);
 			count++;
-			console.log(stores[i].adEndTime);
 		}
-		
-//		// intializeClock('clock', 1, endTime);
-//		intializeClock('clock', 2, endTime);
-//		intializeClock('clock', 3, endTime);
-//		intializeClock('clock', 4, endTime);
 		
 	}
 	
@@ -291,17 +266,18 @@ $(document).ready(function() {
 		
 		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
 		for (var i = xAxis; i <= axisMax; i = i + xAxis ) {
-			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2));
+//			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2)); // Original
+			xAdPointSpectrum[iCount] = Number((i).toFixed(2)); // Attempting not to upConvert Floating-Point Values
 			iCount++;
 		}
-	}
+	};
 	
 	getXAdPointSpectrum(); // verified to contain index count of 10000
 	// Changed to contain index of 99 >> Web Browser Freezing with Large Number
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING Y TABLE SPECTRUM ===//
-  	//=========================================================\\
+  //=========================================================\\
 	
 	
 	//== ID-5 ==\\
@@ -316,7 +292,7 @@ $(document).ready(function() {
 			yAdPointSpectrum[kCount] = Number(k.toFixed(4));
 			kCount++;
 		}
-	}
+	};
 		
 	getYAdPointSpectrum(); // verified to contain index count of 10000
 	// Changed to contain index of 999 >> Web Browser Freezing with Large Number
@@ -347,7 +323,7 @@ $(document).ready(function() {
 	}
 	
 	getYPivotPointValues();
-	
+
 	//=========================================================\\
 	//=== START CODE FOR GENERATING CALCULATED VALUES FOR GENERATING STEP DIVVIATION MULTIPLIER ===//
   //=========================================================\\
@@ -385,12 +361,12 @@ $(document).ready(function() {
 	getBaseDr();
 	combineDr();
 	
-	
 	//=========================================================\\
 	//=== START CODE FOR ** FINAL CALCULATED X AND Y ** TO APPLY AS TABLE MULTIPLIER FOR AD LEDGER ===//
 	//=========================================================\\
 	
-	//== ID-9 ==\\
+	//== ID-9 ==\\ ///====== >>> TEMPORARILY DISABLED FUNCTION UNTIL USE PURPOSE IS DISCOVERED
+	
     //=== THE BELOW LOOP FREEZES DUE TO RECORD/TABLE SIZE OF (99*999)x2 = 197,802 VALUES
     //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
     //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
@@ -433,12 +409,11 @@ $(document).ready(function() {
 			
 		}
 	}		
-	
-	 getFinalAdLedgerTable();
-	console.log(axisCalculated[98801]);
-	console.log(xyAxisCalculated[98801]);
-	console.log(axisCalculated.length);
-	console.log(xyAxisCalculated.length);
+//	 getFinalAdLedgerTable();
+//	console.log(axisCalculated[98801]);
+//	console.log(xyAxisCalculated[98801]);
+//	console.log(axisCalculated.length);
+//	console.log(xyAxisCalculated.length);
 	
 	//=========================================================\\
 	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
@@ -447,29 +422,22 @@ $(document).ready(function() {
 	
 	//== ID-10 ==\\	
 	function getTotalAdOffers(obj) {
-		var storeObjects = arguments;
 		var discountAvg = 0;
 		var totalOffers = 0;
 
-		for (var i in storeObjects ) {
-			var currentStore = storeObjects[i];
-			
-			for (var k in currentStore ) {
-				discountAvg += (currentStore[k].discount * currentStore[k].discount);
-				totalOffers += currentStore[k].adOffers;
-			}
+		for (var i in obj ) {
+			// need to upconvert discount percent in order to use its value with number of offers 
+			discountAvg += Number(obj[i].discount * 100) * Number(obj[i].discount * 100);
+			totalOffers += Number(obj[i].adOffers);	
 		}
 		
-		return ( totalOffers / discountAvg).toFixed(2);
+		return ( totalOffers / discountAvg).toFixed(4);
 	}
-
-	var totalAdOffers = getTotalAdOffers(stores);
 	
 	//=========================================================\\
 	//=== GET THE POINT CONVERSION VALUE FOR A SINGLE PERCENTAGE POINT
 	//=== EXAMPLE ** (1% === 1.43PTS) >> 20% DISCOUNT * 1.43PTS = 28.6PTS WILL DIPLAY WITHIN AD OFFER ===//
   //=========================================================\\
-	
 	
 	//== ID-11 ==\\	
 	// == Need stores originating discount percent
@@ -481,7 +449,6 @@ $(document).ready(function() {
 	//  combinedBaseDr === yAdPointSpectrum
 	
 	function getOriginatingDiscountPercent(s) {
-		var store_1 = parseFloat(s.store_1.discount/100).toFixed(4);
 		var numberMultiplier = 0;
 		var yIndex = 1;
 		var yIncrement = 0.001;
@@ -504,43 +471,42 @@ $(document).ready(function() {
 		
 		getYIndex();
 	
-		// console.log(t);
-		// console.log(store_1 * 100);
-		// console.log(yIndex);
-		// console.log(combinedBaseDr[yIndex]);
-		// console.log((store_1 * 100) * combinedBaseDr[yIndex] * adBaseDiscountConvertRate).toFixed(2);
-		
-		return ((store_1 * 100) * combinedBaseDr[yIndex] * adBaseDiscountConvertRate).toFixed(2);
+		//** s == .12 need 100% upconvert to point value || combinedBaseDr upconvert is optional >> can be moved as neccessary 
+		return ((s * 100) * (combinedBaseDr[yIndex] * 10) * adBaseDiscountConvertRate).toFixed(2);
 	}
 		
-	var storeOneOriginatingDiscount = getOriginatingDiscountPercent(stores);
-	
-	
 	//=========================================================\\
 	//=== APPLY STORES LIVE POINT VALUE TO ADVERTISEMENT ===//
 	//=== AD-LEDGER ADJUSTMENT USED TO VARY OFFER ===//
 	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
   //=========================================================\\
 	
-	//== ID-12 ==\\	
-	function getStoreAdPointValue(v) {
-		// var v = storeOneOriginatingDiscount;
-		var store1 = (stores.store_1.discount * v).toFixed(2);
-		$('.js-pointValue-1').text(store1);
-		
-		var store2 = (stores.store_2.discount * v).toFixed(2);
-		$('.js-pointValue-2').text(store2);
-		
-		var store3 = (stores.store_3.discount * v).toFixed(2);
-		$('.js-pointValue-3').text(store3);
-	}
+	//== ID-12 ==\\	//**** MARKED FOR REMOVAL -- ADDED TO FUNCTION ID-1 ***\\
 	
-	getStoreAdPointValue(storeOneOriginatingDiscount);
+//	function getStoreAdPointValue(v) {
+//		// var v = storeOneOriginatingDiscount;
+//		var store1 = (stores.store_1.discount * v).toFixed(2);
+//		$('.js-pointValue-1').text(store1);
+//		
+//		var store2 = (stores.store_2.discount * v).toFixed(2);
+//		$('.js-pointValue-2').text(store2);
+//		
+//		var store3 = (stores.store_3.discount * v).toFixed(2);
+//		$('.js-pointValue-3').text(store3);
+//	}
+//	
+	// getStoreAdPointValue(getOriginatingDiscountPercent);
 	
+		
 	//=========================================================\\
 	//=== GO BACK OVER CODE AND FIX >> GET FUNCTIONS TO WORK INDEPENDENTLY FROM OTHERS ===//
-  //=========================================================\\
+  //=========================================================//
 	
+	
+	
+	
+	// NEED TO TIMER ALGORITHM/TABLE
+	// NEED RANK ALGORITHM/TABLES
 	// NEED FUNCTION TO REDUCE TOTAL AD COUNT FROM CURRENT TOTAL
 	// NEED TO WORK ON CREATING USERS
 	// NEED TO CREATE USER RANK TABLE
@@ -548,6 +514,39 @@ $(document).ready(function() {
 	// NEED TO CREATE TABLE FOR USER PODS
 	// NEED TO CREATE REWARD DISTRIBUTION GRIDS
 	// NEED TO ADD CREDIT CARD FORM
+	
+	
+	
+	
+	//=========================================================\\
+	//=== START CODE FOR INSERTIN STORE VALUES WITHIN DISPLAYED AD ===\\
+	//=== NEED TO KEEP LAST BECAUSE ALGORITHM COMPONENTS NEED TO BE GENERATED ===//
+	        //=== OTHERWISE UNDEFINED ERRORS WILL OCCURS ===//
+  //=========================================================//
+	
+	//== ID-1 ==\\
+	function compileAdList(st) {
+		
+		function updateList(c, sn, sa, sc, sz, so, sd) {
+			$('.js-storeName-' + c).text(sn);
+			$('.js-storeAddress-' + c).text(sa);
+			$('.js-storeCity-' + c).text(sc);
+			$('.js-distance-' + c).text("12.44 miles");
+			$('.js-numberOfOffers-' + c).text(so);
+			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
+			$('.js-pointValue-' + c).text(getOriginatingDiscountPercent(sd));
+		}
+		
+		var count = 1;
+		for (var i in stores) {
+			updateList(count, stores[i].name, stores[i].address, stores[i].city, stores[i].zip, stores[i].adOffers, stores[i].discount);
+			count++;
+		}
+		
+	}
+	
+	compileAdList(stores);
+	
 	
 	
 	
