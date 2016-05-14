@@ -20,7 +20,7 @@ $(document).ready(function() {
 		store_2: {
 			name: "Organic Grill",
 			address: "23 Organic Grill Street",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55411",
 			discount: 19.00,
 			rank: .99,
@@ -30,7 +30,7 @@ $(document).ready(function() {
 		store_3: {
 			name: "Pizza Joint",
 			address: "999 Pizza Joint Ave",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55404",
 			discount: 18.00,
 			rank: .98,
@@ -40,7 +40,7 @@ $(document).ready(function() {
 		store_4: {
 			name: "Take Out Sushi",
 			address: "672 Take Out Sushi Rd",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55409",
 			discount: 17.00,
 			rank: .97,
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		store_5: {
 			name: "Get Me My Veggies",
 			address: "43 Veggie Street",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55444",
 			discount: 16.00,
 			rank: .96,
@@ -60,7 +60,7 @@ $(document).ready(function() {
 		store_6: {
 			name: "Good Stuff Grill",
 			address: "783 Good Stuff Grill",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55416",
 			discount: 15.00,
 			rank: .95,
@@ -70,7 +70,7 @@ $(document).ready(function() {
 		store_7: {
 			name: "The Good Bake",
 			address: "11 Good Bake Street",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55411",
 			discount: 14.00,
 			rank: .94,
@@ -80,7 +80,7 @@ $(document).ready(function() {
 		store_8: {
 			name: "Sushi Dine",
 			address: "409 Sushi Dine Drive",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55410",
 			discount: 13.00,
 			rank: .93,
@@ -90,7 +90,7 @@ $(document).ready(function() {
 		store_9: {
 			name: "Burger Burger",
 			address: "335 Burger Street",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55422",
 			discount: 12.00,
 			rank: .92,
@@ -100,7 +100,7 @@ $(document).ready(function() {
 		store_10: {
 			name: "Cheesy Grill",
 			address: "78 Cheesy Grill Rd",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55422",
 			discount: 11.00,
 			rank: .91,
@@ -110,7 +110,7 @@ $(document).ready(function() {
 		store_11: {
 			name: "The Hot Pot",
 			address: "466 Hot Pot Street",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55430",
 			discount: 10.00,
 			rank: .9,
@@ -120,7 +120,7 @@ $(document).ready(function() {
 		store_12: {
 			name: "Green House",
 			address: "567 Green House Rd",
-			city: "MN",
+			city: "Minneapolis",
 			zip: "55444",
 			discount: 30.00,
 			rank: .89,
@@ -135,19 +135,30 @@ $(document).ready(function() {
   //=========================================================\\
 	
 	
-	function compileAdList() {
+	function compileAdList1(n, m, o) {
+			
+		$('.js-storeName-' + n).text(stores.store_1.name);
+		$('.js-storeAddress-' + n).text(stores.store_1.address);
+		$('.js-storeCity-' + n).text(stores.store_1.city + "\n" + stores.store_1.zip);
+		$('.js-distance-' + n ).text("12.44 miles");
+		$('.js-numberOfOffers-' + n).text(stores.store_1.adOffers);	
+//		$('.js-distance-1').text("12.44 miles"); // This needs to be dynamic/function
+//		$('.js-numberOfOffers-1').text(stores.store_1.adOffers); // This needs to be dynamic/function
 		
-		$('.js-storeName-1').text(stores.store_1.name);
-		$('.js-storeAddress-1').text(stores.store_1.address);
-		$('.js-storeCity-1').text(stores.store_1.city + "\n" + stores.store_1.zip);
+		$('.js-storeName-' + m).text(stores.store_2.name);
+		$('.js-storeAddress-' + m).text(stores.store_2.address);
+		$('.js-storeCity-' + m).text(stores.store_2.city + "\n" + stores.store_2.zip);
+		$('.js-distance-' + m ).text("12.44 miles");
+		$('.js-numberOfOffers-' + m).text(stores.store_2.adOffers);	
 		
-		$('.js-distance-1').text("12.44 miles"); // This needs to be dynamic/function
-		// $('.js-pointValue-1').text(store_1.); // This needs to be dynamic/function
-		$('.js-numberOfOffers-1').text(stores.store_1.adOffers); // This needs to be dynamic/function
-		
+		$('.js-storeName-' + o).text(stores.store_3.name);
+		$('.js-storeAddress-' + o).text(stores.store_3.address);
+		$('.js-storeCity-' + o).text(stores.store_3.city + "\n" + stores.store_3.zip);
+		$('.js-distance-' + o ).text("12.44 miles");
+		$('.js-numberOfOffers-' + o).text(stores.store_3.adOffers);	
 	}
 	
-	compileAdList();
+	compileAdList1(1, 2, 3 );
 	
 	// Need to tie this into point system // 
 	
@@ -479,10 +490,17 @@ $(document).ready(function() {
 	
 	getStoreAdPointValue(storeOneOriginatingDiscount);
 	
+	//=========================================================\\
+	//=== GO BACK OVER CODE AND FIX >> GET FUNCTIONS TO WORK INDEPENDENTLY FROM OTHERS ===//
+  //=========================================================\\
 	
-	
-	
-	
+	// NEED FUNCTION TO REDUCE TOTAL AD COUNT FROM CURRENT TOTAL
+	// NEED TO WORK ON CREATING USERS
+	// NEED TO CREATE USER RANK TABLE
+	// NEED TO CREATE USER PODS
+	// NEED TO CREATE TABLE FOR USER PODS
+	// NEED TO CREATE REWARD DISTRIBUTION GRIDS
+	// NEED TO ADD CREDIT CARD FORM
 	
 	
 	
