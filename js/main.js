@@ -164,22 +164,124 @@ $(document).ready(function() {
 		
 	} //===== END HARD CODE STORES INTO OBJECTS =====//
 	
+	//=========================================================\\
+		//=== MEASUREMENT PARAM OBJECT FOR EACH RANK LVL ===//
+		//=== MUST BE AT TOP ===//
+  //=========================================================//
+		
+	var mParam = {
+		
+		lv1: {
+			rankMTime: 5, // in days
+			rankMOccurences: 3, // in minutes
+			actionValue: 1, // number of points awarded per successful action
+			minutes: 60,
+			hours: 24,
+		},
+		
+		lv2: {
+			rankMTime: 6, // in days
+			rankMOccurences: 3, // in minutes
+			actionValue: 1, // number of points awarded per successful action
+			minutes: 60,
+			hours: 24,
+		}
+	}
 	
 	//=========================================================\\
 			//=== RANK OBJECT FOR HOLDING VALUES  ===//
   //=========================================================//
 	
-	var rank = {
+	var setRank = {
 		
-		rankLevel_1: { 
+		rLv1: { 
 			activityBaseCo: 1,
 			y1: 0.03,
 			y2: 0.01,
 			x1: 0.005,
 			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
-			adAcquireAvg: 0.50 // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
-		}
+			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
+			mGradePoint: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
+				var c = mParam.lv1;
+				return parseFloat((c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+			},
+			setMTable: {
+				shopperActivity: {
+				clicks: 0.2100,
+				views: 0.2100,
+				reviews: 0.2200,
+				payablePod: 0,
+				notPayablePod: 0, // when the customer does not have a pod available at time of link
+				podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
+				rewardGridVariationLow: {
+					low1: 0,
+					low2: 0,
+					low3: 0
+				},
+				rewardGridVariationMid: {
+					mid1: 0,
+					mid2: 0,
+					mid3: 0
+				},
+				rewardGridVariationHigh: {
+					high1: 0,
+					high2: 0,
+					high3: 0
+				}
+			},
+
+			adRewardCurrency: {
+				eligibleAmount: 0, // total amount awardable
+				paidAmount: 0, // actual amount paid out of total eligible
+				adRcAvailable: 0,
+				secondTransaction: 0, // repeat purchase from same customer
+				rcSecondTransaction: 0 // repeat purchase from same customer using rc
+			},
+
+			advertiserPerformance: {
+				savedAdOccurences: 0.0208,
+				purchaseOccurences: 0.0208,
+				compoundDiscountOfferPercent: 0.0031,
+				accumulatedAdPoint: 1.046,
+				adPointsEarned: 0,
+				totalCashValueOfTransactions: 0,
+				adOfferProductVariation: {
+					cat1: 1,
+					cat2: 2
+				},
+
+				adAcquisitionPercent: {
+					oneToTenPercent: 0,
+					tenToTwentyPercent: 0,
+					twentyToThirtyPercent: 0,
+					thirtyToFortyPercent: 0,
+					fortyToFiftyPercent: 0
+				},
+			},
+
+			advertiserSocialActions: {
+				promotions: 0,
+				sharing: 0,
+				numberOfLinks: 0,
+				totalNumberOfOffers: 0
+			}
+			}
+		},
+		
+		rLv2: {
+			activityBaseCo: 1,
+			y1: 0.03,
+			y2: 0.01,
+			x1: 0.005,
+			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
+			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
+			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
+			mGradePoint: function() {
+				var c = mParam.lv2;
+				return parseFloat((c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+			}
+		},
 		
 	}
 	
@@ -572,9 +674,9 @@ $(document).ready(function() {
 			}
 		}
 		
-		for (var i in rank ) {
-			getY1(rank[i].activityBaseCo, rank[i].y1, rank[i].y2, rank[i].adLimit, rank[i].adAcquireAvg);
-			getX1(rank[i].xTimeScale);
+		for (var i in setRank ) {
+			getY1(setRank[i].activityBaseCo, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].adAcquireAvg);
+			getX1(setRank[i].xTimeScale);
 		}
 		
 		function combineAdActivityTable() {	
@@ -609,8 +711,8 @@ $(document).ready(function() {
 			}	
 		}
 		
-		for (var i in rank ) {
-			calculateAdActivityTable(rank[i].x1);
+		for (var i in setRank ) {
+			calculateAdActivityTable(setRank[i].x1);
 		}
 	}
 	
@@ -652,7 +754,7 @@ $(document).ready(function() {
 			}
 			
 			cIndex = (yIndex * xIndex) - (xIndex - rt);
-			console.log(cIndex);
+//			console.log(cIndex);
 			adOccuranceMultiplier.push(parseFloat(activityTable[cIndex]));
 		}
 		
@@ -666,10 +768,104 @@ $(document).ready(function() {
 	}
 	
 	//=========================================================\\
-	//=== GET & CALCULATE THE AD ACTIVITY/OCCURANCE MULTIPLIER >> ===//
+					//=== START TABLE FOR RANK TABLES  ===//
   //=========================================================//
 	
+	//=========================================================\\
+	//=== CREATING OBJECT TO HOLD MEASUREMENT VALUES FOR ADVERTISER  ===//
+  //=========================================================//
+	
+	var advertiserRankMLv1 = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
+		
+		shopperActivity: {
+			clicks: 0.2100,
+			views: 0.2100,
+			reviews: 0.2200,
+			payablePod: 0,
+			notPayablePod: 0, // when the customer does not have a pod available at time of link
+			podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
+			rewardGridVariationLow: {
+				low1: 0,
+				low2: 0,
+				low3: 0
+			},
+			rewardGridVariationMid: {
+				mid1: 0,
+				mid2: 0,
+				mid3: 0
+			},
+			rewardGridVariationHigh: {
+				high1: 0,
+				high2: 0,
+				high3: 0
+			}
+		},
+		
+		adRewardCurrency: {
+			eligibleAmount: 0, // total amount awardable
+			paidAmount: 0, // actual amount paid out of total eligible
+			adRcAvailable: 0,
+			secondTransaction: 0, // repeat purchase from same customer
+			rcSecondTransaction: 0 // repeat purchase from same customer using rc
+		},
+		
+		advertiserPerformance: {
+			savedAdOccurences: 0.0208,
+			purchaseOccurences: 0.0208,
+			compoundDiscountOfferPercent: 0.0031,
+			accumulatedAdPoint: 1.046,
+			adPointsEarned: 0,
+			totalCashValueOfTransactions: 0,
+			adOfferProductVariation: {
+				cat1: 1,
+				cat2: 2
+			},
+			
+			adAcquisitionPercent: {
+				oneToTenPercent: 0,
+				tenToTwentyPercent: 0,
+				twentyToThirtyPercent: 0,
+				thirtyToFortyPercent: 0,
+				fortyToFiftyPercent: 0
+			},
+			
+		},
+		
+		advertiserSocialActions: {
+			promotions: 0,
+			sharing: 0,
+			numberOfLinks: 0,
+			totalNumberOfOffers: 0
+		}
+		
+	};
+	
+	
+	//=========================================================\\
+	//=== GENERATING RANK TABLE FOR ADVERTISER  ===//
+  //=========================================================//
+	
+	function generateAdvertiserRankTable() {
+		var rObj = setRank;
+		
+		//== (1). Need the values from advertiserRankMLv1 object
+		
+		
+		for (var i in rObj ) {
+			
+		}
+		
+	}
+	
+	
+	// NEED RANK TABLE FOR EACH LEVEL >> ANOTHER FUNCTION WITHIN EXISTING OBJECT? ===\\
+	
 	// NEED TO WORK ON RANK FUNCTION AND FEATURES
+	// === (1). NEED AN OBJECT FOR EACH ADVERTISER; KEEP TRACK OF CUMMULATIVE ACTIONS
+	// === (2). ADD/CONVERT VARIABLES THAT ARE CREATED HERE TO PROPERTIES OF EACH STORE OF STORES OBJECT
+	
+	
+	// === FOR ALL >> WILL NEED TO CREATE A SIDEBAR WITH ACTION BUTTONS TO INCREMENT FOR DEMONSTRATIVE PURPOSES
 	
 	// NEED TO AD ACTIVITY OCCURANCE ALGORITHM/TABLE <<< DONE
 	// NEED TO TIMER ALGORITHM/TABLE?? 
