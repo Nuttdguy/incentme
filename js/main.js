@@ -13,9 +13,10 @@ $(document).ready(function() {
 			zip: "55411",
 			discount: 0.1700,
 			rank: 1,
-			adOffers: 9,
-			adCreateTime: "May 10 2016",// Needs a definded date for reference only
-			adEndTime: "May 23 2016" // this is used for the ad clock and ad-algorithm
+			adOffers: 19,
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 18 2016" 
 		},
 		
 		store_2: {
@@ -26,8 +27,9 @@ $(document).ready(function() {
 			discount: 0.2130,
 			rank: 0.99,
 			adOffers: 48,
-			adCreateTime: "May 11 2016",
-			adEndTime: "June 23 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 17 2016" 
 		},
 		
 		store_3: {
@@ -38,8 +40,9 @@ $(document).ready(function() {
 			discount: 0.1800,
 			rank: 0.98,
 			adOffers: 47,
-			adCreateTime: "May 09 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 19 2016" 
 		},
 
 		store_4: {
@@ -50,8 +53,9 @@ $(document).ready(function() {
 			discount: 0.1700,
 			rank: 0.97,
 			adOffers: 46,
-			adCreateTime: "May 08 2016",
-			adEndTime: "June 02 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_5: {
@@ -62,8 +66,9 @@ $(document).ready(function() {
 			discount: 0.1600,
 			rank: 0.96,
 			adOffers: 45,
-			adCreateTime: "May 07 2016",
-			adEndTime: "June 04 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_6: {
@@ -74,8 +79,9 @@ $(document).ready(function() {
 			discount: 0.1500,
 			rank: 0.95,
 			adOffers: 44,
-			adCreateTime: "May 10 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_7: {
@@ -86,8 +92,9 @@ $(document).ready(function() {
 			discount: 0.1400,
 			rank: 0.94,
 			adOffers: 43,
-			adCreateTime: "May 01 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_8: {
@@ -98,8 +105,9 @@ $(document).ready(function() {
 			discount: 0.1300,
 			rank: 0.93,
 			adOffers: 42,
-			adCreateTime: "May 06 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_9: {
@@ -110,8 +118,9 @@ $(document).ready(function() {
 			discount: 0.1200,
 			rank: 0.92,
 			adOffers: 41,
-			adCreateTime: "May 09 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_10: {
@@ -122,8 +131,9 @@ $(document).ready(function() {
 			discount: 0.1100,
 			rank: 0.91,
 			adOffers: 40,
-			adCreateTime: "May 13 2016",
-			adEndTime: "June 07 2016"
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		},
 
 		store_11: {
@@ -134,8 +144,9 @@ $(document).ready(function() {
 			discount: 0.1000,
 			rank: 0.9,
 			adOffers: 39,
+			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "June 07 2016"
+			adEndTime: "May 16 2016" 
 		},
 
 		store_12: {
@@ -145,48 +156,71 @@ $(document).ready(function() {
 			zip: "55444",
 			discount: 0.3000,
 			rank: 0.89,
-			adOffers: 38,
-			adCreateTime: "May 11 2016",
-			adEndTime: "June 07 2016"
+			adOffers: 8,
+			nowTime: new Date(),
+			adCreateTime: "May 12 2016",
+			adEndTime: "May 16 2016" 
 		}
 		
 	} //===== END HARD CODE STORES INTO OBJECTS =====//
 	
 	
 	//=========================================================\\
+			//=== RANK OBJECT FOR HOLDING VALUES  ===//
+  //=========================================================//
+	
+	var rank = {
+		
+		rankLevel_1: { 
+			activityBaseCo: 1,
+			y1: 0.03,
+			y2: 0.01,
+			x1: 0.005,
+			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
+			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
+			adAcquireAvg: 0.50 // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
+		}
+		
+	}
+	
+	//=========================================================\\
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
   //=========================================================\\
-	// 
+	
+	//==  ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
+	
+	function getAdTime(et, ct, nt) {
+		
+		var time = Date.parse(et) - Date.parse(new Date());
+		var sTime = Date.parse(ct) - Date.parse(new Date());
+		var rTime = time - sTime; // required to determine # of days 
+
+		var seconds = Math.floor( (time/1000) % 60 );
+		var minutes = Math.floor( (time/1000/60) % 60 );
+		var hours = Math.floor( (time/(1000*60*60)) % 24 );
+		var days = Math.floor( time/(1000*60*60*24) );
+
+		return {
+			'ntotal': nt,
+			'total': time,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
 	
 	//== ID-2 ==\\
 	
 	function calculateTime(s) {
+	
 		
-		function getAdTime(et, ct) {
-//			var time = Date.parse(endTime) - Date.parse(new Date());
-			var time = Date.parse(et) - Date.parse(new Date()) ;
-			var sTime = Date.parse(ct) - Date.parse(new Date());
-			var rTime = time - sTime; // required to determine # of days 
-			
-			var seconds = Math.floor( (time/1000) % 60 );
-			var minutes = Math.floor( (time/1000/60) % 60 );
-			var hours = Math.floor( (time/(1000*60*60)) % 24 );
-			var days = Math.floor( rTime/(1000*60*60*24) );
-			return {
-				'total': rTime,
-				'days': days,
-				'hours': hours,
-				'minutes': minutes,
-				'seconds': seconds
-			};
-		}
-		
-		function intializeClock(id, c, et, ct) {
+		function intializeClock(id, c, et, ct, nt) {
 			var clock = $('.js-timeLeft-'+ c);
 			// console.log(clock);
 			var timeInterval = setInterval(function() {
 				
-				var t = getAdTime(et, ct); // this is the function calling the new time
+				var t = getAdTime(et, ct, nt); // this is the function calling the new time
 				if (t.minutes <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
 				} 
@@ -212,7 +246,7 @@ $(document).ready(function() {
 		
 		var count = 1;
 		for (var i in stores ) {
-			intializeClock('clock', count, stores[i].adEndTime, stores[i].adCreateTime);
+			intializeClock('clock', count, stores[i].adEndTime, stores[i].adCreateTime, stores[i].nTime);
 			count++;
 		}
 		
@@ -472,7 +506,7 @@ $(document).ready(function() {
 		getYIndex();
 	
 		//** s == .12 need 100% upconvert to point value || combinedBaseDr upconvert is optional >> can be moved as neccessary 
-		return ((s * 100) * (combinedBaseDr[yIndex] * 10) * adBaseDiscountConvertRate).toFixed(2);
+		return Number((s * 100) * (combinedBaseDr[yIndex] * 10) * adBaseDiscountConvertRate).toFixed(2);
 	}
 		
 	//=========================================================\\
@@ -499,13 +533,146 @@ $(document).ready(function() {
 	
 		
 	//=========================================================\\
-	//=== GO BACK OVER CODE AND FIX >> GET FUNCTIONS TO WORK INDEPENDENTLY FROM OTHERS ===//
+	//=== BEGIN CODE FOR AD | ACTIVITY OCCURANCE ALGORITHM ===//
   //=========================================================//
 	
+
+	
+	//=========================================================\\
+	//=== GENERATING THE XY AXIS TABLES FOR AD ACTIVITY ===//
+  //=========================================================//
+	
+	var yAdActivity = [];
+	var y2PlusAdActivity = [];
+	var x1Activity = [];
+	
+	function getXYAdActivity() { 
+		
+		function getY1(ab, y1, y2, ali, aq) {
+			var pivot = ali * aq;
+			var y1a = y1;
+			var y2a = y2;
+			
+			for (var m = 0; m < ali; m++ ) {
+				if (m < pivot ) {
+					yAdActivity.unshift( parseFloat(ab + y1).toFixed(4) );
+					y1 = parseFloat(y1 + y1a);
+				}
+			
+				if (m >= pivot && m < ali ) {
+					y2PlusAdActivity.push( parseFloat(ab - y2).toFixed(4) );
+					y2 = parseFloat(y2 + y2a);
+				}
+			}
+		}
+		
+		function getX1(xts) {
+			for (var x = 0; x < xts; x++ ) {
+				x1Activity.push(x);
+			}
+		}
+		
+		for (var i in rank ) {
+			getY1(rank[i].activityBaseCo, rank[i].y1, rank[i].y2, rank[i].adLimit, rank[i].adAcquireAvg);
+			getX1(rank[i].xTimeScale);
+		}
+		
+		function combineAdActivityTable() {	
+			for (var i in y2PlusAdActivity ) {
+				yAdActivity.push(y2PlusAdActivity[i]);
+			}
+		}
+		
+		combineAdActivityTable();
+		
+	}
+	
+	getXYAdActivity();
 	
 	
+	//=========================================================\\
+	//=== CALCULATING & GENERATING XY-AXIS TABLE FOR AD ACTIVITY ===//
+  //=========================================================//
 	
-	// NEED TO TIMER ALGORITHM/TABLE
+	var activityTable = [];
+	
+	function getAdActivityTable() { // (assigned ad point value + (assigned ad point value *  occurrence table value))
+		
+		function calculateAdActivityTable(xt) {
+			
+			for (var x = 0; x < yAdActivity.length; x++ ) {
+				var x3 = parseFloat(yAdActivity[x]);
+				for (var x2 = 0; x2 < x1Activity.length; x2++ ) {
+						activityTable.push(parseFloat(x3 - (yAdActivity[x] * xt)).toFixed(4));
+						x3 = parseFloat(x3 - (yAdActivity[x] * xt));
+				}
+			}	
+		}
+		
+		for (var i in rank ) {
+			calculateAdActivityTable(rank[i].x1);
+		}
+	}
+	
+	getAdActivityTable();
+//	console.log(activityTable[240]); // For checking values against excel table
+//	console.log(activityTable[241]);
+//	console.log(activityTable[242]);
+//	console.log(activityTable[243]);
+//	console.log(activityTable[244]);
+//	console.log(activityTable[245]);
+	
+	
+	//=========================================================\\
+	//=== GET & CALCULATE THE AD ACTIVITY/OCCURANCE MULTIPLIER >> ===//
+  //=========================================================//
+	
+	// 1. NEED THE NUMBER OF AD OFFER LEFT (40 LEFT) << NEED ACCESS TO STORES OBJECT
+	// 2. NEED THE TIME LEFT FOR THE AD OFFER TO THE NEAREST HOUR (80 HOURS LEFT) << NEED TO CALL TIME AND GET THE RTIME
+	// 3. NEED THE VALUE TO MUTLIPLY FROM THE ACTIVITY TABLE (1.22 )
+	// 3.1. GET NUMBER OF OFFERS LEFT
+	// 3.2. LOCATE VALUE ON Y-AXIS; GET THE INDEX NUMBER
+	// 3.4. MULTIPLY Y-AXIS INDEX AND X-AXIS.LENGTH
+	// 3.5. USE INDEX NUMBER TO LOCATE MULTIPLIER. APPLY TO AD
+	
+	function adOccuranceFactor() {
+		var yIndex;
+		var xIndex = x1Activity.length;
+		var cIndex;
+		var adOccuranceMultiplier = [];
+		
+		function calculate(ao, ct, et, sd ) {
+			var t = getAdTime(et, ct);
+			var rt = parseInt(t.total/(1000 * 60 * 60));
+			
+			for (var y1 = 0; y1 < yAdActivity.length; y1++ ) {
+				if ( y1 == ao ) {
+					yIndex = y1;
+				}
+			}
+			
+			cIndex = (yIndex * xIndex) - (xIndex - rt);
+			console.log(cIndex);
+			adOccuranceMultiplier.push(parseFloat(activityTable[cIndex]));
+		}
+		
+		
+		for (var i in stores ) {
+			calculate(stores[i].adOffers, stores[i].adCreateTime, stores[i].adEndTime, stores[i].discount );
+		}
+		
+		return adOccuranceMultiplier;
+		
+	}
+	
+	//=========================================================\\
+	//=== GET & CALCULATE THE AD ACTIVITY/OCCURANCE MULTIPLIER >> ===//
+  //=========================================================//
+	
+	// NEED TO WORK ON RANK FUNCTION AND FEATURES
+	
+	// NEED TO AD ACTIVITY OCCURANCE ALGORITHM/TABLE <<< DONE
+	// NEED TO TIMER ALGORITHM/TABLE?? 
 	// NEED RANK ALGORITHM/TABLES
 	// NEED FUNCTION TO REDUCE TOTAL AD COUNT FROM CURRENT TOTAL
 	// NEED TO WORK ON CREATING USERS
@@ -534,7 +701,10 @@ $(document).ready(function() {
 			$('.js-distance-' + c).text("12.44 miles");
 			$('.js-numberOfOffers-' + c).text(so);
 			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
-			$('.js-pointValue-' + c).text(getOriginatingDiscountPercent(sd));
+			var j = adOccuranceFactor([c]);
+			console.log(j);
+//			$('.js-pointValue-' + c).text((getOriginatingDiscountPercent(sd) * adOccuranceFactor()[c-1]).toFixed(2));
+			$('.js-pointValue-' + c).text((getOriginatingDiscountPercent(sd) * j[c-1]).toFixed(2));
 		}
 		
 		var count = 1;
