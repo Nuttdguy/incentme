@@ -128,7 +128,7 @@ header {
 
 /* ========== RETURN AND DO AFTER INTERACTIVE COMPONENTS */
 .sidebar-menu {
-	visibility: hidden;
+	visibility: visible;
 	
 	position: fixed;
 	top: 0;

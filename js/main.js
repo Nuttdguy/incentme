@@ -5,18 +5,27 @@ $(document).ready(function() {
 	
 	var stores = {
 		
-		store_1: {
+			store_1: {
 			name: "Fresh Wok",
 			address: "112 Fresh Wok Street",
 			city: "Minneapolis",
 			state: "MN",
 			zip: "55411",
 			discount: 0.1700,
-			rank: 1,
+			rankLv: 1,
 			adOffers: 19,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 18 2016" 
+			adEndTime: "May 18 2016",
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			clicksCount: 657,
+			viewsCount: 0,
+			reviewsCount: 10,
+			savedAdOccurencesCount: 0,
+			purchaseOccurencesCount: 0,
+			compoundDiscountOfferPercentCount: 0,
+			accumulatedAdPointCount: 100
 		},
 		
 		store_2: {
@@ -29,7 +38,9 @@ $(document).ready(function() {
 			adOffers: 48,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 17 2016" 
+			adEndTime: "May 17 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 		
 		store_3: {
@@ -42,7 +53,9 @@ $(document).ready(function() {
 			adOffers: 47,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 19 2016" 
+			adEndTime: "May 19 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_4: {
@@ -55,7 +68,9 @@ $(document).ready(function() {
 			adOffers: 46,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 16 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_5: {
@@ -68,7 +83,9 @@ $(document).ready(function() {
 			adOffers: 45,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 17 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_6: {
@@ -81,7 +98,9 @@ $(document).ready(function() {
 			adOffers: 44,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 16 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_7: {
@@ -94,7 +113,9 @@ $(document).ready(function() {
 			adOffers: 43,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 20 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_8: {
@@ -107,7 +128,9 @@ $(document).ready(function() {
 			adOffers: 42,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 21 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_9: {
@@ -120,7 +143,9 @@ $(document).ready(function() {
 			adOffers: 41,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 17 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_10: {
@@ -133,7 +158,9 @@ $(document).ready(function() {
 			adOffers: 40,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 20 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_11: {
@@ -146,7 +173,9 @@ $(document).ready(function() {
 			adOffers: 39,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 19 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		},
 
 		store_12: {
@@ -156,10 +185,12 @@ $(document).ready(function() {
 			zip: "55444",
 			discount: 0.3000,
 			rank: 0.89,
-			adOffers: 8,
+			adOffers: 29,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016" 
+			adEndTime: "May 18 2016",
+			rankCount: 0,
+			rankTime: new Date() // WILL NEED TO BE FUNCTION
 		}
 		
 	} //===== END HARD CODE STORES INTO OBJECTS =====//
@@ -172,11 +203,12 @@ $(document).ready(function() {
 	var mParam = {
 		
 		lv1: {
-			rankMTime: 5, // in days
+			rankMTime: 15, // in days
 			rankMOccurences: 3, // in minutes
 			actionValue: 1, // number of points awarded per successful action
 			minutes: 60,
 			hours: 24,
+			milliDay: (new Date().getTime() / 1000/60/60/24),
 		},
 		
 		lv2: {
@@ -186,7 +218,7 @@ $(document).ready(function() {
 			minutes: 60,
 			hours: 24,
 		}
-	}
+	};
 	
 	//=========================================================\\
 			//=== RANK OBJECT FOR HOLDING VALUES  ===//
@@ -204,68 +236,7 @@ $(document).ready(function() {
 			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mGradePoint: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
 				var c = mParam.lv1;
-				return parseFloat((c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
-			},
-			setMTable: {
-				shopperActivity: {
-				clicks: 0.2100,
-				views: 0.2100,
-				reviews: 0.2200,
-				payablePod: 0,
-				notPayablePod: 0, // when the customer does not have a pod available at time of link
-				podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
-				rewardGridVariationLow: {
-					low1: 0,
-					low2: 0,
-					low3: 0
-				},
-				rewardGridVariationMid: {
-					mid1: 0,
-					mid2: 0,
-					mid3: 0
-				},
-				rewardGridVariationHigh: {
-					high1: 0,
-					high2: 0,
-					high3: 0
-				}
-			},
-
-			adRewardCurrency: {
-				eligibleAmount: 0, // total amount awardable
-				paidAmount: 0, // actual amount paid out of total eligible
-				adRcAvailable: 0,
-				secondTransaction: 0, // repeat purchase from same customer
-				rcSecondTransaction: 0 // repeat purchase from same customer using rc
-			},
-
-			advertiserPerformance: {
-				savedAdOccurences: 0.0208,
-				purchaseOccurences: 0.0208,
-				compoundDiscountOfferPercent: 0.0031,
-				accumulatedAdPoint: 1.046,
-				adPointsEarned: 0,
-				totalCashValueOfTransactions: 0,
-				adOfferProductVariation: {
-					cat1: 1,
-					cat2: 2
-				},
-
-				adAcquisitionPercent: {
-					oneToTenPercent: 0,
-					tenToTwentyPercent: 0,
-					twentyToThirtyPercent: 0,
-					thirtyToFortyPercent: 0,
-					fortyToFiftyPercent: 0
-				},
-			},
-
-			advertiserSocialActions: {
-				promotions: 0,
-				sharing: 0,
-				numberOfLinks: 0,
-				totalNumberOfOffers: 0
-			}
+				return parseFloat( (c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
 			}
 		},
 		
@@ -279,11 +250,11 @@ $(document).ready(function() {
 			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mGradePoint: function() {
 				var c = mParam.lv2;
-				return parseFloat((c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+				return parseFloat( (c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
 			}
 		},
 		
-	}
+	};
 	
 	//=========================================================\\
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
@@ -773,9 +744,11 @@ $(document).ready(function() {
 	
 	//=========================================================\\
 	//=== CREATING OBJECT TO HOLD MEASUREMENT VALUES FOR ADVERTISER  ===//
+	//=== THE !!!BELOW!!! NEEDS TO BE IN USER/STORE OBJECT TO TRACK COUNT  !! ===\\
   //=========================================================//
 	
-	var advertiserRankMLv1 = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
+	var lv1_SetMTableAdver = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
+		// ATTEMPTED TO ADD TO "SETRANK" OBJECT BUT TOO LARGE. DECIDED TO SEPERATE CONCERNS BECAUSE THERE'S EXPECTED TO BE OVER 40 RANK LEVELS.
 		
 		shopperActivity: {
 			clicks: 0.2100,
@@ -842,20 +815,128 @@ $(document).ready(function() {
 	
 	
 	//=========================================================\\
-	//=== GENERATING RANK TABLE FOR ADVERTISER  ===//
+	    //=== GENERATING RANK TABLE FOR ADVERTISER  ===//
+	    //<<<<<  DONT THINK THIS IS REQUIRED/NEEDED >>>>>
+			//===!! NEED TO KEEP TRACK OF EACH ACTION !! ===>
   //=========================================================//
 	
-	function generateAdvertiserRankTable() {
-		var rObj = setRank;
+	function generateAdvertiserRankTable(rk) {
+		var array = []; //== getting the key:property value pair for measurement values
+		var arCount = []; //== getting the values of properties that are greater than 1.
+		var arLength = arCount.length; //== getting the number of active grade points.
 		
-		//== (1). Need the values from advertiserRankMLv1 object
-		
-		
-		for (var i in rObj ) {
-			
+		for (var i in rk) {
+			var f = rk[i];
+			for (var k in f ) {
+				if ( f[k] > 0 ) {
+					arCount.push(f[k]);
+				}
+			}
+			array.push(f);
 		}
 		
-	}
+		return arCount;
+	};
+	
+	//=========================================================\\
+	//=== CALCULATE ADVERTISERS RANK USING MEASUREMENT TABLE ===//
+  //=========================================================//
+	
+	//=== REWORK >> CREATE BUTTON AND FUNCTION FOR EACH MEASUREMENT VALUE TRACKED <<===//
+//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.clicks;
+//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.views;
+//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.reviews;
+//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.savedAdOccurences;
+//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.purchaseOccurences;
+//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.compoundDiscountOfferPercent;
+//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.accumulatedAdPoint;
+	//=== REWORK >> CREATE BUTTON AND FUNCTION FOR EACH MEASUREMENT VALUE TRACKED <<===//
+  $('.js-measureClick').on('click', function() {
+		// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
+		var tStoresRankPoints = stores.store_1.totalRankPoints;
+		// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
+		var tStoresRankTimePeriod = stores.store_1.rankTimePeriod.getTime();
+		// (3). GET RANK LEVEL OF ADVERTISER (STORE)
+		var getStoresRankLv = stores.store_1.rankLv;		
+		// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
+		var getStoresClickCount = stores.store_1.clicksCount;
+		// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
+		var getSetMTableClicks = lv1_SetMTableAdver.shopperActivity.clicks;
+		// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
+		var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
+		// (7). CALCULATE THE STORES NUMBER OF TIME SEGMENT OF THE CURRENT RANK PERIOD
+//		var currentStoresRankTimeSegment = convertTRankTimePeriodToNumber / mParam.lv1.rankMOccurences; << THIS IS INCORRECT
+		// (8). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
+		var setRankMSegments = setRank.rLv1.mGradePoint(); 
+		
+		// NEED TO DETERMINE IF CURRENT RANK TIME EXCEEDS RANK PERIOD TIME
+		// NEED A RANK TIME END PERIOD >> NEED TO CALCULATE 15 DAYS FROM START PERIOD
+		// (10). GET THE TOTAL TIME UP TO NOW IN DAYS
+		var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
+		// (11). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
+		var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
+		// (12). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
+		var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
+		// (13). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
+		var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
+		// (14). GET THE ACTIVE SEGMENT NOW
+		var getActiveSegment = setRankMSegments - currentSegmentsRemain;
+		// (15). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
+		var calcClickMin = parseFloat(getActiveSegment * getSetMTableClicks).toFixed(4);
+		
+		
+		var mYIndex = [];
+		
+		for (var i = 0; i < setRankMSegments; i++ ) {
+			mYIndex.push(i);
+		}
+		
+		function addRankPoint() {
+			if (getStoresClickCount != calcClickMin && getStoresClickCount > calcClickMin ) {
+				stores.store_1.clicksCount += 1;
+				return stores.store_1.totalRankPoints += 1;
+			}
+		}
+		
+		addRankPoint();
+		
+		//===== VALUES THAT NEED TO BE UPDATED =====\\
+		
+		//			clicksCount: 1100,
+		//			viewsCount: 1200,
+		//			reviewsCount: 10,
+		//			savedAdOccurencesCount: 0,
+		//			purchaseOccurencesCount: 0,
+		//			compoundDiscountOfferPercentCount: 0,
+		//			accumulatedAdPointCount: 100
+		
+		//===== VALUES THAT NEED TO BE UPDATED =====\\
+		
+		// (1). BREAK RANK START TIME DOWN INTO DURATION OF 3 MINUTE SEGMENTS OVER 15 DAYS 
+		// (2). DONT NEED Y-TABLE BECAUSE TIME INT VALUE SLOT IS MULITPLIED BY MEASUREMENT VALUE
+		// (3). NEED TO GET THE TOTAL VALUE FROM EACH CATEGORY
+		// (4). COMBINE ALL THE VALUES 
+		// (5). COMPARE THE ADVERTISERS CURRENT
+		// (6). NEED ACTIVITY COUNTER FOR EACH MEASURED PARAM
+		// (7). NEED TO CLEAR COUNT FOR EACH PARAM IF RANK TIME EXPIRES
+		
+		console.log(convertTRankTimePeriodToNumber + ' === CURRENT RANK PERIOD TIME UP TO THE SET RANK START TIME IN DAYS');
+		console.log(timeNow + ' === TIME TODAY IN DAYS');	
+		console.log(currentTimeToMilliRemain +  ' === this is the calculated CURRENT TIME remaining for rank period in minutes');
+		console.log(currentNumberOfRankHoursRemain +  ' === number of hours remain');
+		console.log(currentSegmentsRemain +  ' === number of 3 minutes segments remain');
+		console.log(getActiveSegment +  ' === the active measurement segment');
+		
+		console.log(stores.store_1.clicksCount + ' === stores click count ');
+		console.log(stores.store_1.totalRankPoints  + ' === stores total Rank Points ');
+//		console.log(currentTime + ' === current time ');
+//		console.log(currentStoresRankTimeSegment + '=== current advertisers time segment << Used for all '); // Correct value is within variable getActiveSegment
+		console.log(setRankMSegments + " === total number of measurement segments");
+		console.log(calcClickMin + ' === value required to get one point for click measurement ONLY');
+//		
+	});
+	
+	
 	
 	
 	// NEED RANK TABLE FOR EACH LEVEL >> ANOTHER FUNCTION WITHIN EXISTING OBJECT? ===\\
@@ -863,10 +944,13 @@ $(document).ready(function() {
 	// NEED TO WORK ON RANK FUNCTION AND FEATURES
 	// === (1). NEED AN OBJECT FOR EACH ADVERTISER; KEEP TRACK OF CUMMULATIVE ACTIONS
 	// === (2). ADD/CONVERT VARIABLES THAT ARE CREATED HERE TO PROPERTIES OF EACH STORE OF STORES OBJECT
+	// === (3). NEED TO ASSOCIATE WITH TIMER >> THIS MEANS AN ACTIVE TIMER FOR EACH AD OFFER
+	// === (4). 
 	
 	
 	// === FOR ALL >> WILL NEED TO CREATE A SIDEBAR WITH ACTION BUTTONS TO INCREMENT FOR DEMONSTRATIVE PURPOSES
 	
+	// NEED TO AD BUTTON FOR EACH AD OFFER = FOR THE ABILITY TO INCREMENT OR DECRENT VALUES
 	// NEED TO AD ACTIVITY OCCURANCE ALGORITHM/TABLE <<< DONE
 	// NEED TO TIMER ALGORITHM/TABLE?? 
 	// NEED RANK ALGORITHM/TABLES
@@ -898,8 +982,7 @@ $(document).ready(function() {
 			$('.js-numberOfOffers-' + c).text(so);
 			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
 			var j = adOccuranceFactor([c]);
-			console.log(j);
-//			$('.js-pointValue-' + c).text((getOriginatingDiscountPercent(sd) * adOccuranceFactor()[c-1]).toFixed(2));
+//			console.log(j);
 			$('.js-pointValue-' + c).text((getOriginatingDiscountPercent(sd) * j[c-1]).toFixed(2));
 		}
 		
