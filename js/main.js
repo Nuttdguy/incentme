@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	var stores = {
 		
-			store_1: {
+		store_1: {
 			name: "Fresh Wok",
 			address: "112 Fresh Wok Street",
 			city: "Minneapolis",
@@ -19,13 +19,34 @@ $(document).ready(function() {
 			adEndTime: "May 18 2016",
 			totalRankPoints: 0, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
-			clicksCount: 657,
-			viewsCount: 0,
-			reviewsCount: 10,
-			savedAdOccurencesCount: 0,
-			purchaseOccurencesCount: 0,
-			compoundDiscountOfferPercentCount: 0,
-			accumulatedAdPointCount: 100
+			
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 800,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 0,
+			lastAccumulatedAdPointCount: 0,
+			accumulatedAdPointCount: 3800
 		},
 		
 		store_2: {
@@ -34,13 +55,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55411",
 			discount: 0.2130,
-			rank: 0.99,
+			rankLv: 2,
 			adOffers: 48,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 17 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 		
 		store_3: {
@@ -49,13 +98,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55404",
 			discount: 0.1800,
-			rank: 0.98,
+			rankLv: 1,
 			adOffers: 47,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 19 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_4: {
@@ -64,13 +141,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55409",
 			discount: 0.1700,
-			rank: 0.97,
+			rankLv: 1,
 			adOffers: 46,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 16 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_5: {
@@ -79,13 +184,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55444",
 			discount: 0.1600,
-			rank: 0.96,
+			rankLv: 1,
 			adOffers: 45,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 17 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_6: {
@@ -94,13 +227,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55416",
 			discount: 0.1500,
-			rank: 0.95,
+			rankLv: 1,
 			adOffers: 44,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 16 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_7: {
@@ -109,13 +270,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55411",
 			discount: 0.1400,
-			rank: 0.94,
+			rankLv: 1,
 			adOffers: 43,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 20 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_8: {
@@ -124,13 +313,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55410",
 			discount: 0.1300,
-			rank: 0.93,
+			rankLv: 1,
 			adOffers: 42,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 21 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_9: {
@@ -139,13 +356,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55422",
 			discount: 0.1200,
-			rank: 0.92,
+			rankLv: 1,
 			adOffers: 41,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 17 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_10: {
@@ -154,13 +399,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55422",
 			discount: 0.1100,
-			rank: 0.91,
+			rankLv: 1,
 			adOffers: 40,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 20 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_11: {
@@ -169,13 +442,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55430",
 			discount: 0.1000,
-			rank: 0.9,
+			rankLv: 1,
 			adOffers: 39,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 19 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		},
 
 		store_12: {
@@ -184,13 +485,41 @@ $(document).ready(function() {
 			city: "Minneapolis",
 			zip: "55444",
 			discount: 0.3000,
-			rank: 0.89,
+			rankLv: 1,
 			adOffers: 29,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 18 2016",
-			rankCount: 0,
-			rankTime: new Date() // WILL NEED TO BE FUNCTION
+			totalRankPoints: 0, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preClicksCount: 0, 
+			lastClickCountMin: 0, 
+			clicksCount: 720,
+			
+			preViewsCount: 0, 
+			lastViewsCountMin: 0, 
+			viewsCount: 800,
+			
+			preReviewsCount: 0, 
+			lastReviewsCount: 0, 
+			reviewsCount: 100,
+			
+			preSavedAdOccurencesCount: 0,
+			lastSavedAdOccurencesCount: 0,
+			savedAdOccurencesCount: 700,
+			
+			prePurchaseOccurencesCount: 0,
+			lastPurchaseOccurencesCount: 0,
+			purchaseOccurencesCount: 700,
+			
+			preCompoundDiscountOfferPercentCount: 0,
+			lastCompoundDiscountOfferPercentCount: 0,
+			compoundDiscountOfferPercentCount: 400,
+			
+			preAccumulatedAdPointCount: 100,
+			lastAccumulatedAdPointCount: 100,
+			accumulatedAdPointCount: 100
 		}
 		
 	} //===== END HARD CODE STORES INTO OBJECTS =====//
@@ -209,6 +538,7 @@ $(document).ready(function() {
 			minutes: 60,
 			hours: 24,
 			milliDay: (new Date().getTime() / 1000/60/60/24),
+			setRLv: 1
 		},
 		
 		lv2: {
@@ -217,6 +547,7 @@ $(document).ready(function() {
 			actionValue: 1, // number of points awarded per successful action
 			minutes: 60,
 			hours: 24,
+			setRLv: 2
 		}
 	};
 	
@@ -226,7 +557,7 @@ $(document).ready(function() {
 	
 	var setRank = {
 		
-		rLv1: { 
+		lv1: { 
 			activityBaseCo: 1,
 			y1: 0.03,
 			y2: 0.01,
@@ -240,7 +571,7 @@ $(document).ready(function() {
 			}
 		},
 		
-		rLv2: {
+		lv2: {
 			activityBaseCo: 1,
 			y1: 0.03,
 			y2: 0.01,
@@ -747,68 +1078,127 @@ $(document).ready(function() {
 	//=== THE !!!BELOW!!! NEEDS TO BE IN USER/STORE OBJECT TO TRACK COUNT  !! ===\\
   //=========================================================//
 	
-	var lv1_SetMTableAdver = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
+	var setMTableAdver = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
 		// ATTEMPTED TO ADD TO "SETRANK" OBJECT BUT TOO LARGE. DECIDED TO SEPERATE CONCERNS BECAUSE THERE'S EXPECTED TO BE OVER 40 RANK LEVELS.
 		
-		shopperActivity: {
-			clicks: 0.2100,
-			views: 0.2100,
-			reviews: 0.2200,
-			payablePod: 0,
-			notPayablePod: 0, // when the customer does not have a pod available at time of link
-			podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
-			rewardGridVariationLow: {
-				low1: 0,
-				low2: 0,
-				low3: 0
+		lv1: {
+			shopperActivity: {
+				clicks: 0.2100,
+				views: 0.2100,
+				reviews: 0.2200,
+				payablePod: 0,
+				notPayablePod: 0, // when the customer does not have a pod available at time of link
+				podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
+				rewardGridVariationLow: {
+					low1: 0,
+					low2: 0,
+					low3: 0
+				},
+				rewardGridVariationMid: {
+					mid1: 0,
+					mid2: 0,
+					mid3: 0
+				},
+				rewardGridVariationHigh: {
+					high1: 0,
+					high2: 0,
+					high3: 0
+				}
+			},	
+			adRewardCurrency: {
+				eligibleAmount: 0, // total amount awardable
+				paidAmount: 0, // actual amount paid out of total eligible
+				adRcAvailable: 0,
+				secondTransaction: 0, // repeat purchase from same customer
+				rcSecondTransaction: 0 // repeat purchase from same customer using rc
 			},
-			rewardGridVariationMid: {
-				mid1: 0,
-				mid2: 0,
-				mid3: 0
+			advertiserPerformance: {
+				savedAdOccurences: 0.0208,
+				purchaseOccurences: 0.0208,
+				compoundDiscountOfferPercent: 0.0031,
+				accumulatedAdPoint: 1.046,
+				adPointsEarned: 0,
+				totalCashValueOfTransactions: 0,
+				adOfferProductVariation: {
+					cat1: 1,
+					cat2: 2
+				},
+
+				adAcquisitionPercent: {
+					oneToTenPercent: 0,
+					tenToTwentyPercent: 0,
+					twentyToThirtyPercent: 0,
+					thirtyToFortyPercent: 0,
+					fortyToFiftyPercent: 0
+				},
+
 			},
-			rewardGridVariationHigh: {
-				high1: 0,
-				high2: 0,
-				high3: 0
+			advertiserSocialActions: {
+				promotions: 0,
+				sharing: 0,
+				numberOfLinks: 0,
+				totalNumberOfOffers: 0
 			}
 		},
-		
-		adRewardCurrency: {
-			eligibleAmount: 0, // total amount awardable
-			paidAmount: 0, // actual amount paid out of total eligible
-			adRcAvailable: 0,
-			secondTransaction: 0, // repeat purchase from same customer
-			rcSecondTransaction: 0 // repeat purchase from same customer using rc
-		},
-		
-		advertiserPerformance: {
-			savedAdOccurences: 0.0208,
-			purchaseOccurences: 0.0208,
-			compoundDiscountOfferPercent: 0.0031,
-			accumulatedAdPoint: 1.046,
-			adPointsEarned: 0,
-			totalCashValueOfTransactions: 0,
-			adOfferProductVariation: {
-				cat1: 1,
-				cat2: 2
-			},
 			
-			adAcquisitionPercent: {
-				oneToTenPercent: 0,
-				tenToTwentyPercent: 0,
-				twentyToThirtyPercent: 0,
-				thirtyToFortyPercent: 0,
-				fortyToFiftyPercent: 0
+		lv2: {
+			shopperActivity: {
+				clicks: 0.2100,
+				views: 0.2100,
+				reviews: 0.2200,
+				payablePod: 0,
+				notPayablePod: 0, // when the customer does not have a pod available at time of link
+				podMax: 0, // Keep tally of every advertisers customer that has reached their max pod link limit
+				rewardGridVariationLow: {
+					low1: 0,
+					low2: 0,
+					low3: 0
+				},
+				rewardGridVariationMid: {
+					mid1: 0,
+					mid2: 0,
+					mid3: 0
+				},
+				rewardGridVariationHigh: {
+					high1: 0,
+					high2: 0,
+					high3: 0
+				}
 			},
-			
-		},
-		
-		advertiserSocialActions: {
-			promotions: 0,
-			sharing: 0,
-			numberOfLinks: 0,
-			totalNumberOfOffers: 0
+			adRewardCurrency: {
+				eligibleAmount: 0, // total amount awardable
+				paidAmount: 0, // actual amount paid out of total eligible
+				adRcAvailable: 0,
+				secondTransaction: 0, // repeat purchase from same customer
+				rcSecondTransaction: 0 // repeat purchase from same customer using rc
+			},
+			advertiserPerformance: {
+				savedAdOccurences: 0.0208,
+				purchaseOccurences: 0.0208,
+				compoundDiscountOfferPercent: 0.0031,
+				accumulatedAdPoint: 1.046,
+				adPointsEarned: 0,
+				totalCashValueOfTransactions: 0,
+				adOfferProductVariation: {
+					cat1: 1,
+					cat2: 2
+				},
+
+				adAcquisitionPercent: {
+					oneToTenPercent: 0,
+					tenToTwentyPercent: 0,
+					twentyToThirtyPercent: 0,
+					thirtyToFortyPercent: 0,
+					fortyToFiftyPercent: 0
+				},
+
+			},
+			advertiserSocialActions: {
+				promotions: 0,
+				sharing: 0,
+				numberOfLinks: 0,
+				totalNumberOfOffers: 0
+			}
 		}
 		
 	};
@@ -840,77 +1230,300 @@ $(document).ready(function() {
 	
 	//=========================================================\\
 	//=== CALCULATE ADVERTISERS RANK USING MEASUREMENT TABLE ===//
+	//=== NOTES OF FLAWS >> NEED TO REDO USING FOR LOOPS FOR DIRECTING VALUES INTO AN ARRAY ===\\
   //=========================================================//
 	
-	//=== REWORK >> CREATE BUTTON AND FUNCTION FOR EACH MEASUREMENT VALUE TRACKED <<===//
-//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.clicks;
-//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.views;
-//		var getMParamClick = lv1_SetMTableAdver.shopperActivity.reviews;
-//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.savedAdOccurences;
-//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.purchaseOccurences;
-//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.compoundDiscountOfferPercent;
-//		var getMParamClick = lv1_SetMTableAdver.advertiserPerformance.accumulatedAdPoint;
-	//=== REWORK >> CREATE BUTTON AND FUNCTION FOR EACH MEASUREMENT VALUE TRACKED <<===//
-  $('.js-measureClick').on('click', function() {
-		// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
-		var tStoresRankPoints = stores.store_1.totalRankPoints;
-		// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
-		var tStoresRankTimePeriod = stores.store_1.rankTimePeriod.getTime();
-		// (3). GET RANK LEVEL OF ADVERTISER (STORE)
-		var getStoresRankLv = stores.store_1.rankLv;		
-		// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
-		var getStoresClickCount = stores.store_1.clicksCount;
-		// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
-		var getSetMTableClicks = lv1_SetMTableAdver.shopperActivity.clicks;
-		// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
-		var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
-		// (7). CALCULATE THE STORES NUMBER OF TIME SEGMENT OF THE CURRENT RANK PERIOD
-//		var currentStoresRankTimeSegment = convertTRankTimePeriodToNumber / mParam.lv1.rankMOccurences; << THIS IS INCORRECT
-		// (8). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
-		var setRankMSegments = setRank.rLv1.mGradePoint(); 
+	
+  $('.js-measurementBtn').on('click', function() {
+		var actType = $(this).attr('id');
 		
-		// NEED TO DETERMINE IF CURRENT RANK TIME EXCEEDS RANK PERIOD TIME
-		// NEED A RANK TIME END PERIOD >> NEED TO CALCULATE 15 DAYS FROM START PERIOD
-		// (10). GET THE TOTAL TIME UP TO NOW IN DAYS
-		var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
-		// (11). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
-		var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
-		// (12). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
-		var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
-		// (13). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
-		var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
-		// (14). GET THE ACTIVE SEGMENT NOW
-		var getActiveSegment = setRankMSegments - currentSegmentsRemain;
-		// (15). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
-		var calcClickMin = parseFloat(getActiveSegment * getSetMTableClicks).toFixed(4);
-		
-		
-		var mYIndex = [];
-		
-		for (var i = 0; i < setRankMSegments; i++ ) {
-			mYIndex.push(i);
-		}
-		
-		function addRankPoint() {
-			if (getStoresClickCount != calcClickMin && getStoresClickCount > calcClickMin ) {
-				stores.store_1.clicksCount += 1;
-				return stores.store_1.totalRankPoints += 1;
+		function calculateStoreValues(cs, trp, rtp, rlv, cc, crtp, rhr, segr, aseg, cmin, vc, rc, sc, pc, dc, apc ) {
+			//  ============================ LEVEL 1 ================  \\
+			var getlv1Click = (setMTableAdver.lv1.shopperActivity.clicks * aseg).toFixed(4);
+			var getlv1Views = (setMTableAdver.lv1.shopperActivity.views  * aseg).toFixed(4);
+			var getlv1Reviews = (setMTableAdver.lv1.shopperActivity.reviews  * aseg).toFixed(4);
+			var getlv1Saves = (setMTableAdver.lv1.advertiserPerformance.savedAdOccurences * aseg).toFixed(4);
+			var getlv1Purchases = (setMTableAdver.lv1.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);;
+			var getlv1CompoundPercents = (setMTableAdver.lv1.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
+			var getlv1AccumulatedPoints = (setMTableAdver.lv1.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
+			var getlv1 = 1;
+			//  ============================ LEVEL 2 ================  \\
+			var getlv2Click = (setMTableAdver.lv2.shopperActivity.clicks * aseg).toFixed(4);
+			var getlv2Views = (setMTableAdver.lv2.shopperActivity.views  * aseg).toFixed(4);
+			var getlv2Reviews = (setMTableAdver.lv2.shopperActivity.reviews  * aseg).toFixed(4);
+			var getlv2Saves = (setMTableAdver.lv2.advertiserPerformance.savedAdOccurences  * aseg).toFixed(4);
+			var getlv2Purchases = (setMTableAdver.lv2.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);
+			var getlv2CompoundPercents = (setMTableAdver.lv2.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
+			var getlv2AccumulatedPoints = (setMTableAdver.lv2.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
+			
+			for ( var k1 in setMTableAdver ) {
+				var cMProp = setMTableAdver[k1];
+				for ( var k2 in cMProp ) {
+					var c2MProp = cMProp[k2];
+					for ( var k3 in c2MProp ) {
+						//** BEGIN OF RANK LVL1 IF STATEMENTS **\\
+						if ( rlv == 1 ) { 
+							if (cs == 'store_1' && actType == 'click-btn') {
+//								console.log(getlv1Click + ' == ' + cc);
+								if ( cc >= getlv1Click ) {
+									console.log(cc + ' > ' + parseInt(getlv1Click) + ' == last Count > ' + stores.store_1.lastClickCountMin + ' === preClicks ' + stores.store_1.preClicksCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( cc == stores.store_1.preClicksCount && parseInt(getlv1Click) == stores.store_1.lastClickCountMin ) {
+										console.log(stores.store_1.lastClickCountMin + ' === lastCountMin');
+										return;
+									}
+									stores.store_1.clicksCount += 1;
+									stores.store_1.preClicksCount = stores.store_1.clicksCount;
+									stores.store_1.lastClickCountMin = parseInt(getlv1Click);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> CLICK-BTN **\\
+							if (cs == 'store_1' && actType == 'view-btn') {
+								if ( vc >= getlv1Views ) {
+									console.log(vc + ' > ' + parseInt(getlv1Views) + ' == last Count > ' + stores.store_1.lastViewsCountMin + ' === pre ' + stores.store_1.preViewsCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( vc == stores.store_1.preViewsCount && parseInt(getlv1Views) == stores.store_1.lastViewsCountMin ) {
+										return;
+									}
+									stores.store_1.viewsCount += 1;
+									stores.store_1.preViewsCount = stores.store_1.viewsCount;
+									stores.store_1.lastViewsCountMin = parseInt(getlv1Views);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> VIEW-BTN **\\
+							if (cs == 'store_1' && actType == 'review-btn') {
+								if ( rc >= getlv1Reviews ) {
+									console.log(rc + ' > ' + parseInt(getlv1Reviews) + ' == last Count > ' + stores.store_1.lastReviewsCount + ' === pre ' + stores.store_1.preReviewsCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( rc == stores.store_1.preReviewsCount && parseInt(getlv1Reviews) == stores.store_1.lastReviewsCount ) {
+										return;
+									}
+									stores.store_1.reviewsCount += 1;
+									stores.store_1.preReviewsCount = stores.store_1.reviewsCount;
+									stores.store_1.lastReviewsCount = parseInt(getlv1Reviews);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> REVIEW-BTN **\\
+							if (cs == 'store_1' && actType == 'saved-occurences-btn') {
+								if ( sc >= getlv1Saves ) {
+									console.log(sc + ' > ' + parseInt(getlv1Saves) + ' == last Count > ' + stores.store_1.lastSavedAdOccurencesCount + ' === pre ' + stores.store_1.preSavedAdOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( sc == stores.store_1.preSavedAdOccurencesCount && parseInt(getlv1Saves) == stores.store_1.lastSavedAdOccurencesCount ) {
+										return;
+									}
+									stores.store_1.savedAdOccurencesCount += 1;
+									stores.store_1.preSavedAdOccurencesCount = stores.store_1.savedAdOccurencesCount;
+									stores.store_1.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> SAVED-OCCURENCES-BTN **\\
+							if (cs == 'store_1' && actType == 'purchase-occurences-btn') {
+								if ( pc >= getlv1Purchases ) {
+									if ( pc == stores.store_1.prePurchaseOccurencesCount && parseInt(getlv1Purchases) == stores.store_1.lastPurchaseOccurencesCount ) {
+										console.log(pc + ' > ' + parseInt(getlv1Purchases) + ' == last Count > ' + stores.store_1.lastPurchaseOccurencesCount + ' === pre ' + stores.store_1.prePurchaseOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
+										return;
+									}
+									stores.store_1.purchaseOccurencesCount += 1;
+									stores.store_1.prePurchaseOccurencesCount = stores.store_1.purchaseOccurencesCount;
+									stores.store_1.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> PURCHASE-OCCURENCES-BTN **\\
+							if (cs == 'store_1' && actType == 'compound-discount-btn') {
+								console.log(sc + ' ==> ' + getlv1CompoundPercents );
+								if ( dc >= getlv1CompoundPercents ) {
+									console.log(dc + ' > ' + parseInt(getlv1CompoundPercents) + ' == last Count > ' + stores.store_1.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_1.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( dc == stores.store_1.preCompoundDiscountOfferPercentCount && parseInt(getlv1CompoundPercents) == stores.store_1.lastCompoundDiscountOfferPercentCount ) {
+										return;
+									}
+									stores.store_1.compoundDiscountOfferPercentCount += 1;
+									stores.store_1.preCompoundDiscountOfferPercentCount = stores.store_1.compoundDiscountOfferPercentCount;
+									stores.store_1.lastCompoundDiscountOfferPercentCount = parseInt(getlv1CompoundPercents);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> COMPOUND-DISCOUNT BTN **\\
+							if (cs == 'store_1' && actType == 'accumulated-point-btn') {
+								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
+								if ( apc >= getlv1AccumulatedPoints ) {
+									
+									console.log(apc + ' > ' + parseInt(getlv1AccumulatedPoints) + ' == last Count > ' + stores.store_1.lastAccumulatedAdPointCount + ' === pre ' + stores.store_1.preAccumulatedAdPointCount + ' === ' + stores.store_1.totalRankPoints ); 
+									if ( apc == stores.store_1.preAccumulatedAdPointCount && parseInt(getlv1AccumulatedPoints) == stores.store_1.lastAccumulatedAdPointCount ) {
+										
+										console.log(stores.store_1.lastAccumulatedAdPointCount + ' === lastCountMin');
+										return;
+									}
+									stores.store_1.accumulatedAdPointCount += 1;
+									stores.store_1.preAccumulatedAdPointCount = stores.store_1.accumulatedAdPointCount;
+									stores.store_1.lastAccumulatedAdPointCount = parseInt(getlv1AccumulatedPoints);
+									stores.store_1.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_1 >> ACCUMULATED-POINT BTN **\\
+						} //** END RANK_LV1 >> IF STATEMENTS **\\
+						//** BEGIN OF RANK-LVL2 IF STATEMENTS **\\
+						if ( rlv == 2 ) {
+							if (cs == 'store_2' && actType == 'click-btn') {
+								console.log(cc + ' == ' + getlv2Click);
+								if ( cc >= getlv2Click ) {
+									console.log(cc + ' > ' + parseInt(getlv2Click) + ' == last Count > ' + stores.store_2.lastClickCountMin + ' === preClicks ' + stores.store_2.preClicksCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( cc == stores.store_2.preClicksCount && parseInt(getlv2Click) == stores.store_2.lastClickCountMin ) {
+										console.log(stores.store_2.lastClickCountMin + ' === lastCountMin');
+										return;
+									}
+									stores.store_2.clicksCount += 1;
+									stores.store_2.preClicksCount = stores.store_2.clicksCount;
+									stores.store_2.lastClickCountMin = parseInt(getlv2Click);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> CLICK-BTN **\\
+							if (cs == 'store_2' && actType == 'view-btn') {
+//								console.log(cc + ' == ' + getlv2Views + ' == in rLvl2');
+								if ( vc >= getlv2Views ) {
+									console.log(vc + ' > ' + parseInt(getlv2Views) + ' == last Count > ' + stores.store_2.lastViewsCountMin + ' === pre ' + stores.store_2.preViewsCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( vc == stores.store_2.preViewsCount && parseInt(getlv2Views) == stores.store_2.lastViewsCountMin ) {
+										return;
+									}
+									stores.store_2.viewsCount += 1;
+									stores.store_2.preViewsCount = stores.store_2.viewsCount;
+									stores.store_2.lastViewsCountMin = parseInt(getlv2Views);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> VIEW-BTN **\\
+							if (cs == 'store_2' && actType == 'review-btn') {
+								if ( rc >= getlv2Reviews ) {
+									console.log(rc + ' > ' + parseInt(getlv2Reviews) + ' == last Count > ' + stores.store_2.lastReviewsCount + ' === pre ' + stores.store_2.preReviewsCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( rc == stores.store_2.preReviewsCount && parseInt(getlv2Reviews) == stores.store_2.lastReviewsCount ) {
+										return;
+									}
+									stores.store_2.reviewsCount += 1;
+									stores.store_2.preReviewsCount = stores.store_2.reviewsCount;
+									stores.store_2.lastReviewsCount = parseInt(getlv2Reviews);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> REVIEW-BTN **\\
+							if (cs == 'store_2' && actType == 'saved-occurences-btn') {
+								if ( sc >= getlv2Saves ) {
+									console.log(sc + ' > ' + parseInt(getlv2Saves) + ' == last Count > ' + stores.store_2.lastSavedAdOccurencesCount + ' === pre ' + stores.store_2.preSavedAdOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( sc == stores.store_2.preSavedAdOccurencesCount && parseInt(getlv2Saves) == stores.store_2.lastSavedAdOccurencesCount ) {
+										return;
+									}
+									stores.store_2.savedAdOccurencesCount += 1;
+									stores.store_2.preSavedAdOccurencesCount = stores.store_2.savedAdOccurencesCount;
+									stores.store_2.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> SAVED-OCCURENCES-BTN **\\
+							if (cs == 'store_2' && actType == 'purchase-occurences-btn') {
+								if ( pc >= getlv2Purchases ) {
+									if ( pc == stores.store_2.prePurchaseOccurencesCount && parseInt(getlv2Purchases) == stores.store_2.lastPurchaseOccurencesCount ) {
+										console.log(pc + ' > ' + parseInt(getlv2Purchases) + ' == last Count > ' + stores.store_2.lastPurchaseOccurencesCount + ' === pre ' + stores.store_2.prePurchaseOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
+										return;
+									}
+									stores.store_2.purchaseOccurencesCount += 1;
+									stores.store_2.prePurchaseOccurencesCount = stores.store_2.purchaseOccurencesCount;
+									stores.store_2.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> PURCHASE-OCCURENCES-BTN **\\
+							if (cs == 'store_2' && actType == 'compound-discount-btn') {
+								if ( dc >= getlv2CompoundPercents ) {
+									console.log(dc + ' > ' + parseInt(getlv2CompoundPercents) + ' == last Count > ' + stores.store_2.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_2.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( dc == stores.store_2.preCompoundDiscountOfferPercentCount && parseInt(getlv2CompoundPercents) == stores.store_2.lastCompoundDiscountOfferPercentCount ) {
+										return;
+									}
+									stores.store_2.compoundDiscountOfferPercentCount += 1;
+									stores.store_2.preCompoundDiscountOfferPercentCount = stores.store_2.compoundDiscountOfferPercentCount;
+									stores.store_2.lastCompoundDiscountOfferPercentCount = parseInt(getlv2CompoundPercents);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> COMPOUND-DISCOUNT BTN **\\
+							if (cs == 'store_2' && actType == 'accumulated-point-btn') {
+								if ( apc >= getlv2AccumulatedPoints ) {
+									
+									console.log(apc + ' > ' + parseInt(getlv2AccumulatedPoints) + ' == last Count > ' + stores.store_2.lastAccumulatedAdPointCount + ' === pre ' + stores.store_2.preAccumulatedAdPointCount + ' === ' + stores.store_2.totalRankPoints ); 
+									if ( apc == stores.store_2.preAccumulatedAdPointCount && parseInt(getlv2AccumulatedPoints) == stores.store_2.lastAccumulatedAdPointCount ) {
+										
+										console.log(stores.store_2.lastAccumulatedAdPointCount + ' === lastCountMin');
+										return;
+									}
+									stores.store_2.accumulatedAdPointCount += 1;
+									stores.store_2.preAccumulatedAdPointCount = stores.store_2.accumulatedAdPointCount;
+									stores.store_2.lastAccumulatedAdPointCount = parseInt(getlv2AccumulatedPoints);
+									stores.store_2.totalRankPoints += 1;
+									return;
+								}
+							}  //** END OF STORE_2 >> ACCUMULATED-POINT BTN **\\
+						} //** END RANK_LV2 >> IF STATEMENTS **\\
+						//** END OF IF STATEMENTS **\\
+					}
+				}
 			}
 		}
 		
-		addRankPoint();
+		// (1). NEED TO KNOW STORE RANK LEVEL FIRST
+		// (2). NEED TO KNOW THE STORES NUMBER
+		function calculateObjectValues() {
+			
+			for (var i in stores ) {
+				var cStore = i;
+				// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
+				var tStoresRankPoints = stores[i].totalRankPoints;
+				// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
+				var tStoresRankTimePeriod = stores[i].rankTimePeriod.getTime();
+				// (3). GET RANK LEVEL OF ADVERTISER (STORE)
+				var getStoresRankLv = stores[i].rankLv;	
+				// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
+				var getStoresClickCount = stores[i].clicksCount;
+				var getStoresViewCount = stores[i].viewsCount;
+				var getStoresReviewsCount = stores[i].reviewsCount;
+				var getStoresSavedCount = stores[i].savedAdOccurencesCount;
+				var getStoresPurchaseCount = stores[i].purchaseOccurencesCount;
+				var getStoresCompoundCount = stores[i].compoundDiscountOfferPercentCount;
+				var getStoresAccumulatedPointCount = stores[i].accumulatedAdPointCount;
+				// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
+				// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
+				var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
+				
+				if ( getStoresRankLv == 1 ) {
+					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
+					var setRankMSegments = setRank.lv1.mGradePoint();
+					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
+					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
+				}
+				if ( getStoresRankLv == 2 ) {
+					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
+					var setRankMSegments = setRank.lv2.mGradePoint();
+					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
+					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv2.rankMTime;
+				}
+				
+				// (8). GET THE TOTAL TIME UP TO NOW IN DAYS
+				var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
+			
+				// (10). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
+				var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
+				// (11). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
+				var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
+				// (12). GET THE ACTIVE SEGMENT NOW
+				var getActiveSegment = setRankMSegments - currentSegmentsRemain;
+				// (13). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
+				var calcClickMin = parseFloat(getActiveSegment * 0.21).toFixed(4);
+			
+				calculateStoreValues(cStore, tStoresRankPoints, tStoresRankTimePeriod, getStoresRankLv, getStoresClickCount, convertTRankTimePeriodToNumber, currentNumberOfRankHoursRemain, currentSegmentsRemain, getActiveSegment, calcClickMin, getStoresViewCount, getStoresReviewsCount, getStoresSavedCount, getStoresPurchaseCount, getStoresCompoundCount, getStoresAccumulatedPointCount );
+			}
+			
+		}
 		
-		//===== VALUES THAT NEED TO BE UPDATED =====\\
+		calculateObjectValues();
 		
-		//			clicksCount: 1100,
-		//			viewsCount: 1200,
-		//			reviewsCount: 10,
-		//			savedAdOccurencesCount: 0,
-		//			purchaseOccurencesCount: 0,
-		//			compoundDiscountOfferPercentCount: 0,
-		//			accumulatedAdPointCount: 100
-		
-		//===== VALUES THAT NEED TO BE UPDATED =====\\
 		
 		// (1). BREAK RANK START TIME DOWN INTO DURATION OF 3 MINUTE SEGMENTS OVER 15 DAYS 
 		// (2). DONT NEED Y-TABLE BECAUSE TIME INT VALUE SLOT IS MULITPLIED BY MEASUREMENT VALUE
@@ -918,34 +1531,22 @@ $(document).ready(function() {
 		// (4). COMBINE ALL THE VALUES 
 		// (5). COMPARE THE ADVERTISERS CURRENT
 		// (6). NEED ACTIVITY COUNTER FOR EACH MEASURED PARAM
-		// (7). NEED TO CLEAR COUNT FOR EACH PARAM IF RANK TIME EXPIRES
+		// NOT DONE  >>  (7). NEED TO CLEAR COUNT FOR EACH PARAM IF RANK TIME EXPIRES 
 		
-		console.log(convertTRankTimePeriodToNumber + ' === CURRENT RANK PERIOD TIME UP TO THE SET RANK START TIME IN DAYS');
-		console.log(timeNow + ' === TIME TODAY IN DAYS');	
-		console.log(currentTimeToMilliRemain +  ' === this is the calculated CURRENT TIME remaining for rank period in minutes');
-		console.log(currentNumberOfRankHoursRemain +  ' === number of hours remain');
-		console.log(currentSegmentsRemain +  ' === number of 3 minutes segments remain');
-		console.log(getActiveSegment +  ' === the active measurement segment');
+		// === (1). NEED AN OBJECT FOR EACH ADVERTISER; KEEP TRACK OF CUMMULATIVE ACTIONS
+		// === (2). ADD/CONVERT VARIABLES THAT ARE CREATED HERE TO PROPERTIES OF EACH STORE OF STORES OBJECT
+		// === (3). NEED TO ASSOCIATE WITH TIMER >> THIS MEANS AN ACTIVE TIMER FOR EACH AD OFFER
 		
-		console.log(stores.store_1.clicksCount + ' === stores click count ');
-		console.log(stores.store_1.totalRankPoints  + ' === stores total Rank Points ');
-//		console.log(currentTime + ' === current time ');
-//		console.log(currentStoresRankTimeSegment + '=== current advertisers time segment << Used for all '); // Correct value is within variable getActiveSegment
-		console.log(setRankMSegments + " === total number of measurement segments");
-		console.log(calcClickMin + ' === value required to get one point for click measurement ONLY');
-//		
+		
 	});
 	
+	//=========================================================\\
+	//     ||=== RANK LEVEL TABLE  ===> ADVERTISER ===||
+  //=========================================================//
 	
 	
 	
-	// NEED RANK TABLE FOR EACH LEVEL >> ANOTHER FUNCTION WITHIN EXISTING OBJECT? ===\\
 	
-	// NEED TO WORK ON RANK FUNCTION AND FEATURES
-	// === (1). NEED AN OBJECT FOR EACH ADVERTISER; KEEP TRACK OF CUMMULATIVE ACTIONS
-	// === (2). ADD/CONVERT VARIABLES THAT ARE CREATED HERE TO PROPERTIES OF EACH STORE OF STORES OBJECT
-	// === (3). NEED TO ASSOCIATE WITH TIMER >> THIS MEANS AN ACTIVE TIMER FOR EACH AD OFFER
-	// === (4). 
 	
 	
 	// === FOR ALL >> WILL NEED TO CREATE A SIDEBAR WITH ACTION BUTTONS TO INCREMENT FOR DEMONSTRATIVE PURPOSES
