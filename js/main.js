@@ -946,6 +946,8 @@ $(document).ready(function() {
 	//=== GENERATING THE XY AXIS TABLES FOR AD ACTIVITY ===//
   //=========================================================//
 	
+	//== ID-13 ==\\
+	
 	var yAdActivity = [];
 	var y2PlusAdActivity = [];
 	var x1Activity = [];
@@ -998,6 +1000,8 @@ $(document).ready(function() {
 	//=== CALCULATING & GENERATING XY-AXIS TABLE FOR AD ACTIVITY ===//
   //=========================================================//
 	
+	
+	//== ID-14 ==\\
 	var activityTable = [];
 	
 	function getAdActivityTable() { // (assigned ad point value + (assigned ad point value *  occurrence table value))
@@ -1030,6 +1034,8 @@ $(document).ready(function() {
 	//=========================================================\\
 	//=== GET & CALCULATE THE AD ACTIVITY/OCCURANCE MULTIPLIER >> ===//
   //=========================================================//
+	
+	//== ID-15 ==\\
 	
 	// 1. NEED THE NUMBER OF AD OFFER LEFT (40 LEFT) << NEED ACCESS TO STORES OBJECT
 	// 2. NEED THE TIME LEFT FOR THE AD OFFER TO THE NEAREST HOUR (80 HOURS LEFT) << NEED TO CALL TIME AND GET THE RTIME
@@ -1075,8 +1081,9 @@ $(document).ready(function() {
 	
 	//=========================================================\\
 	//=== CREATING OBJECT TO HOLD MEASUREMENT VALUES FOR ADVERTISER  ===//
-	//=== THE !!!BELOW!!! NEEDS TO BE IN USER/STORE OBJECT TO TRACK COUNT  !! ===\\
   //=========================================================//
+	
+	//== ID-16 ==\\
 	
 	var setMTableAdver = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
 		// ATTEMPTED TO ADD TO "SETRANK" OBJECT BUT TOO LARGE. DECIDED TO SEPERATE CONCERNS BECAUSE THERE'S EXPECTED TO BE OVER 40 RANK LEVELS.
@@ -1205,34 +1212,11 @@ $(document).ready(function() {
 	
 	
 	//=========================================================\\
-	    //=== GENERATING RANK TABLE FOR ADVERTISER  ===//
-	    //<<<<<  DONT THINK THIS IS REQUIRED/NEEDED >>>>>
-			//===!! NEED TO KEEP TRACK OF EACH ACTION !! ===>
-  //=========================================================//
-	
-	function generateAdvertiserRankTable(rk) {
-		var array = []; //== getting the key:property value pair for measurement values
-		var arCount = []; //== getting the values of properties that are greater than 1.
-		var arLength = arCount.length; //== getting the number of active grade points.
-		
-		for (var i in rk) {
-			var f = rk[i];
-			for (var k in f ) {
-				if ( f[k] > 0 ) {
-					arCount.push(f[k]);
-				}
-			}
-			array.push(f);
-		}
-		
-		return arCount;
-	};
-	
-	//=========================================================\\
 	//=== CALCULATE ADVERTISERS RANK USING MEASUREMENT TABLE ===//
 	//=== NOTES OF FLAWS >> NEED TO REDO USING FOR LOOPS FOR DIRECTING VALUES INTO AN ARRAY ===\\
   //=========================================================//
 	
+	//== ID-18 ==\\
 	
   $('.js-measurementBtn').on('click', function() {
 		var actType = $(this).attr('id');
@@ -1468,6 +1452,8 @@ $(document).ready(function() {
 			}
 		}
 		
+	//== ID-17 ==\\
+		
 		// (1). NEED TO KNOW STORE RANK LEVEL FIRST
 		// (2). NEED TO KNOW THE STORES NUMBER
 		function calculateObjectValues() {
@@ -1544,7 +1530,7 @@ $(document).ready(function() {
 	//     ||=== RANK LEVEL TABLE  ===> ADVERTISER ===||
   //=========================================================//
 	
-	
+	//== ID-19 ==\\
 	
 	
 	
