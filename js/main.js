@@ -1127,8 +1127,8 @@ $(document).ready(function() {
 				adPointsEarned: 0,
 				totalCashValueOfTransactions: 0,
 				adOfferProductVariation: {
-					cat1: 1,
-					cat2: 2
+					cat1: 0,
+					cat2: 0
 				},
 
 				adAcquisitionPercent: {
@@ -1187,8 +1187,8 @@ $(document).ready(function() {
 				adPointsEarned: 0,
 				totalCashValueOfTransactions: 0,
 				adOfferProductVariation: {
-					cat1: 1,
-					cat2: 2
+					cat1: 0,
+					cat2: 0
 				},
 
 				adAcquisitionPercent: {
@@ -1526,27 +1526,582 @@ $(document).ready(function() {
 		
 	});
 	
-	//=========================================================\\
-	//     ||=== RANK LEVEL TABLE  ===> ADVERTISER ===||
-  //=========================================================//
+	//==========================================================================================\\
+	//   ||=== GENERAL USE FUNCTION TO GET VALUES FROM #{ SETMTABLEADVER } OBJECT ===||
+  //==========================================================================================//
 	
 	//== ID-19 ==\\
+	
+	var getObjectValuesFromSetTableAdver = {
+		
+		//== (1). USE FUNCTION WITHIN OBJECT; 
+		//== (2). RETURN INDEXED ARRAY CONTAINING ITS VALUES
+		setTableAdver_Lv1: function() {
+			// (2). GET OBJECT INTO ARRAY FORMAT & COUNT NUMBER OF ACTIVE MEASUREMENT PARAMS
+			var setTableAdver_base = [];
+			var setTableAdverLv1_1deep = [];
+			var setTableAdverLv1_2deep = [];
+			var setTableAdverLv1_3deep = [];
+			var setTableAdverLv1_4deep = [];
+			var activeMasurementKeysLv1 = [];
+			var activeMasurementValuesLv1 = [];
+			var totalMeasurementConditionsLv1Count = 0;
+
+			for ( var p1 in setMTableAdver ) {
+				setTableAdver_base.push(setMTableAdver);
+				if ( p1 == 'lv1' ) {
+					var pass1 = setMTableAdver[p1];
+					setTableAdverLv1_1deep.push(pass1);
+
+					for ( var p2 in pass1 ) {
+						var pass2 = pass1[p2];
+						setTableAdverLv1_2deep.push(pass2);
+
+						for (var p3 in pass2 ) { //== USING 3RD FOR LOOP TO GET TOTAL COUNT OF MEASUREMENT PARAMETERS
+							var pass3 = pass2[p3];
+							setTableAdverLv1_3deep.push(pass3);
+							
+							if ( pass3 > 0 && pass3 !== typeof Object ) {
+								activeMasurementKeysLv1.push(p3);
+								activeMasurementValuesLv1.push(pass3);
+								totalMeasurementConditionsLv1Count++;
+							}
+
+							for ( var p4 in pass3 ) { //== USING FORTH LOOP TO CHECK THE OBJECT ONE MORE LEVEL DEEP
+								var pass4 = pass3[p4];
+								setTableAdverLv1_4deep.push(pass4);
+								
+								if ( pass4 > 0 && pass4 !== typeof Object ) {
+									activeMasurementKeysLv1.push(p4);
+									activeMasurementValuesLv1.push(pass4);
+									totalMeasurementConditionsLv1Count++;
+								}
+							}
+						}
+					}
+				}
+			}
+			return [setTableAdver_base, setTableAdverLv1_1deep, setTableAdverLv1_2deep, setTableAdverLv1_3deep, setTableAdverLv1_4deep, activeMasurementKeysLv1, activeMasurementValuesLv1, totalMeasurementConditionsLv1Count ];
+		},
+		setTableAdver_Lv2: function() {
+			var setTableAdver_base = [];
+			var setTableAdverLv2_1deep = [];
+			var setTableAdverLv2_2deep = [];
+			var setTableAdverLv2_3deep = [];
+			var setTableAdverLv2_4deep = [];
+			var activeMasurementKeysLv2 = [];
+			var activeMasurementValuesLv2 = [];
+			var totalMeasurementConditionsLv2Count = 0;
+			
+			for ( var p1 in setMTableAdver ) {
+				setTableAdver_base.push(setMTableAdver);
+				if ( p1 == 'lv2' ) {
+					var pass1 = setMTableAdver[p1];
+					setTableAdverLv2_1deep.push(pass1);
+
+					for ( var p2 in pass1 ) {
+						var pass2 = pass1[p2];
+						setTableAdverLv2_2deep.push(pass2);
+
+						for (var p3 in pass2 ) { //== USING 3RD FOR LOOP TO GET TOTAL COUNT OF MEASUREMENT PARAMETERS
+							var pass3 = pass2[p3];
+							setTableAdverLv2_3deep.push(pass3);
+								if ( pass3 > 0 && pass3 !== typeof Object ) {
+									activeMasurementKeysLv2.push(p3);
+									activeMasurementValuesLv2.push(pass3);
+									totalMeasurementConditionsLv2Count++;
+							}
+
+							for ( var p4 in pass3 ) { //== USING FORTH LOOP TO CHECK THE OBJECT ONE MORE LEVEL DEEP
+								var pass4 = pass3[p4];
+								setTableAdverLv2_4deep.push(pass4);
+									if ( pass4 > 0 && pass4 !== typeof Object ) {
+										activeMasurementKeysLv2.push(p4);
+										activeMasurementValuesLv2.push(pass4);
+										totalMeasurementConditionsLv2Count++;
+								}
+							}
+						}
+					}
+				}
+			}
+			return [setTableAdver_base, setTableAdverLv2_1deep, setTableAdverLv2_2deep, setTableAdverLv2_3deep, setTableAdverLv2_4deep, activeMasurementKeysLv2, activeMasurementValuesLv2, totalMeasurementConditionsLv2Count ];
+		},
+		
+	}
+	
+//	var t1 = getObjectValuesFromSetTableAdver.setTableAdver_Lv2();
+//	console.log(t1);
+	
+	//==========================================================================================\\
+	//   ||=== GENERAL USE FUNCTION TO GET VALUES FROM #{ MPARAM } OBJECT ===||
+  //==========================================================================================//
+	
+	//== ID-20 ==\\
+	
+	var getObjectValuesFromMParam = {
+
+		//== (1). USE FUNCTION WITHIN OBJECT; 
+		//== (2). RETURN INDEXED ARRAY CONTAINING ITS VALUES
+		mParam_Lv1: function() {
+			var mParam_base = [];
+			var mParamLv1_1deep = [];
+			var mParamLv1_2deep = [];
+
+			for ( var p1 in mParam ) {
+				mParam_base.push(mParam );
+				if ( p1 == 'lv1' ) {
+					var pass1 = mParam[p1];
+					mParamLv1_1deep.push(pass1);
+					for ( var p2 in pass1 ) {
+						mParamLv1_2deep.push(pass1[p2]); //== GET THE NUMERICAL VALUES OF INNER OBJECT
+					}
+				}
+			}
+			return [mParam_base, mParamLv1_1deep, mParamLv1_2deep ];
+		},
+		mParam_Lv2: function() {
+			var mParam_base = [];
+			var mParamLv2_1deep = [];
+			var mParamLv2_2deep = [];
+
+			for ( var p1 in mParam ) {
+				mParam_base.push(mParam );
+				if ( p1 == 'lv2' ) {
+					var pass1 = mParam[p1];
+					mParamLv2_1deep.push(pass1);
+					
+					for ( var p2 in pass1 ) {
+						mParamLv2_2deep.push(pass1[p2]); //== GET THE NUMERICAL VALUES OF INNER OBJECT
+					}
+				}
+			}
+			return [mParam_base, mParamLv2_1deep, mParamLv2_2deep ];
+		}
+
+	}
+
+//	var t2 = getObjectValuesFromMParam.mParam_Lv2();
+//	console.log(t2);
+	
+	//==========================================================================================\\
+	//   ||=== GENERAL USE FUNCTION TO GET VALUES FROM #{ STORES } OBJECT ===||
+	//        ?? ARRAY OF 12 STORES RETURNING OVER 4700 RECORDS ??
+  //==========================================================================================//
+	
+	//== ID-21 ==\\
+	
+	var getObjectValuesFromStores = {
+		//== (1). USE FUNCTION WITHIN OBJECT; 
+		//== (2). RETURN INDEXED ARRAY CONTAINING ITS VALUES
+		//== { ONLY ONE LEVEL DEEP }
+		
+		stores: function() {
+			
+			var stores_base = [];
+			var stores_1deep = [];
+			
+			for (var p1 in stores ) {
+				var pass1 = stores;
+				stores_base.push(pass1);
+				
+				for (var p2 in stores ) {
+					var pass2 = pass1[p2];
+					stores_1deep.push(pass2);
+				}
+			}
+			return [stores_base, stores_1deep ];
+		},
+		
+	}
+	
+//	var t3 = getObjectValuesFromStores.stores();
+//	
+//	console.log(t3);
+	
+	//==========================================================================================\\
+	//  ||=== GENERAL FUNCTION >> GET VALUES FROM SETRANK OBJECT ===||
+  //==========================================================================================//
+	
+	//== ID-22 ==\\
+	
+  var getObjectValuesFromSetRank = {
+		
+		setRank_lv1: function() {
+			
+			var setRankLv1_base = [];
+			var setRankLv1_1deep = [];
+			
+			for (var p1 in setRank ) {
+				setRankLv1_base.push(setRank)
+				var pass1 = setRank[p1];
+				for ( var p2 in pass1 ) {
+					setRankLv1_1deep.push(setRank[p1][p2]);
+				}
+			}
+			
+			return [ setRankLv1_base, setRankLv1_1deep ];
+		}
+		
+	}
+	
+//	var t4 = getObjectValuesFromSetRank.setRank_lv1();
+//	console.log(t4[1][7]());
+	
+	
+	//==========================================================================================\\
+	//  ||=== CHECK WHICH STORE ADVERTISER LOGGED-IN ===||
+	//  ||=== CREATING TEMPORARY LOGIN OBJECT FOR STORE ==||
+	//         ||=== USE BUTTON TO ENTER INPUT AND CHANGE STORE STATUS ===||
+	//         ||===  ===||
+  //==========================================================================================//
+	
+	var storeloginStatus = [
+		
+		{ store_1: false },
+		{	store_2: false },
+		{	store_3: false },
+		{	store_4: true },
+		{	store_5: false },
+		{	store_6: false },
+		{	store_7: false },
+		{	store_8: false },
+		{	store_9: false },
+		{	store_10: false },
+		{	store_11: false },
+		{	store_12: false }
+		
+	]
+	
+	//== ID-22 ==\\ 
+	
+	function whichStoreLoggedIn(cv, index, arr) {
+		
+		//== FOR-IN LOOP REQUIRED TO GET NAMED KEY VALUE ==\\
+		for (var p1 in arr[index] ) {
+			if ( arr[index][p1] == true ) {
+				return arr[index][p1];
+			}
+		}
+	}
+	
+//	var t5 = storeloginStatus.find(whichStoreLoggedIn);	
+	//	console.log(t5);
+	
+	//==========================================================================================\\
+	//  ||=== GET THE STORE-IDENTIFIER FROM ID-23; 
+	//  ||=== STOP HERE 5/17/2016 ==||
+  //==========================================================================================//
+	
+	//== ID-24 ==\\
+	
+	function checkStoreRankLv() {
+		var storeArr = storeloginStatus.find(whichStoreLoggedIn);
+		
+		for (var p1 in storeArr ) {
+			return p1;
+		} 
+		
+	} 
+	
+//	var t6 = checkStoreRankLv();
+//	console.log(t6);
+	
+	//==========================================================================================\\
+	//  ||=== GET RANK LEVEL OF IDENTIFIED LOGGED-IN ADVERTISER/STORE ===||
+	//  ||=== USE KEY VALUE FROM FUNCTION ID-23 TO GET STORES CURRENT RANK LEVEL ===||
+	//  ||=== STOP HERE 5/17/2016 ==||
+  //==========================================================================================//
+	
+	//== ID-25 ==\\
+	
+	function getLoggedInStoresRankLv() {
+		var whatStore = checkStoreRankLv();
+		var storeRLv = stores[whatStore].rankLv;
+		
+		return storeRLv;
+		
+	}
+	
+//	var t7 = getLoggedInStoresRankLv();
+	//	console.log(t7);
+	
+	//==========================================================================================\\
+	//  ||=== GET NUMBER OF TOTAL POSSIBLE POINTS FOR A MEASURED RANK PERIOD ===||
+  //==========================================================================================//
+	
+	//== ID-26 ==\\
+	
+	function calcTotalPossibleRankPoints() {
+		var storeRLv = getLoggedInStoresRankLv();
+		
+		// (1). GET NUMBER OF GRADED MEASUREMENT CONDITIONS
+		// (2). GET TOTAL COUNT OF ACTIVE MEASUREMENT PARAMS
+		// (3). MULTIPLY BY THE NUMBER OF GRADED SEGMENT POINTS
+		//== RESULT IS TOTAL NUMBER OF POSSIBLE POINTS || ASSUMING EACH ACTION IS WORTH 1 RANK PT ==\\
+		
+		if (storeRLv === 1 ) {
+			var getSetTableVal = getObjectValuesFromSetTableAdver.setTableAdver_Lv1();
+			var actMeasurementVal = getSetTableVal[getSetTableVal.length - 1 ];
+			var getMSegments = getObjectValuesFromSetRank.setRank_lv1();
+			var mSegments = getMSegments[1][7]() * actMeasurementVal;
+			return mSegments;
+//			console.log(mSegments);
+//			console.log(actMeasurementVal);
+		}
+		if (storeRLv === 2 ) {
+			var getSetTableVal = getObjectValuesFromSetTableAdver.setTableAdver_Lv2;
+			var actMeasurementVal = getSetTableVal[getSetTableVal.length - 1 ];
+			var getMSegments = getObjectValuesFromSetRank.setRank_lv2();
+			var mSegments = getMSegments[1][7]() * actMeasurementVal;
+			return mSegments;
+		}
+	
+	} 
+	
+//	calcTotalPossibleRankPoints();
+	
+	//==========================================================================================\\
+	//  ||=== GENERATE TABLE FOR RANK LEVEL > ADVERTISER ===||
+  //==========================================================================================//
+
+	//== ID-27 ==\\
+	
+	function genAdvertiserRankLevelTable() {
+		var getMSegments = calcTotalPossibleRankPoints();
+		var rankLvStep = .0025;
+		var numLevels = 40;
+		
+		// attempt to increment first; then decrement after pivot point 
+		var numStart = 0.3;
+		var numPos = 0.14;
+		var numNeg = 0.31;
+		var count = 40; //== total number of level values required
+		// var tally = 0;
+
+		var p1 = 0;
+		for ( var i = 40; i !== 0; i-- ) {
+			p1 = parseInt(p1 + (count * (numPos + numStart)));
+			count--;
+			if (count > 27 ) {
+				// increment from the numStart number
+				numStart = numStart + numPos;
+				// console.log(numStart);
+			}
+			else {
+				// decrement from the incremented numStart
+				numStart = numStart - numNeg;
+			}
+			console.log(p1);
+		}
+		
+		console.log(getMSegments);
+		
+	}
+	
+	genAdvertiserRankLevelTable();
+	
+	
+	//==========================================================================================\\
+	//  ||=== GENERATE POINT THRESHOLD LEVELS/TABLE FOR > ADVERTISER ===||
+	//  !!=== NEEDS A RECURSION METHOD >> CURRENTLY HARD CODED >> STILL WAS NOT ABLE TO GET A SOLUTION AFTER 8+ HOURS ===!!
+  //==========================================================================================//
+	
+	//== ID-28 ==\\
+	
+	
+	function addUp() {
+		var arr = [];
+		var r = rLevelValues;
+
+		for ( var p1 = 0; p1 < r.length; p1++ ) {
+			if ( p1 === 0 ) {
+				arr.push(r[p1] + 0);
+			}
+			if ( p1 === 1 ) {
+				arr.push( r[p1] + r[p1-1] );
+			}
+			if ( p1 === 2 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] );
+			}
+			if ( p1 === 3 ) {
+				arr.push( r[p1] + r[p1-1]+ r[p1-2] + r[p1-3] );
+			}
+			if ( p1 === 4 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] );
+			}
+			if ( p1 === 5 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5]);
+			}
+			if ( p1 === 6 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] );
+			}
+			if ( p1 === 7 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] );
+			}
+			if ( p1 === 8 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] );
+			}
+			if ( p1 === 9 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] );
+			}
+			if ( p1 === 10 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] );
+			}
+			if ( p1 === 11 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] );
+			}
+			if ( p1 === 12 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12] );
+			}
+			if ( p1 === 13 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] );
+			}
+			if ( p1 === 14 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] );
+			}
+			if ( p1 === 15 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10]+ r[p1-11] + r[p1-12] + r[p1-13] + r[p1-14] + r[p1-15]  );
+			}
+			if ( p1 === 16 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10]+ r[p1-11] + r[p1-12] + r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16] );
+			}
+			if ( p1 === 17 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10]+ r[p1-11] + r[p1-12] + r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] );
+			}
+			if ( p1 === 18 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] );
+			}
+			if ( p1 === 19 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] );
+			}
+			if ( p1 === 20 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] );
+			}
+			if ( p1 === 21 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] );
+			}
+			if ( p1 === 22 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] );
+			}
+			if ( p1 === 23 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] );
+			}
+			if ( p1 === 24 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24]);
+			}
+			if ( p1 === 25 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] );
+			}
+			if ( p1 === 26 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] );
+			}
+			if ( p1 === 27 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] );
+			}
+			if ( p1 === 28 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] );
+			}
+			if ( p1 === 29 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] );
+			}
+			if ( p1 === 30 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] );
+			}
+			if ( p1 === 31 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] );
+			}
+			if ( p1 === 32 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32] );
+			}
+			if ( p1 === 33 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] );
+			}
+			if ( p1 === 34 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] );
+			}
+			if ( p1 === 35 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] );
+			}
+			if ( p1 === 36 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] + r[p1-36] );
+			}
+			if ( p1 === 37 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] + r[p1-36]+ r[p1-37] );
+			}
+			if ( p1 === 38 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] + r[p1-36]+ r[p1-37] + r[p1-38] );
+			}
+			if ( p1 === 39 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] + r[p1-36]+ r[p1-37] + r[p1-38] + r[p1-39] );
+			}
+			if ( p1 === 40 ) {
+				arr.push( r[p1] + r[p1-1] + r[p1-2] + r[p1-3] + r[p1-4] + r[p1-5] + r[p1-6] + r[p1-7] + r[p1-8] + r[p1-9] + r[p1-10] + r[p1-11] + r[p1-12]+ r[p1-13] + r[p1-14] + r[p1-15] + r[p1-16]+ r[p1-17] + r[p1-18] + r[p1-19] + r[p1-20] + r[p1-21] + r[p1-22] + r[p1-23] + r[p1-24] + r[p1-25] + r[p1-26] + r[p1-27] + r[p1-28] + r[p1-29] + r[p1-30] + r[p1-31] + r[p1-32]+ r[p1-33] + r[p1-34] + r[p1-35] + r[p1-36]+ r[p1-37] + r[p1-38] + r[p1-39] + r[p1-40] );
+			}
+
+		}
+
+		return arr;
+
+
+	}
+
+	addUp();
+
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN DISCOUNT PERCENT FEE TABLE AND CONFIGURATIONS ===||
+  //==========================================================================================//
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN REWARD DISTRIBUTION GRID AND CONFIGURATION ===||
+  //==========================================================================================//
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN SHOPPER PODS AND CONFIGURATIONS ===||
+  //==========================================================================================//
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN SHOPPER RANK TABLES AND CONFIGURATIONS ===||
+  //==========================================================================================//
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN RANK EFFECTS OBJECTS AND PARAMETERS ===||
+  //==========================================================================================//
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN DISCOUNT | RANK POINT ADJUSTMENT TABLES ===||
+  //==========================================================================================//
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
 	
 	// === FOR ALL >> WILL NEED TO CREATE A SIDEBAR WITH ACTION BUTTONS TO INCREMENT FOR DEMONSTRATIVE PURPOSES
 	
-	// NEED TO AD BUTTON FOR EACH AD OFFER = FOR THE ABILITY TO INCREMENT OR DECRENT VALUES
-	// NEED TO AD ACTIVITY OCCURANCE ALGORITHM/TABLE <<< DONE
-	// NEED TO TIMER ALGORITHM/TABLE?? 
-	// NEED RANK ALGORITHM/TABLES
-	// NEED FUNCTION TO REDUCE TOTAL AD COUNT FROM CURRENT TOTAL
-	// NEED TO WORK ON CREATING USERS
+	// ##{  } ## NEED TO AD BUTTON FOR EACH AD OFFER = FOR THE ABILITY TO INCREMENT OR DECRENT QTY VALUES >> REDUCE TOTAL AD COUNT FROM CURRENT TOTAL
+	// ##{ DONE - REFER TO FUNCTION ID-13, 14, 15 } ## NEED TO AD ACTIVITY OCCURANCE ALGORITHM/TABLE
+	// ##{ REFER FUNCTION ID-17, & 18  } NEED TO RANK & TIMER ALGORITHM/TABLE??
+	// NEED TO CREATE REWARD DISTRIBUTION GRIDS
+	// NEED TO CREATE ENHANCEMENT FOR RANK LEVELS
+	// NEED TO CREATE USER OBJECTS
 	// NEED TO CREATE USER RANK TABLE
 	// NEED TO CREATE USER PODS
 	// NEED TO CREATE TABLE FOR USER PODS
-	// NEED TO CREATE REWARD DISTRIBUTION GRIDS
 	// NEED TO ADD CREDIT CARD FORM
 	
 	
