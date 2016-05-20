@@ -16,8 +16,10 @@ $(document).ready(function() {
 			adOffers: 19,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 18 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			adEndTime: "May 24 2016",
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 121, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
@@ -59,8 +61,10 @@ $(document).ready(function() {
 			adOffers: 48,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 17 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			adEndTime: "May 24 2016",
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
@@ -103,7 +107,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 19 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -146,7 +152,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 16 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -189,7 +197,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 17 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -232,7 +242,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 16 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -275,7 +287,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 20 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -318,7 +332,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 21 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -361,7 +377,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 17 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
@@ -404,7 +422,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 20 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -447,7 +467,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 19 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -490,7 +512,9 @@ $(document).ready(function() {
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
 			adEndTime: "May 18 2016",
-			totalRankPoints: 0, // SET FOR DEMONSTATION
+			
+			rankLv_Inner: 1,
+			totalRankPoints: 1, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
@@ -1315,7 +1339,7 @@ $(document).ready(function() {
 								}
 							}  //** END OF STORE_1 >> PURCHASE-OCCURENCES-BTN **\\
 							if (cs == 'store_1' && actType == 'compound-discount-btn') {
-								console.log(sc + ' ==> ' + getlv1CompoundPercents );
+//								console.log(sc + ' ==> ' + getlv1CompoundPercents );
 								if ( dc >= getlv1CompoundPercents ) {
 									console.log(dc + ' > ' + parseInt(getlv1CompoundPercents) + ' == last Count > ' + stores.store_1.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_1.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_1.totalRankPoints ); 
 									if ( dc == stores.store_1.preCompoundDiscountOfferPercentCount && parseInt(getlv1CompoundPercents) == stores.store_1.lastCompoundDiscountOfferPercentCount ) {
@@ -1329,7 +1353,7 @@ $(document).ready(function() {
 								}
 							}  //** END OF STORE_1 >> COMPOUND-DISCOUNT BTN **\\
 							if (cs == 'store_1' && actType == 'accumulated-point-btn') {
-								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
+//								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
 								if ( apc >= getlv1AccumulatedPoints ) {
 									
 									console.log(apc + ' > ' + parseInt(getlv1AccumulatedPoints) + ' == last Count > ' + stores.store_1.lastAccumulatedAdPointCount + ' === pre ' + stores.store_1.preAccumulatedAdPointCount + ' === ' + stores.store_1.totalRankPoints ); 
@@ -1349,7 +1373,7 @@ $(document).ready(function() {
 						//** BEGIN OF RANK-LVL2 IF STATEMENTS **\\
 						if ( rlv == 2 ) {
 							if (cs == 'store_2' && actType == 'click-btn') {
-								console.log(cc + ' == ' + getlv2Click);
+//								console.log(cc + ' == ' + getlv2Click);
 								if ( cc >= getlv2Click ) {
 									console.log(cc + ' > ' + parseInt(getlv2Click) + ' == last Count > ' + stores.store_2.lastClickCountMin + ' === preClicks ' + stores.store_2.preClicksCount + ' === ' + stores.store_2.totalRankPoints ); 
 									if ( cc == stores.store_2.preClicksCount && parseInt(getlv2Click) == stores.store_2.lastClickCountMin ) {
@@ -1509,6 +1533,7 @@ $(document).ready(function() {
 		}
 		
 		calculateObjectValues();
+		updateRankAdvertiser(); //== LOCATED @ FUNCTION ID-30 ==\\
 		
 		
 		// (1). BREAK RANK START TIME DOWN INTO DURATION OF 3 MINUTE SEGMENTS OVER 15 DAYS 
@@ -1756,12 +1781,14 @@ $(document).ready(function() {
 	//         ||===  ===||
   //==========================================================================================//
 	
+	//== ID-23 ==\\
+	
 	var storeloginStatus = [
 		
-		{ store_1: false },
+		{ store_1: true },
 		{	store_2: false },
 		{	store_3: false },
-		{	store_4: true },
+		{	store_4: false },
 		{	store_5: false },
 		{	store_6: false },
 		{	store_7: false },
@@ -1773,7 +1800,7 @@ $(document).ready(function() {
 		
 	]
 	
-	//== ID-22 ==\\ 
+	//== ID-24 ==\\ 
 	
 	function whichStoreLoggedIn(cv, index, arr) {
 		
@@ -1789,11 +1816,10 @@ $(document).ready(function() {
 	//	console.log(t5);
 	
 	//==========================================================================================\\
-	//  ||=== GET THE STORE-IDENTIFIER FROM ID-23; 
-	//  ||=== STOP HERE 5/17/2016 ==||
+	//  ||=== GET THE STORE-IDENTIFIER FROM ID-24; 
   //==========================================================================================//
 	
-	//== ID-24 ==\\
+	//== ID-25 ==\\
 	
 	function checkStoreRankLv() {
 		var storeArr = storeloginStatus.find(whichStoreLoggedIn);
@@ -1809,11 +1835,11 @@ $(document).ready(function() {
 	
 	//==========================================================================================\\
 	//  ||=== GET RANK LEVEL OF IDENTIFIED LOGGED-IN ADVERTISER/STORE ===||
-	//  ||=== USE KEY VALUE FROM FUNCTION ID-23 TO GET STORES CURRENT RANK LEVEL ===||
+	//  ||=== USE KEY VALUE FROM FUNCTION ID-25 TO GET STORES CURRENT RANK LEVEL ===||
 	//  ||=== STOP HERE 5/17/2016 ==||
   //==========================================================================================//
 	
-	//== ID-25 ==\\
+	//== ID-26 ==\\
 	
 	function getLoggedInStoresRankLv() {
 		var whatStore = checkStoreRankLv();
@@ -1830,7 +1856,7 @@ $(document).ready(function() {
 	//  ||=== GET NUMBER OF TOTAL POSSIBLE POINTS FOR A MEASURED RANK PERIOD ===||
   //==========================================================================================//
 	
-	//== ID-26 ==\\
+	//== ID-27 ==\\
 	
 	function calcTotalPossibleRankPoints() {
 		var storeRLv = getLoggedInStoresRankLv();
@@ -1845,9 +1871,9 @@ $(document).ready(function() {
 			var actMeasurementVal = getSetTableVal[getSetTableVal.length - 1 ];
 			var getMSegments = getObjectValuesFromSetRank.setRank_lv1();
 			var mSegments = getMSegments[1][7]() * actMeasurementVal;
-			return mSegments;
-//			console.log(mSegments);
+//			console.log(getMSegments);
 //			console.log(actMeasurementVal);
+			return mSegments;
 		}
 		if (storeRLv === 2 ) {
 			var getSetTableVal = getObjectValuesFromSetTableAdver.setTableAdver_Lv2;
@@ -1859,24 +1885,26 @@ $(document).ready(function() {
 	
 	} 
 	
-//	calcTotalPossibleRankPoints();
+//  var t8 = calcTotalPossibleRankPoints();
+//	console.log(t8);
 	
 	//==========================================================================================\\
 	//  ||=== GENERATE TABLE FOR RANK LEVEL > ADVERTISER ===||
   //==========================================================================================//
 
-	//== ID-27 ==\\
+	//== ID-28 ==\\
 	
 	function genAdvertiserRankLevelTable() {
-		var getMSegments = calcTotalPossibleRankPoints();
-		var rankLvStep = .0025;
-		var numLevels = 40;
+		var getMSegments = calcTotalPossibleRankPoints(); //
+//		var rankLvStep = .0025;
+//		var numLevels = 40;
 		
 		// attempt to increment first; then decrement after pivot point 
 		var numStart = 0.3;
 		var numPos = 0.14;
 		var numNeg = 0.31;
 		var count = 40; //== total number of level values required
+		var rLevelPointSpread = []
 		// var tally = 0;
 
 		var p1 = 0;
@@ -1886,33 +1914,36 @@ $(document).ready(function() {
 			if (count > 27 ) {
 				// increment from the numStart number
 				numStart = numStart + numPos;
+				rLevelPointSpread.push(p1);
 				// console.log(numStart);
 			}
 			else {
 				// decrement from the incremented numStart
 				numStart = numStart - numNeg;
+				rLevelPointSpread.push(p1);
 			}
-			console.log(p1);
+		//	console.log(p1); //== results in a calculated number of point values per Level >> total == 40
 		}
 		
-		console.log(getMSegments);
+		//console.log(getMSegments); //== 50,400 ;
+		//console.log(rLevelPointSpread);
+		return rLevelPointSpread;
 		
 	}
 	
-	genAdvertiserRankLevelTable();
-	
+//	var t9 = genAdvertiserRankLevelTable();
+//	console.log(t9);
 	
 	//==========================================================================================\\
 	//  ||=== GENERATE POINT THRESHOLD LEVELS/TABLE FOR > ADVERTISER ===||
 	//  !!=== NEEDS A RECURSION METHOD >> CURRENTLY HARD CODED >> STILL WAS NOT ABLE TO GET A SOLUTION AFTER 8+ HOURS ===!!
   //==========================================================================================//
 	
-	//== ID-28 ==\\
+	//== ID-29 ==\\
 	
-	
-	function addUp() {
-		var arr = [];
-		var r = rLevelValues;
+	function genRankLevelPointThresholdValues() {
+		var arr = []; //== array for holding point threshold values 
+		var r = genAdvertiserRankLevelTable();
 
 		for ( var p1 = 0; p1 < r.length; p1++ ) {
 			if ( p1 === 0 ) {
@@ -2042,26 +2073,67 @@ $(document).ready(function() {
 		}
 
 		return arr;
-
-
+		
 	}
 
-	addUp();
+//	var t10 = genRankLevelPointThresholdValues();
+//	console.log(t10);
 
-	
-	
 	//==========================================================================================\\
-	//  ||=== BEGIN DISCOUNT PERCENT FEE TABLE AND CONFIGURATIONS ===||
+	//  ||=== CHECK CURRENT POINT VALUE & UPDATE STORES CURRENT INNER RANK LEVEL  ===||
+	//  ||=== THIS IS FOR DETERMINING WHETHER THE ACCUMULATED POINTS AWARDS AN INNER RANK LEVEL INCREASE 
+	//        & !!--NOT THE MEASUREMENT POINT INCREASE==!! THAT WAS DETERMINED WITHIN FUNCTION ID-17 & 18 ===||
   //==========================================================================================//
+	
+	//== ID-30 ==\\
+	
+	function updateRankAdvertiser() {
+		var rankPointThreshold = genRankLevelPointThresholdValues(); //== gets the ranks current point threshold values
+		var getStore = checkStoreRankLv(); //== get the store_# from function ID-25
+		var getStoresTotalRankPoints = stores[getStore].totalRankPoints;
+//		console.log(getStoresTotalRankPoints);		
+		
+		for (var i = 0; i < rankPointThreshold.length; i++ ) {
+			if( getStoresTotalRankPoints <= rankPointThreshold[i] ) {
+				var setRankLevel = (i + 1);
+				stores[getStore].rankLv_Inner = setRankLevel; //== This will set the stores inner rankLevel to the current iteration value (i.e. if true @ 700, rank level is the index value at which that occurs )
+				//console.log(stores[getStore].rankLv_Inner); //== validates rank level changes as point threshold value is exceeded
+			}
+			if ( rankPointThreshold[i] > getStoresTotalRankPoints ) {
+				return;
+			}
+		}	
+		
+	}
+	
+//	var t11 = updateRankAdvertiser();
+//	console.log(t11);
 	
 	
 	//==========================================================================================\\
 	//  ||=== BEGIN REWARD DISTRIBUTION GRID AND CONFIGURATION ===||
   //==========================================================================================//
 	
+	// (1). NEED TO CREATE THE NUMBER OF REWARDS GRIDS AVAILABLE > { USE FLOATING POINT RANGE VALUES }
+	// (2). HOW ARE THE REWARD GRIDS ASSOCIATED > { DETERMINE THE MIN AND MAX POINT VALUE SPREAD }
+	// (3). CONFIGURE MONETARY DISTRIBUTION PERCENTAGES > { GRID LEVELS 10 THROUGH 20 GET DISTIRBUTION SPECTRUM ONE, ETC. }
+	// (4). CONFIGURE EACH GRID BY STAKEHOLDER TYPE / CLASS > { ADVERTISER / SHOPPER }
+	// (5). CONFIGURE VARIABLE DISTRIBUTION PERCENTAGES BY STAKEHOLDER TYPE / CLASS
+	// (6). ?? CONFIGURE METHOD IN WHICH POD ASSCOCIATES TO REWARD GRID ??
+	// (7). ADD TRANSACTION/PURCHASE ACTION AND AMOUNT TO VERIFY FEATURE WORKS
+	
+	
+	
 	
 	//==========================================================================================\\
-	//  ||=== BEGIN SHOPPER PODS AND CONFIGURATIONS ===||
+	//  ||=== BEGIN STAKEHOLDER PODS AND CONFIGURATIONS ===||
+  //==========================================================================================//
+	
+	
+	
+	
+	//==========================================================================================\\
+	//  ||=== BEGIN DISCOUNT PERCENT FEE TABLE AND CONFIGURATIONS ===||
   //==========================================================================================//
 	
 	
