@@ -12,7 +12,15 @@ $(document).ready(function() {
 			state: "MN",
 			zip: "55411",
 			discount: 0.1700,
+			
 			rankLv: 1,
+			getAddOnPointData: function() {
+				var storeRLv = this.rankLv; //== This will have to be active for EACH ad offer that's being shown / displayed ==\\
+				var obj = objectForAdPointAddition;
+				return [storeRLv, obj];
+			},
+			baseAddOnPoints: 0,
+			
 			adOffers: 19,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
@@ -552,7 +560,10 @@ $(document).ready(function() {
 		//=== MEASUREMENT PARAM OBJECT FOR EACH RANK LVL ===//
 		//=== MUST BE AT TOP ===//
   //=========================================================//
-		
+	
+	
+	//== ID-00 ==\\
+	
 	var mParam = {
 		
 		lv1: {
@@ -579,6 +590,8 @@ $(document).ready(function() {
 			//=== RANK OBJECT FOR HOLDING VALUES  ===//
   //=========================================================//
 	
+	//== ID-0 ==\\
+		
 	var setRank = {
 		
 		lv1: { 
@@ -610,6 +623,9 @@ $(document).ready(function() {
 		},
 		
 	};
+	
+//	var a1 = setRank.lv1.mGradePoint();
+//	console.log(a1); //== RETURNS 7,200 NUMBER OF MINUTES
 	
 	//=========================================================\\
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
@@ -700,7 +716,7 @@ $(document).ready(function() {
 		adPointMidPercentage = 0.50;
 		adBasePercentageDiscountAverage = 0.20;
 		calculatedMidPoint = (adPointMidPercentage * adPointMax);
-		//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5 
+		//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5  << THIS IS THE STARTING BASE OF 1%. ( I.E. EVERY 1% == 2.5 PTS )
 		adBaseDiscountConvertRate = (calculatedMidPoint/(adBasePercentageDiscountAverage*adPointMax));
 		calculatedAdPointMax = (adBaseDiscountConvertRate * 100); // 100 == 100%
 		
@@ -1800,6 +1816,7 @@ $(document).ready(function() {
 		
 	]
 	
+	
 	//== ID-24 ==\\ 
 	
 	function whichStoreLoggedIn(cv, index, arr) {
@@ -2081,8 +2098,8 @@ $(document).ready(function() {
 
 	//==========================================================================================\\
 	//  ||=== CHECK CURRENT POINT VALUE & UPDATE STORES CURRENT INNER RANK LEVEL  ===||
-	//  ||=== THIS IS FOR DETERMINING WHETHER THE ACCUMULATED POINTS AWARDS AN INNER RANK LEVEL INCREASE 
-	//        & !!--NOT THE MEASUREMENT POINT INCREASE==!! THAT WAS DETERMINED WITHIN FUNCTION ID-17 & 18 ===||
+	//  ||=== THIS IS FOR DETERMINING WHETHER THE ACCUMULATED POINTS AWARDS AN INNER RANK LEVEL INCREASE FOR ADVERTISER/STORE
+	//        & THIS IS NOT THE MEASUREMENT POINT INCREASE==!! THAT WAS DETERMINED WITHIN FUNCTION ID-17 & 18 ===||
   //==========================================================================================//
 	
 	//== ID-30 ==\\
@@ -2108,13 +2125,412 @@ $(document).ready(function() {
 	
 //	var t11 = updateRankAdvertiser();
 //	console.log(t11);
+
+	//==========================================================================================\\
+	//  ||=== START TABLE FOR GENERATING AD-POINT ADDITION TO BASE AD-POINT FIGURE OF ID-3 > ADVERTISER ===||
+	//    !!== THE VALUE DETERMINED HERE IS ADDED PRIOR TO OTHER MODIFYING FACTORS ==!!
+	//    !!== EACH TABLE IS ASSCOIATED WITH ITS OWN RANK LEVEL ( I.E. RANK LEVEL 1 WILL HAVE DIFFERENT CONFIGIRATION THAT RANK LEVEL 2, ETC. )
+  //==========================================================================================//
+	
+	//==========================================================================================\\
+	//  ||=== SET AD-POINT ADDITION XY TABLE VALUES WITHIN AN OBJECT ===||
+  //==========================================================================================//
+	
+	//== ID-31 ==\\
+	
+	var objectForAdPointAddition = {
+		
+		adPointAddition_Lv1: {
+			y_top: 0.000020,
+			y_bottom: 0.000015,
+			x1_topRight: 0.00001,
+			x1_topLeft: 0.00027,
+			x2_bottomLeft: 0.00025,
+			x2_bottomRight: 0.000440,
+			xMeasureSegments: setRank.lv1.mGradePoint() / mParam.lv1.rankMOccurences,
+			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv1.rankMOccurences), //== relies on ID-27 & mParamObject
+			yPivotTop: 0.50, //== as a percentage of possible measurement segments
+			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
+			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
+			xPivotRight: 0.50, //== as a percentage of possible measurement segments
+			pivotStartVal: 1 ///== number in which increments and decrements start from == different for each rank level 
+			
+		},
+		
+		adPointAddition_Lv2: {
+			y_top: 0.000020,
+			y_bottom: 0.000015,
+			x1_topRight: 0.00001,
+			x1_topLeft: 0.00027,
+			x2_bottomLeft: 0.00025,
+			x2_bottomRight: 0.000440,
+			xMeasureSegments: setRank.lv2.mGradePoint() / mParam.lv2.rankMOccurences,
+			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv2.rankMOccurences), //== relies on ID-27 & mParamObject
+			yPivotTop: 0.50, //== as a percentage of possible measurement segments
+			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
+			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
+			xPivotRight: 0.50, //== as a percentage of possible measurement segments
+			pivotStartVal: 1.5 ///== number in which increments and decrements start from == different for each rank level  
+		}
+		
+	}
+	
+//	var t12 = objectForAdPointAddition.adPointAddition_Lv1.mPointSegments;
+//	console.log(t12);
+	
+	//==========================================================================================\\
+	//  ||=== GENERATE XY AD-POINT ADDITION TABLE VALUES USING VALUES FROM ID-33 ===||
+  //==========================================================================================//
+	
+	//== ID-32 ==\\ 
+	
+	function getAdPointAdditionValues(lvl) {
+		//== tables compile from the y-axis values ==\\
+		var yTopAxisAddOnPointTable = [];
+		var yBottomAxisAddOnPointTable = [];
+		
+		var y1AddOnPointTable = []; //== refers to top-left block
+		var y2AddOnPointTable = []; //== refers top-right block
+		var y3AddOnPointTable = []; //== refers to bottom-left block
+		var y4AddOnPointTable = []; //== refers to bottom-right block
+		var yTopAddOnPointTable = [];
+		var yBottomAddOnPointTable = [];
+		var combineYAddOnTables = [];
+		
+		//== there should be four divisions/block of values
+		if ( lvl === 1 ) {
+			var addOnObject = objectForAdPointAddition.adPointAddition_Lv1;
+			var y1_top = addOnObject.y_top;
+			var y1_bottom = addOnObject.y_bottom;
+			
+			var x1_tLeft = addOnObject.x1_topLeft;
+			var x1_tRight = addOnObject.x1_topRight;
+			var x2_bLeft = addOnObject.x2_bottomLeft;
+			var x2_bRight = addOnObject.x2_bottomRight;
+			
+			var yMeasureSegments = addOnObject.yMeasureSegments; //== Returns 16,800
+			var xMeasureSegments = addOnObject.xMeasureSegments; //== Returns 2,400
+			var yPivotTop = (1 - addOnObject.yPivotTop) * yMeasureSegments; //== Returns 8.400
+			var yPivotBottom = (1 - addOnObject.yPivotBottom) * yMeasureSegments; //== Returns 8.400
+			var xPivotLeft = (1 - addOnObject.xPivotLeft) * addOnObject.xMeasureSegments; //== Returns 1,200
+			var xPivotRight = (1 - addOnObject.xPivotRight) * addOnObject.xMeasureSegments; //== Returns 1,200
+			
+			var pivotStartVal = addOnObject.pivotStartVal;
+			
+			//== ID-33 ==\\
+			
+			function compileY1Top() { 
+				var y1Total = 0;
+				for ( var p1 = yPivotTop; p1 != 0; p1-- ) {
+					var pass1 = (pivotStartVal - ( pivotStartVal * y1Total )); 
+					yTopAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+					y1Total = y1Total + (y1_top + y1_top);
+				}
+			}
+			
+			//== ID-34 ==\\
+			
+			function compileY1Bottom() {
+				var y1Total = 0;
+				for ( var p1 = yPivotBottom; p1 != 0; p1-- ) {
+					var pass1 = (pivotStartVal + ( pivotStartVal * y1Total )); 
+					yBottomAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+					y1Total = y1Total + (y1_bottom + y1_bottom);
+				}
+			}
+			
+			//== ID-35 ==\\ { Y-TOPLEFT TABLE }
+				
+			function compileYTopLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
+					
+					var xRowLeft = yTopAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft - ( xRowLeft * x1_tLeft ));
+						y1AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft - (x1_tLeft + x1_tLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			}
+			
+			//== ID-36 ==\\ { Y-TOPRIGHT TABLE == ADDED VALUES }
+				
+			function compileYTopRightAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
+					
+					var xRowRight =  yTopAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					
+					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
+						var pass3 = ( xRowRight + ( xRowRight * x1_tRight ));
+						y2AddOnPointTable.push(pass3);
+						xRowRight = xRowRight + ( x1_tRight + x1_tRight )
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+				}
+				
+			}						
+			
+			//== ID-37 ==\\ { Y-BOTTOM-LEFT }
+				
+			function compileYBottomLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft - ( xRowLeft * x2_bLeft ));
+						y3AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft - (x2_bLeft + x2_bLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			} 
+			
+			//== ID-38 ==\\  { Y-BOTTOM-RIGHT } -->> { ADDED VALUES }
+				
+			function compileYBottomRightAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowRight =  yBottomAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					
+					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
+						var pass3 = ( xRowRight + ( xRowRight * x2_bRight ));
+						y4AddOnPointTable.push(pass3);
+						xRowRight = xRowRight + ( x2_bRight + x2_bRight )
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+				}
+			} 	
+			
+			
+			compileY1Top();
+			compileY1Bottom();
+			compileYTopLeftAddOnTable();
+			compileYTopRightAddOnTable();
+			compileYBottomLeftAddOnTable();
+			compileYBottomRightAddOnTable();
+			
+			//=======================================================================\\
+			//========== REVERSE ARRAYS IN ORDER TO ALIGN GENERATAED TABLES =========\\
+			y1AddOnPointTable.reverse();
+			y2AddOnPointTable.reverse();
+			y3AddOnPointTable.reverse();
+			//========== ALL TABLES VALUES ARE CORRECTLY ALIGNED AS INTENDED ========\\
+			//=======================================================================\\
+		}
+		
+		if ( lvl === 2 ) {
+			var addOnObject = objectForAdPointAddition.adPointAddition_Lv2;
+			var y1_top = addOnObject.y_top;
+			var y1_bottom = addOnObject.y_bottom;
+			
+			var x1_tLeft = addOnObject.x1_topLeft;
+			var x1_tRight = addOnObject.x1_topRight;
+			var x2_bLeft = addOnObject.x2_bottomLeft;
+			var x2_bRight = addOnObject.x2_bottomRight;
+			
+			var yMeasureSegments = addOnObject.yMeasureSegments; //== Returns 16,800
+			var xMeasureSegments = addOnObject.xMeasureSegments; //== Returns 2,400
+			var yPivotTop = (1 - addOnObject.yPivotTop) * yMeasureSegments; //== Returns 8.400
+			var yPivotBottom = (1 - addOnObject.yPivotBottom) * yMeasureSegments; //== Returns 8.400
+			var xPivotLeft = (1 - addOnObject.xPivotLeft) * addOnObject.xMeasureSegments; //== Returns 1,200
+			var xPivotRight = (1 - addOnObject.xPivotRight) * addOnObject.xMeasureSegments; //== Returns 1,200
+			
+			var pivotStartVal = addOnObject.pivotStartVal;
+			
+			//== ID-33 ==\\
+			
+			function compileY1Top() { 
+				var y1Total = 0;
+				for ( var p1 = yPivotTop; p1 != 0; p1-- ) {
+					var pass1 = (pivotStartVal - ( pivotStartVal * y1Total )); 
+					yTopAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+					y1Total = y1Total + (y1_top + y1_top);
+				}
+			}
+			
+			//== ID-34 ==\\
+			
+			function compileY1Bottom() {
+				var y1Total = 0;
+				for ( var p1 = yPivotBottom; p1 != 0; p1-- ) {
+					var pass1 = (pivotStartVal + ( pivotStartVal * y1Total )); 
+					yBottomAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+					y1Total = y1Total + (y1_bottom + y1_bottom);
+				}
+			}
+			
+			//== ID-35 ==\\ { Y-TOPLEFT TABLE }
+				
+			function compileYTopLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
+					
+					var xRowLeft = yTopAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft - ( xRowLeft * x1_tLeft ));
+						y1AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft - (x1_tLeft + x1_tLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			}
+			
+			//== ID-36 ==\\ { Y-TOPRIGHT TABLE == ADDED VALUES }
+				
+			function compileYTopRightAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
+					
+					var xRowRight =  yTopAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					
+					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
+						var pass3 = ( xRowRight + ( xRowRight * x1_tRight ));
+						y2AddOnPointTable.push(pass3);
+						xRowRight = xRowRight + ( x1_tRight + x1_tRight )
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+				}
+				
+			}						
+			
+			//== ID-37 ==\\ { Y-BOTTOM-LEFT }
+				
+			function compileYBottomLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft - ( xRowLeft * x2_bLeft ));
+						y3AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft - (x2_bLeft + x2_bLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			} 
+			
+			//== ID-38 ==\\  { Y-BOTTOM-RIGHT } -->> { ADDED VALUES }
+				
+			function compileYBottomRightAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowRight =  yBottomAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					
+					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
+						var pass3 = ( xRowRight + ( xRowRight * x2_bRight ));
+						y4AddOnPointTable.push(pass3);
+						xRowRight = xRowRight + ( x2_bRight + x2_bRight )
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+				}
+			} 	
+			
+			
+			compileY1Top();
+			compileY1Bottom();
+			compileYTopLeftAddOnTable();
+			compileYTopRightAddOnTable();
+			compileYBottomLeftAddOnTable();
+			compileYBottomRightAddOnTable();
+			
+			//=======================================================================\\
+			//========== REVERSE ARRAYS IN ORDER TO ALIGN GENERATAED TABLES =========\\
+			y1AddOnPointTable.reverse();
+			y2AddOnPointTable.reverse();
+			y3AddOnPointTable.reverse();
+			//========== ALL TABLES VALUES ARE CORRECTLY ALIGNED AS INTENDED ========\\
+			//=======================================================================\\
+		}
+		
+		
+		return [ xPivotRight, yBottomAxisAddOnPointTable, y1AddOnPointTable,  y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable ]; 
+		
+	}
+	
+	var t13 = getAdPointAdditionValues(2);
+	console.log(t13);
+	
+	
+	//==========================================================================================\\
+	//  ||=== SET CONFIGURATION VALUES FOR ADVERTISER BASE AD-POINT ADDITION ===||
+  //==========================================================================================//
+	
+	//== ID-35 ==\\
+	
+	var getUniqueBaseAdPointAdvertiser = {
+		
+	}
+	
+	
+	//== We need to set each advertisers addOnBase prior to load
+	//== We need to know their rank level ( not inner-rank level )
+	//== We need to the number of graded measurement segments
+	//== We need to know the total number of points that can be accumulated for the identified rank level
+	//== We need to know the base ad point value of the current period & ( advertiser category in future )
+	//== 
+	//== WE NEED TO 
+	
 	
 	
 	//==========================================================================================\\
 	//  ||=== BEGIN REWARD DISTRIBUTION GRID AND CONFIGURATION ===||
+	
+	//  ||== { COMPLETE FIRST } COMPLETE ADVERTISERS BASE AD-POINT ADJUSTMENT TABLE PRIOR TO REWARD DISTRIBUTION GRID 
+	//  ||== NEED THE HIGHEST VALUE TO DETERMINE AD POINT OFFER RANGE
   //==========================================================================================//
 	
+	//== ID ==\\ { DATA REQUIRED FROM ID-3, ID- }
+	
+	//== ORIGINATING POINT CONVERT VALUE, GREATEST AD-OCCURANCE FACTOR, GREATEST AD-OFFER OCCURANCE FACTOR ( 4.998 )
+	//== BASE AD POINT RANGE IS CURRENTLY @ 1% === 2.5 POINTS >> 2.5 PTS * UP TO 100% DISCOUNT PERCENT === 250 PTS
+	//== 
+	
+	
+	function yellow() {
+		
+	}
+	
 	// (1). NEED TO CREATE THE NUMBER OF REWARDS GRIDS AVAILABLE > { USE FLOATING POINT RANGE VALUES }
+	//** A static point base/range can be set || Base reward distribution proportions/percentages defined at this time ||
+	//** then this range modified by the actual point range spectrum of ad-offers redeemed to the exact point value
+	//** that value is used to determine the mid-point / pivot-point of the modified distribution proportion for that reward period
+	//** From that point, there are 3 segments >> high-point, mid-point & low-point << refer to patent for example configuration
+	
+	//## Create the following components
+	//   > Define a point range { Go back to }
+	
+	//== How do we get the maximum number of points possible per ad offer? ==\\
+	
 	// (2). HOW ARE THE REWARD GRIDS ASSOCIATED > { DETERMINE THE MIN AND MAX POINT VALUE SPREAD }
 	// (3). CONFIGURE MONETARY DISTRIBUTION PERCENTAGES > { GRID LEVELS 10 THROUGH 20 GET DISTIRBUTION SPECTRUM ONE, ETC. }
 	// (4). CONFIGURE EACH GRID BY STAKEHOLDER TYPE / CLASS > { ADVERTISER / SHOPPER }
