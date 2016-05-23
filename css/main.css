@@ -514,8 +514,22 @@ header {
 }
 
 
+/*==================================*/
+/*--- BUTTON STYLES
+/*==================================*/
 
+.btn {
+	height: 60px;
+	width: 100%;
+	background-color: #634f9b;
+	
+	color: aliceblue;
+	font-size: 14px;
+}
 
+.btn:hover {
+	background-color: #181a1a;
+}
 
 
 
