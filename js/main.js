@@ -14,16 +14,16 @@ $(document).ready(function() {
 			discount: 0.1700,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0, 
 			
 			adOffers: 19,
 			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
-			adEndTime: "May 24 2016",
+			adCreateTime: "May 22 2016",
+			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 3821, // SET FOR DEMONSTATION
+			totalRankPoints: 5821, // SET FOR DEMONSTATION
 			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
@@ -63,17 +63,17 @@ $(document).ready(function() {
 			discount: 0.2130,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 10, 
 			
 			adOffers: 48,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 24 2016",
+			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 6000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 21, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -112,17 +112,17 @@ $(document).ready(function() {
 			discount: 0.1800,
 
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0, 
 			
 			adOffers: 47,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 19 2016",
+			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 5000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 22, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -161,17 +161,17 @@ $(document).ready(function() {
 			discount: 0.1700,
 
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0, 
 			
 			adOffers: 46,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016",
+			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -210,17 +210,17 @@ $(document).ready(function() {
 			discount: 0.1600,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 45,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 17 2016",
+			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -259,17 +259,17 @@ $(document).ready(function() {
 			discount: 0.1500,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0, 
 			
 			adOffers: 44,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 16 2016",
+			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -308,17 +308,17 @@ $(document).ready(function() {
 			discount: 0.1400,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 43,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 20 2016",
+			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -357,17 +357,17 @@ $(document).ready(function() {
 			discount: 0.1300,
 
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0, 
 			
 			adOffers: 42,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 21 2016",
+			adEndTime: "May 30 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -406,17 +406,17 @@ $(document).ready(function() {
 			discount: 0.1200,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 41,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 17 2016",
+			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -455,17 +455,17 @@ $(document).ready(function() {
 			discount: 0.1100,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 40,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 20 2016",
+			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -504,17 +504,17 @@ $(document).ready(function() {
 			discount: 0.1000,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 39,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 19 2016",
+			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -553,17 +553,17 @@ $(document).ready(function() {
 			discount: 0.3000,
 			
 			rankLv: 1,
-			baseAddOnPoints: 0,
+			adjDcr: 0,
 			baseAdConvertRate: 0,
 			
 			adOffers: 29,
 			nowTime: new Date(),
 			adCreateTime: "May 12 2016",
-			adEndTime: "May 18 2016",
+			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
-			totalRankPoints: 1, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 10, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			totalRankPoints: 7000, // SET FOR DEMONSTATION
+			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -607,7 +607,7 @@ $(document).ready(function() {
 	var mParam = {
 		
 		lv1: {
-			rankMTime: 7, // in days
+			rankMTime: 4, // in days { REDUCING TO PREVENT BROWSER FROM FREEZING }
 			rankMOccurences: 3, // in minutes
 			actionValue: 1, // number of points awarded per successful action
 			minutes: 60,
@@ -645,6 +645,7 @@ $(document).ready(function() {
 			mGradePoint: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
 				var c = mParam.lv1;
 				return parseFloat( (c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+				//******** THIS ALREADY SUBDIVIDES THE TIME INTO 3, 4, ETC. MINUTES ************* !! IMPORTANT NOTE !! ***\\
 			}
 		},
 		
@@ -966,7 +967,7 @@ $(document).ready(function() {
 	// (4). Multiply the STORE DISCOUNT PERCENT by the Matched BASE DR Value
 	//  combinedBaseDr === yAdPointSpectrum
 	
-	function getOriginatingDiscountPercent(s) {
+	function getOriginatingDiscountPercent(s, dcr) {
 		var numberMultiplier = 0;
 		var yIndex = 1;
 		var yIncrement = 0.001;
@@ -990,7 +991,8 @@ $(document).ready(function() {
 		getYIndex();
 	
 		//** s == .12 need 100% upconvert to point value || combinedBaseDr upconvert is optional >> can be moved as neccessary 
-		return Number((s * 100) * (combinedBaseDr[yIndex] * 10) * ( adBaseDiscountConvertRate )).toFixed(2);
+		console.log( [ s, combinedBaseDr[yIndex], adBaseDiscountConvertRate, dcr ] );
+		return Number((s * 100) * (combinedBaseDr[yIndex] * 10) * ( adBaseDiscountConvertRate + dcr )).toFixed(2);
 	}
 		
 	//=========================================================\\
@@ -1894,7 +1896,6 @@ $(document).ready(function() {
 	//==========================================================================================\\
 	//  ||=== GET RANK LEVEL OF IDENTIFIED LOGGED-IN ADVERTISER/STORE ===||
 	//  ||=== USE KEY VALUE FROM FUNCTION ID-25 TO GET STORES CURRENT RANK LEVEL ===||
-	//  ||=== STOP HERE 5/17/2016 ==||
   //==========================================================================================//
 	
 	//== ID-26 ==\\
@@ -1954,8 +1955,6 @@ $(document).ready(function() {
 	
 	function genAdvertiserRankLevelTable() {
 		var getMSegments = calcTotalPossibleRankPoints(); //
-//		var rankLvStep = .0025;
-//		var numLevels = 40;
 		
 		// attempt to increment first; then decrement after pivot point 
 		var numStart = 0.3;
@@ -1963,7 +1962,6 @@ $(document).ready(function() {
 		var numNeg = 0.31;
 		var count = 40; //== total number of level values required
 		var rLevelPointSpread = []
-		// var tally = 0;
 
 		var p1 = 0;
 		for ( var i = 40; i !== 0; i-- ) {
@@ -2167,11 +2165,14 @@ $(document).ready(function() {
 //	var t11 = updateRankAdvertiser();
 //	console.log(t11);
 
-	//==========================================================================================\\
+	
+	
+	//************************   START ADJUSTED BASE DISCOUNT RATE ALGORITHIM FEATURE   *********************************************\\
+	//*******************************************************************************************************************************\\
+	
 	//  ||=== START TABLE FOR GENERATING AD-POINT ADDITION TO BASE AD-POINT FIGURE OF ID-3 > ADVERTISER ===||
 	//    !!== THE VALUE DETERMINED HERE IS ADDED PRIOR TO OTHER MODIFYING FACTORS ==!!
 	//    !!== EACH TABLE IS ASSCOIATED WITH ITS OWN RANK LEVEL ( I.E. RANK LEVEL 1 WILL HAVE DIFFERENT CONFIGIRATION THAT RANK LEVEL 2, ETC. )
-  //==========================================================================================//
 	
 	//==========================================================================================\\
 	//  ||=== SET AD-POINT ADDITION XY TABLE VALUES WITHIN AN OBJECT ===||
@@ -2187,8 +2188,8 @@ $(document).ready(function() {
 			x1_topRight: 0.0015,
 			x1_topLeft: 0.0012,
 			x2_bottomLeft: 0.0009,
-			x2_bottomRight: 0.00440,
-			xMeasureSegments: setRank.lv1.mGradePoint() / mParam.lv1.rankMOccurences,
+			x2_bottomRight: 0.00020,
+			xMeasureSegments: setRank.lv1.mGradePoint(),
 			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv1.rankMOccurences), //== relies on ID-27 & mParamObject
 			yPivotTop: 0.50, //== as a percentage of possible measurement segments
 			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
@@ -2206,7 +2207,7 @@ $(document).ready(function() {
 			x1_topLeft: 0.00027,
 			x2_bottomLeft: 0.00025,
 			x2_bottomRight: 0.000440,
-			xMeasureSegments: setRank.lv2.mGradePoint() / mParam.lv2.rankMOccurences,
+			xMeasureSegments: setRank.lv2.mGradePoint(),
 			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv2.rankMOccurences), //== relies on ID-27 & mParamObject
 			yPivotTop: 0.50, //== as a percentage of possible measurement segments
 			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
@@ -2222,12 +2223,13 @@ $(document).ready(function() {
 	
 	//==========================================================================================\\
 	//  ||=== GENERATE XY AD-POINT ADDITION TABLE VALUES USING VALUES FROM ID-31 ===||
+	//  ||===     REVERSE INDEXING TO ACCOMMONDATE COUNTDOWN X-TIMER AXIS        ===||
   //==========================================================================================//
 	
 	//== ID-32 ==\\ 
-	//== CONTAINS ID-33, 34, 35, 36, 37 & 38 ==\\
+	//== CONTAINS ID-33, 34, 35, 36, 37, 38 & 39 ==\\
 	
-	function getAdPointAdditionValues(lvl) {
+	function getAdjDCRValues(lvl) {
 		//== tables compile from the y-axis values ==\\
 		var yTopAxisAddOnPointTable = [];
 		var yBottomAxisAddOnPointTable = [];
@@ -2236,8 +2238,13 @@ $(document).ready(function() {
 		var y2AddOnPointTable = []; //== refers top-right block
 		var y3AddOnPointTable = []; //== refers to bottom-left block
 		var y4AddOnPointTable = []; //== refers to bottom-right block
+		
+		var yAxisY1 = [];
+		var yAxisY3 = [];
+		
+		var xMeasureSegmentsHeader = [];
 		var combineYTable = [];
-		var combinedXYAddOnTables = []; //== !!Caution!! THIS WILL NOT WORK WITH LARGER ARRAYS > BROWSER WILL FREEZE IF ARRAY TABLE OVER 22 MILLION
+		var combinedXYDrcTable = []; //== !!Caution!! THIS WILL NOT WORK WITH LARGER ARRAYS > BROWSER WILL FREEZE IF ARRAY TABLE OVER 22 MILLION
 		
 		//== there should be four divisions/block of values
 		if ( lvl === 1 ) {
@@ -2251,13 +2258,21 @@ $(document).ready(function() {
 			var x2_bRight = addOnObject.x2_bottomRight;
 			
 			var yMeasureSegments = addOnObject.yMeasureSegments; //== Returns 7,840
-			var xMeasureSegments = addOnObject.xMeasureSegments; //== Returns 1,120
+			var xMeasureSegments = addOnObject.xMeasureSegments; //== Returns 3,360
 			var yPivotTop = (1 - addOnObject.yPivotTop) * yMeasureSegments; //== Returns 3,920
-			var yPivotBottom = (1 - addOnObject.yPivotBottom) * yMeasureSegments; //== Returns 3,920
-			var xPivotLeft = (1 - addOnObject.xPivotLeft) * addOnObject.xMeasureSegments; //== Returns 560
-			var xPivotRight = (1 - addOnObject.xPivotRight) * addOnObject.xMeasureSegments; //== Returns 560
+			var yPivotBottom = (1 - addOnObject.yPivotBottom) * yMeasureSegments; //== Returns 3,360
+			var xPivotLeft = (1 - addOnObject.xPivotLeft) * addOnObject.xMeasureSegments; //== Returns 1680
+			var xPivotRight = (1 - addOnObject.xPivotRight) * addOnObject.xMeasureSegments; //== Returns 1680
 			
 			var pivotStartVal = addOnObject.pivotStartVal;
+			
+			//== ID-39 ==\\
+			
+			function compileXMeasureSegments() {
+				for ( var p1 = 0; p1 < xMeasureSegments; p1++ ) {
+					xMeasureSegmentsHeader.push(p1);
+				}
+			}
 			
 			//== ID-33 ==\\
 			
@@ -2281,7 +2296,7 @@ $(document).ready(function() {
 				}
 			}
 			
-			//== ID-35 ==\\ { Y-TOPLEFT TABLE }
+			//== ID-35 ==\\ { Y1-TOPLEFT TABLE }
 				
 			function compileYTopLeftAddOnTable() {
 				
@@ -2290,9 +2305,9 @@ $(document).ready(function() {
 					var xRowLeft = yTopAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
 					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
 						
-						var pass2 = ( xRowLeft - ( xRowLeft * x1_tLeft ));
+						var pass2 = ( xRowLeft + ( xRowLeft * x1_tLeft ));
 						y1AddOnPointTable.push(pass2);
-						xRowLeft = xRowLeft - (x1_tLeft + x1_tLeft);
+						xRowLeft = xRowLeft + (x1_tLeft + x1_tLeft);
 					}
 //					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
 //					 	return;
@@ -2301,13 +2316,33 @@ $(document).ready(function() {
 				}
 			}
 			
-			//== ID-36 ==\\ { Y-TOPRIGHT TABLE == ADDED VALUES }
+			//== ID-37 ==\\ { Y3-BOTTOM-LEFT }
+				
+			function compileYBottomLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft + ( xRowLeft * x2_bLeft ));
+						y3AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft + (x2_bLeft + x2_bLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			} 
+			
+			//== ID-36 ==\\ { Y2-TOPRIGHT TABLE == ADDED VALUES }
 				
 			function compileYTopRightAddOnTable() {
 				
 				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
 					
-					var xRowRight =  yTopAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					var xRowRight =  yAxisY1[p1]; //== this is the RIGHT starting value to use for each loop
 					
 					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
 						var pass3 = ( xRowRight + ( xRowRight * x1_tRight ));
@@ -2321,33 +2356,13 @@ $(document).ready(function() {
 				
 			}						
 			
-			//== ID-37 ==\\ { Y-BOTTOM-LEFT }
-				
-			function compileYBottomLeftAddOnTable() {
-				
-				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
-					
-					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
-					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
-						
-						var pass2 = ( xRowLeft - ( xRowLeft * x2_bLeft ));
-						y3AddOnPointTable.push(pass2);
-						xRowLeft = xRowLeft - (x2_bLeft + x2_bLeft);
-					}
-//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
-//					 	return;
-//				  }
-					
-				}
-			} 
-			
-			//== ID-38 ==\\  { Y-BOTTOM-RIGHT } -->> { ADDED VALUES }
+			//== ID-38 ==\\  { Y4-BOTTOM-RIGHT } -->> { ADDED VALUES }
 				
 			function compileYBottomRightAddOnTable() {
 				
 				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
 					
-					var xRowRight =  yBottomAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					var xRowRight =  yAxisY3[p1]; //== this is the RIGHT starting value to use for each loop
 					
 					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
 						var pass3 = ( xRowRight + ( xRowRight * x2_bRight ));
@@ -2360,28 +2375,51 @@ $(document).ready(function() {
 				}
 			} 	
 			
+			//== ID 40 ==\\
+			//** { NEED Y-AXIS CONTINUATION VALUES FROM Y1 OF LAST INDEX OF X-TIME SEGMENT }
+			function getYAxisY1() {
+				for ( var p1 = 1; p1 < y1AddOnPointTable.length; p1++ ) {
+					if (p1 % xPivotLeft === 0 ) {
+						yAxisY1.push(y1AddOnPointTable[p1-1]);
+					}
+				}
+				yAxisY1.unshift(y1AddOnPointTable[xPivotLeft-1]);
+				yAxisY1.reverse();
+			}
 			
+			//== ID 41 ==\\
+			//** { NEED Y-AXIS CONTINUATION VALUES FROM Y3 OF LAST INDEX OF X-TIME SEGMENT }
+			function getYAxisY3() {
+				for ( var p1 = 1; p1 < y3AddOnPointTable.length; p1++ ) {
+					if (p1 % xPivotLeft === 0 ) {
+						yAxisY3.push(y3AddOnPointTable[p1-1]);
+					}
+				}
+				yAxisY3.unshift(y3AddOnPointTable[xPivotLeft-1]);
+//				yAxisY3.splice(0, 1);
+			}
+			
+			compileXMeasureSegments();
 			compileY1Top();
 			compileY1Bottom();
+			
+			//***********   EXECUTION ORDER VERY IMPORTANT   *******************\\
 			compileYTopLeftAddOnTable();
-			compileYTopRightAddOnTable();
 			compileYBottomLeftAddOnTable();
+			getYAxisY1();
+			getYAxisY3();
+			
+			//**  yAxisY1 & yAxisY3 IS USED AS Y-AXIS STARTING VALUE FOR Y2 & Y4 AXIS  **\\
+			compileYTopRightAddOnTable();
 			compileYBottomRightAddOnTable();
 			
 			//=======================================================================\\
-			//========== REVERSE ARRAYS IN ORDER TO ALIGN GENERATAED TABLES =========\\
-			yTopAxisAddOnPointTable.reverse();
-			y1AddOnPointTable.reverse();
-			y2AddOnPointTable.reverse();
-			y3AddOnPointTable.reverse();
-//			y4AddOnPointTable.reverse();
-			//========== ALL TABLES VALUES ARE CORRECTLY ALIGNED AS INTENDED ========\\
 			//=======================================================================\\
 			
 			//==========  CONCAT THE TABLES VALUES INTO ONE  ========================\\
 			var yAddOnTables = y1AddOnPointTable.concat(y2AddOnPointTable);
 			var xAddOnTables = y3AddOnPointTable.concat(y4AddOnPointTable);
-			combinedXYAddOnTables = yAddOnTables.concat(xAddOnTables);
+			combinedXYDrcTable = yAddOnTables.concat(xAddOnTables);
 			combineYTable = yTopAxisAddOnPointTable.concat(yBottomAxisAddOnPointTable);
 			//=======================================================================\\
 		}
@@ -2405,6 +2443,14 @@ $(document).ready(function() {
 			
 			var pivotStartVal = addOnObject.pivotStartVal;
 			
+			//== ID-39 ==\\
+			
+			function compileXMeasureSegments() {
+				for ( var p1 = 0; p1 < xMeasureSegments; p1++ ) {
+					xMeasureSegmentsHeader.push(p1);
+				}
+			}
+			
 			//== ID-33 ==\\
 			
 			function compileY1Top() { 
@@ -2427,7 +2473,7 @@ $(document).ready(function() {
 				}
 			}
 			
-			//== ID-35 ==\\ { Y-TOPLEFT TABLE }
+			//== ID-35 ==\\ { Y1-TOPLEFT TABLE }
 				
 			function compileYTopLeftAddOnTable() {
 				
@@ -2436,9 +2482,9 @@ $(document).ready(function() {
 					var xRowLeft = yTopAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
 					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
 						
-						var pass2 = ( xRowLeft - ( xRowLeft * x1_tLeft ));
+						var pass2 = ( xRowLeft + ( xRowLeft * x1_tLeft ));
 						y1AddOnPointTable.push(pass2);
-						xRowLeft = xRowLeft - (x1_tLeft + x1_tLeft);
+						xRowLeft = xRowLeft + (x1_tLeft + x1_tLeft);
 					}
 //					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
 //					 	return;
@@ -2447,13 +2493,33 @@ $(document).ready(function() {
 				}
 			}
 			
-			//== ID-36 ==\\ { Y-TOPRIGHT TABLE == ADDED VALUES }
+			//== ID-37 ==\\ { Y3-BOTTOM-LEFT }
+				
+			function compileYBottomLeftAddOnTable() {
+				
+				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
+					
+					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
+					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
+						
+						var pass2 = ( xRowLeft + ( xRowLeft * x2_bLeft ));
+						y3AddOnPointTable.push(pass2);
+						xRowLeft = xRowLeft + (x2_bLeft + x2_bLeft);
+					}
+//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
+//					 	return;
+//				  }
+					
+				}
+			} 			
+			
+			//== ID-36 ==\\ { Y2-TOPRIGHT TABLE == ADDED VALUES }
 				
 			function compileYTopRightAddOnTable() {
 				
 				for ( var p1 = 0; p1 < yPivotTop; p1++ ) {
 					
-					var xRowRight =  yTopAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					var xRowRight =  yAxisY1[p1]; //== this is the RIGHT starting value to use for each loop
 					
 					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
 						var pass3 = ( xRowRight + ( xRowRight * x1_tRight ));
@@ -2467,33 +2533,13 @@ $(document).ready(function() {
 				
 			}						
 			
-			//== ID-37 ==\\ { Y-BOTTOM-LEFT }
-				
-			function compileYBottomLeftAddOnTable() {
-				
-				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
-					
-					var xRowLeft = yBottomAxisAddOnPointTable[p1]; //== this is the LEFT starting value to use for each looP					
-					for ( var p2 = xPivotLeft; p2 !== 0; p2-- ) {
-						
-						var pass2 = ( xRowLeft - ( xRowLeft * x2_bLeft ));
-						y3AddOnPointTable.push(pass2);
-						xRowLeft = xRowLeft - (x2_bLeft + x2_bLeft);
-					}
-//					if ( p1 == 1 ) {  //=== LEAVE TO TEST VALUES OF LOOP
-//					 	return;
-//				  }
-					
-				}
-			} 
-			
-			//== ID-38 ==\\  { Y-BOTTOM-RIGHT } -->> { ADDED VALUES }
+			//== ID-38 ==\\  { Y4-BOTTOM-RIGHT } -->> { ADDED VALUES }
 				
 			function compileYBottomRightAddOnTable() {
 				
 				for ( var p1 = 0; p1 < yPivotBottom; p1++ ) {
 					
-					var xRowRight =  yBottomAxisAddOnPointTable[p1]; //== this is the RIGHT starting value to use for each loop
+					var xRowRight =  yAxisY3[p1]; //== this is the RIGHT starting value to use for each loop
 					
 					for ( var p2 = 0; p2 < xPivotRight; p2++ ) {
 						var pass3 = ( xRowRight + ( xRowRight * x2_bRight ));
@@ -2506,32 +2552,55 @@ $(document).ready(function() {
 				}
 			} 	
 			
+			//== ID 40 ==\\
+			//** { NEED Y-AXIS CONTINUATION VALUES FROM Y1 OF LAST INDEX OF X-TIME SEGMENT }
+			function getYAxisY1() {
+				for ( var p1 = 1; p1 < y1AddOnPointTable.length; p1++ ) {
+					if (p1 % xPivotLeft === 0 ) {
+						yAxisY1.push(y1AddOnPointTable[p1-1]);
+					}
+				}
+				yAxisY1.unshift(y1AddOnPointTable[xPivotLeft-1]);
+				yAxisY1.reverse();
+			}
+			
+			//== ID 41 ==\\
+			//** { NEED Y-AXIS CONTINUATION VALUES FROM Y3 OF LAST INDEX OF X-TIME SEGMENT }
+			function getYAxisY3() {
+				for ( var p1 = 1; p1 < y3AddOnPointTable.length; p1++ ) {
+					if (p1 % xPivotLeft === 0 ) {
+						yAxisY3.push(y3AddOnPointTable[p1-1]);
+					}
+				}
+				yAxisY3.unshift(y3AddOnPointTable[xPivotLeft-1]);
+//				yAxisY3.splice(0, 1);
+			}
 			
 			compileY1Top();
 			compileY1Bottom();
+
+			//***********   EXECUTION ORDER VERY IMPORTANT   *******************\\
 			compileYTopLeftAddOnTable();
-			compileYTopRightAddOnTable();
 			compileYBottomLeftAddOnTable();
+			getYAxisY1();
+			getYAxisY3();
+			
+			//**  yAxisY1 & yAxisY3 IS USED AS Y-AXIS STARTING VALUE FOR Y2 & Y4 AXIS  **\\
+			compileYTopRightAddOnTable();
 			compileYBottomRightAddOnTable();
 			
 			//=======================================================================\\
-			//========== REVERSE ARRAYS IN ORDER TO ALIGN GENERATAED TABLES =========\\
-			yTopAxisAddOnPointTable.reverse();
-			y1AddOnPointTable.reverse();
-			y2AddOnPointTable.reverse();
-			y3AddOnPointTable.reverse();
-			//========== ALL TABLES VALUES ARE CORRECTLY ALIGNED AS INTENDED ========\\
 			//=======================================================================\\
 			
 			//==========  CONCAT THE TABLES VALUES INTO ONE  ========================\\
-			combinedXYAddOnTables = y1AddOnPointTable.concat(y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable );
+			combinedXYDrcTable = y1AddOnPointTable.concat(y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable );
 			combineYTable = yTopAxisAddOnPointTable.concat(yBottomAxisAddOnPointTable);
 			//=======================================================================\\
 		}
 		
 		
-//		return [ yMeasureSegments, xMeasureSegments, yPivotTop, xPivotLeft, y1AddOnPointTable, y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable, combinedXYAddOnTables ]; 
-		return [ combineYTable, combinedXYAddOnTables  ]; 
+//		return [ y1AddOnPointTable, y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable, combinedXYDrcTable, yAxisY1, yAxisY3 ]; 
+		return [ combineYTable, combinedXYDrcTable, xMeasureSegmentsHeader ]; 
 		
 	}
 	
@@ -2540,149 +2609,305 @@ $(document).ready(function() {
 	
 	
 	//==========================================================================================\\
-	//  ||=== SET CONFIGURATION VALUES FOR ADVERTISER BASE AD-POINT ADDITION ===||
+	//  ||=== GETTER FUNCTIONS FOR STORES, SETRANK AND MPARAM  ===||
+	//  ||===           RETURNS OBJECTS OR PROPERTY            ===||
   //==========================================================================================//
 	
-	//== ID-39 ==\\
-	function getStores() {
-		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
+	//== ID-42 ==\\
+	function getStoresObj() {
 		var storesObj = [];
 		for ( var p1 in stores) {
 			var pass1 = stores[p1]
 			storesObj.push(pass1);
-			storesProp.push(p1);
 		}
-		return [storesProp[0], storesObj[0]]
+		return storesObj;
 	}
 	
-	//== ID-40 ==\\
-	function getSetRank() {
+	//== ID-43 ==\\
+	function getStoresProp() {
+		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
+		for ( var p1 in stores) {
+			var pass1 = stores[p1]
+			storesProp.push(p1);
+		}
+		return storesProp;
+	}
+	
+	//== ID-44 ==\\
+	function getSetRankObj() {
 		var setRankObj = [];
-		var setRankProp = [];
 		for ( var p1 in setRank) {
 			var pass1 = setRank[p1]
 			setRankObj.push(pass1);
-			setRankProp.push(p1);
 		}
-		return [setRankObj[0], setRankProp[0]]
+		return setRankObj;
 	}
 	
-	//== ID-41 ==\\
-	function getMParam() {
+	//== ID-45 ==\\
+	function getSetRankProp() {
+		var setRankProp = [];
+		for ( var p1 in setRank) {
+			var pass1 = setRank[p1]
+			setRankProp.push(p1);
+		}
+		return setRankProp;
+	}
+	
+	//== ID-46 ==\\
+	function getMParamObj() {
 		var setMParamObj = [];
-		var setMParamProp = [];
 		for ( var p1 in mParam) {
 			var pass1 = mParam[p1]
 			setMParamObj.push(pass1);
-			setMParamProp.push(p1);
 		}
-		return [setMParamObj[0], setMParamProp[0]]
+		return setMParamObj;
 	}
 	
-	//== ID-42 ==\\
+	//== ID-47 ==\\
+	function getMParamProp() {
+		var setMParamProp = [];
+		for ( var p1 in mParam) {
+			var pass1 = mParam[p1]
+			setMParamProp.push(p1);
+		}
+		return setMParamProp;
+	}
 	
-	function updateStoresAddOnPoints(storeNum) {
+	
+	//==========================================================================================\\
+	//  ||=== SETS THE ADJUSTED DISCOUNT POINT CONVERT RATE FOR ADVERTISER ===||
+	//  ||===        IS ABLE TO SET EACH STORES ADJDRC PROPERTY #          ===||
+	//  ||===          { REQUIRES STORE-NUMBER AS INPUT PARAM }            ===||
+  //==========================================================================================//
+					//== LOAD THE CORRECT ADD-ON TABLE ( LEVEL 1, LEVEL 2, ETC. )
+					//== GET THE ADD-ON Y-POINT SPECTRUM ( 0 TO 7,840 )
+					//== GET THE ADD-ON X-TIME SPECTRUM ( 0 TO 3,360 )
+	//== ID-48 ==\\
+	//** { ENVOKES FUNCTION ID-32 | ( N ) ACCEPTS AN INTEGER TO IDENTIFY RANK LEVEL
+	
+	var drcTable = [];
+	function loadDRCTable(n) { 
+		if ( n == 1 ) {
+			drcTable = getAdjDCRValues(n); 
+		}
+		if ( n == 2 ) {
+			drcTable = getAdjDCRValues(n); 
+		}
+		console.log(' === DCR TABLE GENERATED === ')
+		return drcTable;
+	}
+	
 		
-		//== ID-43 ==\\
-		var loadStores = getStores();
-		var loadSetRank = getSetRank();
-		var loadMParam = getMParam();
+	//== ID-49 ==\\
+	//** { (STORENUMBER) ACCEPTS INTEGER TO IDENTIFY STORE NUMBER }
+	function updateAdjDCR(storeNumber) {
 		
-		var xyAddOnTable = loadAddOnTable(storeNum);
-		var activeMeasureTimeSegment = 0;
-		var addOnPoints = 0;
+		//== ID-50 ==\\
+		var storesObj = getStoresObj();
+		//== ID-51 ==\\
+		var setRankObj = getSetRankObj();
+		//== ID-52 ==\\
+		var mParamObj = getMParamObj();
+		//== ID-53 ==\\
+		var rankLvl = 0;
+		
+		//== ID-54 ==\\
+		var activeAdjDRC;
+		//== ID-55 ==\\
+		var xyAdjDRCTable = drcTable;
+		//== ID-56 ==\\
+		var xTimeMSegActive = 0;
+		//== ID-57 ==\\
+		var index = storeNumber - 1;
+		
 		
 		//== GET THE RANK LVL ( RANK LEVEL 1, RANK LEVEL 2 )
-		//== ID-44 ==\\
-		function getStoreData() {
-			if(storeNum === 1 ) {
-				return storesObj[0].rankLv;
+		//== ID-58 ==\\
+		//** { CHECKS STORENUMBER; RETURNS STORE-RANK LEVEL }
+		function getStoreData(storeNumber) {
+			if(storeNumber === 1 ) {
+				rankLvl = storesObj[0].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 2 ) {
-				return storesObj[1].rankLv;
+			if(storeNumber === 2 ) {
+				rankLvl = storesObj[1].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 3 ) {
-				return storesObj[2].rankLv;
+			if(storeNumber === 3 ) {
+				rankLvl = storesObj[2].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 4 ) {
-				return storesObj[3].rankLv;
+			if(storeNumber === 4 ) {
+				rankLvl = storesObj[3].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 5 ) {
-				return storesObj[4].rankLv;
+			if(storeNumber === 5 ) {
+				rankLvl = storesObj[4].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 6 ) {
-				return storesObj[5].rankLv;
+			if(storeNumber === 6 ) {
+				rankLvl = storesObj[5].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 7 ) {
-				return storesObj[6].rankLv;
+			if(storeNumber === 7 ) {
+				rankLvl = storesObj[6].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 8 ) {
-				return storesObj[7].rankLv;
+			if(storeNumber === 8 ) {
+				rankLvl = storesObj[7].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 9 ) {
-				return storesObj[8].rankLv;
+			if(storeNumber === 9 ) {
+				rankLvl = storesObj[8].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 10 ) {
-				return storesObj[9].rankLv;
+			if(storeNumber === 10 ) {
+				rankLvl = storesObj[9].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 11 ) {
-				return storesObj[10].rankLv;
+			if(storeNumber === 11 ) {
+				rankLvl = storesObj[10].rankLv;
+				return rankLvl;
 			}
-			if(storeNum === 12 ) {
-				return storesObj[11].rankLv;
+			if(storeNumber === 12 ) {
+				rankLvl = storesObj[11].rankLv;
+				return rankLvl;
 			}
 		}
 		
-		//== LOAD THE CORRECT ADD-ON TABLE ( LEVEL 1, LEVEL 2, ETC. )
-		//== GET THE ADD-ON Y-POINT SPECTRUM ( 0 TO 7,840 )
-		//== GET THE ADD-ON X-TIME SPECTRUM ( 0 TO 1,120 )
+		rankLvl = getStoreData(storeNumber);
+//		xyAdjDRCTable = loadDRCTable(rankLvl);
 		
-		//== ID-45 ==\\
-		//== ENVOKES FUNCTION ID-32 
-		function loadAddOnTable(n) { 	//== RETURNS RESULT AS AN ARRAY TO ADDONTABLE VARIABLE LOCATED AT TOP
-			if ( storeNum == 1 ) {
-				return getAdPointAdditionValues(1); 
-			}
-			if ( storeNum == 2 ) {
-				return getAdPointAdditionValues(2);
-			}	
+		
+		//== ID-59 ==\\
+		//** USED WITHIN FUNCTION ID-45 **\\
+		//** { CALCULATES THE IDENTIFIED RANK PERIODS FULL DURATION IN MINUTES }	
+		function getRankPeriodDuration(mp, rankLvl) {
+			var rptDuration = (((mp[rankLvl].rankMTime) * 24 * 60 )); //== TOTAL RANK TIME PERIOD IN SEGMENTS
+			return rptDuration;
 		}
 		
-		//== ID-43 ==\\
-		//== GET THE RANK LEVELS CURRENT MEASUREMENT TIME/ WHERE ITS AT CURRENTLY ( 1,120 x 7840 )
-		function loadCurrentMeasurementSegment(so, sr, mp, stNum) {
-			var t = so[1].rankTimePeriod.getTime();
-			var rtpMin = Number((t/ 1000/ 60 ).toFixed(4)); //== THIS IS THE START TIME / DATE
-//			var rtpMin = Number((so[storeNum].rankTimePeriod.getTime() / 1000/ 60 ).toFixed(4)); //== THIS IS THE START TIME / DATE
-			var timeNowToMin = Number(( new Date() / 1000/ 60 ).toFixed(4)); //== THIS IS THE CURRENT TIME / DATE
-//			var rankEndTime = (rtpMin + (mp[stNum-1].rankMTime * 24)); 
-			var rankEndTime = (rtpMin + (mp[0].rankMTime * 24)); 
-			var rtpLeft = (timeNowToMin - rankEndTime); 
-//			var cMeasureSeg = parseInt(rtpLeft / mp[stNum-1].rankMOccurences); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
-			var cMeasureSeg = parseInt(rtpLeft / mp[1].rankMOccurences); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
-//			console.log([ rtpMin, timeNowToMin, rankEndTime, rtpLeft ]);
-			return cMeasureSeg;
-		}
 		
-		activeMeasureTimeSegment = loadCurrentMeasurementSegment(loadStores, loadSetRank, loadMParam, storeNum); //== THIS RETURNS THE CURRENT "X" TIME SEGMENT
-		
-		//== ID-44==\\
-		//== GET THE ADD-ON POINT FACTOR & UPDATE STORES ADJUSTED AD-POINT CONVERT NUMBER
-		function getAddOnPointVal(so, storeNum, actMesure) {
-//			var activeAdPoint = so[storeNum].totalRankPoints; //== LOADS THE STORES ACCUMULATED RANK POINTS
-			var activeAdPoint = so[1].totalRankPoints; //== LOADS THE STORES ACCUMULATED RANK POINTS
-			var index = Number(actMesure); //== GET THE INDEX NUMBER FOR XY-ADDON TABLE
-			var arrayIndex = (index * activeAdPoint);
-//			var addOnNum = Number(xyAddOnTable[1][arrayIndex]);
-			var addOnNum = Number(xyAddOnTable[storeNum -1][arrayIndex]);
+		//== ID-60 ==\\
+		//** { RETURNS THE CURRENT X-TIME AXIS SEGMENT }
+		function getXTimeMSegment(so, sr, mp, stNum) {
+			//********************  VERFIED VALUES THAT ARE CORRECT ***********************************\\
 			
-			so[storeNum -1].baseAddOnPoints = Number((addOnNum).toFixed(4));
+			var rtpStartMin = ((so[stNum-1].rankTimePeriod.getTime() )/1000/60); //== THIS IS THE START TIME / DATE
+			var timeNowToMin = ((new Date().getTime()/1000/60)); //== THIS IS THE CURRENT TIME / DATE
+			var rankTimeDuration = getRankPeriodDuration( mp, rankLvl ); //== GETS THE TOTAL MINUTE SEGMENTS OF THE RANK LEVEL & PERIOD
+			
+			//** MPARAM CANNOT USE INDEX VALUES PASSED IN *** { MUST USE RANK LEVEL AS THERE'S ONLY TWO LEVELS }  ** CAUSES ITERATIONS TO ERROR ONCE INDEX IS GREATER THAN 1
+			var numOfMinSeg = rankTimeDuration / mp[rankLvl].rankMOccurences; //== GETS THE TOTAL NUMBER OF THREE MINUTE SEGMENTS
+			var rankEndTime = (rtpStartMin + (mp[rankLvl].rankMTime * 24 * 60 )); //== THIS IS THE RANK START TIME AND NUMBER OF DAYS IN MINUTES IN THE FUTURE FOR END DATE
+			var rtpTimeLeft = Number((( rankEndTime - timeNowToMin ) ).toFixed(4)); //== THIS THE TIME REMAINING IN THE RANK PERIOD FROM THE CURRENT TIME
+			var curXMSegment = parseInt( rtpTimeLeft / mp[rankLvl].rankMOccurences); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
+			
+//			console.log([ rankEndTime, rtpTimeLeft, curXMSegment ]);
+			return curXMSegment;
+			//********************  VERFIED VALUES THAT ARE CORRECT ***********************************\\
 			
 		}
 		
-		addOnPoints = getAddOnPointVal(loadStores, storeNum, activeMeasureTimeSegment );
+		xTimeMSegActive = getXTimeMSegment(storesObj, setRankObj, mParamObj, storeNumber);
 		
 		
+		//== ID-61 ==\\
+		//** { RETURNS THE ADJUSTED BASE AD-POINT CONVERT RATE  }
+		function getAdjDRC(so, storeNum, actTimePt, adjTableVals, mp) {
+			
+			var activeAdPoint = so[storeNum-1].totalRankPoints; //== LOADS THE STORES ACCUMULATED RANK POINTS
+			var xSeg = actTimePt; //== THIS IS THE CURRENT TIME SEGMENT
+			var tMinSegments = parseInt(getRankPeriodDuration(mp, rankLvl) / mp[rankLvl].rankMOccurences);
+			var correctXSeg = tMinSegments - xSeg;
+//			console.log([xSeg, tMinSegments, correctXSeg]);
+			var drc = 0;
+			
+			//** THIS WILL TRANSVERSE THE X-TIME AXIS
+			for ( var p5 = 0; p5 < adjTableVals[2].length; p5++ ) {
+				if ( p5 == correctXSeg) {
+					//== THIS WILL TRASVERSE Y-POINT AXIS
+					for ( var p6 = 0; p6 < adjTableVals[1].length ; p6++ ) {
+						if ( p6 === activeAdPoint ) {
+							drc = adjTableVals[1][p6];
+							return Number((drc).toFixed(8));
+						}
+					}
+				}
+			}
+		}
+		
+		activeAdjDRC = getAdjDRC(storesObj, storeNumber, xTimeMSegActive, xyAdjDRCTable, mParamObj );
+		
+		
+		//== ID-62 ==\\
+		//** { UPDATES THE STORES PROPERTY ADJDRC VALUE }
+		function changeStoreDRC(stNum) {
+			for (var p1 = 0; p1 < storesObj.length ; p1++ ) {
+				if ( stNum === 1 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+					console.log("run==1");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 2 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==2");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 3 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==3");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 4 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==4");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 5 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==5");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 6 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==6");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 7 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==7");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 8 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==8");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 9 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==9");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 10 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==10");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 11 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+//					console.log("run==11");
+					return storesObj[p1].adjDcr;
+				}
+				if ( stNum === 12 ) {
+					storesObj[p1].adjDcr = activeAdjDRC;
+					console.log("run==12");
+					return storesObj[p1].adjDcr;
+				}
+			}
+		}
+		
+		changeStoreDRC(storeNumber);
 		
 		//== UPDATE BASE AD-POINT ADD-ON CONVERT RATE ( 2.5 POINTS FOR EVERY 1% );
 		//== CALC THE ( NUMBER OF STORES RANK POINTS x CURRENT RANK MEASUREMENT TIME ) = INDEX NUMBER TO USE
@@ -2690,8 +2915,9 @@ $(document).ready(function() {
 		//== UPDATE STORE OBJECT BASE AD-POINT VALUE
 		
 //		return [ xyAddOnTable, activeMeasureTimeSegment, addOnPoints, stores.store_1.totalRankPoints, stores.store_1.baseAddOnPoints];
-		console.log( addOnPoints, storeNum, loadStores, xyAddOnTable);
-		return Number(addOnPoints);
+//		console.log( [storesObj, rankLvl, activeAdjDRC, xTimeMSegmentActive, xyAdjDRCTable ] );
+		console.log("=== CHANGED DRC VALUES ");
+		return activeAdjDRC;
 		
 	}
 	
@@ -2699,17 +2925,14 @@ $(document).ready(function() {
 //	console.log(t14);
 	
 	
-	//== We need to the number of graded measurement segments 
-	//== We need to know the total number of points that can be accumulated for the identified rank level
-	//== We need to know the base ad point value of the current period & ( advertiser category in future )
-	//== 
-	//== WE NEED TO 
+	//************************   END ADJUSTED BASE DISCOUNT RATE ALGORITHIM FEATURE   *********************************************\\
+	//*******************************************************************************************************************************\\
+	
 	
 	
 	//==========================================================================================\\
 	//  ||=== BEGIN REWARD DISTRIBUTION GRID AND CONFIGURATION ===||
 	
-	//  ||== { COMPLETE FIRST } COMPLETE ADVERTISERS BASE AD-POINT ADJUSTMENT TABLE PRIOR TO REWARD DISTRIBUTION GRID 
 	//  ||== NEED THE HIGHEST VALUE TO DETERMINE AD POINT OFFER RANGE
   //==========================================================================================//
 	
@@ -2728,21 +2951,6 @@ $(document).ready(function() {
 
 	}
 	
-//	var t16 = getUniqueBaseAdPointAdvertiser();
-//	console.log(t16);
-	
-//	function concatYBottom() {
-//		var getAddOnVal = getAdPointAdditionValues(1);
-////		var greatestAddOnVal = getAddOnVal[3][getAddOnVal[3].length - 1];
-////		var yTop = getAddOnVal[0].concat(getAddOnVal[1]);
-//		var yBottom = getAddOnVal[1].concat(getAddOnVal[2]);
-////		var yFinalTable = yTop.concat(yBottom);
-//		return [yBottom];
-//		
-//	}
-//	
-//	var t16 = concatYBottom();
-//	console.log(t16);
 	
 	// (1). NEED TO CREATE THE NUMBER OF REWARDS GRIDS AVAILABLE > { USE FLOATING POINT RANGE VALUES }
 	//** A static point base/range can be set || Base reward distribution proportions/percentages defined at this time ||
@@ -2834,10 +3042,6 @@ $(document).ready(function() {
 			$('.js-storeCity-' + c).text(sc);
 			$('.js-distance-' + c).text("12.44 miles");
 			$('.js-numberOfOffers-' + c).text(so);
-			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
-			var j = adOccuranceFactor([c]);
-//			console.log(j);
-			$('.js-pointValue-' + c).text((getOriginatingDiscountPercent(sd) * j[c-1]).toFixed(2));
 		}
 		
 		var count = 1;
@@ -2849,17 +3053,125 @@ $(document).ready(function() {
 	}
 	
 	
-	$('.addon-point-btn').on('click', function() {
-		var n = $(this).attr('id');
+	//************************************************************************************\\
+	//*****************        BUTTONS TO EXECUTE FUNCTIONS          *******************\\
+	//************************************************************************************\\
+	
+	
+	//==============================================================\\
+	//   ||==   (8). GENERATE DCR XY TABLES      ==||
+	//   ||==   (rLvl) ACCEPTS RANK LEVEL; INTEGER    ==||
+	//==============================================================\\
+	
+	$('.js-xyDrcTable').on('click', function() {
+		var rLvl = $(this).attr('id');
+		rLvl= Number(rLvl);
 		
-		updateStoresAddOnPoints(n);
+		loadDRCTable(rLvl);
 		
 	});	
+	
+	
+	//==============================================================\\
+	//   ||==   (9). UPDATE DCR VALUES OF EACH STORE OBJECT ==||
+	//   ||==   (count) ACCEPTS RANK LEVEL; INTEGER    ==||
+	//==============================================================\\
+	
+	$('.js-updateDrc').on('click', function() {
+		
+		var st = getStoresObj();
+		
+		for ( var i = 1; i < st.length; i++ ) {
+			updateAdjDCR(i);
+		}
+		
+	});	
+	
+	//==============================================================\\
+	//   ||== (10). UPDATE POINT VALUES OF AD OFFERS 1 - 12 ==||
+	//   ||== USES ADOCCURENCEFACTOR FUNCTION ==||
+	//==============================================================\\
+	
+	
+	$('.js-drc-PointBtn1').on('click', function() {
+		var n = $(this).attr('id');
+		nc = Number(n);
+		
+		var st = getStoresObj();
+		
+		for (var p1 = 1; p1 <= st.length; p1++ ) {
+			var t = 0;
+			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
+			var j = adOccuranceFactor([p1]);
+			if ( p1 == 1 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			}
+			if ( p1 == 2 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 3 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 4 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			}
+			if ( p1 == 5 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 6 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			}
+			if ( p1 == 7 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			}
+			if ( p1 == 8 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 9 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 10 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			}
+			if ( p1 == 11 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+			if ( p1 == 12 ) {
+				t = updateAdjDCR(p1);
+				$('.js-pointValue-' + p1).text((getOriginatingDiscountPercent(st[p1-1].discount, t) * j[p1-1]).toFixed(2));
+			} 
+		}
+		
+	});	
+	
+	//==============================================================\\
+	//   ||== (11). COMPILE AD INFO  ==||
+	//==============================================================\\
+	
+	$('.js-drc-PointBtn2').on('click', function() {
+		
+	});	
+	
+	//==============================================================\\
+	//   ||== UPDATE POINT VALUES OF AD OFFERS 4 - 6 ==||
+	//==============================================================\\
+	
 	
 	$('.js-compileAdBtn').on('click', function() {
 //		var num = $(this).attr('id');
 		
-		compileAdList(stores);
+		compileAdList(stores); //=== NEED TO GO BACK AND FIX << 
 		
 	});
 	
