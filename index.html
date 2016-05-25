@@ -51,6 +51,49 @@
 		
 		<section>
 			<div class="sidebar-menu">
+				<label for="store-number">Ad/Store #</label><input type="number" min="1" max="12" id="storeNumber" value="1">
+				<label for="rank-level">Rank Lvl </label><input type="number" min="1" max="2" id="rankLevel" value="1">
+				<form action="" id="measurements">
+					<select name="measurementOptions" form="measurements" >				
+						<option value="clicks">Clicks</option>					
+						<option value="views">Views</option>					
+						<option value="reviews">Reviews</option>					
+						<option value="saves">Saves</option>					
+						<option value="purchases">Purchases</option>					
+						<option value="discount">Compounded Discount</option>					
+						<option value="accumulatePoints">Accumulated Points</option>
+					</select>
+					<label class="increase-label" for="change-set-value">Increase Or decrease</label>
+					<input type="number" id="changeMSetValue" value="1" >
+				</form>
+				<input class="submit submitMParams" type="button" value="Set MParams">
+				
+				<br>
+				<form action="" id="setDate">
+					<p>Change Measure &amp; Offer Dates</p>
+					<p>Store #: <input type="number" id="setStoreDate" min="1" max="12" value="1"> </p>
+					<select name="setDate" form="setDate">
+						<option value="rankPeriodStartTime">Set Rank Period Start Date</option>
+						<option value="offerCreateTime">Set Offer Create Date</option>
+						<option value="offerEndTime">Set Offer End Date</option>
+					</select>
+					<input type="number" id="getMonth" min="1" max="12" value="5">
+					<input type="number" name="day" id="getDay" min="1" max="31" value="27">
+					<input type="number" name="year" id="getYear" value="2016">
+				</form>
+				<input class="submit submitSetDate" type="button" value="Set Date">
+				
+				<br>
+				<form action="" id="storeOffers">
+					<p>Set Offer Details</p>
+					<p>Store #: <input type="number" id="setStoreDiscountQty" min="1" max="12" value="1"> </p>
+					<span>Offer QTY </span><input type="number" min="1" max="50" id="quantity" value="1">
+					<span>Discount %</span><input type="text" id="discountPercent" value="19.59">
+				</form>
+				<input class="submit submitOfferDetails" type="button" value="Set Offer Params">
+				<br>
+				
+<!--
 				<button class="btn click-btn js-measurementBtn" id="click-btn"> (1). Click Measurement </button>
 				<button class="btn view-btn js-measurementBtn" id="view-btn"> (2). View Measurement </button>
 				<button class="btn review-btn js-measurementBtn" id="review-btn"> (3). Review Measurement </button>
@@ -58,12 +101,12 @@
 				<button class="btn purchase-occurences-btn js-measurementBtn" id="purchase-occurences-btn"> (5). purchaseOccurences Measurement </button>
 				<button class="btn compound-discount-btn js-measurementBtn" id="compound-discount-btn"> (6). compoundDiscount OfferPercent Measurement</button>
 				<button class="btn accumulated-point-btn js-measurementBtn" id="accumulated-point-btn"> (7). accumulatedAdPoint Measurement </button>
+-->
 				
-				<button class="btn xy-drc-table js-xyDrcTable" id="1"> (8). Generate xyDRC table <br> [ !IMPORTANT > MUST USE BEFORE 10 ]</button>
-				<button class="btn js-updateDrc" id="1"> (9). Update Stores DRC Values <br> [ OPTIONAL ] </button>
-				<button class="btn xy-drc-table js-drc-PointBtn1" id="1"> (10). Update Ad Points [ AD-OFFER 1 - 12 ] </button>
-								<button class="btn compile-ad-btn js-compileAdBtn" id="1"> (11). Compile AD Info </button>
-				<button class="btn addon-point-btn js-drc-PointBtn2" id="1"> (12). </button>
+				<button class="btn xy-drc-table js-generateDrcTable" id="1"> (1)). Generate xyDRC table <br></button>
+				<button class="btn js-updateDcr" id="1"> (2). Update stores DCR; <br>Use after 1. </button>
+				<button class="btn xy-drc-table js-drc-PointBtn1" id="1"> (3). Calculate points <br> Offers 1 - 12 </button>
+				<button class="btn compile-ad-btn js-compileAdBtn" id="1"> (4). Compile store info </button>
 			</div>
 		</section> <!-- Categories and search functionality will go here -->
 		

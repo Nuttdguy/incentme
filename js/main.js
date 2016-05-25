@@ -24,7 +24,9 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 5821, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			
+			preRankMeasurementTimeSegment: 0,
 			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -73,7 +75,9 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 6000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 21, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			
+			preRankMeasurementTimeSegment: 0,
 			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -122,8 +126,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 5000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 22, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -171,8 +177,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -220,8 +228,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -269,8 +279,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -318,8 +330,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -367,8 +381,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -416,7 +432,9 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+
+			preRankMeasurementTimeSegment: 0,
 			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
@@ -465,8 +483,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -514,8 +534,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -563,8 +585,10 @@ $(document).ready(function() {
 			
 			rankLv_Inner: 1,
 			totalRankPoints: 7000, // SET FOR DEMONSTATION
-			rankTimePeriod: new Date(2016, 4, 20, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
+			rankTimePeriod: new Date(2016, 4, 24, 0, 0, 0, 0 ), // NEED A FUNCTION THAT WILL ALLOW THIS DATE TO SET FOR A DEFINED PERIOD & RESET AFTER A DEFINED NUMBER OF DAYS. THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE.
 
+			preRankMeasurementTimeSegment: 0,
+			
 			preClicksCount: 0, 
 			lastClickCountMin: 0, 
 			clicksCount: 720,
@@ -607,13 +631,12 @@ $(document).ready(function() {
 	var mParam = {
 		
 		lv1: {
-			rankMTime: 4, // in days { REDUCING TO PREVENT BROWSER FROM FREEZING }
+			rankMTime: 5, // in days { REDUCING TO PREVENT BROWSER FROM FREEZING }
 			rankMOccurences: 3, // in minutes
 			actionValue: 1, // number of points awarded per successful action
 			minutes: 60,
 			hours: 24,
-			milliDay: (new Date().getTime() / 1000/60/60/24),
-			setRLv: 1
+			setRLv: 1,
 		},
 		
 		lv2: {
@@ -622,7 +645,7 @@ $(document).ready(function() {
 			actionValue: 1, // number of points awarded per successful action
 			minutes: 60,
 			hours: 24,
-			setRLv: 2
+			setRLv: 2,
 		}
 	};
 	
@@ -642,9 +665,9 @@ $(document).ready(function() {
 			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
 			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
-			mGradePoint: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
-				var c = mParam.lv1;
-				return parseFloat( (c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+			mTimeSegments: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
+				var mp = mParam.lv1;
+				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
 				//******** THIS ALREADY SUBDIVIDES THE TIME INTO 3, 4, ETC. MINUTES ************* !! IMPORTANT NOTE !! ***\\
 			}
 		},
@@ -657,15 +680,16 @@ $(document).ready(function() {
 			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
 			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
-			mGradePoint: function() {
-				var c = mParam.lv2;
-				return parseFloat( (c.rankMTime * c.minutes * c.hours) / c.rankMOccurences).toFixed(2);
+			mTimeSegments: function() {
+				var mp = mParam.lv1;
+				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
+				//******** THIS ALREADY SUBDIVIDES THE TIME INTO 3, 4, ETC. MINUTES ************* !! IMPORTANT NOTE !! ***\\
 			}
 		},
 		
 	};
 	
-//	var a1 = setRank.lv1.mGradePoint();
+//	var a1 = setRank.lv1.mTimeSegments();
 //	console.log(a1); //== RETURNS 7,200 NUMBER OF MINUTES
 	
 	//=========================================================\\
@@ -695,12 +719,13 @@ $(document).ready(function() {
 		};
 	}
 	
+	
 	//== ID-2 ==\\
 	
 	function calculateTime(s) {
 	
 		
-		function intializeClock(id, c, et, ct, nt) {
+		function intializeClock(et, ct, nt, id, c ) {
 			var clock = $('.js-timeLeft-'+ c);
 			// console.log(clock);
 			var timeInterval = setInterval(function() {
@@ -731,7 +756,7 @@ $(document).ready(function() {
 		
 		var count = 1;
 		for (var i in stores ) {
-			intializeClock('clock', count, stores[i].adEndTime, stores[i].adCreateTime, stores[i].nTime);
+			intializeClock(stores[i].adEndTime, stores[i].adCreateTime, stores[i].nTime, 'clock', count );
 			count++;
 		}
 		
@@ -780,7 +805,7 @@ $(document).ready(function() {
 	
 	function getXAdPointSpectrum() {
 		var axisMax = 1;
-		var xAxis = 0.01;
+		var xAxis = 0.0001;
 		var iCount = 0; // scale x range is 0.01% to 1
 		
 		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
@@ -804,7 +829,7 @@ $(document).ready(function() {
 	
 	function getYAdPointSpectrum() {
 		var axisMax = 1;
-		var yAxis = 0.001; 
+		var yAxis = 0.0001; 
 		var kCount = 0; // scale y range is 0.0001 to 1
 		
 		for (var k = yAxis; k <= axisMax; k = k + yAxis ) {
@@ -991,7 +1016,7 @@ $(document).ready(function() {
 		getYIndex();
 	
 		//** s == .12 need 100% upconvert to point value || combinedBaseDr upconvert is optional >> can be moved as neccessary 
-		console.log( [ s, combinedBaseDr[yIndex], adBaseDiscountConvertRate, dcr ] );
+//		console.log( [ s, combinedBaseDr[yIndex], adBaseDiscountConvertRate, dcr ] );
 		return Number((s * 100) * (combinedBaseDr[yIndex] * 10) * ( adBaseDiscountConvertRate + dcr )).toFixed(2);
 	}
 		
@@ -1001,7 +1026,7 @@ $(document).ready(function() {
 	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
   //=========================================================\\
 	
-	//== ID-12 ==\\	//**** MARKED FOR REMOVAL -- ADDED TO FUNCTION ID-1 ***\\
+	//== ID-12 ==\\	//*******************************************************  MARKED FOR REMOVAL -- ADDED TO FUNCTION ID-1 ***\\
 	
 //	function getStoreAdPointValue(v) {
 //		// var v = storeOneOriginatingDiscount;
@@ -1298,301 +1323,683 @@ $(document).ready(function() {
 	//=== NOTES OF FLAWS >> NEED TO REDO USING FOR LOOPS FOR DIRECTING VALUES INTO AN ARRAY ===\\
   //=========================================================//
 	
-	//== ID-18 ==\\
+	//=***************************************************************** NEW BLOCK OF IMPROVED FUNCTIONS *****************************************************\\
+	//=*******************************************************************************************************************************************************\\
+	//=******************************************************************  GETS VALUES FROM INPUT-BOXES ******************************************************\\
+	//== GETS THE SELECTED MEASUREMENT PARAM
+	function getInputBoxSelectedMeasurementParam() {
+		var selectMeasurement = $('#measurements option:selected').text();
+		return (selectMeasurement).toLowerCase();
+	}
 	
-  $('.js-measurementBtn').on('click', function() {
-		var actType = $(this).attr('id');
+	function getInputBoxSelectedStore() {
+		var selectStore = document.getElementById('storeNumber').value;
+		return Number(selectStore);
+	}
+	
+	function getInputBoxSelectedRankLevel() {
+		var selectRankLevel = document.getElementById('rankLevel').value;
+		return Number(selectRankLevel);
+	}
+	
+	function getInputBoxMeasurementIncreaseOrDecreaseAmount() {
+		var value = document.getElementById('changeMSetValue').value;
+		return Number(value);
+	}
+	
+	function getInputBoxTimePeriodStoreNumber() {
+		var storeNumber = $('#setStoreDate').text();
+		return Number(storeNumber);
+	}
+	
+	function getInputBoxSelectionForTimePeriod() {
+		var selected;
+		selected = $('#setDate option:selected').text();
+		return (selected).toLowerCase();
+	}
+	
+	//== RETURNS DATE IN NUMBER FORMAT
+	function getInputBoxTimePeriod() {
+		var month, day, year, time;
+		month = document.getElementById('getMonth').value;
+		day = document.getElementById('getDay').value;
+		year = document.getElementById('getYear').value;
+		time = new Date(month + ' ' + day + ' ' + year).getTime();
 		
-		function calculateStoreValues(cs, trp, rtp, rlv, cc, crtp, rhr, segr, aseg, cmin, vc, rc, sc, pc, dc, apc, addOn ) {
-			//  ============================ LEVEL 1 ================  \\
-			var getlv1Click = (setMTableAdver.lv1.shopperActivity.clicks * aseg).toFixed(4);
-			var getlv1Views = (setMTableAdver.lv1.shopperActivity.views  * aseg).toFixed(4);
-			var getlv1Reviews = (setMTableAdver.lv1.shopperActivity.reviews  * aseg).toFixed(4);
-			var getlv1Saves = (setMTableAdver.lv1.advertiserPerformance.savedAdOccurences * aseg).toFixed(4);
-			var getlv1Purchases = (setMTableAdver.lv1.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);;
-			var getlv1CompoundPercents = (setMTableAdver.lv1.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
-			var getlv1AccumulatedPoints = (setMTableAdver.lv1.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
-			var getlv1 = 1;
-			//  ============================ LEVEL 2 ================  \\
-			var getlv2Click = (setMTableAdver.lv2.shopperActivity.clicks * aseg).toFixed(4);
-			var getlv2Views = (setMTableAdver.lv2.shopperActivity.views  * aseg).toFixed(4);
-			var getlv2Reviews = (setMTableAdver.lv2.shopperActivity.reviews  * aseg).toFixed(4);
-			var getlv2Saves = (setMTableAdver.lv2.advertiserPerformance.savedAdOccurences  * aseg).toFixed(4);
-			var getlv2Purchases = (setMTableAdver.lv2.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);
-			var getlv2CompoundPercents = (setMTableAdver.lv2.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
-			var getlv2AccumulatedPoints = (setMTableAdver.lv2.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
-			
-			for ( var k1 in setMTableAdver ) {
-				var cMProp = setMTableAdver[k1];
-				for ( var k2 in cMProp ) {
-					var c2MProp = cMProp[k2];
-					for ( var k3 in c2MProp ) {
-						//** BEGIN OF RANK LVL1 IF STATEMENTS **\\
-						if ( rlv == 1 ) { 
-							if (cs == 'store_1' && actType == 'click-btn') {
-//								console.log(getlv1Click + ' == ' + cc);
-								if ( cc >= getlv1Click ) {
-									console.log(cc + ' > ' + parseInt(getlv1Click) + ' == last Count > ' + stores.store_1.lastClickCountMin + ' === preClicks ' + stores.store_1.preClicksCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( cc == stores.store_1.preClicksCount && parseInt(getlv1Click) == stores.store_1.lastClickCountMin ) {
-										console.log(stores.store_1.lastClickCountMin + ' === lastCountMin');
-										return;
-									}
-									stores.store_1.clicksCount += 1;
-									stores.store_1.preClicksCount = stores.store_1.clicksCount;
-									stores.store_1.lastClickCountMin = parseInt(getlv1Click);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> CLICK-BTN **\\
-							if (cs == 'store_1' && actType == 'view-btn') {
-								if ( vc >= getlv1Views ) {
-									console.log(vc + ' > ' + parseInt(getlv1Views) + ' == last Count > ' + stores.store_1.lastViewsCountMin + ' === pre ' + stores.store_1.preViewsCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( vc == stores.store_1.preViewsCount && parseInt(getlv1Views) == stores.store_1.lastViewsCountMin ) {
-										return;
-									}
-									stores.store_1.viewsCount += 1;
-									stores.store_1.preViewsCount = stores.store_1.viewsCount;
-									stores.store_1.lastViewsCountMin = parseInt(getlv1Views);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> VIEW-BTN **\\
-							if (cs == 'store_1' && actType == 'review-btn') {
-								if ( rc >= getlv1Reviews ) {
-									console.log(rc + ' > ' + parseInt(getlv1Reviews) + ' == last Count > ' + stores.store_1.lastReviewsCount + ' === pre ' + stores.store_1.preReviewsCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( rc == stores.store_1.preReviewsCount && parseInt(getlv1Reviews) == stores.store_1.lastReviewsCount ) {
-										return;
-									}
-									stores.store_1.reviewsCount += 1;
-									stores.store_1.preReviewsCount = stores.store_1.reviewsCount;
-									stores.store_1.lastReviewsCount = parseInt(getlv1Reviews);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> REVIEW-BTN **\\
-							if (cs == 'store_1' && actType == 'saved-occurences-btn') {
-								if ( sc >= getlv1Saves ) {
-									console.log(sc + ' > ' + parseInt(getlv1Saves) + ' == last Count > ' + stores.store_1.lastSavedAdOccurencesCount + ' === pre ' + stores.store_1.preSavedAdOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( sc == stores.store_1.preSavedAdOccurencesCount && parseInt(getlv1Saves) == stores.store_1.lastSavedAdOccurencesCount ) {
-										return;
-									}
-									stores.store_1.savedAdOccurencesCount += 1;
-									stores.store_1.preSavedAdOccurencesCount = stores.store_1.savedAdOccurencesCount;
-									stores.store_1.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> SAVED-OCCURENCES-BTN **\\
-							if (cs == 'store_1' && actType == 'purchase-occurences-btn') {
-								if ( pc >= getlv1Purchases ) {
-									if ( pc == stores.store_1.prePurchaseOccurencesCount && parseInt(getlv1Purchases) == stores.store_1.lastPurchaseOccurencesCount ) {
-										console.log(pc + ' > ' + parseInt(getlv1Purchases) + ' == last Count > ' + stores.store_1.lastPurchaseOccurencesCount + ' === pre ' + stores.store_1.prePurchaseOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
-										return;
-									}
-									stores.store_1.purchaseOccurencesCount += 1;
-									stores.store_1.prePurchaseOccurencesCount = stores.store_1.purchaseOccurencesCount;
-									stores.store_1.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> PURCHASE-OCCURENCES-BTN **\\
-							if (cs == 'store_1' && actType == 'compound-discount-btn') {
-//								console.log(sc + ' ==> ' + getlv1CompoundPercents );
-								if ( dc >= getlv1CompoundPercents ) {
-									console.log(dc + ' > ' + parseInt(getlv1CompoundPercents) + ' == last Count > ' + stores.store_1.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_1.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( dc == stores.store_1.preCompoundDiscountOfferPercentCount && parseInt(getlv1CompoundPercents) == stores.store_1.lastCompoundDiscountOfferPercentCount ) {
-										return;
-									}
-									stores.store_1.compoundDiscountOfferPercentCount += 1;
-									stores.store_1.preCompoundDiscountOfferPercentCount = stores.store_1.compoundDiscountOfferPercentCount;
-									stores.store_1.lastCompoundDiscountOfferPercentCount = parseInt(getlv1CompoundPercents);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> COMPOUND-DISCOUNT BTN **\\
-							if (cs == 'store_1' && actType == 'accumulated-point-btn') {
-//								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
-								if ( apc >= getlv1AccumulatedPoints ) {
-									
-									console.log(apc + ' > ' + parseInt(getlv1AccumulatedPoints) + ' == last Count > ' + stores.store_1.lastAccumulatedAdPointCount + ' === pre ' + stores.store_1.preAccumulatedAdPointCount + ' === ' + stores.store_1.totalRankPoints ); 
-									if ( apc == stores.store_1.preAccumulatedAdPointCount && parseInt(getlv1AccumulatedPoints) == stores.store_1.lastAccumulatedAdPointCount ) {
-										
-										console.log(stores.store_1.lastAccumulatedAdPointCount + ' === lastCountMin');
-										return;
-									}
-									stores.store_1.accumulatedAdPointCount += 1;
-									stores.store_1.preAccumulatedAdPointCount = stores.store_1.accumulatedAdPointCount;
-									stores.store_1.lastAccumulatedAdPointCount = parseInt(getlv1AccumulatedPoints);
-									stores.store_1.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_1 >> ACCUMULATED-POINT BTN **\\
-						} //** END RANK_LV1 >> IF STATEMENTS **\\
-						//** BEGIN OF RANK-LVL2 IF STATEMENTS **\\
-						if ( rlv == 2 ) {
-							if (cs == 'store_2' && actType == 'click-btn') {
-//								console.log(cc + ' == ' + getlv2Click);
-								if ( cc >= getlv2Click ) {
-									console.log(cc + ' > ' + parseInt(getlv2Click) + ' == last Count > ' + stores.store_2.lastClickCountMin + ' === preClicks ' + stores.store_2.preClicksCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( cc == stores.store_2.preClicksCount && parseInt(getlv2Click) == stores.store_2.lastClickCountMin ) {
-										console.log(stores.store_2.lastClickCountMin + ' === lastCountMin');
-										return;
-									}
-									stores.store_2.clicksCount += 1;
-									stores.store_2.preClicksCount = stores.store_2.clicksCount;
-									stores.store_2.lastClickCountMin = parseInt(getlv2Click);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> CLICK-BTN **\\
-							if (cs == 'store_2' && actType == 'view-btn') {
-//								console.log(cc + ' == ' + getlv2Views + ' == in rLvl2');
-								if ( vc >= getlv2Views ) {
-									console.log(vc + ' > ' + parseInt(getlv2Views) + ' == last Count > ' + stores.store_2.lastViewsCountMin + ' === pre ' + stores.store_2.preViewsCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( vc == stores.store_2.preViewsCount && parseInt(getlv2Views) == stores.store_2.lastViewsCountMin ) {
-										return;
-									}
-									stores.store_2.viewsCount += 1;
-									stores.store_2.preViewsCount = stores.store_2.viewsCount;
-									stores.store_2.lastViewsCountMin = parseInt(getlv2Views);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> VIEW-BTN **\\
-							if (cs == 'store_2' && actType == 'review-btn') {
-								if ( rc >= getlv2Reviews ) {
-									console.log(rc + ' > ' + parseInt(getlv2Reviews) + ' == last Count > ' + stores.store_2.lastReviewsCount + ' === pre ' + stores.store_2.preReviewsCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( rc == stores.store_2.preReviewsCount && parseInt(getlv2Reviews) == stores.store_2.lastReviewsCount ) {
-										return;
-									}
-									stores.store_2.reviewsCount += 1;
-									stores.store_2.preReviewsCount = stores.store_2.reviewsCount;
-									stores.store_2.lastReviewsCount = parseInt(getlv2Reviews);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> REVIEW-BTN **\\
-							if (cs == 'store_2' && actType == 'saved-occurences-btn') {
-								if ( sc >= getlv2Saves ) {
-									console.log(sc + ' > ' + parseInt(getlv2Saves) + ' == last Count > ' + stores.store_2.lastSavedAdOccurencesCount + ' === pre ' + stores.store_2.preSavedAdOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( sc == stores.store_2.preSavedAdOccurencesCount && parseInt(getlv2Saves) == stores.store_2.lastSavedAdOccurencesCount ) {
-										return;
-									}
-									stores.store_2.savedAdOccurencesCount += 1;
-									stores.store_2.preSavedAdOccurencesCount = stores.store_2.savedAdOccurencesCount;
-									stores.store_2.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> SAVED-OCCURENCES-BTN **\\
-							if (cs == 'store_2' && actType == 'purchase-occurences-btn') {
-								if ( pc >= getlv2Purchases ) {
-									if ( pc == stores.store_2.prePurchaseOccurencesCount && parseInt(getlv2Purchases) == stores.store_2.lastPurchaseOccurencesCount ) {
-										console.log(pc + ' > ' + parseInt(getlv2Purchases) + ' == last Count > ' + stores.store_2.lastPurchaseOccurencesCount + ' === pre ' + stores.store_2.prePurchaseOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
-										return;
-									}
-									stores.store_2.purchaseOccurencesCount += 1;
-									stores.store_2.prePurchaseOccurencesCount = stores.store_2.purchaseOccurencesCount;
-									stores.store_2.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> PURCHASE-OCCURENCES-BTN **\\
-							if (cs == 'store_2' && actType == 'compound-discount-btn') {
-								if ( dc >= getlv2CompoundPercents ) {
-									console.log(dc + ' > ' + parseInt(getlv2CompoundPercents) + ' == last Count > ' + stores.store_2.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_2.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( dc == stores.store_2.preCompoundDiscountOfferPercentCount && parseInt(getlv2CompoundPercents) == stores.store_2.lastCompoundDiscountOfferPercentCount ) {
-										return;
-									}
-									stores.store_2.compoundDiscountOfferPercentCount += 1;
-									stores.store_2.preCompoundDiscountOfferPercentCount = stores.store_2.compoundDiscountOfferPercentCount;
-									stores.store_2.lastCompoundDiscountOfferPercentCount = parseInt(getlv2CompoundPercents);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> COMPOUND-DISCOUNT BTN **\\
-							if (cs == 'store_2' && actType == 'accumulated-point-btn') {
-								if ( apc >= getlv2AccumulatedPoints ) {
-									
-									console.log(apc + ' > ' + parseInt(getlv2AccumulatedPoints) + ' == last Count > ' + stores.store_2.lastAccumulatedAdPointCount + ' === pre ' + stores.store_2.preAccumulatedAdPointCount + ' === ' + stores.store_2.totalRankPoints ); 
-									if ( apc == stores.store_2.preAccumulatedAdPointCount && parseInt(getlv2AccumulatedPoints) == stores.store_2.lastAccumulatedAdPointCount ) {
-										
-										console.log(stores.store_2.lastAccumulatedAdPointCount + ' === lastCountMin');
-										return;
-									}
-									stores.store_2.accumulatedAdPointCount += 1;
-									stores.store_2.preAccumulatedAdPointCount = stores.store_2.accumulatedAdPointCount;
-									stores.store_2.lastAccumulatedAdPointCount = parseInt(getlv2AccumulatedPoints);
-									stores.store_2.totalRankPoints += 1;
-									return;
-								}
-							}  //** END OF STORE_2 >> ACCUMULATED-POINT BTN **\\
-						} //** END RANK_LV2 >> IF STATEMENTS **\\
-						//** END OF IF STATEMENTS **\\
-					}
+		return time;
+	}
+	
+	function getInputBoxDiscountQtyStoreNumber() {
+		var storeNumber = $('#setStoreDiscountQty').val();
+		return Number(storeNumber);
+	}
+	
+	function getInputBoxQty() {
+		var qty;
+		qty = $('#quantity').val();
+		return Number(qty);
+	}
+	
+	function getInputBoxDiscountPercent() {
+		var discount; 
+		discount = $('#discountPercent').val();
+		return Number(parseFloat(discount/100).toFixed(4));
+	}
+	
+	//=***************************************************************************************************************\\
+	//=************  GET AND SET STORE VALUES FROM STORE OBJECT  *****************************************************\\
+	
+	//== ID-A1 ==\\
+	//== GETS THE SET RANK LEVEL OF STORE & RETURNS THE RANK LEVEL
+	function getCurrentRankLevel(storeNum) {
+		var rankLevel, storesObject;
+		
+		storesObject = getStoresObj();
+		rankLevel = storesObject[storeNum].rankLv;
+		return rankLevel;
+		
+	}
+	
+	//== ID-A2 ==\\
+	//== GETS THE RANKS LEVELS TOTAL TIME SEGMENTS  
+	function getRankLevelTimeSegment(rankLvl) {
+		var rankObject, mParamObject, aIndex, rLevelTimeSegment ;
+		
+		rankObject = getSetRankObj();
+		mParamObject= getMParamObj();
+		aIndex = rankLvl - 1;
+		rLevelTimeSegment = rankObject[aIndex].mTimeSegments(); //== RETURNS 3360 || TOTAL 3 MINUTES SEGMENTS
+		
+		return Number(rLevelTimeSegment);
+		
+	}
+	
+	//== ID-A3 ==\\
+	//== GETS THE STORES CURRENT TIME SEGMENT
+	function getStoresCurrentTimeSegment(storeNum) {
+		var storeObject, mParamObject, aIndex, rankLevel, rLevelTimeSegment, timeNow, endStoreRankPeriod, timeDifference, calcCurrentTimeSegment, storeCurrentTimeSegment;
+		
+		storeObject = getStoresObj();
+		mParamObject = getMParamObj();
+		aIndex = storeNum - 1;
+		rankLevel = getCurrentRankLevel(storeNum); //== RETURNS STORES RANK LEVEL 
+		rLevelTimeSegment = getRankLevelTimeSegment(rankLevel); //== RETURNS 3360 || TOTAL 3 MIN SEGMENTS
+		timeNow = new Date().getTime() / 1000/ 60 ; //== RETURNS 24,402,516 
+		endStoreRankPeriod = ((storeObject[aIndex].rankTimePeriod /1000 / 60) + ( rLevelTimeSegment * mParamObject[aIndex].rankMOccurences ));
+		//**********************  UPCONVERT ABOVE RLEVELTIMESEGMENT BY RANK-M-OCCURENCES; RETURNS TO 1 MINUTE SEGMENTS  **********************************\\
+		
+		timeDifference = Number(((endStoreRankPeriod - timeNow) / mParamObject[aIndex].rankMOccurences).toFixed(2)); 
+		//           ||***************** RANK STOP TIME IS DETERMINED BY SET PARAMETERS ************************************||
+		calcCurrentTimeSegment = (rLevelTimeSegment);
+		storeCurrentTimeSegment = ((calcCurrentTimeSegment - timeDifference) );
+		
+//		console.log([ endStoreRankPeriod, timeNow, Number(timeDifference.toFixed(2)), Number(calcCurrentTimeSegment.toFixed(2)), Number(storeCurrentTimeSegment.toFixed(2)) ]);
+		return Number(storeCurrentTimeSegment.toFixed(2));
+	}
+	
+	//=***************************************************************************************************************\\
+	//=************  GET OBJECT KEY:VALUE PAIRS AND RETURNING AN INDEXED ARRAY ***************************************\\
+	
+	//== ID-A4 ==\\
+	//== GETS & RETURNS MEASUREMENT OBJECT [ KEY:VALUE ]
+	function getMTableAdverObj() {
+		var mTableAdverObj = [];
+		
+		for ( var p1 in setMTableAdver) {
+			var pass1 = setMTableAdver[p1]
+			for ( var p2 in pass1 ) {
+				mTableAdverObj.push(pass1[p2]);
+			}
+//			console.log(mTableAdverObj);
+			return mTableAdverObj;
+		} 
+	}
+	
+	//== GETS & RETURNS MREASUREMENT OBJECT KEY
+	function getMTableAdverProp() {
+		var mTableAdverProp = [];
+		
+		for ( var p1 in setMTableAdver) {
+			var pass1 = setMTableAdver[p1];
+			for ( var p2 in pass1 ) {
+				var pass2 = pass1[p2];
+//				mTableAdverProp.push(p2);
+				for ( var p3 in pass2 ) {
+					var pass3 = pass2[p3];
+					mTableAdverProp.push(p3);
+//					console.log(p3);
 				}
+			}
+			return mTableAdverProp;
+		}
+	}
+	
+	//=***************************************************************************************************************\\
+	//=************  SETS INPUT VALUES AND RETURNS A VALUE  **********************************************************\\
+	
+	//== PRIMARY FUNCTION GETS VALUES FROM INPUT-BOX == HOW THE STORE IS IDENTIFIED
+	//== SETS THE MEASUREMENT VALUE; RETURNS THE TOTAL ACCUMULATED RANK POINTS 
+	function setAdvertiserMParamValues() {
+		var store, storeNumber, rankLevel, measurement, increaseDecrease, aIndex, minThresholdValue, currentMeasurementCount, currentTimeSegment ;
+		
+		store = getStoresObj();
+		storeNumber = getInputBoxSelectedStore();
+		rankLevel = getInputBoxSelectedRankLevel();
+		measurement =	getInputBoxSelectedMeasurementParam();
+		increaseDecrease = getInputBoxMeasurementIncreaseOrDecreaseAmount();
+		aIndex = (storeNumber-1);
+		currentTimeSegment = getStoresCurrentTimeSegment(storeNumber);
+		
+		store[aIndex].rankLv = rankLevel;
+		
+		if ( measurement === 'clicks') {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].clicksCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preClicksCount && parseInt(minThresholdValue) === store[aIndex].lastClickCountMin && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].clicksCount += increaseDecrease;
+				store[aIndex].clicksCount = store[aIndex].clicksCount;
+				store[aIndex].lastClickCountMin = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'views' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].viewsCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preViewsCount && parseInt(minThresholdValue) === store[aIndex].lastViewsCountMin && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].viewsCount += increaseDecrease;
+				store[aIndex].viewsCount = store[aIndex].viewsCount;
+				store[aIndex].lastViewsCountMin = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'reviews' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].reviewsCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preReviewsCount && parseInt(minThresholdValue) === store[aIndex].lastReviewsCount && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].reviewsCount += increaseDecrease;
+				store[aIndex].reviewsCount = store[aIndex].reviewsCount;
+				store[aIndex].lastReviewsCount = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'saves' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].savedAdOccurencesCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preSavedAdOccurencesCount && parseInt(minThresholdValue) === store[aIndex].lastSavedAdOccurencesCount && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].savedAdOccurencesCount += increaseDecrease;
+				store[aIndex].savedAdOccurencesCount = store[aIndex].savedAdOccurencesCount;
+				store[aIndex].lastSavedAdOccurencesCount = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'purchases' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].purchaseOccurencesCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].prePurchaseOccurencesCount && parseInt(minThresholdValue) === store[aIndex].lastPurchaseOccurencesCount && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].purchaseOccurencesCount += increaseDecrease;
+				store[aIndex].purchaseOccurencesCount = store[aIndex].purchaseOccurencesCount;
+				store[aIndex].lastPurchaseOccurencesCount = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'compounded discount' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].compoundDiscountOfferPercentCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preCompoundDiscountOfferPercentCount && parseInt(minThresholdValue) === store[aIndex].lastCompoundDiscountOfferPercentCount && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].compoundDiscountOfferPercentCount += increaseDecrease;
+				store[aIndex].compoundDiscountOfferPercentCount = store[aIndex].compoundDiscountOfferPercentCount;
+				store[aIndex].lastCompoundDiscountOfferPercentCount = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		} 
+		else if ( measurement === 'accumulated points' ) {
+			minThresholdValue = setRankMeasurementThresholdMinimumForCurrentTimeSegment( storeNumber, aIndex, measurement, currentTimeSegment );
+			currentMeasurementCount = store[aIndex].accumulatedAdPointCount;
+			if ( currentMeasurementCount >= minThresholdValue ) {
+				if ( currentMeasurementCount === store[aIndex].preAccumulatedAdPointCount && parseInt(minThresholdValue) === store[aIndex].lastAccumulatedAdPointCount && parseInt(currentTimeSegment) === parseInt(store[aIndex].preRankMeasurementTimeSegment)) {
+					return;
+				}
+				store[aIndex].preRankMeasurementTimeSegment = currentTimeSegment;
+				store[aIndex].accumulatedAdPointCount += increaseDecrease;
+				store[aIndex].accumulatedAdPointCount = store[aIndex].accumulatedAdPointCount;
+				store[aIndex].lastAccumulatedAdPointCount = parseInt(minThresholdValue);
+				store[aIndex].totalRankPoints += increaseDecrease;
+			}
+			return store[aIndex].totalRankPoints;
+		}
+		
+	}
+	
+	//== SETS THE TIME FOR THE SELECTED PARAM; RETURNS THE TIME IN NUMBER FORMAT
+	function setAdvertiserTimeMeasureParamValues() {
+		var timePropToUpdate, time, storeNumber, storeObject, aIndex;
+		
+		storeNumber = getInputBoxTimePeriodStoreNumber();
+		timePropToUpdate = getInputBoxSelectionForTimePeriod();
+		time = getInputBoxTimePeriod();
+		storeObject = getStoresObj();
+		aIndex = (storeNumber-1);
+		
+		if (timePropToUpdate === ('Set Rank Period Start Date').toLowerCase() )   {
+			storeObject[storeNumber].rankTimePeriod = time;
+			return storeObject[storeNumber].rankTimePeriod;
+		}
+		else if (timePropToUpdate === ('Set Offer Create Date').toLowerCase() ) {
+			storeObject[storeNumber].adCreateTime = time;
+			return storeObject[storeNumber].adCreateTime;
+		}
+		else if (timePropToUpdate === ('Set Offer End Date').toLowerCase() ) {
+			storeObject[storeNumber].adEndTime = time;
+			return storeObject[storeNumber].adEndTime;
+		}	
+		
+	}
+	
+	//== SETS THE AD OFFER QTY & DISCOUNT PERCENT
+	function setAdvertiserDiscountAndQty() {
+		var activeDiscount, activeQty, storeNumber, storeObject, index;
+		
+		storeNumber = getInputBoxDiscountQtyStoreNumber();
+		activeQty = getInputBoxQty();
+		activeDiscount = getInputBoxDiscountPercent();
+		storeObject = getStoresObj();
+		index = (storeNumber-1)
+		
+		if (storeNumber) {
+			storeObject[index].discount = activeDiscount;
+			storeObject[index].adOffers = activeQty;
+			return storeObject[index].discount;
+		}
+		
+	}
+	
+	//== SETS THE ACTIVE RANK MEASUREMENT POINT THRESHOLD MINIMUMS
+	//== { REQUIRES ( AINDEX - STORE # ) & MEASUREMENT TYPE }
+	function setRankMeasurementThresholdMinimumForCurrentTimeSegment(storeNumber, aIndex, measurementType, currentTimeSegment) {
+		var mTableObject, mTableProp, mTableMinThresholdValue;
+		
+		mTableObject = getMTableAdverObj();
+		mTableProp = getMTableAdverProp();
+		
+		for ( var p1 = 0; p1 < mTableProp.length; p1++ ) {
+			var keyVal = mTableProp[p1];
+			if ( keyVal === measurementType ) {
+				mTableMinThresholdValue = mTableObject[aIndex][keyVal] * currentTimeSegment;
+				return mTableMinThresholdValue;
 			}
 		}
 		
-	//== ID-17 ==\\
+	}
+	
+	
+	//===================== TESTING FUNCTIONS TO GET VALUES ==================================\\
+	//========================================================================================\\
+	
+	$('.submitMParams').on('click', function() {
+		var returnTotalCurrentRankPoint = setAdvertiserMParamValues();
+		console.log(returnTotalCurrentRankPoint); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
+	
+	$('.submitSetDate').on('click', function() {
+		var time = setAdvertiserTimeMeasureParamValues();
+		console.log(time);
+	});
+	
+	$('.submitOfferDetails').on('click', function() {
+		
+		var discount = setAdvertiserDiscountAndQty();
+		console.log(discount);
+	});
+	
+	
+	//=***************************************************************** END BLOCK OF IMPROVED FUNCTIONS *****************************************************\\
+	//=*******************************************************************************************************************************************************\\
+	
+	
+	//========================================================================================\\
+	//========================================================================================\\
+	
+	//== ID-18 ==\\    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------------------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
+//  $('.js-measurementBtn').on('click', function() {
+//  $('.submitMParams').on('click', function() {
+//		var actType = $(this).attr('id');
+////		var activeMeasurement = getInputBoxSelectedMeasurementParam();
+////		var activeStoreNumber = getInputBoxSelectedStore();
+////		var activeRankLevel = getInputBoxSelectedRankLevel();
+////		var activeIncreaseDecrease = getInputBoxMeasurementIncreaseOrDecreaseAmount();
+//		
+//		var storesObject = getStoresObj();
+//		var mParamObject = getMParamObj();
+//		var setRankObject = getSetRankObj();
+//		console.log(activeMeasurement);
+//		console.log(activeStoreNumber);
+//		console.log(activeRankLevel);
+//		console.log(activeIncreaseDecrease);
+	
+		
+//		function calculateStoreValues(cs, trp, rtp, rlv, cc, crtp, rhr, segr, aseg, cmin, vc, rc, sc, pc, dc, apc, addOn ) {  <<<<<<<<<<<<<--------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
+//			//  ============================ LEVEL 1 ================  \\
+//			var getlv1Click = (setMTableAdver.lv1.shopperActivity.clicks * aseg).toFixed(4);
+//			var getlv1Views = (setMTableAdver.lv1.shopperActivity.views  * aseg).toFixed(4);
+//			var getlv1Reviews = (setMTableAdver.lv1.shopperActivity.reviews  * aseg).toFixed(4);
+//			var getlv1Saves = (setMTableAdver.lv1.advertiserPerformance.savedAdOccurences * aseg).toFixed(4);
+//			var getlv1Purchases = (setMTableAdver.lv1.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);;
+//			var getlv1CompoundPercents = (setMTableAdver.lv1.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
+//			var getlv1AccumulatedPoints = (setMTableAdver.lv1.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
+//			var getlv1 = 1;
+//			//  ============================ LEVEL 2 ================  \\
+//			var getlv2Click = (setMTableAdver.lv2.shopperActivity.clicks * aseg).toFixed(4);
+//			var getlv2Views = (setMTableAdver.lv2.shopperActivity.views  * aseg).toFixed(4);
+//			var getlv2Reviews = (setMTableAdver.lv2.shopperActivity.reviews  * aseg).toFixed(4);
+//			var getlv2Saves = (setMTableAdver.lv2.advertiserPerformance.savedAdOccurences  * aseg).toFixed(4);
+//			var getlv2Purchases = (setMTableAdver.lv2.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);
+//			var getlv2CompoundPercents = (setMTableAdver.lv2.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
+//			var getlv2AccumulatedPoints = (setMTableAdver.lv2.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
+//			
+//			for ( var k1 in setMTableAdver ) {
+//				var cMProp = setMTableAdver[k1];
+//				for ( var k2 in cMProp ) {
+//					var c2MProp = cMProp[k2];
+//					for ( var k3 in c2MProp ) {
+//						//** BEGIN OF RANK LVL1 IF STATEMENTS **\\
+//						if ( rlv == 1 ) { 
+//							if (cs == 'store_1' && actType == 'click-btn') {
+////								console.log(getlv1Click + ' == ' + cc);
+//								if ( cc >= getlv1Click ) {
+//									console.log(cc + ' > ' + parseInt(getlv1Click) + ' == last Count > ' + stores.store_1.lastClickCountMin + ' === preClicks ' + stores.store_1.preClicksCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( cc == stores.store_1.preClicksCount && parseInt(getlv1Click) == stores.store_1.lastClickCountMin ) {
+//										console.log(stores.store_1.lastClickCountMin + ' === lastCountMin');
+//										return;
+//									}
+//									stores.store_1.clicksCount += 1;
+//									stores.store_1.preClicksCount = stores.store_1.clicksCount;
+//									stores.store_1.lastClickCountMin = parseInt(getlv1Click);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> CLICK-BTN **\\
+//							if (cs == 'store_1' && actType == 'view-btn') {
+//								if ( vc >= getlv1Views ) {
+//									console.log(vc + ' > ' + parseInt(getlv1Views) + ' == last Count > ' + stores.store_1.lastViewsCountMin + ' === pre ' + stores.store_1.preViewsCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( vc == stores.store_1.preViewsCount && parseInt(getlv1Views) == stores.store_1.lastViewsCountMin ) {
+//										return;
+//									}
+//									stores.store_1.viewsCount += 1;
+//									stores.store_1.preViewsCount = stores.store_1.viewsCount;
+//									stores.store_1.lastViewsCountMin = parseInt(getlv1Views);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> VIEW-BTN **\\
+//							if (cs == 'store_1' && actType == 'review-btn') {
+//								if ( rc >= getlv1Reviews ) {
+//									console.log(rc + ' > ' + parseInt(getlv1Reviews) + ' == last Count > ' + stores.store_1.lastReviewsCount + ' === pre ' + stores.store_1.preReviewsCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( rc == stores.store_1.preReviewsCount && parseInt(getlv1Reviews) == stores.store_1.lastReviewsCount ) {
+//										return;
+//									}
+//									stores.store_1.reviewsCount += 1;
+//									stores.store_1.preReviewsCount = stores.store_1.reviewsCount;
+//									stores.store_1.lastReviewsCount = parseInt(getlv1Reviews);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> REVIEW-BTN **\\
+//							if (cs == 'store_1' && actType == 'saved-occurences-btn') {
+//								if ( sc >= getlv1Saves ) {
+//									console.log(sc + ' > ' + parseInt(getlv1Saves) + ' == last Count > ' + stores.store_1.lastSavedAdOccurencesCount + ' === pre ' + stores.store_1.preSavedAdOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( sc == stores.store_1.preSavedAdOccurencesCount && parseInt(getlv1Saves) == stores.store_1.lastSavedAdOccurencesCount ) {
+//										return;
+//									}
+//									stores.store_1.savedAdOccurencesCount += 1;
+//									stores.store_1.preSavedAdOccurencesCount = stores.store_1.savedAdOccurencesCount;
+//									stores.store_1.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> SAVED-OCCURENCES-BTN **\\
+//							if (cs == 'store_1' && actType == 'purchase-occurences-btn') {
+//								if ( pc >= getlv1Purchases ) {
+//									if ( pc == stores.store_1.prePurchaseOccurencesCount && parseInt(getlv1Purchases) == stores.store_1.lastPurchaseOccurencesCount ) {
+//										console.log(pc + ' > ' + parseInt(getlv1Purchases) + ' == last Count > ' + stores.store_1.lastPurchaseOccurencesCount + ' === pre ' + stores.store_1.prePurchaseOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
+//										return;
+//									}
+//									stores.store_1.purchaseOccurencesCount += 1;
+//									stores.store_1.prePurchaseOccurencesCount = stores.store_1.purchaseOccurencesCount;
+//									stores.store_1.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> PURCHASE-OCCURENCES-BTN **\\
+//							if (cs == 'store_1' && actType == 'compound-discount-btn') {
+////								console.log(sc + ' ==> ' + getlv1CompoundPercents );
+//								if ( dc >= getlv1CompoundPercents ) {
+//									console.log(dc + ' > ' + parseInt(getlv1CompoundPercents) + ' == last Count > ' + stores.store_1.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_1.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( dc == stores.store_1.preCompoundDiscountOfferPercentCount && parseInt(getlv1CompoundPercents) == stores.store_1.lastCompoundDiscountOfferPercentCount ) {
+//										return;
+//									}
+//									stores.store_1.compoundDiscountOfferPercentCount += 1;
+//									stores.store_1.preCompoundDiscountOfferPercentCount = stores.store_1.compoundDiscountOfferPercentCount;
+//									stores.store_1.lastCompoundDiscountOfferPercentCount = parseInt(getlv1CompoundPercents);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> COMPOUND-DISCOUNT BTN **\\
+//							if (cs == 'store_1' && actType == 'accumulated-point-btn') {
+////								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
+//								if ( apc >= getlv1AccumulatedPoints ) {
+//									
+//									console.log(apc + ' > ' + parseInt(getlv1AccumulatedPoints) + ' == last Count > ' + stores.store_1.lastAccumulatedAdPointCount + ' === pre ' + stores.store_1.preAccumulatedAdPointCount + ' === ' + stores.store_1.totalRankPoints ); 
+//									if ( apc == stores.store_1.preAccumulatedAdPointCount && parseInt(getlv1AccumulatedPoints) == stores.store_1.lastAccumulatedAdPointCount ) {
+//										
+//										console.log(stores.store_1.lastAccumulatedAdPointCount + ' === lastCountMin');
+//										return;
+//									}
+//									stores.store_1.accumulatedAdPointCount += 1;
+//									stores.store_1.preAccumulatedAdPointCount = stores.store_1.accumulatedAdPointCount;
+//									stores.store_1.lastAccumulatedAdPointCount = parseInt(getlv1AccumulatedPoints);
+//									stores.store_1.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_1 >> ACCUMULATED-POINT BTN **\\
+//						} //** END RANK_LV1 >> IF STATEMENTS **\\
+//						//** BEGIN OF RANK-LVL2 IF STATEMENTS **\\
+//						if ( rlv == 2 ) {
+//							if (cs == 'store_2' && actType == 'click-btn') {
+////								console.log(cc + ' == ' + getlv2Click);
+//								if ( cc >= getlv2Click ) {
+//									console.log(cc + ' > ' + parseInt(getlv2Click) + ' == last Count > ' + stores.store_2.lastClickCountMin + ' === preClicks ' + stores.store_2.preClicksCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( cc == stores.store_2.preClicksCount && parseInt(getlv2Click) == stores.store_2.lastClickCountMin ) {
+//										console.log(stores.store_2.lastClickCountMin + ' === lastCountMin');
+//										return;
+//									}
+//									stores.store_2.clicksCount += 1;
+//									stores.store_2.preClicksCount = stores.store_2.clicksCount;
+//									stores.store_2.lastClickCountMin = parseInt(getlv2Click);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> CLICK-BTN **\\
+//							if (cs == 'store_2' && actType == 'view-btn') {
+////								console.log(cc + ' == ' + getlv2Views + ' == in rLvl2');
+//								if ( vc >= getlv2Views ) {
+//									console.log(vc + ' > ' + parseInt(getlv2Views) + ' == last Count > ' + stores.store_2.lastViewsCountMin + ' === pre ' + stores.store_2.preViewsCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( vc == stores.store_2.preViewsCount && parseInt(getlv2Views) == stores.store_2.lastViewsCountMin ) {
+//										return;
+//									}
+//									stores.store_2.viewsCount += 1;
+//									stores.store_2.preViewsCount = stores.store_2.viewsCount;
+//									stores.store_2.lastViewsCountMin = parseInt(getlv2Views);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> VIEW-BTN **\\
+//							if (cs == 'store_2' && actType == 'review-btn') {
+//								if ( rc >= getlv2Reviews ) {
+//									console.log(rc + ' > ' + parseInt(getlv2Reviews) + ' == last Count > ' + stores.store_2.lastReviewsCount + ' === pre ' + stores.store_2.preReviewsCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( rc == stores.store_2.preReviewsCount && parseInt(getlv2Reviews) == stores.store_2.lastReviewsCount ) {
+//										return;
+//									}
+//									stores.store_2.reviewsCount += 1;
+//									stores.store_2.preReviewsCount = stores.store_2.reviewsCount;
+//									stores.store_2.lastReviewsCount = parseInt(getlv2Reviews);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> REVIEW-BTN **\\
+//							if (cs == 'store_2' && actType == 'saved-occurences-btn') {
+//								if ( sc >= getlv2Saves ) {
+//									console.log(sc + ' > ' + parseInt(getlv2Saves) + ' == last Count > ' + stores.store_2.lastSavedAdOccurencesCount + ' === pre ' + stores.store_2.preSavedAdOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( sc == stores.store_2.preSavedAdOccurencesCount && parseInt(getlv2Saves) == stores.store_2.lastSavedAdOccurencesCount ) {
+//										return;
+//									}
+//									stores.store_2.savedAdOccurencesCount += 1;
+//									stores.store_2.preSavedAdOccurencesCount = stores.store_2.savedAdOccurencesCount;
+//									stores.store_2.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> SAVED-OCCURENCES-BTN **\\
+//							if (cs == 'store_2' && actType == 'purchase-occurences-btn') {
+//								if ( pc >= getlv2Purchases ) {
+//									if ( pc == stores.store_2.prePurchaseOccurencesCount && parseInt(getlv2Purchases) == stores.store_2.lastPurchaseOccurencesCount ) {
+//										console.log(pc + ' > ' + parseInt(getlv2Purchases) + ' == last Count > ' + stores.store_2.lastPurchaseOccurencesCount + ' === pre ' + stores.store_2.prePurchaseOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
+//										return;
+//									}
+//									stores.store_2.purchaseOccurencesCount += 1;
+//									stores.store_2.prePurchaseOccurencesCount = stores.store_2.purchaseOccurencesCount;
+//									stores.store_2.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> PURCHASE-OCCURENCES-BTN **\\
+//							if (cs == 'store_2' && actType == 'compound-discount-btn') {
+//								if ( dc >= getlv2CompoundPercents ) {
+//									console.log(dc + ' > ' + parseInt(getlv2CompoundPercents) + ' == last Count > ' + stores.store_2.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_2.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( dc == stores.store_2.preCompoundDiscountOfferPercentCount && parseInt(getlv2CompoundPercents) == stores.store_2.lastCompoundDiscountOfferPercentCount ) {
+//										return;
+//									}
+//									stores.store_2.compoundDiscountOfferPercentCount += 1;
+//									stores.store_2.preCompoundDiscountOfferPercentCount = stores.store_2.compoundDiscountOfferPercentCount;
+//									stores.store_2.lastCompoundDiscountOfferPercentCount = parseInt(getlv2CompoundPercents);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> COMPOUND-DISCOUNT BTN **\\
+//							if (cs == 'store_2' && actType == 'accumulated-point-btn') {
+//								if ( apc >= getlv2AccumulatedPoints ) {
+//									
+//									console.log(apc + ' > ' + parseInt(getlv2AccumulatedPoints) + ' == last Count > ' + stores.store_2.lastAccumulatedAdPointCount + ' === pre ' + stores.store_2.preAccumulatedAdPointCount + ' === ' + stores.store_2.totalRankPoints ); 
+//									if ( apc == stores.store_2.preAccumulatedAdPointCount && parseInt(getlv2AccumulatedPoints) == stores.store_2.lastAccumulatedAdPointCount ) {
+//										
+//										console.log(stores.store_2.lastAccumulatedAdPointCount + ' === lastCountMin');
+//										return;
+//									}
+//									stores.store_2.accumulatedAdPointCount += 1;
+//									stores.store_2.preAccumulatedAdPointCount = stores.store_2.accumulatedAdPointCount;
+//									stores.store_2.lastAccumulatedAdPointCount = parseInt(getlv2AccumulatedPoints);
+//									stores.store_2.totalRankPoints += 1;
+//									return;
+//								}
+//							}  //** END OF STORE_2 >> ACCUMULATED-POINT BTN **\\
+//						} //** END RANK_LV2 >> IF STATEMENTS **\\
+//						//** END OF IF STATEMENTS **\\
+//					}
+//				}
+//			}
+//		}
+		
+	//== ID-17 ==\\   <<<<<<<<<<<<<<<<<<<<<<<<<<<<------------------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
 		
 		// (1). NEED TO KNOW STORE RANK LEVEL FIRST
 		// (2). NEED TO KNOW THE STORES NUMBER
-		function calculateObjectValues() {
-			
-			for (var i in stores ) {
-				var cStore = i;
-				// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
-				var tStoresRankPoints = stores[i].totalRankPoints;
-				// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
-				var tStoresRankTimePeriod = stores[i].rankTimePeriod.getTime();
-				// (3). GET RANK LEVEL OF ADVERTISER (STORE)
-				var getStoresRankLv = stores[i].rankLv;	
-				// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
-				var getStoresClickCount = stores[i].clicksCount;
-				var getStoresViewCount = stores[i].viewsCount;
-				var getStoresReviewsCount = stores[i].reviewsCount;
-				var getStoresSavedCount = stores[i].savedAdOccurencesCount;
-				var getStoresPurchaseCount = stores[i].purchaseOccurencesCount;
-				var getStoresCompoundCount = stores[i].compoundDiscountOfferPercentCount;
-				var getStoresAccumulatedPointCount = stores[i].accumulatedAdPointCount;
-				
-				// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
-				// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
-				var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
-				
-				if ( getStoresRankLv == 1 ) {
-					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
-					var setRankMSegments = setRank.lv1.mGradePoint();
-					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
-					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
-				}
-				if ( getStoresRankLv == 2 ) {
-					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
-					var setRankMSegments = setRank.lv2.mGradePoint();
-					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
-					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv2.rankMTime;
-				}
-				
-				// (8). GET THE TOTAL TIME UP TO NOW IN DAYS
-				var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
-			
-				// (10). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
-				var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
-				// (11). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
-				var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
-				// (12). GET THE ACTIVE SEGMENT NOW
-				var getActiveSegment = setRankMSegments - currentSegmentsRemain;
-				// (13). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
-				var calcClickMin = parseFloat(getActiveSegment * 0.21).toFixed(4);
-			
-				calculateStoreValues(cStore, tStoresRankPoints, tStoresRankTimePeriod, getStoresRankLv, getStoresClickCount, convertTRankTimePeriodToNumber, currentNumberOfRankHoursRemain, currentSegmentsRemain, getActiveSegment, calcClickMin, getStoresViewCount, getStoresReviewsCount, getStoresSavedCount, getStoresPurchaseCount, getStoresCompoundCount, getStoresAccumulatedPointCount);
-			}
-			
-		}
+//		function calculateObjectValues() {
+//			
+//			for (var i in stores ) {
+//				
+//				//******************* CAN SET THROUGH FUNCTIONS FUNCTIONS  **************************\\
+////				var cStore = i;
+//				// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
+////				var tStoresRankPoints = stores[i].totalRankPoints;
+//				// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
+////				var tStoresRankTimePeriod = stores[i].rankTimePeriod.getTime();
+//				// (3). GET RANK LEVEL OF ADVERTISER (STORE)
+////				var getStoresRankLv = stores[i].rankLv;	
+//				// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
+////				var getStoresClickCount = stores[i].clicksCount;
+////				var getStoresViewCount = stores[i].viewsCount;
+////				var getStoresReviewsCount = stores[i].reviewsCount;
+////				var getStoresSavedCount = stores[i].savedAdOccurencesCount;
+////				var getStoresPurchaseCount = stores[i].purchaseOccurencesCount;
+////				var getStoresCompoundCount = stores[i].compoundDiscountOfferPercentCount;
+////				var getStoresAccumulatedPointCount = stores[i].accumulatedAdPointCount;
+//				
+//				// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
+//				// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
+////				var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
+////				console.log(convertTRankTimePeriodToNumber);
+////				
+////				if ( getStoresRankLv == 1 ) {
+////					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
+////					var setRankMSegments = setRank.lv1.mTimeSegments();
+////					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
+////					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
+////				}
+////				if ( getStoresRankLv == 2 ) {
+////					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
+////					var setRankMSegments = setRank.lv2.mTimeSegments();
+////					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
+////					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv2.rankMTime;
+////				}
+////				
+////				// (8). GET THE TOTAL TIME UP TO NOW IN DAYS
+////				var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
+////			
+////				// (10). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
+////				var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
+////				// (11). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
+////				var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
+////				// (12). GET THE ACTIVE SEGMENT NOW
+////				var getActiveSegment = setRankMSegments - currentSegmentsRemain;
+//				// (13). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
+//				var calcClickMin = parseFloat(getActiveSegment * 0.21).toFixed(4);
+//			
+////				calculateStoreValues(cStore, tStoresRankPoints, tStoresRankTimePeriod, getStoresRankLv, getStoresClickCount, convertTRankTimePeriodToNumber, currentNumberOfRankHoursRemain, currentSegmentsRemain, getActiveSegment, calcClickMin, getStoresViewCount, getStoresReviewsCount, getStoresSavedCount, getStoresPurchaseCount, getStoresCompoundCount, getStoresAccumulatedPointCount);
+//			}
+//			
+//		}
 		
-		calculateObjectValues();
-		updateRankAdvertiser(); //== LOCATED @ FUNCTION ID-30 ==\\
+//		calculateObjectValues();
+		// updateRankAdvertiser(); //== LOCATED @ FUNCTION ID-30 ==\\
 		
 		
 		// (1). BREAK RANK START TIME DOWN INTO DURATION OF 3 MINUTE SEGMENTS OVER 15 DAYS 
@@ -1608,13 +2015,13 @@ $(document).ready(function() {
 		// === (3). NEED TO ASSOCIATE WITH TIMER >> THIS MEANS AN ACTIVE TIMER FOR EACH AD OFFER
 		
 		
-	});
+//	});
 	
 	//==========================================================================================\\
 	//   ||=== GENERAL USE FUNCTION TO GET VALUES FROM #{ SETMTABLEADVER } OBJECT ===||
   //==========================================================================================//
 	
-	//== ID-19 ==\\
+	//== ID-19 ==\\  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------------------------------------------------MARKED FOR POSSIBLE DELETION;
 	
 	var getObjectValuesFromSetTableAdver = {
 		
@@ -1721,7 +2128,7 @@ $(document).ready(function() {
 	//   ||=== GENERAL USE FUNCTION TO GET VALUES FROM #{ MPARAM } OBJECT ===||
   //==========================================================================================//
 	
-	//== ID-20 ==\\
+	//== ID-20 ==\\    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------------------------------------------------MARKED FOR POSSIBLE DELETION;
 	
 	var getObjectValuesFromMParam = {
 
@@ -1773,7 +2180,7 @@ $(document).ready(function() {
 	//        ?? ARRAY OF 12 STORES RETURNING OVER 4700 RECORDS ??
   //==========================================================================================//
 	
-	//== ID-21 ==\\
+	//== ID-21 ==\\   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------------------------------------------------MARKED FOR POSSIBLE DELETION;
 	
 	var getObjectValuesFromStores = {
 		//== (1). USE FUNCTION WITHIN OBJECT; 
@@ -1807,7 +2214,7 @@ $(document).ready(function() {
 	//  ||=== GENERAL FUNCTION >> GET VALUES FROM SETRANK OBJECT ===||
   //==========================================================================================//
 	
-	//== ID-22 ==\\
+	//== ID-22 ==\\   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---------------------------------------------------MARKED FOR POSSIBLE DELETION;
 	
   var getObjectValuesFromSetRank = {
 		
@@ -2138,7 +2545,7 @@ $(document).ready(function() {
 	//==========================================================================================\\
 	//  ||=== CHECK CURRENT POINT VALUE & UPDATE STORES CURRENT INNER RANK LEVEL  ===||
 	//  ||=== THIS IS FOR DETERMINING WHETHER THE ACCUMULATED POINTS AWARDS AN INNER RANK LEVEL INCREASE FOR ADVERTISER/STORE
-	//        & THIS IS NOT THE MEASUREMENT POINT INCREASE==!! THAT WAS DETERMINED WITHIN FUNCTION ID-17 & 18 ===||
+	//                                                           & THIS IS NOT THE MEASUREMENT POINT INCREASE==!! THAT WAS DETERMINED WITHIN FUNCTION ID-17 & 18 ===||
   //==========================================================================================//
 	
 	//== ID-30 ==\\
@@ -2167,7 +2574,7 @@ $(document).ready(function() {
 
 	
 	
-	//************************   START ADJUSTED BASE DISCOUNT RATE ALGORITHIM FEATURE   *********************************************\\
+	//************************   START ADJUSTED BASE DISCOUNT CONVERT RATE ALGORITHIM FEATURE   *********************************************\\
 	//*******************************************************************************************************************************\\
 	
 	//  ||=== START TABLE FOR GENERATING AD-POINT ADDITION TO BASE AD-POINT FIGURE OF ID-3 > ADVERTISER ===||
@@ -2179,8 +2586,8 @@ $(document).ready(function() {
   //==========================================================================================//
 	
 	//== ID-31 ==\\
-	
-	var objectForAdPointAddition = {
+	//## FOR ADJUSTED DCR 
+	var discountConvertRateMeasurementParamObject = {
 		
 		adPointAddition_Lv1: {
 			y_top: 0.000020,
@@ -2189,7 +2596,7 @@ $(document).ready(function() {
 			x1_topLeft: 0.0012,
 			x2_bottomLeft: 0.0009,
 			x2_bottomRight: 0.00020,
-			xMeasureSegments: setRank.lv1.mGradePoint(),
+			xMeasureSegments: setRank.lv1.mTimeSegments(),
 			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv1.rankMOccurences), //== relies on ID-27 & mParamObject
 			yPivotTop: 0.50, //== as a percentage of possible measurement segments
 			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
@@ -2207,7 +2614,7 @@ $(document).ready(function() {
 			x1_topLeft: 0.00027,
 			x2_bottomLeft: 0.00025,
 			x2_bottomRight: 0.000440,
-			xMeasureSegments: setRank.lv2.mGradePoint(),
+			xMeasureSegments: setRank.lv2.mTimeSegments(),
 			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv2.rankMOccurences), //== relies on ID-27 & mParamObject
 			yPivotTop: 0.50, //== as a percentage of possible measurement segments
 			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
@@ -2218,12 +2625,11 @@ $(document).ready(function() {
 		
 	}
 	
-//	var t12 = objectForAdPointAddition.adPointAddition_Lv1.mPointSegments;
+//	var t12 = discountConvertRateMeasurementParamObject.adPointAddition_Lv1.mPointSegments;
 //	console.log(t12);
 	
 	//==========================================================================================\\
 	//  ||=== GENERATE XY AD-POINT ADDITION TABLE VALUES USING VALUES FROM ID-31 ===||
-	//  ||===     REVERSE INDEXING TO ACCOMMONDATE COUNTDOWN X-TIMER AXIS        ===||
   //==========================================================================================//
 	
 	//== ID-32 ==\\ 
@@ -2248,7 +2654,7 @@ $(document).ready(function() {
 		
 		//== there should be four divisions/block of values
 		if ( lvl === 1 ) {
-			var addOnObject = objectForAdPointAddition.adPointAddition_Lv1;
+			var addOnObject = discountConvertRateMeasurementParamObject.adPointAddition_Lv1;
 			var y1_top = addOnObject.y_top;
 			var y1_bottom = addOnObject.y_bottom;
 			
@@ -2425,7 +2831,7 @@ $(document).ready(function() {
 		}
 		
 		if ( lvl === 2 ) {
-			var addOnObject = objectForAdPointAddition.adPointAddition_Lv2;
+			var addOnObject = discountConvertRateMeasurementParamObject.adPointAddition_Lv2;
 			var y1_top = addOnObject.y_top;
 			var y1_bottom = addOnObject.y_bottom;
 			
@@ -2783,7 +3189,7 @@ $(document).ready(function() {
 		//** USED WITHIN FUNCTION ID-45 **\\
 		//** { CALCULATES THE IDENTIFIED RANK PERIODS FULL DURATION IN MINUTES }	
 		function getRankPeriodDuration(mp, rankLvl) {
-			var rptDuration = (((mp[rankLvl].rankMTime) * 24 * 60 )); //== TOTAL RANK TIME PERIOD IN SEGMENTS
+			var rptDuration = (((mp[rankLvl-1].rankMTime) * 24 * 60 )); //== ( DAYS X HOURS X MINUTES ) >> TOTAL RANK TIME PERIOD IN MINUTES
 			return rptDuration;
 		}
 		
@@ -2793,17 +3199,21 @@ $(document).ready(function() {
 		function getXTimeMSegment(so, sr, mp, stNum) {
 			//********************  VERFIED VALUES THAT ARE CORRECT ***********************************\\
 			
-			var rtpStartMin = ((so[stNum-1].rankTimePeriod.getTime() )/1000/60); //== THIS IS THE START TIME / DATE
+			var rtpStartMin = ((so[stNum-1].rankTimePeriod )/1000/60); //== THIS IS THE START TIME / DATE
 			var timeNowToMin = ((new Date().getTime()/1000/60)); //== THIS IS THE CURRENT TIME / DATE
-			var rankTimeDuration = getRankPeriodDuration( mp, rankLvl ); //== GETS THE TOTAL MINUTE SEGMENTS OF THE RANK LEVEL & PERIOD
+			//		endStoreRankPeriod = ((storeObject[aIndex].rankTimePeriod /1000 / 60) + ( rLevelTimeSegment * mParamObject[aIndex].rankMOccurences ));
+			var rankTimeDuration = getRankPeriodDuration( mp, rankLvl ); //== GETS THE TOTAL MINUTES OF THE RANK LEVEL & PERIOD
+			var numOfMinSeg = rankTimeDuration / mp[rankLvl-1].rankMOccurences; //== GETS THE TOTAL NUMBER OF THREE MINUTE SEGMENTS
 			
 			//** MPARAM CANNOT USE INDEX VALUES PASSED IN *** { MUST USE RANK LEVEL AS THERE'S ONLY TWO LEVELS }  ** CAUSES ITERATIONS TO ERROR ONCE INDEX IS GREATER THAN 1
-			var numOfMinSeg = rankTimeDuration / mp[rankLvl].rankMOccurences; //== GETS THE TOTAL NUMBER OF THREE MINUTE SEGMENTS
-			var rankEndTime = (rtpStartMin + (mp[rankLvl].rankMTime * 24 * 60 )); //== THIS IS THE RANK START TIME AND NUMBER OF DAYS IN MINUTES IN THE FUTURE FOR END DATE
-			var rtpTimeLeft = Number((( rankEndTime - timeNowToMin ) ).toFixed(4)); //== THIS THE TIME REMAINING IN THE RANK PERIOD FROM THE CURRENT TIME
-			var curXMSegment = parseInt( rtpTimeLeft / mp[rankLvl].rankMOccurences); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
+			var rankEndTime = (rtpStartMin + rankTimeDuration ); //== ADDS THE RANK DURATION TO THE START TIME
 			
-//			console.log([ rankEndTime, rtpTimeLeft, curXMSegment ]);
+			var rtpTimeLeft = Number((( rankEndTime - timeNowToMin ) / mp[rankLvl-1].rankMOccurences ).toFixed(4)); //== THIS THE TIME REMAINING IN THE RANK PERIOD FROM THE CURRENT TIME
+			var calcCurrentTimeSegment = numOfMinSeg;
+//			var curXMSegment = parseInt( rtpTimeLeft / mp[rankLvl-1].rankMOccurences); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
+			var curXMSegment = parseInt( calcCurrentTimeSegment - rtpTimeLeft ); //== THIS IS THE NUMBER OF MINUTES REMAINING / MEASUREMENT TIME DURATION
+			
+			console.log([ rankEndTime, rtpTimeLeft, curXMSegment ]);
 			return curXMSegment;
 			//********************  VERFIED VALUES THAT ARE CORRECT ***********************************\\
 			
@@ -2811,14 +3221,13 @@ $(document).ready(function() {
 		
 		xTimeMSegActive = getXTimeMSegment(storesObj, setRankObj, mParamObj, storeNumber);
 		
-		
 		//== ID-61 ==\\
 		//** { RETURNS THE ADJUSTED BASE AD-POINT CONVERT RATE  }
 		function getAdjDRC(so, storeNum, actTimePt, adjTableVals, mp) {
 			
 			var activeAdPoint = so[storeNum-1].totalRankPoints; //== LOADS THE STORES ACCUMULATED RANK POINTS
 			var xSeg = actTimePt; //== THIS IS THE CURRENT TIME SEGMENT
-			var tMinSegments = parseInt(getRankPeriodDuration(mp, rankLvl) / mp[rankLvl].rankMOccurences);
+			var tMinSegments = parseInt(getRankPeriodDuration(mp, rankLvl) / mp[rankLvl-1].rankMOccurences);
 			var correctXSeg = tMinSegments - xSeg;
 //			console.log([xSeg, tMinSegments, correctXSeg]);
 			var drc = 0;
@@ -2846,7 +3255,7 @@ $(document).ready(function() {
 			for (var p1 = 0; p1 < storesObj.length ; p1++ ) {
 				if ( stNum === 1 ) {
 					storesObj[p1].adjDcr = activeAdjDRC;
-					console.log("run==1");
+//					console.log("run==1");
 					return storesObj[p1].adjDcr;
 				}
 				if ( stNum === 2 ) {
@@ -2901,7 +3310,7 @@ $(document).ready(function() {
 				}
 				if ( stNum === 12 ) {
 					storesObj[p1].adjDcr = activeAdjDRC;
-					console.log("run==12");
+//					console.log("run==12");
 					return storesObj[p1].adjDcr;
 				}
 			}
@@ -2916,7 +3325,6 @@ $(document).ready(function() {
 		
 //		return [ xyAddOnTable, activeMeasureTimeSegment, addOnPoints, stores.store_1.totalRankPoints, stores.store_1.baseAddOnPoints];
 //		console.log( [storesObj, rankLvl, activeAdjDRC, xTimeMSegmentActive, xyAdjDRCTable ] );
-		console.log("=== CHANGED DRC VALUES ");
 		return activeAdjDRC;
 		
 	}
@@ -3058,12 +3466,12 @@ $(document).ready(function() {
 	//************************************************************************************\\
 	
 	
-	//==============================================================\\
-	//   ||==   (8). GENERATE DCR XY TABLES      ==||
+	//==============================================================================================\\
+	//   ||==   (1). GENERATE DCR XY TABLES FOR RANK LEVEL OF INPUT    ==||
 	//   ||==   (rLvl) ACCEPTS RANK LEVEL; INTEGER    ==||
-	//==============================================================\\
+	//==============================================================================================\\
 	
-	$('.js-xyDrcTable').on('click', function() {
+	$('.js-generateDrcTable').on('click', function() {
 		var rLvl = $(this).attr('id');
 		rLvl= Number(rLvl);
 		
@@ -3072,35 +3480,37 @@ $(document).ready(function() {
 	});	
 	
 	
-	//==============================================================\\
+	//==============================================================================================\\
 	//   ||==   (9). UPDATE DCR VALUES OF EACH STORE OBJECT ==||
 	//   ||==   (count) ACCEPTS RANK LEVEL; INTEGER    ==||
-	//==============================================================\\
+	//==============================================================================================\\
 	
-	$('.js-updateDrc').on('click', function() {
+	$('.js-updateDcr').on('click', function() {
 		
 		var st = getStoresObj();
 		
 		for ( var i = 1; i < st.length; i++ ) {
 			updateAdjDCR(i);
 		}
-		
+		console.log('=== UPDATED STORE DCR ')
 	});	
 	
-	//==============================================================\\
-	//   ||== (10). UPDATE POINT VALUES OF AD OFFERS 1 - 12 ==||
-	//   ||== USES ADOCCURENCEFACTOR FUNCTION ==||
-	//==============================================================\\
+	//==============================================================================================\\
+	//   ||============ (10). UPDATE POINT VALUES OF AD OFFERS 1 - 12 ==============||
+	//   ||*****             USES ADOCCURENCEFACTOR FUNCTION                   *****||
+	
+	//   ||***** READ THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    IF RANK PERIOD TIME IS EXPIRED, LOOP WILL RETURN NaN     *****||
+	//==============================================================================================\\
 	
 	
 	$('.js-drc-PointBtn1').on('click', function() {
 		var n = $(this).attr('id');
 		nc = Number(n);
+		var t;
 		
 		var st = getStoresObj();
 		
 		for (var p1 = 1; p1 <= st.length; p1++ ) {
-			var t = 0;
 			// Getting point value below uses functions ID-11 & ID-10 >> Variable within gets value from function ID-10
 			var j = adOccuranceFactor([p1]);
 			if ( p1 == 1 ) {
@@ -3155,17 +3565,17 @@ $(document).ready(function() {
 		
 	});	
 	
-	//==============================================================\\
+  //==============================================================================================\\
 	//   ||== (11). COMPILE AD INFO  ==||
-	//==============================================================\\
+	//==============================================================================================\\
 	
 	$('.js-drc-PointBtn2').on('click', function() {
 		
 	});	
 	
-	//==============================================================\\
+	//==============================================================================================\\
 	//   ||== UPDATE POINT VALUES OF AD OFFERS 4 - 6 ==||
-	//==============================================================\\
+	//==============================================================================================\\
 	
 	
 	$('.js-compileAdBtn').on('click', function() {
