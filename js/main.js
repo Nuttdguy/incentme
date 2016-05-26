@@ -14,8 +14,9 @@ $(document).ready(function() {
 			discount: 0.1700,
 			
 			rankLv: 1,
-			adjDcr: 0,
 			baseAdConvertRate: 0, 
+			adjDcr: 0, //== ( adjDcr + baseAdConvertRabe ) = actualStoreConvertRate
+			activeDcr: 0,
 			
 			adOffers: 19,
 			nowTime: new Date(),
@@ -689,8 +690,6 @@ $(document).ready(function() {
 		
 	};
 	
-//	var a1 = setRank.lv1.mTimeSegments();
-//	console.log(a1); //== RETURNS 7,200 NUMBER OF MINUTES
 	
 	//=========================================================\\
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
@@ -768,20 +767,18 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
   //=========================================================\\
 	
-	//== ID-3 ==\\
-	var adPointMax;
-	var adPointMidPercentage;
-	var adBasePercentageDiscountAverage;
+	//== ID-4 ==\\
+	var adPointMax; //== CAN DELETE ALL OCCURRENCES
+	var adPointMidPercentage; // == CAN DELETE ALL OCCURRENCES
+	var adBasePercentageDiscountAverage; //== CAN DELETE ALL OCCURRNCES
 	var calculatedMidPoint;
 	//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5 
-	var adBaseDiscountConvertRate;
-	var calculatedAdPointMax;
+	
+	var adBaseDiscountConvertRate;  //== USED IN ID-11
+	
+
 	
 	function getAdPointValue() {
-		adPointMax = 1000;
-		adPointMidPercentage = 0.50;
-		adBasePercentageDiscountAverage = 0.20;
-		calculatedMidPoint = (adPointMidPercentage * adPointMax);
 		//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5  << THIS IS THE STARTING BASE OF 1%. ( I.E. EVERY 1% == 2.5 PTS )
 		adBaseDiscountConvertRate = (calculatedMidPoint/(adBasePercentageDiscountAverage*adPointMax));
 		calculatedAdPointMax = (adBaseDiscountConvertRate * 100); // 100 == 100%
@@ -791,16 +788,39 @@ $(document).ready(function() {
 	getAdPointValue();
 	
 	//=========================================================\\
-	//=== START GENERATE VALUES FOR AD POINT ALGORITHM ===//
+	//=== START GENERATE VALUES FOR AD POINT DISCOUNT CONVERSION ALGORITHM ===//
   //=========================================================\\
 	
-	//=========================================================\\
-	//=== START CODE FOR GENERATING x TABLE SPECTRUM ===//
-  //=========================================================\\
-		//=************************************************* NEW BLOCK OF IMPROVED AD-LEDGER TABLE FUNCTIONS *****************************************************\\
+	//=************************************************* NEW BLOCK OF IMPROVED AD-LEDGER TABLE FUNCTIONS *****************************************************\\
 	//=*******************************************************************************************************************************************************\\
-	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** START SECTION A ***********************************************************************\\
 	
+		
+	//== ID-4 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
+	var baseAdDiscountConvertParamObject = {
+		
+		set_1: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.50,
+			baseAdPointAvgDiscount: 0.20,
+			lastPeriodLedgerPercent: 0,
+		},
+		set_2: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.60,
+			baseAdPointAvgDiscount: 0.30,
+			lastPeriodLedgerPercent: 0,
+		},	
+		set_3: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.70,
+			baseAdPointAvgDiscount: 0.40,
+			lastPeriodLedgerPercent: 0,
+		},
+	}
+	
+	//== ID-5 ==\\
+	//****************************** THIS IS NOT BEING USED FOR 
 	var adLedgerDivviationParamObject = {
 		
 		adLedgerPivotPercent_group1: {
@@ -830,27 +850,114 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ==\\
-	function getAdLedgerDivviationObj() {
-		var adLedgerDivviationObj = [];
+	//== ID-6 ==\\
+	function getBaseAdDiscountConvertParamObject() {
+		var adLedgerBaseDiscountObj = [];
 		
-		for (var p1 in adLedgerDivviationParamObject ) {
-			var pass1 = adLedgerDivviationParamObject[p1];
-			adLedgerDivviationObj.push(pass1);
+		for (var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			adLedgerBaseDiscountObj.push(pass1);
 		}
 		
-		return adLedgerDivviationObj;
+		return adLedgerBaseDiscountObj;
 	}
 	
-	//== ==\\
-	function setStoreAdOfferCategory() {
-		var adOfferCategoryPivotValue = $('#setAdDivviationCategory').val();	
-		return Number((adOfferCategoryPivotValue/100).toFixed(4));
+	//****************************** INPUT BOX GET FUNCTIONS FOR RETRIEVING VALUES FROM INPUT BOXES ************************\\
+	//**********************************************************************************************************************\\
+	//== ID-7 ==\\
+	function getInputBoxAdLedgerStoreNumber() {
+		var storeNumber = $('#setStoreDiscountConvertRate').val();
+		return storeNumber;
 	}
 	
-	//== ID-4 ==\\
-	//** GENERATE X TABLE VALUES FOR AD LEDGER DIVVIATION
-	function xAxisAdLedgerDiscountPercentHeader() {
+	//== ID-8 ==\\	
+	function getInputBoxToChangeAdLedgerDivviationPercent() {
+		var inputBoxDivviationPercent, inputBoxConfigNumber, formatInputDP, baseAdDiscountConvertObj, dcrPivotPercent;
+		
+		inputBoxDivviationPercent = $('#setAdDivviationPercent').val();
+		inputBoxConfigNumber = $('#setConfigNumber').val();
+		formatInputDP = Number((inputBoxDivviationPercent/100).toFixed(4))
+		baseAdDiscountConvertObj = [];
+		dcrPivotPercent = 0;
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			baseAdDiscountConvertObj.push(baseAdDiscountConvertParamObject[p1])
+		}
+		
+		if ( formatInputDP <= baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
+			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - formatInputDP) );
+		} else if ( formatInputDP > baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
+			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount + (formatInputDP - baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount) );
+		}
+		
+		baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent = dcrPivotPercent;
+		
+		return dcrPivotPercent;
+	}
+	
+	//== ID-9 ==\\
+	function getInputBoxAdLedgerConfigNumber() {
+		var adLedgerConfigNumber = $('#setConfigNumber').val();
+		return adLedgerConfigNumber;
+	}
+	
+	//**************************************** SET FUNCTIONS FOR SETTING VALUES ********************************************\\
+	//**********************************************************************************************************************\\
+	
+	//== ID-10 ==\\
+	//== SETS GENERAL/BASE DISCOUNT CONVERT RATE FOR A DEFINED SET << STORE NUMBER IS NOT A REQURIED PARAMETER
+	function setGeneralBaseAdDiscountConvertRate() {
+		var whichConfigSet, baseDcrObj, baseDCR, adPointMax, adPointPivot, adAvgDiscount, lastPeriodAdLedgerPercent;
+		
+		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== GETS THE CONFIG SETTINGS FROM baseAdDiscountConvertParamObject OBJECT
+		baseDcrObj = [];
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			baseDcrObj.push(pass1);
+		}
+		
+		if (whichConfigSet || whichConfigSet === 0 ) {
+			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
+			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
+			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
+			baseDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
+		}
+		
+		return baseDCR;		
+		
+	}
+	
+	//== ID-11 ==\\
+	//== SET STORE GENERAL/BASE DISCOUNT CONVERT RATE
+	function setAdvertiserBaseAdDiscountRate( ) {
+		var storeNumber, whichConfigSet, storeObj, aIndex, baseDcrObj, calculatedDCR, adPointMax, adPointPivot, adAvgDiscount;
+		
+		storeNumber = getInputBoxAdLedgerStoreNumber(); //== THIS RETURNS THE STORE NUMBER TO IDENTIFY WHICH STORE TO UPDATE THE BASEDCR
+		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== THIS RETURNS THE CONFIG SET TO USE ON BASEDCROBJ
+		storeObj = getStoresObj();
+		aIndex = storeNumber - 1;
+		baseDcrObj = [];
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			baseDcrObj.push(pass1);
+		}
+		
+		if (whichConfigSet || whichConfigSet === 0 ) {
+			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
+			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
+			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
+			calculatedDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
+		}
+		
+		storeObj[aIndex].baseAdConvertRate = calculatedDCR;
+		return storeObj[aIndex].baseAdConvertRate;	
+	}
+	
+	//== ID-12 ==\\
+	//** GENERATE & SET X-AXIS HEADER VALUES FOR AD LEDGER DIVVIATION
+	function setXAxisAdLedgerDiscountPercentHeader() {
 		var xAxisHeader, xAxisDiscountPercentMin, xAxisDiscountPercentMax, index;
 		
 		xAxisHeader = [];
@@ -865,9 +972,9 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-5 ==\\
-	//** GENERATE X TABLE VALUES FOR AD LEDGER DIVVIATION
-	function yAxisLedgerDiscountPercentDivviationRange() {
+	//== ID-13 ==\\
+	//** GENERATE & SET Y-AXIS VALUES FOR Y-AXIS MULTIPLIER USE
+	function setYAxisLedgerDiscountPercentDivviationRange() {
 		var yAxisSidebar, yAxisAdLedgerPercentMin, yAxisAdLedgerPercentMax, index;
 		
 		yAxisSidebar = [];
@@ -882,43 +989,177 @@ $(document).ready(function() {
 		return yAxisSidebar;
 	}
 	
-	//== ID-6 ==\\
-	
-	function yAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
-		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex;
+	//== ID-14 ==\\  ======================================================================================== 
+	//** GENERATE Y-AXIS MULTIPLIER FOR X-AXIS USE
+	function setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
+		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex, baseDCR, baseDCRconvert, yAxisBaseMultiplierSidebar, pivotMultiplierIndex, pivotMultiplier;
 		
-		yAxisPivotSidebar = [];
-		pivotPercent = setStoreAdOfferCategory();
-		pivotPercentIndex = Number(((pivotPercent/100) * yAxisDivviationSidebar.length).toFixed(4));
+		//****** COMPILE FIRST Y-AXIS SIDEBAR VALUES  ***************************************************************\\ 
+		yAxisPivotSidebar = []; //== STEP THREE
+		pivotPercent = getInputBoxToChangeAdLedgerDivviationPercent();  //== STEP ONE >> THIS RETURNS THE PIVOT POINT PERCENT DETERMINED BY THE AD-LEDGERS CURRENT VALUE  <<<<<<<<<<<<   COME BACK, THIS NEEDS TO BE DETEMINED AUTONOMOUSLY
+		pivotPercentIndex = Number(((pivotPercent/100) * yAxisDivviationSidebar.length).toFixed(4)); //==STEP TWO >> THE RETURN VALUE IS THE PIVOT INDEX FOR FIRST Y-AXIS
+		baseDCR = setGeneralBaseAdDiscountConvertRate(); //== STEP FOUR >> THE BASE DCR IS RETURNED USING CONFIG PARAMETERS
 		
 		for ( var p1 = 0; p1 < yAxisDivviationSidebar.length; p1++ ) {
 			if ( p1 < pivotPercentIndex ) {
 				yAxisPivotSidebar.unshift(Number(( 1 - parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
 			}
 			else {
-				yAxisPivotSidebar.push(Number(( 1 + parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
+				yAxisPivotSidebar.push(Number(( (1 - (pivotPercent/100)) + parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
 			}
 		}
 		
-		return yAxisPivotSidebar;
+		//========== COMPILE SECOND Y-AXIS SIDEBAR -- TABLE MULTIPLIER VALUES RETURNED FOR USE  ====================================================\\
+		//=== IF MULTIPLIER NEEDS TO BE INCREASED OR DECREASED AT A PIVOT POINT, ADD A MODIFIER VALUE TO A SECOND PIVOT POINT \\
+		//=== FINAL CHANGES ADD TO ADLEDGERPARAM OBJECT ===\\
+		yAxisBaseMultiplierSidebar = []; //== STEP FIVE
+		baseDCRconvert = baseDCR; //== STEP 6
+		pivotMultiplierIndex = (yAxisPivotSidebar.length * 0.40); //== STEP 7
+		pivotMultiplier = 0.25; //==STEP 8
+		
+		for (var p2 = 0; p2 < yAxisDivviationSidebar.length; p2++ ) {
+			if  (p2 < pivotPercentIndex ) {
+				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
+			} else if ( p2 > pivotPercentIndex && p2 < pivotMultiplierIndex ) {
+				yAxisBaseMultiplierSidebar.push(Number(((pivotMultiplier + yAxisPivotSidebar[p2]) * baseDCRconvert).toFixed(4)));
+			} else {
+				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
+			}
+		}
+		
+//		console.log([baseDCR, yAxisPivotSidebar, yAxisBaseMultiplierSidebar ]);
+		return yAxisBaseMultiplierSidebar;
+	} 
+	
+	//******************* FUNCTION FOR GENERATING AD-LEDGER DIVVIATION SIDEBAR MULTIPLER VALUES ********************************\\
+	//**************************************************************************************************************************\\
+	
+	//== ID-15 ==\\   //== THIS NEEDS TO SET THE GENERAL BASE AD POINT CONVERT FOR EVERY STORE
+	function generateYAxisAdLedgerDiviationSidebar() {
+		var xAxisHeader, yAxisDivviationSidebar, yAxisPivot, adLedgerDivviation;
+		
+//		xAxisHeader = setXAxisAdLedgerDiscountPercentHeader();  //== STEP ONE >> USES ID-12
+		yAxisDivviationSidebar = setYAxisLedgerDiscountPercentDivviationRange();  //== STEP ONE  >> USES ID-13
+		yAxisPivot = setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar);   //== STEP TWO  >> USES ID-14
+		
+		return yAxisPivot; //== RETURNS MULTIPLIER VALUES TO USE FOR ADJUSTING THE "GENERAL/GLOBAL" BASE AD-POINT VALUE
+		//=== THIS WILL BE SUBDIVIDED BY STORE CATEGORIES/SUB-SECTIONS { USING OBJECT ID-5 }
+		
+	}
+	
+
+	//****************************** GET VALUES THAT WILL BE USED BY AD-LEDGER  ************************************************\\
+	//**************************************************************************************************************************\\
+	
+	//== ID-16 ==\\	 GETS THE AVERAGE DISCOUNT PERCENT OF ALL OFFERS; UPDATE THE LASTPERIOD LEDGER VALUE AND RETURNS THE PERCENT
+	function getCombinedDiscountTotalofAllStoreAdOffers() {
+		var avgDiscount, dcrParamObj, totalActiveOffers, stores, adLedgerCurrentDcrRateForPeriod, inputBoxConfigNumber;
+
+		stores = getStoresObj();
+		dcrParamObj = getBaseAdDiscountConvertParamObject();
+		
+		avgDiscount = 0;
+		totalActiveOffers = 0;
+		adLedgerCurrentDcrRateForPeriod = Number(( avgDiscount / totalActiveOffers ).toFixed(4)); 
+		inputBoxConfigNumber = getInputBoxAdLedgerConfigNumber();
+		
+		for ( var p1 in stores ) {
+			var value1 = stores[p1].discount;
+			var value2 = stores[p1].adOffers;
+			avgDiscount = ( value1 * value2 );
+			totalActiveOffers = Number(stores[p1].adOffers);	
+		}
+		
+		dcrParamObj[inputBoxConfigNumber].lastPeriodLedgerPercent;
+		
+		return Number(( avgDiscount / totalActiveOffers ).toFixed(4));
 	} 
 	
 	
-	//=**************************************************   NEW CODE ABOVE    **************************************************************\\
-	//=**********************************************************************************************************************************************************\\
-	
-	
-	function generateAdLedgerDiviationTable() {
-		var xAxisHeader, yAxisSidebar, yAxisPivot, adLedgerDivviation;
+	//== ID-17 ==\\  GET DISCOUNT-CONVERT MULTIPLIER UTILIZING Y-AXIS AD-LEDGER DIVVIATION TABLE
+	function getDCRUtilizingAdLedgerTable() {
+		var stores, offerCombinedAvg, xHeader, ySidebar, dcrIndex, dcrMultiplier;
 		
-		xAxisHeader = xAxisAdLedgerDiscountPercentHeader();
-		yAxisSidebar = yAxisLedgerDiscountPercentDivviationRange();
-		yAxisPivot = yAxisAdLedgerDiscountPivotSidebar(yAxisSidebar);
+		stores = getStoresObj();
+		offerCombinedAvg = getCombinedDiscountTotalofAllStoreAdOffers();
+		xHeader = setXAxisAdLedgerDiscountPercentHeader();
+		ySidebar = generateYAxisAdLedgerDiviationSidebar();
+		dcrIndex = (offerCombinedAvg * ySidebar.length );
+		dcrMultiplier = ySidebar[dcrIndex];
 		
-		adLedgerDivviation = getAdLedgerDivviationObj();
-		return yAxisPivot;
+		return dcrMultiplier;
 		
 	}
+	
+	//== ID-18 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
+	function updateOfferPointUtilizingMultiplier() {
+		var stores, dcrMultiplier, count, calculatedAdPoint, updatePoints;
+		
+		stores = getStoresObj();
+		dcrMultiplier = getDCRUtilizingAdLedgerTable();
+		updatePoints = [];
+		
+		count = 1;
+		
+		for (var p1 = 0; p1 < stores.length; p1++ ) {
+			var pass1 = stores[p1];
+			calculatedAdPoint = Number(parseFloat((pass1.discount * 100)* dcrMultiplier).toFixed(2));
+			updatePoints.push(calculatedAdPoint);
+			$('.js-pointValue-' + count).text(calculatedAdPoint);
+			count++;
+		}
+		
+		return updatePoints;
+	}
+	
+	//== ID-19 ==\\  
+	
+	function updateStoreInfoOnOffers() {
+		var stores, storeNumber;
+		
+		stores = getStoresObj();
+		storeNumber = 1;
+		
+		for ( var p1 = 0; p1 < stores.length; p1++ ){
+			$('.js-storeName-' + storeNumber).text(stores[p1].name);
+			$('.js-storeAddress-' + storeNumber).text(stores[p1].address);
+			$('.js-storeCity-' + storeNumber).text(stores[p1].city);
+			$('.js-distance-' + storeNumber).text("12.44 miles");
+			$('.js-numberOfOffers-' + storeNumber).text(stores[p1].adOffers);
+			storeNumber++;
+		}
+		
+	}
+	
+	//*******************  FUNCTIONAL BUTTONS FOR INVOKING FUNCTIONS OF SECTION A  *********************************************\\
+	//**************************************************************************************************************************\\
+	
+	
+	$('.js-setAdDiscountConfigCategory').on('click', function() {
+		var generalDCR = setGeneralBaseAdDiscountConvertRate();
+		console.log(generalDCR); //== RETURNS THE GENERAL DISCOUNT CONVERT RATE (DCR);
+	});
+	
+	$('.js-setStoreDiscountConvertRate').on('click', function() {
+		var storeDCRconvertRate = setAdvertiserBaseAdDiscountRate();
+		
+		console.log(storeDCRconvertRate); //== RETURNS THE STORES SET DISCOUNT CONVERT RATE (DCR);
+	});
+	
+	$('.js-generateAdLedgerDiviationTable').on('click', function() {
+		var adLedgerTable = generateYAxisAdLedgerDiviationSidebar();
+		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
+	
+	$('.js-testingBtn').on('click', function() {
+		var test = updateOfferPointUtilizingMultiplier(); //=== UPDATES POINT VALUE OF OFFERS
+		updateStoreInfoOnOffers();
+		console.log(test); 
+	});
+	
+	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** END SECTION A ***********************************************************************\\
 	
 	//== ID-4 ==\\
 	//+++++ VARIABLES FOR GETTING X TABLE VALUES FOR AD LEDGER DIVVIATION
@@ -942,15 +1183,8 @@ $(document).ready(function() {
 //	var test10 = getXAdPointSpectrum(); // verified to contain index count of 10000
 //	console.log(test10);
 	
-	$('.js-generateAdLedgerDiviationTable').on('click', function() {
-		var adLedgerTable = generateAdLedgerDiviationTable() ;
-		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
-	});
 	
-	$('.js-setAdCategory').on('click', function() {
-		var storeAdOfferCategory = setStoreAdOfferCategory();
-		console.log(storeAdOfferCategory); //== RETURNS THE STORES ACCUMULATED RANK POINTS
-	});
+
 	
 	//== ID-5 ==\\
 //	var yAdPointSpectrum = [];
@@ -1003,46 +1237,47 @@ $(document).ready(function() {
 	//=== START CODE FOR GENERATING CALCULATED VALUES FOR GENERATING STEP DIVVIATION MULTIPLIER ===//
   //=========================================================\\
 	
-	//== ID-7 ==\\
+//== ID-7 ==\\
 	//+++++ GETTING ACTIVE DR TO MULTIPLY AGAINST X & Y SPECTRUM TABLES
-	var baseDrPlus = []; // Verified to have an array length of 880
-	var baseDrMinus = []; // Verified to have an array length of 119
-	var combinedBaseDr = [];
-	var baseMidStartValue = Number((adBaseDiscountConvertRate / 100).toFixed(4));
-
-	function getBaseDr() {
-		
-		for (var a = 0; a < yPlus.length; a++ ) {
-			baseDrPlus[a] = Number((yPlus[a] * baseMidStartValue).toFixed(4));
-		}
-
-		for (var b = 0; b <= yMinus.length - 1; b++ ) {
-			baseDrMinus[b] = Number((yMinus[b] * baseMidStartValue).toFixed(4)); 
-		}
-	}
-	
-	
-	//== ID-8 ==\\
-	function combineDr() {
-		for ( var i in baseDrMinus ) {
-			combinedBaseDr.push(baseDrMinus[i]);
-		}
-	
-		for ( var k in baseDrPlus ) {
-			combinedBaseDr.push(baseDrPlus[k]);
-		}
-	}
-	
-	getBaseDr();
-	combineDr();
+//	var baseDrPlus = []; // Verified to have an array length of 880
+//	var baseDrMinus = []; // Verified to have an array length of 119
+//	var combinedBaseDr = [];
+//	var baseMidStartValue = Number((adBaseDiscountConvertRate / 100).toFixed(4));
+//
+//	function getBaseDr() {
+//		
+//		for (var a = 0; a < yPlus.length; a++ ) {
+//			baseDrPlus[a] = Number((yPlus[a] * baseMidStartValue).toFixed(4));
+//		}
+//
+//		for (var b = 0; b <= yMinus.length - 1; b++ ) {
+//			baseDrMinus[b] = Number((yMinus[b] * baseMidStartValue).toFixed(4)); 
+//		}
+//	}
+//	
+//	
+//	//== ID-8 ==\\
+//	function combineDr() {
+//		for ( var i in baseDrMinus ) {
+//			combinedBaseDr.push(baseDrMinus[i]);
+//		}
+//	
+//		for ( var k in baseDrPlus ) {
+//			combinedBaseDr.push(baseDrPlus[k]);
+//		}
+//	}
+//	
+//	var test110 = getBaseDr();
+//	
+//	console.log(test110);
+//	combineDr();
 	
 	//=========================================================\\
 	//=== START CODE FOR ** FINAL CALCULATED X AND Y ** TO APPLY AS TABLE MULTIPLIER FOR AD LEDGER ===//
 	//=========================================================\\
 	
-	//== ID-9 ==\\ ///====== >>> TEMPORARILY DISABLED FUNCTION UNTIL USE PURPOSE IS DISCOVERED
+	//== ID-9 ==\\ ///====== >>> HAS NO USE FOR GENERAL AD-LEDGER || THIS IS BECAUSE RANK MEASUREMENT PROVIDES THE VARIABILITY FOR FURTHER POINT MANIPULATION 
 	
-    //=== THE BELOW LOOP FREEZES DUE TO RECORD/TABLE SIZE OF (99*999)x2 = 197,802 VALUES
     //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
     //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
     //=== FOR EXAMPLE STEPS:
@@ -1085,29 +1320,12 @@ $(document).ready(function() {
 		}
 	}		
 //	 getFinalAdLedgerTable();
-//	console.log(axisCalculated[98801]);
-//	console.log(xyAxisCalculated[98801]);
-//	console.log(axisCalculated.length);
-//	console.log(xyAxisCalculated.length);
+	
+	
 	
 	//=========================================================\\
 	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
   //=========================================================\\
-	
-	
-	//== ID-10 ==\\	
-	function getTotalAdOffers(obj) {
-		var discountAvg = 0;
-		var totalOffers = 0;
-
-		for (var i in obj ) {
-			// need to upconvert discount percent in order to use its value with number of offers 
-			discountAvg += Number(obj[i].discount * 100) * Number(obj[i].discount * 100);
-			totalOffers += Number(obj[i].adOffers);	
-		}
-		
-		return ( totalOffers / discountAvg).toFixed(4);
-	}
 	
 	//=========================================================\\
 	//=== GET THE POINT CONVERSION VALUE FOR A SINGLE PERCENTAGE POINT
@@ -1123,6 +1341,7 @@ $(document).ready(function() {
 	// (4). Multiply the STORE DISCOUNT PERCENT by the Matched BASE DR Value
 	//  combinedBaseDr === yAdPointSpectrum
 	
+	//=== THIS IS UPDATING THE STORES DISCOUNT BASE DISCOUNT CONVERT RATE UTILIZING THE MODIFIED BASE INDEX MULTIPLIER VALUE
 	function getOriginatingDiscountPercent(s, dcr) {
 		var numberMultiplier = 0;
 		var yIndex = 1;
@@ -1157,28 +1376,10 @@ $(document).ready(function() {
 	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
   //=========================================================\\
 	
-	//== ID-12 ==\\	//*******************************************************  MARKED FOR REMOVAL -- ADDED TO FUNCTION ID-1 ***\\
-	
-//	function getStoreAdPointValue(v) {
-//		// var v = storeOneOriginatingDiscount;
-//		var store1 = (stores.store_1.discount * v).toFixed(2);
-//		$('.js-pointValue-1').text(store1);
-//		
-//		var store2 = (stores.store_2.discount * v).toFixed(2);
-//		$('.js-pointValue-2').text(store2);
-//		
-//		var store3 = (stores.store_3.discount * v).toFixed(2);
-//		$('.js-pointValue-3').text(store3);
-//	}
-//	
-	// getStoreAdPointValue(getOriginatingDiscountPercent);
-	
 		
 	//=========================================================\\
 	//=== BEGIN CODE FOR AD | ACTIVITY OCCURANCE ALGORITHM ===//
   //=========================================================//
-	
-
 	
 	//=========================================================\\
 	//=== GENERATING THE XY AXIS TABLES FOR AD ACTIVITY ===//

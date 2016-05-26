@@ -590,7 +590,9 @@ text-align: center;
 	text-align: center;
 }
 
-#setAdDivviationCategory {
+#setStoreDiscountConvertRate,
+#setAdDivviationPercent, 
+#setConfigNumber {
 	width: 50%;
 }
 

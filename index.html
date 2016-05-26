@@ -92,10 +92,16 @@
 				</form>
 				<input class="submit submitOfferDetails" type="button" value="Set Offer Params">
 				<br>
-<!-- 	LEAVE IN FOR DEMONSTRATIVE PURPOSES -->
 				<form action="" id="setAdCategory">
-					<p>Change Store Divviation Ad Category </p>
-					<p>Divviation % <input type="text" id="setAdDivviationCategory" maxlength="5" value="2951"> </p>
+					<p>Set Param: Ad-Ledger | DCR </p>
+					<p>Store #: <input type="number" id="setStoreDiscountConvertRate" min="1" max="12" value="1"> </p>
+					<p>Change Divviation % <input type="text" id="setAdDivviationPercent" maxlength="5" value="2951"> </p>
+					<p>Config # <input type="number" id="setConfigNumber" min="0" max="2" value="0"> </p>
+				</form>
+				<input class="submit js-setAdDiscountConfigCategory" type="button" value="Change General DCR">
+				<input class="submit js-setStoreDiscountConvertRate" type="button" value="Set Store Convert Rate">
+				
+				
 <!--
 					<select name="setAdCategory" form="setAdCategory">
 						<option value="grocery1">grocery1</option>
@@ -112,10 +118,7 @@
 						<option value="quickServeFood4">quickServeFood4</option>
 					</select>
 -->
-				</form>
 
-				<input class="submit js-setAdCategory" type="button" value="Generate Ad-Ledger Table">
-				
 <!--
 				<button class="btn click-btn js-measurementBtn" id="click-btn"> (1). Click Measurement </button>
 				<button class="btn view-btn js-measurementBtn" id="view-btn"> (2). View Measurement </button>
@@ -125,6 +128,7 @@
 				<button class="btn compound-discount-btn js-measurementBtn" id="compound-discount-btn"> (6). compoundDiscount OfferPercent Measurement</button>
 				<button class="btn accumulated-point-btn js-measurementBtn" id="accumulated-point-btn"> (7). accumulatedAdPoint Measurement </button>
 -->
+				<button class="btn xy-drc-table js-testingBtn" id="1"> FUNCTION TESTING BUTTON <br></button>
 				<button class="btn xy-drc-table js-generateAdLedgerDiviationTable" id="1"> (1). Generate Ad Divviation Table <br></button>
 				<button class="btn xy-drc-table js-generateDrcTable" id="1"> (1). Generate xyDRC table <br></button>
 				<button class="btn js-updateDcr" id="1"> (2). Update stores DCR; <br>Use after 1. </button>
