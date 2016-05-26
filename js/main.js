@@ -626,7 +626,7 @@ $(document).ready(function() {
   //=========================================================//
 	
 	
-	//== ID-00 ==\\
+	//== ID-0 ==\\
 	
 	var mParam = {
 		
@@ -653,7 +653,7 @@ $(document).ready(function() {
 			//=== RANK OBJECT FOR HOLDING VALUES  ===//
   //=========================================================//
 	
-	//== ID-0 ==\\
+	//== ID-1 ==\\
 		
 	var setRank = {
 		
@@ -664,7 +664,7 @@ $(document).ready(function() {
 			x1: 0.005,
 			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
-			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
+			estAdRedemptionAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mTimeSegments: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
 				var mp = mParam.lv1;
 				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
@@ -679,7 +679,7 @@ $(document).ready(function() {
 			x1: 0.005,
 			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
-			adAcquireAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
+			estAdRedemptionAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mTimeSegments: function() {
 				var mp = mParam.lv1;
 				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
@@ -696,12 +696,12 @@ $(document).ready(function() {
 	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
   //=========================================================\\
 	
-	//==  ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
+	//== ID-2 ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
 	
-	function getAdTime(et, ct, nt) {
+	function formatTimeIntoDate(endTime, createTime, nowTime) {
 		
-		var time = Date.parse(et) - Date.parse(new Date());
-		var sTime = Date.parse(ct) - Date.parse(new Date());
+		var time = Date.parse(endTime) - Date.parse(new Date());
+		var sTime = Date.parse(createTime) - Date.parse(new Date());
 		var rTime = time - sTime; // required to determine # of days 
 
 		var seconds = Math.floor( (time/1000) % 60 );
@@ -710,7 +710,7 @@ $(document).ready(function() {
 		var days = Math.floor( time/(1000*60*60*24) );
 
 		return {
-			'ntotal': nt,
+			'ntotal': nowTime,
 			'total': time,
 			'days': days,
 			'hours': hours,
@@ -720,7 +720,7 @@ $(document).ready(function() {
 	}
 	
 	
-	//== ID-2 ==\\
+	//== ID-3 ==\\
 	
 	function calculateTime(s) {
 	
@@ -730,7 +730,7 @@ $(document).ready(function() {
 			// console.log(clock);
 			var timeInterval = setInterval(function() {
 				
-				var t = getAdTime(et, ct, nt); // this is the function calling the new time
+				var t = formatTimeIntoDate(et, ct, nt); // this is the function calling the new time
 				if (t.minutes <= 9) {
 					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
 				} 
@@ -778,7 +778,7 @@ $(document).ready(function() {
 	var calculatedAdPointMax;
 	
 	function getAdPointValue() {
-		adPointMax = 100;
+		adPointMax = 1000;
 		adPointMidPercentage = 0.50;
 		adBasePercentageDiscountAverage = 0.20;
 		calculatedMidPoint = (adPointMidPercentage * adPointMax);
@@ -797,76 +797,207 @@ $(document).ready(function() {
 	//=========================================================\\
 	//=== START CODE FOR GENERATING x TABLE SPECTRUM ===//
   //=========================================================\\
+		//=************************************************* NEW BLOCK OF IMPROVED AD-LEDGER TABLE FUNCTIONS *****************************************************\\
+	//=*******************************************************************************************************************************************************\\
+	//=**********************************************************************************************************************************************************\\
 	
+	var adLedgerDivviationParamObject = {
+		
+		adLedgerPivotPercent_group1: {
+			grocery1: 0.1433,
+			grocery2: 0.1796,
+			grocery3: 0.1931,
+			grocery4: 0.2375,
+		},
+		adLedgerPivotPercent_group2: {
+			clothing1: 0.2121,
+			clothing2: 0.2450,
+			clothing3: 0.2780,
+			clothing4: 0.3500,
+		},
+		adLedgerPivotPercent_group3: {
+			quickServeFood1: 0.243,
+			quickServeFood2: 0.243,
+			quickServeFood3: 0.243,
+			quickServeFood4: 0.243,
+		},
+		adLedgerPivotPercent_group4: {
+			sport1: 0.183,
+			sport2: 0.183,
+			sport3: 0.183,
+			sport4: 0.183,
+		}
+		
+	}
+	
+	//== ==\\
+	function getAdLedgerDivviationObj() {
+		var adLedgerDivviationObj = [];
+		
+		for (var p1 in adLedgerDivviationParamObject ) {
+			var pass1 = adLedgerDivviationParamObject[p1];
+			adLedgerDivviationObj.push(pass1);
+		}
+		
+		return adLedgerDivviationObj;
+	}
+	
+	//== ==\\
+	function setStoreAdOfferCategory() {
+		var adOfferCategoryPivotValue = $('#setAdDivviationCategory').val();	
+		return Number((adOfferCategoryPivotValue/100).toFixed(4));
+	}
+	
+	//== ID-4 ==\\
+	//** GENERATE X TABLE VALUES FOR AD LEDGER DIVVIATION
+	function xAxisAdLedgerDiscountPercentHeader() {
+		var xAxisHeader, xAxisDiscountPercentMin, xAxisDiscountPercentMax, index;
+		
+		xAxisHeader = [];
+		xAxisDiscountPercentMin = 0.0001;
+		xAxisDiscountPercentMax = 1.0000;
+		index = 0;
+		
+		for (var p1 = xAxisDiscountPercentMin; p1 <= xAxisDiscountPercentMax; p1 = Number(parseFloat(p1 + xAxisDiscountPercentMin).toFixed(4)) ) {
+			xAxisHeader.push(p1);
+		}
+		return xAxisHeader;
+		
+	}
+	
+	//== ID-5 ==\\
+	//** GENERATE X TABLE VALUES FOR AD LEDGER DIVVIATION
+	function yAxisLedgerDiscountPercentDivviationRange() {
+		var yAxisSidebar, yAxisAdLedgerPercentMin, yAxisAdLedgerPercentMax, index;
+		
+		yAxisSidebar = [];
+		yAxisAdLedgerPercentMin = 0.0001;
+		yAxisAdLedgerPercentMax = 1.0000;
+		index = 0;
+		
+		for (var p1 = yAxisAdLedgerPercentMin; p1 <= yAxisAdLedgerPercentMax; p1 = Number(parseFloat(p1 + yAxisAdLedgerPercentMin).toFixed(4)) ) {
+			yAxisSidebar.push(p1);
+		}
+		
+		return yAxisSidebar;
+	}
+	
+	//== ID-6 ==\\
+	
+	function yAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
+		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex;
+		
+		yAxisPivotSidebar = [];
+		pivotPercent = setStoreAdOfferCategory();
+		pivotPercentIndex = Number(((pivotPercent/100) * yAxisDivviationSidebar.length).toFixed(4));
+		
+		for ( var p1 = 0; p1 < yAxisDivviationSidebar.length; p1++ ) {
+			if ( p1 < pivotPercentIndex ) {
+				yAxisPivotSidebar.unshift(Number(( 1 - parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
+			}
+			else {
+				yAxisPivotSidebar.push(Number(( 1 + parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
+			}
+		}
+		
+		return yAxisPivotSidebar;
+	} 
+	
+	
+	//=**************************************************   NEW CODE ABOVE    **************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	
+	
+	function generateAdLedgerDiviationTable() {
+		var xAxisHeader, yAxisSidebar, yAxisPivot, adLedgerDivviation;
+		
+		xAxisHeader = xAxisAdLedgerDiscountPercentHeader();
+		yAxisSidebar = yAxisLedgerDiscountPercentDivviationRange();
+		yAxisPivot = yAxisAdLedgerDiscountPivotSidebar(yAxisSidebar);
+		
+		adLedgerDivviation = getAdLedgerDivviationObj();
+		return yAxisPivot;
+		
+	}
 	
 	//== ID-4 ==\\
 	//+++++ VARIABLES FOR GETTING X TABLE VALUES FOR AD LEDGER DIVVIATION
-	var xAdPointSpectrum = []; 	
+//	var xAdPointSpectrum = []; 	
+//	
+//	function getXAdPointSpectrum() {
+//		var axisMax = 1;
+//		var xAxis = 0.0001;
+//		var iCount = 0; // scale x range is 0.01% to 1
+//		
+//		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
+//		for (var i = xAxis; i <= axisMax; i = i + xAxis ) {
+////			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2)); // Original
+//			xAdPointSpectrum[iCount] = Number((i).toFixed(6)); // Attempting not to upConvert Floating-Point Values
+//			iCount++;
+//		}
+//		return xAdPointSpectrum;
+//		
+//	};
 	
-	function getXAdPointSpectrum() {
-		var axisMax = 1;
-		var xAxis = 0.0001;
-		var iCount = 0; // scale x range is 0.01% to 1
-		
-		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
-		for (var i = xAxis; i <= axisMax; i = i + xAxis ) {
-//			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2)); // Original
-			xAdPointSpectrum[iCount] = Number((i).toFixed(2)); // Attempting not to upConvert Floating-Point Values
-			iCount++;
-		}
-	};
+//	var test10 = getXAdPointSpectrum(); // verified to contain index count of 10000
+//	console.log(test10);
 	
-	getXAdPointSpectrum(); // verified to contain index count of 10000
-	// Changed to contain index of 99 >> Web Browser Freezing with Large Number
+	$('.js-generateAdLedgerDiviationTable').on('click', function() {
+		var adLedgerTable = generateAdLedgerDiviationTable() ;
+		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
 	
-	//=========================================================\\
-	//=== START CODE FOR GENERATING Y TABLE SPECTRUM ===//
-  //=========================================================\\
-	
+	$('.js-setAdCategory').on('click', function() {
+		var storeAdOfferCategory = setStoreAdOfferCategory();
+		console.log(storeAdOfferCategory); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
 	
 	//== ID-5 ==\\
-	var yAdPointSpectrum = [];
-	
-	function getYAdPointSpectrum() {
-		var axisMax = 1;
-		var yAxis = 0.0001; 
-		var kCount = 0; // scale y range is 0.0001 to 1
-		
-		for (var k = yAxis; k <= axisMax; k = k + yAxis ) {
-			yAdPointSpectrum[kCount] = Number(k.toFixed(4));
-			kCount++;
-		}
-	};
-		
-	getYAdPointSpectrum(); // verified to contain index count of 10000
-	// Changed to contain index of 999 >> Web Browser Freezing with Large Number
-	
+//	var yAdPointSpectrum = [];
+//	
+//	function getYAdPointSpectrum() {
+//		var axisMax = 1;
+//		var yAxis = 0.0001; 
+//		var kCount = 0; // scale y range is 0.0001 to 1
+//		
+//		for (var k = yAxis; k <= axisMax; k = k + yAxis ) {
+//			yAdPointSpectrum[kCount] = Number(k.toFixed(4));
+//			kCount++;
+//		}
+//	};
+//		
+//	getYAdPointSpectrum(); // verified to contain index count of 10000
+//	// Changed to contain index of 999 >> Web Browser Freezing with Large Number
+//	
+//	
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING **CALCULATED Y** TABLE MULTIPLIER ===//
   //=========================================================\\
-	
-	//== ID-6 ==\\
-	var yPlus = []; // Validated correct values returned >> changed result === 880
-	var yMinus = []; // Validated correct values returned >> changed result === 119
-
-	function getYPivotPointValues() {
-		// var pivotPoint = yAdPointSpectrum[1199]; // this is equivelant to 12.00% within the array
-
-		var y1Count = 0;
-		for (var y = 119; y < yAdPointSpectrum.length; y++ ) {
-			yPlus[y1Count] = Number((1 + parseFloat(yAdPointSpectrum[y])).toFixed(4));
-			y1Count++;
-		}
-
-		var y2Count = 0;
-		for (var x = 119; x > 0; x-- ) {
-			yMinus[y2Count] = Number((1 - parseFloat(yAdPointSpectrum[x])).toFixed(4));
-			y2Count++;
-		}
-	}
-	
-	getYPivotPointValues();
+//	
+//	
+//	//== ID-6 ==\\
+//	var yPlus = []; // Validated correct values returned >> changed result === 880
+//	var yMinus = []; // Validated correct values returned >> changed result === 119
+//
+//	function getYPivotPointValues() {
+//		// var pivotPoint = yAdPointSpectrum[1199]; // this is equivelant to 12.00% within the array
+//
+//		var y1Count = 0;
+//		for (var y = 119; y < yAdPointSpectrum.length; y++ ) {
+//			yPlus[y1Count] = Number((1 + parseFloat(yAdPointSpectrum[y])).toFixed(4));
+//			y1Count++;
+//		}
+//
+//		var y2Count = 0;
+//		for (var x = 119; x > 0; x-- ) {
+//			yMinus[y2Count] = Number((1 - parseFloat(yAdPointSpectrum[x])).toFixed(4));
+//			y2Count++;
+//		}
+//	}
+//	
+//	var test101 = getYPivotPointValues();
+//	console.log([test101]);
 
 	//=========================================================\\
 	//=== START CODE FOR GENERATING CALCULATED VALUES FOR GENERATING STEP DIVVIATION MULTIPLIER ===//
@@ -1086,7 +1217,7 @@ $(document).ready(function() {
 		}
 		
 		for (var i in setRank ) {
-			getY1(setRank[i].activityBaseCo, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].adAcquireAvg);
+			getY1(setRank[i].activityBaseCo, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].estAdRedemptionAvg);
 			getX1(setRank[i].xTimeScale);
 		}
 		
@@ -1159,7 +1290,7 @@ $(document).ready(function() {
 		var adOccuranceMultiplier = [];
 		
 		function calculate(ao, ct, et, sd ) {
-			var t = getAdTime(et, ct);
+			var t = formatTimeIntoDate(et, ct);
 			var rt = parseInt(t.total/(1000 * 60 * 60));
 			
 			for (var y1 = 0; y1 < yAdActivity.length; y1++ ) {

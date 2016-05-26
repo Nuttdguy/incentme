@@ -92,6 +92,29 @@
 				</form>
 				<input class="submit submitOfferDetails" type="button" value="Set Offer Params">
 				<br>
+<!-- 	LEAVE IN FOR DEMONSTRATIVE PURPOSES -->
+				<form action="" id="setAdCategory">
+					<p>Change Store Divviation Ad Category </p>
+					<p>Divviation % <input type="text" id="setAdDivviationCategory" maxlength="5" value="2951"> </p>
+<!--
+					<select name="setAdCategory" form="setAdCategory">
+						<option value="grocery1">grocery1</option>
+						<option value="grocery2">grocery2</option>
+						<option value="grocery3">grocery3</option>						
+						<option value="grocery4">grocery4</option>
+						<option value="clothing1">clothing1</option>
+						<option value="clothing2">clothing2</option>						
+						<option value="clothing3">clothing3</option>
+						<option value="clothing4">clothing4</option>
+						<option value="quickServeFood1">quickServeFood1</option>
+						<option value="quickServeFood2">quickServeFood2</option>						
+						<option value="quickServeFood3">quickServeFood3</option>
+						<option value="quickServeFood4">quickServeFood4</option>
+					</select>
+-->
+				</form>
+
+				<input class="submit js-setAdCategory" type="button" value="Generate Ad-Ledger Table">
 				
 <!--
 				<button class="btn click-btn js-measurementBtn" id="click-btn"> (1). Click Measurement </button>
@@ -102,8 +125,8 @@
 				<button class="btn compound-discount-btn js-measurementBtn" id="compound-discount-btn"> (6). compoundDiscount OfferPercent Measurement</button>
 				<button class="btn accumulated-point-btn js-measurementBtn" id="accumulated-point-btn"> (7). accumulatedAdPoint Measurement </button>
 -->
-				
-				<button class="btn xy-drc-table js-generateDrcTable" id="1"> (1)). Generate xyDRC table <br></button>
+				<button class="btn xy-drc-table js-generateAdLedgerDiviationTable" id="1"> (1). Generate Ad Divviation Table <br></button>
+				<button class="btn xy-drc-table js-generateDrcTable" id="1"> (1). Generate xyDRC table <br></button>
 				<button class="btn js-updateDcr" id="1"> (2). Update stores DCR; <br>Use after 1. </button>
 				<button class="btn xy-drc-table js-drc-PointBtn1" id="1"> (3). Calculate points <br> Offers 1 - 12 </button>
 				<button class="btn compile-ad-btn js-compileAdBtn" id="1"> (4). Compile store info </button>
