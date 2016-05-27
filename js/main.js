@@ -659,7 +659,7 @@ $(document).ready(function() {
 	var setRank = {
 		
 		lv1: { 
-			activityBaseCo: 1,
+			maxScale: 1,
 			y1: 0.03,
 			y2: 0.01,
 			x1: 0.005,
@@ -674,7 +674,7 @@ $(document).ready(function() {
 		},
 		
 		lv2: {
-			activityBaseCo: 1,
+			maxScale: 1,
 			y1: 0.03,
 			y2: 0.01,
 			x1: 0.005,
@@ -762,6 +762,77 @@ $(document).ready(function() {
 	}
 	
 	calculateTime(stores);
+	
+		//==========================================================================================\\
+	//  ||=== GETTER FUNCTIONS FOR STORES, SETRANK AND MPARAM  ===||
+	//  ||===           RETURNS OBJECTS OR PROPERTY            ===||
+  //==========================================================================================//
+	
+	//=*******************************************************************************************************************************************************\\
+	//=*************************************************************** GET OBJECT FUNCTIONS ***********************************************************************\\
+	
+	//== ID-42 ==\\
+	function getStoresObj() {
+		var storesObj = [];
+		for ( var p1 in stores) {
+			var pass1 = stores[p1]
+			storesObj.push(pass1);
+		}
+		return storesObj;
+	}
+	
+	//== ID-43 ==\\
+	function getStoresProp() {
+		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
+		for ( var p1 in stores) {
+			var pass1 = stores[p1]
+			storesProp.push(p1);
+		}
+		return storesProp;
+	}
+	
+	//== ID-44 ==\\
+	function getRankSettingsObject() {
+		var rankSettingsObj = [];
+		for ( var p1 in setRank) {
+			var pass1 = setRank[p1]
+			rankSettingsObj.push(pass1);
+		}
+		return rankSettingsObj;
+	}
+	
+	//== ID-45 ==\\
+	function getRankSettingsProp() {
+		var rankSettingsProp = [];
+		for ( var p1 in setRank) {
+			var pass1 = setRank[p1]
+			rankSettingsProp.push(p1);
+		}
+		return rankSettingsProp;
+	}
+	
+	//== ID-46 ==\\
+	function getMParamObj() {
+		var setMParamObj = [];
+		for ( var p1 in mParam) {
+			var pass1 = mParam[p1]
+			setMParamObj.push(pass1);
+		}
+		return setMParamObj;
+	}
+	
+	//== ID-47 ==\\
+	function getMParamProp() {
+		var setMParamProp = [];
+		for ( var p1 in mParam) {
+			var pass1 = mParam[p1]
+			setMParamProp.push(p1);
+		}
+		return setMParamProp;
+	}
+	
+	//=*******************************************************************************************************************************************************\\
+	//=*************************************************************** GET OBJECT FUNCTIONS  ***********************************************************************\\
 	
 	//=========================================================\\
 	//=== START CODE FOR GENERATING AD POINT VALUE ===//
@@ -1091,27 +1162,6 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-18 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
-	function updateOfferPointUtilizingMultiplier() {
-		var stores, dcrMultiplier, count, calculatedAdPoint, updatePoints;
-		
-		stores = getStoresObj();
-		dcrMultiplier = getDCRUtilizingAdLedgerTable();
-		updatePoints = [];
-		
-		count = 1;
-		
-		for (var p1 = 0; p1 < stores.length; p1++ ) {
-			var pass1 = stores[p1];
-			calculatedAdPoint = Number(parseFloat((pass1.discount * 100)* dcrMultiplier).toFixed(2));
-			updatePoints.push(calculatedAdPoint);
-			$('.js-pointValue-' + count).text(calculatedAdPoint);
-			count++;
-		}
-		
-		return updatePoints;
-	}
-	
 	//== ID-19 ==\\  
 	
 	function updateStoreInfoOnOffers() {
@@ -1130,6 +1180,110 @@ $(document).ready(function() {
 		}
 		
 	}
+	
+		//== ID-20 ==\\
+	
+	function setXAxisHeaderForAdPerformanceTable() {
+		var xAxisHeader, rankLevel, aIndex, rankSettingsObj, xMaxTimeScale;
+		
+		xAxisHeader = [];
+		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
+		aIndex = rankLevel - 1;
+		rankSettingsObj = getRankSettingsObject();
+		xMaxTimeScale = rankSettingsObj[aIndex].xTimeScale;
+		
+		for ( var p1 = 0; p1 < xMaxTimeScale; p1++ ) {
+			xAxisHeader.push(p1);
+		}
+		
+		return xAxisHeader;
+		
+	}
+	
+	//== ID-21 ==\\
+	
+	function setYAxisSidebarForAdPerformanceTable() {
+		var yAxisSidebar, rankSettingsObj, rankLevel, aIndex, yPivot, preVal_y1, preVal_y2 ;
+		
+		yAxisSidebar = [];
+		rankSettingsObj = getRankSettingsObject();
+		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
+		aIndex = rankLevel - 1;
+		yPivot = (rankSettingsObj[aIndex].estAdRedemptionAvg * rankSettingsObj[aIndex].adLimit)
+		preVal_y1 = rankSettingsObj[aIndex].y1;
+		preVal_y2 = rankSettingsObj[aIndex].y2;
+		
+		for ( var p1 = 0; p1 < rankSettingsObj[aIndex].adLimit; p1++ ) {
+			if ( p1 < yPivot ) {
+				var pass1 = rankSettingsObj[aIndex].maxScale + preVal_y1;
+				yAxisSidebar.unshift( parseFloat( pass1 ).toFixed(4) );
+				preVal_y1 += rankSettingsObj[aIndex].y1;
+			} else {
+				var pass2 = rankSettingsObj[aIndex].maxScale - preVal_y2;
+				yAxisSidebar.push( parseFloat( pass2 ).toFixed(4) );
+				preVal_y2 += rankSettingsObj[aIndex].y2;
+			}
+		}
+		
+		return yAxisSidebar;
+	}
+	
+	//== ID-22 ==\\
+	
+	function generateAdPerformanceTable() {
+		var  rankSettingsObj, rankLevel, aIndex, xAxisHeader, yAxisSidebar, adLedgerDCR, xValue, adPerformanceTable;
+		
+		rankSettingsObj = getRankSettingsObject();
+		rankLevel = getInputBoxSelectedRankLevel();
+		aIndex = rankLevel - 1;
+		xAxisHeader = setXAxisHeaderForAdPerformanceTable();
+		yAxisSidebar = setYAxisSidebarForAdPerformanceTable();
+		adLedgerDCR = getCombinedDiscountTotalofAllStoreAdOffers();
+		xValue = Number((rankSettingsObj[aIndex].x1).toFixed(4));
+		adPerformanceTable = [];
+		
+		for (var p1 = 0; p1 < yAxisSidebar.length; p1++ ) {
+			var pass1 = parseFloat(yAxisSidebar[p1]);
+			for (var p2 = 0; p2 < xAxisHeader.length; p2++ ) {
+					adPerformanceTable.push(Number(parseFloat(pass1 + (yAxisSidebar[p1] * xValue)).toFixed(4)));
+					pass1 = (pass1 + (yAxisSidebar[p1] * xValue));
+			}
+		}
+		
+		return adPerformanceTable;
+	}
+	
+	//== ID-23 ==\\ 
+	
+	function processOffersUtilizingPerformanceTable() {
+		//== WILL NEED TO KNOW TIME SEGMENT OF OFFER
+		//== WILL NEED TO KNOW DISCOUNT PERCENT OF OFFER
+		//== WILL NEED TO KNOW QTY OF OFFERS LEFT
+	}
+	
+	//== ID-18 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
+
+	function updateOfferPointUtilizingMultiplier() {
+		var stores, dcrMultiplier, count, calculatedAdPoint, updatePoints, adPerformanceTable;
+		
+		stores = getStoresObj();
+		dcrMultiplier = getDCRUtilizingAdLedgerTable();
+		adPerformanceTable = generateAdPerformanceTable();
+		updatePoints = [];
+		
+		count = 1;
+		
+		for (var p1 = 0; p1 < stores.length; p1++ ) {
+			var pass1 = stores[p1];
+			calculatedAdPoint = Number(parseFloat((pass1.discount * 100)* dcrMultiplier).toFixed(2));
+			updatePoints.push(calculatedAdPoint);
+			$('.js-pointValue-' + count).text(calculatedAdPoint);
+			count++;
+		}
+		
+		return updatePoints;
+	}
+	
 	
 	//*******************  FUNCTIONAL BUTTONS FOR INVOKING FUNCTIONS OF SECTION A  *********************************************\\
 	//**************************************************************************************************************************\\
@@ -1151,11 +1305,17 @@ $(document).ready(function() {
 		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
 	});
 	
-	$('.js-testingBtn').on('click', function() {
+	$('.js-testingBtnSectionA').on('click', function() {
 		var test = updateOfferPointUtilizingMultiplier(); //=== UPDATES POINT VALUE OF OFFERS
 		updateStoreInfoOnOffers();
 		console.log(test); 
 	});
+	
+	$('.js-testingBtnSectionB').on('click', function() {
+		var test = generateAdPerformanceTable(); //== UPDATES DCR RATE ACCORDING TO AD PERFORMANCE
+		console.log(test); 
+	});
+	
 	
 	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
 	//=**********************************************************************************************************************************************************\\
@@ -1277,50 +1437,50 @@ $(document).ready(function() {
 	//=========================================================\\
 	
 	//== ID-9 ==\\ ///====== >>> HAS NO USE FOR GENERAL AD-LEDGER || THIS IS BECAUSE RANK MEASUREMENT PROVIDES THE VARIABILITY FOR FURTHER POINT MANIPULATION 
-	
-    //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
-    //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
-    //=== FOR EXAMPLE STEPS:
-    //=== (1). CHECK AD LEDGER AVERAGE % ==> get from yAdPointSpectrum
-    //=== (2). LOCATE BASEDR FOR CURRENT VALUE ==> get from BaseDrPlus Or Minus
-    //=== (3). CHECK APPLIED DISCOUNT PERCENTAGE OF OFFER
-    //=== (4). MULTIPLY BASEDR VALUE & DISCOUNT PERCENTAGE OF AD OFFER
-    //=== (5). RETURN FINAL RESULT; THIS IS ADS ACTIVE CONVERT POINT VALUE FOR ORIGINATING DISCOUNT AT TIME OF AD CREATION
-		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
-	
-	
-	var axisCalculated = [];
-	var xyAxisCalculated = [];
-	var negIndex = baseDrMinus.length-1;
-	var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
-
-	function getFinalAdLedgerTable() {
-		
-		for (var ya = 0; ya < xAdPointSpectrum.length; ya++ ) {  // length === 99	
-			for (var ya1 = 0; ya1 < yAdPointSpectrum.length; ya1++ ) { // length === 999
-				if (ya1 > 0 && ya1 < 119 ) {
-					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrMinus[negIndex] + "==== FIRST LOOP =====XXXX " + xAdPointSpectrum[ya] + " %"); // VERIFIED RESULT === 118 Outer 118 0.002 Y-Informative-Only==0.0249==== FIRST LOOP =====XXXX 1 %
-					axisCalculated.push(Number(baseDrMinus[negIndex]).toFixed(4) );
-					xyAxisCalculated.push(Number(yAdPointSpectrum[ya]).toFixed(4) );
-				}
-				if (ya1 >= 119 && ya1 < yAdPointSpectrum.length ) {
-					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrPlus[plusIndex] + "====" + plusIndex + "===== XXXX >" + xAdPointSpectrum[ya] + " %  == " + ya1); // This Line Correct >>==  0.12 Y-Informative-Only==0.028====0===== XXXX >1 %  == 1	
-					axisCalculated.push(Number(baseDrPlus[plusIndex]).toFixed(4) );
-					xyAxisCalculated.push( Number(yAdPointSpectrum[ya]).toFixed(4) );
-				}
-				if (plusIndex > (baseDrPlus.length - 1) ) {
-					plusIndex = 0;
-				}
-				if (ya1 > 119 ) {
-					plusIndex++;
-				}
-			}
-			negIndex--;
-			
-		}
-	}		
-//	 getFinalAdLedgerTable();
-	
+//	
+//    //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
+//    //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
+//    //=== FOR EXAMPLE STEPS:
+//    //=== (1). CHECK AD LEDGER AVERAGE % ==> get from yAdPointSpectrum
+//    //=== (2). LOCATE BASEDR FOR CURRENT VALUE ==> get from BaseDrPlus Or Minus
+//    //=== (3). CHECK APPLIED DISCOUNT PERCENTAGE OF OFFER
+//    //=== (4). MULTIPLY BASEDR VALUE & DISCOUNT PERCENTAGE OF AD OFFER
+//    //=== (5). RETURN FINAL RESULT; THIS IS ADS ACTIVE CONVERT POINT VALUE FOR ORIGINATING DISCOUNT AT TIME OF AD CREATION
+//		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
+//	
+//	
+////	var axisCalculated = [];
+////	var xyAxisCalculated = [];
+////	var negIndex = baseDrMinus.length-1;
+////	var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
+//
+//	function getFinalAdLedgerTable() {
+//		
+//		for (var ya = 0; ya < xAdPointSpectrum.length; ya++ ) {  // length === 99	
+//			for (var ya1 = 0; ya1 < yAdPointSpectrum.length; ya1++ ) { // length === 999
+//				if (ya1 > 0 && ya1 < 119 ) {
+//					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrMinus[negIndex] + "==== FIRST LOOP =====XXXX " + xAdPointSpectrum[ya] + " %"); // VERIFIED RESULT === 118 Outer 118 0.002 Y-Informative-Only==0.0249==== FIRST LOOP =====XXXX 1 %
+//					axisCalculated.push(Number(baseDrMinus[negIndex]).toFixed(4) );
+//					xyAxisCalculated.push(Number(yAdPointSpectrum[ya]).toFixed(4) );
+//				}
+//				if (ya1 >= 119 && ya1 < yAdPointSpectrum.length ) {
+//					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrPlus[plusIndex] + "====" + plusIndex + "===== XXXX >" + xAdPointSpectrum[ya] + " %  == " + ya1); // This Line Correct >>==  0.12 Y-Informative-Only==0.028====0===== XXXX >1 %  == 1	
+//					axisCalculated.push(Number(baseDrPlus[plusIndex]).toFixed(4) );
+//					xyAxisCalculated.push( Number(yAdPointSpectrum[ya]).toFixed(4) );
+//				}
+//				if (plusIndex > (baseDrPlus.length - 1) ) {
+//					plusIndex = 0;
+//				}
+//				if (ya1 > 119 ) {
+//					plusIndex++;
+//				}
+//			}
+//			negIndex--;
+//			
+//		}
+//	}		
+////	 getFinalAdLedgerTable();
+//	
 	
 	
 	//=========================================================\\
@@ -1342,6 +1502,7 @@ $(document).ready(function() {
 	//  combinedBaseDr === yAdPointSpectrum
 	
 	//=== THIS IS UPDATING THE STORES DISCOUNT BASE DISCOUNT CONVERT RATE UTILIZING THE MODIFIED BASE INDEX MULTIPLIER VALUE
+	
 	function getOriginatingDiscountPercent(s, dcr) {
 		var numberMultiplier = 0;
 		var yIndex = 1;
@@ -1381,6 +1542,14 @@ $(document).ready(function() {
 	//=== BEGIN CODE FOR AD | ACTIVITY OCCURANCE ALGORITHM ===//
   //=========================================================//
 	
+	
+	
+	//=*************************************************************   NEW CODE BELOW    *******************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** START SECTION B ***********************************************************************\\
+	
+
+	
 	//=========================================================\\
 	//=== GENERATING THE XY AXIS TABLES FOR AD ACTIVITY ===//
   //=========================================================//
@@ -1418,7 +1587,7 @@ $(document).ready(function() {
 		}
 		
 		for (var i in setRank ) {
-			getY1(setRank[i].activityBaseCo, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].estAdRedemptionAvg);
+			getY1(setRank[i].maxScale, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].estAdRedemptionAvg);
 			getX1(setRank[i].xTimeScale);
 		}
 		
@@ -1441,27 +1610,27 @@ $(document).ready(function() {
 	
 	
 	//== ID-14 ==\\
-	var activityTable = [];
-	
-	function getAdActivityTable() { // (assigned ad point value + (assigned ad point value *  occurrence table value))
-		
-		function calculateAdActivityTable(xt) {
-			
-			for (var x = 0; x < yAdActivity.length; x++ ) {
-				var x3 = parseFloat(yAdActivity[x]);
-				for (var x2 = 0; x2 < x1Activity.length; x2++ ) {
-						activityTable.push(parseFloat(x3 - (yAdActivity[x] * xt)).toFixed(4));
-						x3 = parseFloat(x3 - (yAdActivity[x] * xt));
-				}
-			}	
-		}
-		
-		for (var i in setRank ) {
-			calculateAdActivityTable(setRank[i].x1);
-		}
-	}
-	
-	getAdActivityTable();
+//	var activityTable = [];
+//	
+//	function getAdActivityTable() { // (assigned ad point value + (assigned ad point value *  occurrence table value))
+//		
+//		function calculateAdActivityTable(xt) {
+//			
+//			for (var x = 0; x < yAdActivity.length; x++ ) {
+//				var x3 = parseFloat(yAdActivity[x]);
+//				for (var x2 = 0; x2 < x1Activity.length; x2++ ) {
+//						activityTable.push(parseFloat(x3 - (yAdActivity[x] * xt)).toFixed(4));
+//						x3 = parseFloat(x3 - (yAdActivity[x] * xt));
+//				}
+//			}	
+//		}
+//		
+//		for (var i in setRank ) {
+//			calculateAdActivityTable(setRank[i].x1);
+//		}
+//	}
+//	
+//	getAdActivityTable();
 //	console.log(activityTable[240]); // For checking values against excel table
 //	console.log(activityTable[241]);
 //	console.log(activityTable[242]);
@@ -1513,6 +1682,11 @@ $(document).ready(function() {
 		return adOccuranceMultiplier;
 		
 	}
+	
+	
+	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** END SECTION B ***********************************************************************\\
 	
 	//=========================================================\\
 					//=== START TABLE FOR RANK TABLES  ===//
@@ -1737,7 +1911,7 @@ $(document).ready(function() {
 	function getRankLevelTimeSegment(rankLvl) {
 		var rankObject, mParamObject, aIndex, rLevelTimeSegment ;
 		
-		rankObject = getSetRankObj();
+		rankObject = getRankSettingsObject();
 		mParamObject= getMParamObj();
 		aIndex = rankLvl - 1;
 		rLevelTimeSegment = rankObject[aIndex].mTimeSegments(); //== RETURNS 3360 || TOTAL 3 MINUTES SEGMENTS
@@ -2032,7 +2206,7 @@ $(document).ready(function() {
 //		
 //		var storesObject = getStoresObj();
 //		var mParamObject = getMParamObj();
-//		var setRankObject = getSetRankObj();
+//		var setRankObject = getRankSettingsObject();
 //		console.log(activeMeasurement);
 //		console.log(activeStoreNumber);
 //		console.log(activeRankLevel);
@@ -3346,72 +3520,7 @@ $(document).ready(function() {
 //	console.log(t13);
 	
 	
-	//==========================================================================================\\
-	//  ||=== GETTER FUNCTIONS FOR STORES, SETRANK AND MPARAM  ===||
-	//  ||===           RETURNS OBJECTS OR PROPERTY            ===||
-  //==========================================================================================//
-	
-	//== ID-42 ==\\
-	function getStoresObj() {
-		var storesObj = [];
-		for ( var p1 in stores) {
-			var pass1 = stores[p1]
-			storesObj.push(pass1);
-		}
-		return storesObj;
-	}
-	
-	//== ID-43 ==\\
-	function getStoresProp() {
-		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
-		for ( var p1 in stores) {
-			var pass1 = stores[p1]
-			storesProp.push(p1);
-		}
-		return storesProp;
-	}
-	
-	//== ID-44 ==\\
-	function getSetRankObj() {
-		var setRankObj = [];
-		for ( var p1 in setRank) {
-			var pass1 = setRank[p1]
-			setRankObj.push(pass1);
-		}
-		return setRankObj;
-	}
-	
-	//== ID-45 ==\\
-	function getSetRankProp() {
-		var setRankProp = [];
-		for ( var p1 in setRank) {
-			var pass1 = setRank[p1]
-			setRankProp.push(p1);
-		}
-		return setRankProp;
-	}
-	
-	//== ID-46 ==\\
-	function getMParamObj() {
-		var setMParamObj = [];
-		for ( var p1 in mParam) {
-			var pass1 = mParam[p1]
-			setMParamObj.push(pass1);
-		}
-		return setMParamObj;
-	}
-	
-	//== ID-47 ==\\
-	function getMParamProp() {
-		var setMParamProp = [];
-		for ( var p1 in mParam) {
-			var pass1 = mParam[p1]
-			setMParamProp.push(p1);
-		}
-		return setMParamProp;
-	}
-	
-	
+
 	//==========================================================================================\\
 	//  ||=== SETS THE ADJUSTED DISCOUNT POINT CONVERT RATE FOR ADVERTISER ===||
 	//  ||===        IS ABLE TO SET EACH STORES ADJDRC PROPERTY #          ===||
@@ -3443,7 +3552,7 @@ $(document).ready(function() {
 		//== ID-50 ==\\
 		var storesObj = getStoresObj();
 		//== ID-51 ==\\
-		var setRankObj = getSetRankObj();
+		var setRankObj = getRankSettingsObject();
 		//== ID-52 ==\\
 		var mParamObj = getMParamObj();
 		//== ID-53 ==\\
