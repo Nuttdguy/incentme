@@ -19,8 +19,8 @@ $(document).ready(function() {
 			activeDcr: 0,
 			
 			adOffers: 19,
-			nowTime: new Date(),
-			adCreateTime: "May 22 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 26 2016",
 			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
@@ -70,8 +70,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 10, 
 			
 			adOffers: 48,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
@@ -121,8 +121,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0, 
 			
 			adOffers: 47,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
@@ -172,8 +172,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0, 
 			
 			adOffers: 46,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
@@ -223,8 +223,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 45,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 27 2016",
 			
 			rankLv_Inner: 1,
@@ -274,8 +274,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0, 
 			
 			adOffers: 44,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
@@ -325,8 +325,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 43,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
@@ -376,8 +376,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0, 
 			
 			adOffers: 42,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 30 2016",
 			
 			rankLv_Inner: 1,
@@ -427,8 +427,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 41,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
@@ -478,8 +478,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 40,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
@@ -529,8 +529,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 39,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 28 2016",
 			
 			rankLv_Inner: 1,
@@ -580,8 +580,8 @@ $(document).ready(function() {
 			baseAdConvertRate: 0,
 			
 			adOffers: 29,
-			nowTime: new Date(),
-			adCreateTime: "May 12 2016",
+			currentTime: new Date(),
+			adCreateTime: "May 27 2016",
 			adEndTime: "May 29 2016",
 			
 			rankLv_Inner: 1,
@@ -629,7 +629,7 @@ $(document).ready(function() {
 	
 	//== ID-0 ==\\
 	
-	var mParam = {
+	var rankTimeMeasurementSettingsForAdvertiserObject = {
 		
 		lv1: {
 			rankMTime: 5, // in days { REDUCING TO PREVENT BROWSER FROM FREEZING }
@@ -638,6 +638,7 @@ $(document).ready(function() {
 			minutes: 60,
 			hours: 24,
 			setRLv: 1,
+			adEndTimeForOffers: 5
 		},
 		
 		lv2: {
@@ -647,6 +648,7 @@ $(document).ready(function() {
 			minutes: 60,
 			hours: 24,
 			setRLv: 2,
+			adEndTimeForOffers: 5
 		}
 	};
 	
@@ -656,18 +658,18 @@ $(document).ready(function() {
 	
 	//== ID-1 ==\\
 		
-	var setRank = {
+	var rankXyTableConfigSettingsForAdvertiserObject = {
 		
 		lv1: { 
 			maxScale: 1,
 			y1: 0.03,
 			y2: 0.01,
 			x1: 0.005,
-			xTimeScale: 120, // the maximum amount of time an ad offer is live (120 hours in this case) 
+			xTimeScale: 120, //== THIS IS THE NUMBER OF TIME SEGMENTS IN HOURS THAT AN AD OFFER IS MEASURED || EXAMPLE ( (((5DAYS x 24) / 120) * 60) = EVERY 60 MINS  )
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
 			estAdRedemptionAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mTimeSegments: function() { //=== SETTING RANK MEASUREMENT TABLE PARAMS FOR ADVERTISER  ===//
-				var mp = mParam.lv1;
+				var mp = rankTimeMeasurementSettingsForAdvertiserObject.lv1;
 				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
 				//******** THIS ALREADY SUBDIVIDES THE TIME INTO 3, 4, ETC. MINUTES ************* !! IMPORTANT NOTE !! ***\\
 			}
@@ -682,7 +684,7 @@ $(document).ready(function() {
 			adLimit: 50, // however, the amount of time available will determine actual amount unique for each advertiser
 			estAdRedemptionAvg: 0.50, // the pivot point. An estimate in the number of ads that will be acquired. y-axis is plus or minus from this point.
 			mTimeSegments: function() {
-				var mp = mParam.lv1;
+				var mp = rankTimeMeasurementSettingsForAdvertiserObject.lv1;
 				return parseFloat( (mp.rankMTime * mp.minutes * mp.hours) / mp.rankMOccurences).toFixed(2);
 				//******** THIS ALREADY SUBDIVIDES THE TIME INTO 3, 4, ETC. MINUTES ************* !! IMPORTANT NOTE !! ***\\
 			}
@@ -690,1015 +692,13 @@ $(document).ready(function() {
 		
 	};
 	
-	
-	//=========================================================\\
-	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
-  //=========================================================\\
-	
-	//== ID-2 ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
-	
-	function formatTimeIntoDate(endTime, createTime, nowTime) {
-		
-		var time = Date.parse(endTime) - Date.parse(new Date());
-		var sTime = Date.parse(createTime) - Date.parse(new Date());
-		var rTime = time - sTime; // required to determine # of days 
-
-		var seconds = Math.floor( (time/1000) % 60 );
-		var minutes = Math.floor( (time/1000/60) % 60 );
-		var hours = Math.floor( (time/(1000*60*60)) % 24 );
-		var days = Math.floor( time/(1000*60*60*24) );
-
-		return {
-			'ntotal': nowTime,
-			'total': time,
-			'days': days,
-			'hours': hours,
-			'minutes': minutes,
-			'seconds': seconds
-		};
-	}
-	
-	
-	//== ID-3 ==\\
-	
-	function calculateTime(s) {
-	
-		
-		function intializeClock(et, ct, nt, id, c ) {
-			var clock = $('.js-timeLeft-'+ c);
-			// console.log(clock);
-			var timeInterval = setInterval(function() {
-				
-				var t = formatTimeIntoDate(et, ct, nt); // this is the function calling the new time
-				if (t.minutes <= 9) {
-					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
-				} 
-				if (t.seconds <= 9) {
-						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
-					}
-				if (t.seconds <= 9) {
-						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
-					} 
-				
-				if (t.minutes <= 9 && t.seconds <= 9) {
-					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':0' + t.seconds );
-				} 
-				if (t.minutes > 9 && t.seconds > 9) {
-					clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':' + t.seconds );
-				}
-				
-				if(t.total <=0 ) {
-					clearInterval(timeInterval);
-				}
-			}, 1000); // 1000 is equal to 1 second // 
-		}
-		
-		var count = 1;
-		for (var i in stores ) {
-			intializeClock(stores[i].adEndTime, stores[i].adCreateTime, stores[i].nTime, 'clock', count );
-			count++;
-		}
-		
-	}
-	
-	calculateTime(stores);
-	
-		//==========================================================================================\\
-	//  ||=== GETTER FUNCTIONS FOR STORES, SETRANK AND MPARAM  ===||
-	//  ||===           RETURNS OBJECTS OR PROPERTY            ===||
-  //==========================================================================================//
-	
-	//=*******************************************************************************************************************************************************\\
-	//=*************************************************************** GET OBJECT FUNCTIONS ***********************************************************************\\
-	
-	//== ID-42 ==\\
-	function getStoresObj() {
-		var storesObj = [];
-		for ( var p1 in stores) {
-			var pass1 = stores[p1]
-			storesObj.push(pass1);
-		}
-		return storesObj;
-	}
-	
-	//== ID-43 ==\\
-	function getStoresProp() {
-		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
-		for ( var p1 in stores) {
-			var pass1 = stores[p1]
-			storesProp.push(p1);
-		}
-		return storesProp;
-	}
-	
-	//== ID-44 ==\\
-	function getRankSettingsObject() {
-		var rankSettingsObj = [];
-		for ( var p1 in setRank) {
-			var pass1 = setRank[p1]
-			rankSettingsObj.push(pass1);
-		}
-		return rankSettingsObj;
-	}
-	
-	//== ID-45 ==\\
-	function getRankSettingsProp() {
-		var rankSettingsProp = [];
-		for ( var p1 in setRank) {
-			var pass1 = setRank[p1]
-			rankSettingsProp.push(p1);
-		}
-		return rankSettingsProp;
-	}
-	
-	//== ID-46 ==\\
-	function getMParamObj() {
-		var setMParamObj = [];
-		for ( var p1 in mParam) {
-			var pass1 = mParam[p1]
-			setMParamObj.push(pass1);
-		}
-		return setMParamObj;
-	}
-	
-	//== ID-47 ==\\
-	function getMParamProp() {
-		var setMParamProp = [];
-		for ( var p1 in mParam) {
-			var pass1 = mParam[p1]
-			setMParamProp.push(p1);
-		}
-		return setMParamProp;
-	}
-	
-	//=*******************************************************************************************************************************************************\\
-	//=*************************************************************** GET OBJECT FUNCTIONS  ***********************************************************************\\
-	
-	//=========================================================\\
-	//=== START CODE FOR GENERATING AD POINT VALUE ===//
-  //=========================================================\\
-	
-	//== ID-4 ==\\
-	var adPointMax; //== CAN DELETE ALL OCCURRENCES
-	var adPointMidPercentage; // == CAN DELETE ALL OCCURRENCES
-	var adBasePercentageDiscountAverage; //== CAN DELETE ALL OCCURRNCES
-	var calculatedMidPoint;
-	//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5 
-	
-	var adBaseDiscountConvertRate;  //== USED IN ID-11
-	
-
-	
-	function getAdPointValue() {
-		//--- EXAMPLE OF BELOW CALCULATION (50 / ( .20 * 100 )) = 2.5  << THIS IS THE STARTING BASE OF 1%. ( I.E. EVERY 1% == 2.5 PTS )
-		adBaseDiscountConvertRate = (calculatedMidPoint/(adBasePercentageDiscountAverage*adPointMax));
-		calculatedAdPointMax = (adBaseDiscountConvertRate * 100); // 100 == 100%
-		
-	}
-	
-	getAdPointValue();
-	
-	//=========================================================\\
-	//=== START GENERATE VALUES FOR AD POINT DISCOUNT CONVERSION ALGORITHM ===//
-  //=========================================================\\
-	
-	//=************************************************* NEW BLOCK OF IMPROVED AD-LEDGER TABLE FUNCTIONS *****************************************************\\
-	//=*******************************************************************************************************************************************************\\
-	//=*************************************************************** START SECTION A ***********************************************************************\\
-	
-		
-	//== ID-4 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
-	var baseAdDiscountConvertParamObject = {
-		
-		set_1: {
-			baseAdPointMax: 1000,
-			baseAdPointPivotPercent: 0.50,
-			baseAdPointAvgDiscount: 0.20,
-			lastPeriodLedgerPercent: 0,
-		},
-		set_2: {
-			baseAdPointMax: 1000,
-			baseAdPointPivotPercent: 0.60,
-			baseAdPointAvgDiscount: 0.30,
-			lastPeriodLedgerPercent: 0,
-		},	
-		set_3: {
-			baseAdPointMax: 1000,
-			baseAdPointPivotPercent: 0.70,
-			baseAdPointAvgDiscount: 0.40,
-			lastPeriodLedgerPercent: 0,
-		},
-	}
-	
-	//== ID-5 ==\\
-	//****************************** THIS IS NOT BEING USED FOR 
-	var adLedgerDivviationParamObject = {
-		
-		adLedgerPivotPercent_group1: {
-			grocery1: 0.1433,
-			grocery2: 0.1796,
-			grocery3: 0.1931,
-			grocery4: 0.2375,
-		},
-		adLedgerPivotPercent_group2: {
-			clothing1: 0.2121,
-			clothing2: 0.2450,
-			clothing3: 0.2780,
-			clothing4: 0.3500,
-		},
-		adLedgerPivotPercent_group3: {
-			quickServeFood1: 0.243,
-			quickServeFood2: 0.243,
-			quickServeFood3: 0.243,
-			quickServeFood4: 0.243,
-		},
-		adLedgerPivotPercent_group4: {
-			sport1: 0.183,
-			sport2: 0.183,
-			sport3: 0.183,
-			sport4: 0.183,
-		}
-		
-	}
-	
-	//== ID-6 ==\\
-	function getBaseAdDiscountConvertParamObject() {
-		var adLedgerBaseDiscountObj = [];
-		
-		for (var p1 in baseAdDiscountConvertParamObject ) {
-			var pass1 = baseAdDiscountConvertParamObject[p1];
-			adLedgerBaseDiscountObj.push(pass1);
-		}
-		
-		return adLedgerBaseDiscountObj;
-	}
-	
-	//****************************** INPUT BOX GET FUNCTIONS FOR RETRIEVING VALUES FROM INPUT BOXES ************************\\
-	//**********************************************************************************************************************\\
-	//== ID-7 ==\\
-	function getInputBoxAdLedgerStoreNumber() {
-		var storeNumber = $('#setStoreDiscountConvertRate').val();
-		return storeNumber;
-	}
-	
-	//== ID-8 ==\\	
-	function getInputBoxToChangeAdLedgerDivviationPercent() {
-		var inputBoxDivviationPercent, inputBoxConfigNumber, formatInputDP, baseAdDiscountConvertObj, dcrPivotPercent;
-		
-		inputBoxDivviationPercent = $('#setAdDivviationPercent').val();
-		inputBoxConfigNumber = $('#setConfigNumber').val();
-		formatInputDP = Number((inputBoxDivviationPercent/100).toFixed(4))
-		baseAdDiscountConvertObj = [];
-		dcrPivotPercent = 0;
-		
-		for ( var p1 in baseAdDiscountConvertParamObject ) {
-			baseAdDiscountConvertObj.push(baseAdDiscountConvertParamObject[p1])
-		}
-		
-		if ( formatInputDP <= baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
-			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - formatInputDP) );
-		} else if ( formatInputDP > baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
-			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount + (formatInputDP - baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount) );
-		}
-		
-		baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent = dcrPivotPercent;
-		
-		return dcrPivotPercent;
-	}
-	
-	//== ID-9 ==\\
-	function getInputBoxAdLedgerConfigNumber() {
-		var adLedgerConfigNumber = $('#setConfigNumber').val();
-		return adLedgerConfigNumber;
-	}
-	
-	//**************************************** SET FUNCTIONS FOR SETTING VALUES ********************************************\\
-	//**********************************************************************************************************************\\
-	
-	//== ID-10 ==\\
-	//== SETS GENERAL/BASE DISCOUNT CONVERT RATE FOR A DEFINED SET << STORE NUMBER IS NOT A REQURIED PARAMETER
-	function setGeneralBaseAdDiscountConvertRate() {
-		var whichConfigSet, baseDcrObj, baseDCR, adPointMax, adPointPivot, adAvgDiscount, lastPeriodAdLedgerPercent;
-		
-		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== GETS THE CONFIG SETTINGS FROM baseAdDiscountConvertParamObject OBJECT
-		baseDcrObj = [];
-		
-		for ( var p1 in baseAdDiscountConvertParamObject ) {
-			var pass1 = baseAdDiscountConvertParamObject[p1];
-			baseDcrObj.push(pass1);
-		}
-		
-		if (whichConfigSet || whichConfigSet === 0 ) {
-			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
-			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
-			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
-			baseDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
-		}
-		
-		return baseDCR;		
-		
-	}
-	
-	//== ID-11 ==\\
-	//== SET STORE GENERAL/BASE DISCOUNT CONVERT RATE
-	function setAdvertiserBaseAdDiscountRate( ) {
-		var storeNumber, whichConfigSet, storeObj, aIndex, baseDcrObj, calculatedDCR, adPointMax, adPointPivot, adAvgDiscount;
-		
-		storeNumber = getInputBoxAdLedgerStoreNumber(); //== THIS RETURNS THE STORE NUMBER TO IDENTIFY WHICH STORE TO UPDATE THE BASEDCR
-		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== THIS RETURNS THE CONFIG SET TO USE ON BASEDCROBJ
-		storeObj = getStoresObj();
-		aIndex = storeNumber - 1;
-		baseDcrObj = [];
-		
-		for ( var p1 in baseAdDiscountConvertParamObject ) {
-			var pass1 = baseAdDiscountConvertParamObject[p1];
-			baseDcrObj.push(pass1);
-		}
-		
-		if (whichConfigSet || whichConfigSet === 0 ) {
-			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
-			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
-			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
-			calculatedDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
-		}
-		
-		storeObj[aIndex].baseAdConvertRate = calculatedDCR;
-		return storeObj[aIndex].baseAdConvertRate;	
-	}
-	
-	//== ID-12 ==\\
-	//** GENERATE & SET X-AXIS HEADER VALUES FOR AD LEDGER DIVVIATION
-	function setXAxisAdLedgerDiscountPercentHeader() {
-		var xAxisHeader, xAxisDiscountPercentMin, xAxisDiscountPercentMax, index;
-		
-		xAxisHeader = [];
-		xAxisDiscountPercentMin = 0.0001;
-		xAxisDiscountPercentMax = 1.0000;
-		index = 0;
-		
-		for (var p1 = xAxisDiscountPercentMin; p1 <= xAxisDiscountPercentMax; p1 = Number(parseFloat(p1 + xAxisDiscountPercentMin).toFixed(4)) ) {
-			xAxisHeader.push(p1);
-		}
-		return xAxisHeader;
-		
-	}
-	
-	//== ID-13 ==\\
-	//** GENERATE & SET Y-AXIS VALUES FOR Y-AXIS MULTIPLIER USE
-	function setYAxisLedgerDiscountPercentDivviationRange() {
-		var yAxisSidebar, yAxisAdLedgerPercentMin, yAxisAdLedgerPercentMax, index;
-		
-		yAxisSidebar = [];
-		yAxisAdLedgerPercentMin = 0.0001;
-		yAxisAdLedgerPercentMax = 1.0000;
-		index = 0;
-		
-		for (var p1 = yAxisAdLedgerPercentMin; p1 <= yAxisAdLedgerPercentMax; p1 = Number(parseFloat(p1 + yAxisAdLedgerPercentMin).toFixed(4)) ) {
-			yAxisSidebar.push(p1);
-		}
-		
-		return yAxisSidebar;
-	}
-	
-	//== ID-14 ==\\  ======================================================================================== 
-	//** GENERATE Y-AXIS MULTIPLIER FOR X-AXIS USE
-	function setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
-		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex, baseDCR, baseDCRconvert, yAxisBaseMultiplierSidebar, pivotMultiplierIndex, pivotMultiplier;
-		
-		//****** COMPILE FIRST Y-AXIS SIDEBAR VALUES  ***************************************************************\\ 
-		yAxisPivotSidebar = []; //== STEP THREE
-		pivotPercent = getInputBoxToChangeAdLedgerDivviationPercent();  //== STEP ONE >> THIS RETURNS THE PIVOT POINT PERCENT DETERMINED BY THE AD-LEDGERS CURRENT VALUE  <<<<<<<<<<<<   COME BACK, THIS NEEDS TO BE DETEMINED AUTONOMOUSLY
-		pivotPercentIndex = Number(((pivotPercent/100) * yAxisDivviationSidebar.length).toFixed(4)); //==STEP TWO >> THE RETURN VALUE IS THE PIVOT INDEX FOR FIRST Y-AXIS
-		baseDCR = setGeneralBaseAdDiscountConvertRate(); //== STEP FOUR >> THE BASE DCR IS RETURNED USING CONFIG PARAMETERS
-		
-		for ( var p1 = 0; p1 < yAxisDivviationSidebar.length; p1++ ) {
-			if ( p1 < pivotPercentIndex ) {
-				yAxisPivotSidebar.unshift(Number(( 1 - parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
-			}
-			else {
-				yAxisPivotSidebar.push(Number(( (1 - (pivotPercent/100)) + parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
-			}
-		}
-		
-		//========== COMPILE SECOND Y-AXIS SIDEBAR -- TABLE MULTIPLIER VALUES RETURNED FOR USE  ====================================================\\
-		//=== IF MULTIPLIER NEEDS TO BE INCREASED OR DECREASED AT A PIVOT POINT, ADD A MODIFIER VALUE TO A SECOND PIVOT POINT \\
-		//=== FINAL CHANGES ADD TO ADLEDGERPARAM OBJECT ===\\
-		yAxisBaseMultiplierSidebar = []; //== STEP FIVE
-		baseDCRconvert = baseDCR; //== STEP 6
-		pivotMultiplierIndex = (yAxisPivotSidebar.length * 0.40); //== STEP 7
-		pivotMultiplier = 0.25; //==STEP 8
-		
-		for (var p2 = 0; p2 < yAxisDivviationSidebar.length; p2++ ) {
-			if  (p2 < pivotPercentIndex ) {
-				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
-			} else if ( p2 > pivotPercentIndex && p2 < pivotMultiplierIndex ) {
-				yAxisBaseMultiplierSidebar.push(Number(((pivotMultiplier + yAxisPivotSidebar[p2]) * baseDCRconvert).toFixed(4)));
-			} else {
-				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
-			}
-		}
-		
-//		console.log([baseDCR, yAxisPivotSidebar, yAxisBaseMultiplierSidebar ]);
-		return yAxisBaseMultiplierSidebar;
-	} 
-	
-	//******************* FUNCTION FOR GENERATING AD-LEDGER DIVVIATION SIDEBAR MULTIPLER VALUES ********************************\\
-	//**************************************************************************************************************************\\
-	
-	//== ID-15 ==\\   //== THIS NEEDS TO SET THE GENERAL BASE AD POINT CONVERT FOR EVERY STORE
-	function generateYAxisAdLedgerDiviationSidebar() {
-		var xAxisHeader, yAxisDivviationSidebar, yAxisPivot, adLedgerDivviation;
-		
-//		xAxisHeader = setXAxisAdLedgerDiscountPercentHeader();  //== STEP ONE >> USES ID-12
-		yAxisDivviationSidebar = setYAxisLedgerDiscountPercentDivviationRange();  //== STEP ONE  >> USES ID-13
-		yAxisPivot = setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar);   //== STEP TWO  >> USES ID-14
-		
-		return yAxisPivot; //== RETURNS MULTIPLIER VALUES TO USE FOR ADJUSTING THE "GENERAL/GLOBAL" BASE AD-POINT VALUE
-		//=== THIS WILL BE SUBDIVIDED BY STORE CATEGORIES/SUB-SECTIONS { USING OBJECT ID-5 }
-		
-	}
-	
-
-	//****************************** GET VALUES THAT WILL BE USED BY AD-LEDGER  ************************************************\\
-	//**************************************************************************************************************************\\
-	
-	//== ID-16 ==\\	 GETS THE AVERAGE DISCOUNT PERCENT OF ALL OFFERS; UPDATE THE LASTPERIOD LEDGER VALUE AND RETURNS THE PERCENT
-	function getCombinedDiscountTotalofAllStoreAdOffers() {
-		var avgDiscount, dcrParamObj, totalActiveOffers, stores, adLedgerCurrentDcrRateForPeriod, inputBoxConfigNumber;
-
-		stores = getStoresObj();
-		dcrParamObj = getBaseAdDiscountConvertParamObject();
-		
-		avgDiscount = 0;
-		totalActiveOffers = 0;
-		adLedgerCurrentDcrRateForPeriod = Number(( avgDiscount / totalActiveOffers ).toFixed(4)); 
-		inputBoxConfigNumber = getInputBoxAdLedgerConfigNumber();
-		
-		for ( var p1 in stores ) {
-			var value1 = stores[p1].discount;
-			var value2 = stores[p1].adOffers;
-			avgDiscount = ( value1 * value2 );
-			totalActiveOffers = Number(stores[p1].adOffers);	
-		}
-		
-		dcrParamObj[inputBoxConfigNumber].lastPeriodLedgerPercent;
-		
-		return Number(( avgDiscount / totalActiveOffers ).toFixed(4));
-	} 
-	
-	
-	//== ID-17 ==\\  GET DISCOUNT-CONVERT MULTIPLIER UTILIZING Y-AXIS AD-LEDGER DIVVIATION TABLE
-	function getDCRUtilizingAdLedgerTable() {
-		var stores, offerCombinedAvg, xHeader, ySidebar, dcrIndex, dcrMultiplier;
-		
-		stores = getStoresObj();
-		offerCombinedAvg = getCombinedDiscountTotalofAllStoreAdOffers();
-		xHeader = setXAxisAdLedgerDiscountPercentHeader();
-		ySidebar = generateYAxisAdLedgerDiviationSidebar();
-		dcrIndex = (offerCombinedAvg * ySidebar.length );
-		dcrMultiplier = ySidebar[dcrIndex];
-		
-		return dcrMultiplier;
-		
-	}
-	
-	//== ID-19 ==\\  
-	
-	function updateStoreInfoOnOffers() {
-		var stores, storeNumber;
-		
-		stores = getStoresObj();
-		storeNumber = 1;
-		
-		for ( var p1 = 0; p1 < stores.length; p1++ ){
-			$('.js-storeName-' + storeNumber).text(stores[p1].name);
-			$('.js-storeAddress-' + storeNumber).text(stores[p1].address);
-			$('.js-storeCity-' + storeNumber).text(stores[p1].city);
-			$('.js-distance-' + storeNumber).text("12.44 miles");
-			$('.js-numberOfOffers-' + storeNumber).text(stores[p1].adOffers);
-			storeNumber++;
-		}
-		
-	}
-	
-		//== ID-20 ==\\
-	
-	function setXAxisHeaderForAdPerformanceTable() {
-		var xAxisHeader, rankLevel, aIndex, rankSettingsObj, xMaxTimeScale;
-		
-		xAxisHeader = [];
-		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
-		aIndex = rankLevel - 1;
-		rankSettingsObj = getRankSettingsObject();
-		xMaxTimeScale = rankSettingsObj[aIndex].xTimeScale;
-		
-		for ( var p1 = 0; p1 < xMaxTimeScale; p1++ ) {
-			xAxisHeader.push(p1);
-		}
-		
-		return xAxisHeader;
-		
-	}
-	
-	//== ID-21 ==\\
-	
-	function setYAxisSidebarForAdPerformanceTable() {
-		var yAxisSidebar, rankSettingsObj, rankLevel, aIndex, yPivot, preVal_y1, preVal_y2 ;
-		
-		yAxisSidebar = [];
-		rankSettingsObj = getRankSettingsObject();
-		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
-		aIndex = rankLevel - 1;
-		yPivot = (rankSettingsObj[aIndex].estAdRedemptionAvg * rankSettingsObj[aIndex].adLimit)
-		preVal_y1 = rankSettingsObj[aIndex].y1;
-		preVal_y2 = rankSettingsObj[aIndex].y2;
-		
-		for ( var p1 = 0; p1 < rankSettingsObj[aIndex].adLimit; p1++ ) {
-			if ( p1 < yPivot ) {
-				var pass1 = rankSettingsObj[aIndex].maxScale + preVal_y1;
-				yAxisSidebar.unshift( parseFloat( pass1 ).toFixed(4) );
-				preVal_y1 += rankSettingsObj[aIndex].y1;
-			} else {
-				var pass2 = rankSettingsObj[aIndex].maxScale - preVal_y2;
-				yAxisSidebar.push( parseFloat( pass2 ).toFixed(4) );
-				preVal_y2 += rankSettingsObj[aIndex].y2;
-			}
-		}
-		
-		return yAxisSidebar;
-	}
-	
-	//== ID-22 ==\\
-	
-	function generateAdPerformanceTable() {
-		var  rankSettingsObj, rankLevel, aIndex, xAxisHeader, yAxisSidebar, adLedgerDCR, xValue, adPerformanceTable;
-		
-		rankSettingsObj = getRankSettingsObject();
-		rankLevel = getInputBoxSelectedRankLevel();
-		aIndex = rankLevel - 1;
-		xAxisHeader = setXAxisHeaderForAdPerformanceTable();
-		yAxisSidebar = setYAxisSidebarForAdPerformanceTable();
-		adLedgerDCR = getCombinedDiscountTotalofAllStoreAdOffers();
-		xValue = Number((rankSettingsObj[aIndex].x1).toFixed(4));
-		adPerformanceTable = [];
-		
-		for (var p1 = 0; p1 < yAxisSidebar.length; p1++ ) {
-			var pass1 = parseFloat(yAxisSidebar[p1]);
-			for (var p2 = 0; p2 < xAxisHeader.length; p2++ ) {
-					adPerformanceTable.push(Number(parseFloat(pass1 + (yAxisSidebar[p1] * xValue)).toFixed(4)));
-					pass1 = (pass1 + (yAxisSidebar[p1] * xValue));
-			}
-		}
-		
-		return adPerformanceTable;
-	}
-	
-	//== ID-23 ==\\ 
-	
-	function processOffersUtilizingPerformanceTable() {
-		//== WILL NEED TO KNOW TIME SEGMENT OF OFFER
-		//== WILL NEED TO KNOW DISCOUNT PERCENT OF OFFER
-		//== WILL NEED TO KNOW QTY OF OFFERS LEFT
-	}
-	
-	//== ID-18 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
-
-	function updateOfferPointUtilizingMultiplier() {
-		var stores, dcrMultiplier, count, calculatedAdPoint, updatePoints, adPerformanceTable;
-		
-		stores = getStoresObj();
-		dcrMultiplier = getDCRUtilizingAdLedgerTable();
-		adPerformanceTable = generateAdPerformanceTable();
-		updatePoints = [];
-		
-		count = 1;
-		
-		for (var p1 = 0; p1 < stores.length; p1++ ) {
-			var pass1 = stores[p1];
-			calculatedAdPoint = Number(parseFloat((pass1.discount * 100)* dcrMultiplier).toFixed(2));
-			updatePoints.push(calculatedAdPoint);
-			$('.js-pointValue-' + count).text(calculatedAdPoint);
-			count++;
-		}
-		
-		return updatePoints;
-	}
-	
-	
-	//*******************  FUNCTIONAL BUTTONS FOR INVOKING FUNCTIONS OF SECTION A  *********************************************\\
-	//**************************************************************************************************************************\\
-	
-	
-	$('.js-setAdDiscountConfigCategory').on('click', function() {
-		var generalDCR = setGeneralBaseAdDiscountConvertRate();
-		console.log(generalDCR); //== RETURNS THE GENERAL DISCOUNT CONVERT RATE (DCR);
-	});
-	
-	$('.js-setStoreDiscountConvertRate').on('click', function() {
-		var storeDCRconvertRate = setAdvertiserBaseAdDiscountRate();
-		
-		console.log(storeDCRconvertRate); //== RETURNS THE STORES SET DISCOUNT CONVERT RATE (DCR);
-	});
-	
-	$('.js-generateAdLedgerDiviationTable').on('click', function() {
-		var adLedgerTable = generateYAxisAdLedgerDiviationSidebar();
-		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
-	});
-	
-	$('.js-testingBtnSectionA').on('click', function() {
-		var test = updateOfferPointUtilizingMultiplier(); //=== UPDATES POINT VALUE OF OFFERS
-		updateStoreInfoOnOffers();
-		console.log(test); 
-	});
-	
-	$('.js-testingBtnSectionB').on('click', function() {
-		var test = generateAdPerformanceTable(); //== UPDATES DCR RATE ACCORDING TO AD PERFORMANCE
-		console.log(test); 
-	});
-	
-	
-	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
-	//=**********************************************************************************************************************************************************\\
-	//=*************************************************************** END SECTION A ***********************************************************************\\
-	
-	//== ID-4 ==\\
-	//+++++ VARIABLES FOR GETTING X TABLE VALUES FOR AD LEDGER DIVVIATION
-//	var xAdPointSpectrum = []; 	
-//	
-//	function getXAdPointSpectrum() {
-//		var axisMax = 1;
-//		var xAxis = 0.0001;
-//		var iCount = 0; // scale x range is 0.01% to 1
-//		
-//		// var i = .0001; .0001 < 1; .0001 = .0001 + .0001)
-//		for (var i = xAxis; i <= axisMax; i = i + xAxis ) {
-////			xAdPointSpectrum[iCount] = Number((i * 100).toFixed(2)); // Original
-//			xAdPointSpectrum[iCount] = Number((i).toFixed(6)); // Attempting not to upConvert Floating-Point Values
-//			iCount++;
-//		}
-//		return xAdPointSpectrum;
-//		
-//	};
-	
-//	var test10 = getXAdPointSpectrum(); // verified to contain index count of 10000
-//	console.log(test10);
-	
-	
-
-	
-	//== ID-5 ==\\
-//	var yAdPointSpectrum = [];
-//	
-//	function getYAdPointSpectrum() {
-//		var axisMax = 1;
-//		var yAxis = 0.0001; 
-//		var kCount = 0; // scale y range is 0.0001 to 1
-//		
-//		for (var k = yAxis; k <= axisMax; k = k + yAxis ) {
-//			yAdPointSpectrum[kCount] = Number(k.toFixed(4));
-//			kCount++;
-//		}
-//	};
-//		
-//	getYAdPointSpectrum(); // verified to contain index count of 10000
-//	// Changed to contain index of 999 >> Web Browser Freezing with Large Number
-//	
-//	
-	
-	//=========================================================\\
-	//=== START CODE FOR GENERATING **CALCULATED Y** TABLE MULTIPLIER ===//
-  //=========================================================\\
-//	
-//	
-//	//== ID-6 ==\\
-//	var yPlus = []; // Validated correct values returned >> changed result === 880
-//	var yMinus = []; // Validated correct values returned >> changed result === 119
-//
-//	function getYPivotPointValues() {
-//		// var pivotPoint = yAdPointSpectrum[1199]; // this is equivelant to 12.00% within the array
-//
-//		var y1Count = 0;
-//		for (var y = 119; y < yAdPointSpectrum.length; y++ ) {
-//			yPlus[y1Count] = Number((1 + parseFloat(yAdPointSpectrum[y])).toFixed(4));
-//			y1Count++;
-//		}
-//
-//		var y2Count = 0;
-//		for (var x = 119; x > 0; x-- ) {
-//			yMinus[y2Count] = Number((1 - parseFloat(yAdPointSpectrum[x])).toFixed(4));
-//			y2Count++;
-//		}
-//	}
-//	
-//	var test101 = getYPivotPointValues();
-//	console.log([test101]);
-
-	//=========================================================\\
-	//=== START CODE FOR GENERATING CALCULATED VALUES FOR GENERATING STEP DIVVIATION MULTIPLIER ===//
-  //=========================================================\\
-	
-//== ID-7 ==\\
-	//+++++ GETTING ACTIVE DR TO MULTIPLY AGAINST X & Y SPECTRUM TABLES
-//	var baseDrPlus = []; // Verified to have an array length of 880
-//	var baseDrMinus = []; // Verified to have an array length of 119
-//	var combinedBaseDr = [];
-//	var baseMidStartValue = Number((adBaseDiscountConvertRate / 100).toFixed(4));
-//
-//	function getBaseDr() {
-//		
-//		for (var a = 0; a < yPlus.length; a++ ) {
-//			baseDrPlus[a] = Number((yPlus[a] * baseMidStartValue).toFixed(4));
-//		}
-//
-//		for (var b = 0; b <= yMinus.length - 1; b++ ) {
-//			baseDrMinus[b] = Number((yMinus[b] * baseMidStartValue).toFixed(4)); 
-//		}
-//	}
-//	
-//	
-//	//== ID-8 ==\\
-//	function combineDr() {
-//		for ( var i in baseDrMinus ) {
-//			combinedBaseDr.push(baseDrMinus[i]);
-//		}
-//	
-//		for ( var k in baseDrPlus ) {
-//			combinedBaseDr.push(baseDrPlus[k]);
-//		}
-//	}
-//	
-//	var test110 = getBaseDr();
-//	
-//	console.log(test110);
-//	combineDr();
-	
-	//=========================================================\\
-	//=== START CODE FOR ** FINAL CALCULATED X AND Y ** TO APPLY AS TABLE MULTIPLIER FOR AD LEDGER ===//
-	//=========================================================\\
-	
-	//== ID-9 ==\\ ///====== >>> HAS NO USE FOR GENERAL AD-LEDGER || THIS IS BECAUSE RANK MEASUREMENT PROVIDES THE VARIABILITY FOR FURTHER POINT MANIPULATION 
-//	
-//    //=== WOULD POSSIBLY BE MORE EFFICIENT TO LOOK UP THE DISCOUNT VALUE FIRST, THEN LOCATE THE MULTIPLIER TO APPLY
-//    //=== THE BELOW IS NOT REQUIRED FOR CALCULATING CHANGE BUT CAN BE USED << BECAUSE CALCULATED BASEDR IS MULTIPLIED BY THE PERCENTAGE APPLIED
-//    //=== FOR EXAMPLE STEPS:
-//    //=== (1). CHECK AD LEDGER AVERAGE % ==> get from yAdPointSpectrum
-//    //=== (2). LOCATE BASEDR FOR CURRENT VALUE ==> get from BaseDrPlus Or Minus
-//    //=== (3). CHECK APPLIED DISCOUNT PERCENTAGE OF OFFER
-//    //=== (4). MULTIPLY BASEDR VALUE & DISCOUNT PERCENTAGE OF AD OFFER
-//    //=== (5). RETURN FINAL RESULT; THIS IS ADS ACTIVE CONVERT POINT VALUE FOR ORIGINATING DISCOUNT AT TIME OF AD CREATION
-//		// yAdPointSpectrum[ya1] is only used for comparing/getting baseDrPlus value (Divviation Value);	
-//	
-//	
-////	var axisCalculated = [];
-////	var xyAxisCalculated = [];
-////	var negIndex = baseDrMinus.length-1;
-////	var plusIndex = 0; // Need Start INDEX Of "0" for second-half of BaseDrPlus because its index is different than current loop
-//
-//	function getFinalAdLedgerTable() {
-//		
-//		for (var ya = 0; ya < xAdPointSpectrum.length; ya++ ) {  // length === 99	
-//			for (var ya1 = 0; ya1 < yAdPointSpectrum.length; ya1++ ) { // length === 999
-//				if (ya1 > 0 && ya1 < 119 ) {
-//					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrMinus[negIndex] + "==== FIRST LOOP =====XXXX " + xAdPointSpectrum[ya] + " %"); // VERIFIED RESULT === 118 Outer 118 0.002 Y-Informative-Only==0.0249==== FIRST LOOP =====XXXX 1 %
-//					axisCalculated.push(Number(baseDrMinus[negIndex]).toFixed(4) );
-//					xyAxisCalculated.push(Number(yAdPointSpectrum[ya]).toFixed(4) );
-//				}
-//				if (ya1 >= 119 && ya1 < yAdPointSpectrum.length ) {
-//					// console.log(yAdPointSpectrum[ya1] + " Y-Informative-Only==" + baseDrPlus[plusIndex] + "====" + plusIndex + "===== XXXX >" + xAdPointSpectrum[ya] + " %  == " + ya1); // This Line Correct >>==  0.12 Y-Informative-Only==0.028====0===== XXXX >1 %  == 1	
-//					axisCalculated.push(Number(baseDrPlus[plusIndex]).toFixed(4) );
-//					xyAxisCalculated.push( Number(yAdPointSpectrum[ya]).toFixed(4) );
-//				}
-//				if (plusIndex > (baseDrPlus.length - 1) ) {
-//					plusIndex = 0;
-//				}
-//				if (ya1 > 119 ) {
-//					plusIndex++;
-//				}
-//			}
-//			negIndex--;
-//			
-//		}
-//	}		
-////	 getFinalAdLedgerTable();
-//	
-	
-	
-	//=========================================================\\
-	//=== GET DISCOUNT PERCENTAGE AVERAGE FOR ALL AD OFFERS ===//
-  //=========================================================\\
-	
-	//=========================================================\\
-	//=== GET THE POINT CONVERSION VALUE FOR A SINGLE PERCENTAGE POINT
-	//=== EXAMPLE ** (1% === 1.43PTS) >> 20% DISCOUNT * 1.43PTS = 28.6PTS WILL DIPLAY WITHIN AD OFFER ===//
-  //=========================================================\\
-	
-	//== ID-11 ==\\	
-	// == Need stores originating discount percent
-	// == Each button/ad will have its own unique class, therefore identifying which one is not really relevant at this time
-	// (1). Need to match the correct "Y" to TotalAdOffers returned Value 
-	// (2). Need to Match RETURNED Value to "yAdPointSpectrum"
-	// (3). Get the BASEDR convert value using the RETURNED Index Value
-	// (4). Multiply the STORE DISCOUNT PERCENT by the Matched BASE DR Value
-	//  combinedBaseDr === yAdPointSpectrum
-	
-	//=== THIS IS UPDATING THE STORES DISCOUNT BASE DISCOUNT CONVERT RATE UTILIZING THE MODIFIED BASE INDEX MULTIPLIER VALUE
-	
-	function getOriginatingDiscountPercent(s, dcr) {
-		var numberMultiplier = 0;
-		var yIndex = 1;
-		var yIncrement = 0.001;
-		var t = getTotalAdOffers(stores);
-		
-		// (1). Find Y Value of adjusted Discount Percent (.20) > vertical (999)
-		// (2). Find X Value of Stores Percent (20) > horizontal (99)
-		// (3). Find DR Value of Y position. > horizontal (98,802)
-		function getYIndex() {
-			var count = 0;
-			for (var i = yIncrement; i < t; i = i + yIncrement ) {
-				// console.log(count + " +++ " + i.toFixed(4) + " === " + combinedBaseDr[count] + " +++ " + yAdPointSpectrum[count]);
-				
-				if ( yAdPointSpectrum[count] <= t ) {
-					yIndex = count;
-				}
-				count++;
-			}
-		}
-		
-		getYIndex();
-	
-		//** s == .12 need 100% upconvert to point value || combinedBaseDr upconvert is optional >> can be moved as neccessary 
-//		console.log( [ s, combinedBaseDr[yIndex], adBaseDiscountConvertRate, dcr ] );
-		return Number((s * 100) * (combinedBaseDr[yIndex] * 10) * ( adBaseDiscountConvertRate + dcr )).toFixed(2);
-	}
-		
-	//=========================================================\\
-	//=== APPLY STORES LIVE POINT VALUE TO ADVERTISEMENT ===//
-	//=== AD-LEDGER ADJUSTMENT USED TO VARY OFFER ===//
-	//== NEED TO CORRECT CODE TO BE MODULAR FOR EACH STORE AD OFFER ===//
-  //=========================================================\\
-	
-		
-	//=========================================================\\
-	//=== BEGIN CODE FOR AD | ACTIVITY OCCURANCE ALGORITHM ===//
-  //=========================================================//
-	
-	
-	
-	//=*************************************************************   NEW CODE BELOW    *******************************************************************\\
-	//=**********************************************************************************************************************************************************\\
-	//=*************************************************************** START SECTION B ***********************************************************************\\
-	
-
-	
-	//=========================================================\\
-	//=== GENERATING THE XY AXIS TABLES FOR AD ACTIVITY ===//
-  //=========================================================//
-	
-	//== ID-13 ==\\
-	
-	var yAdActivity = [];
-	var y2PlusAdActivity = [];
-	var x1Activity = [];
-	
-	function getXYAdActivity() { 
-		
-		function getY1(ab, y1, y2, ali, aq) {
-			var pivot = ali * aq;
-			var y1a = y1;
-			var y2a = y2;
-			
-			for (var m = 0; m < ali; m++ ) {
-				if (m < pivot ) {
-					yAdActivity.unshift( parseFloat(ab + y1).toFixed(4) );
-					y1 = parseFloat(y1 + y1a);
-				}
-			
-				if (m >= pivot && m < ali ) {
-					y2PlusAdActivity.push( parseFloat(ab - y2).toFixed(4) );
-					y2 = parseFloat(y2 + y2a);
-				}
-			}
-		}
-		
-		function getX1(xts) {
-			for (var x = 0; x < xts; x++ ) {
-				x1Activity.push(x);
-			}
-		}
-		
-		for (var i in setRank ) {
-			getY1(setRank[i].maxScale, setRank[i].y1, setRank[i].y2, setRank[i].adLimit, setRank[i].estAdRedemptionAvg);
-			getX1(setRank[i].xTimeScale);
-		}
-		
-		function combineAdActivityTable() {	
-			for (var i in y2PlusAdActivity ) {
-				yAdActivity.push(y2PlusAdActivity[i]);
-			}
-		}
-		
-		combineAdActivityTable();
-		
-	}
-	
-	getXYAdActivity();
-	
-	
-	//=========================================================\\
-	//=== CALCULATING & GENERATING XY-AXIS TABLE FOR AD ACTIVITY ===//
-  //=========================================================//
-	
-	
-	//== ID-14 ==\\
-//	var activityTable = [];
-//	
-//	function getAdActivityTable() { // (assigned ad point value + (assigned ad point value *  occurrence table value))
-//		
-//		function calculateAdActivityTable(xt) {
-//			
-//			for (var x = 0; x < yAdActivity.length; x++ ) {
-//				var x3 = parseFloat(yAdActivity[x]);
-//				for (var x2 = 0; x2 < x1Activity.length; x2++ ) {
-//						activityTable.push(parseFloat(x3 - (yAdActivity[x] * xt)).toFixed(4));
-//						x3 = parseFloat(x3 - (yAdActivity[x] * xt));
-//				}
-//			}	
-//		}
-//		
-//		for (var i in setRank ) {
-//			calculateAdActivityTable(setRank[i].x1);
-//		}
-//	}
-//	
-//	getAdActivityTable();
-//	console.log(activityTable[240]); // For checking values against excel table
-//	console.log(activityTable[241]);
-//	console.log(activityTable[242]);
-//	console.log(activityTable[243]);
-//	console.log(activityTable[244]);
-//	console.log(activityTable[245]);
-	
-	
-	//=========================================================\\
-	//=== GET & CALCULATE THE AD ACTIVITY/OCCURANCE MULTIPLIER >> ===//
-  //=========================================================//
-	
-	//== ID-15 ==\\
-	
-	// 1. NEED THE NUMBER OF AD OFFER LEFT (40 LEFT) << NEED ACCESS TO STORES OBJECT
-	// 2. NEED THE TIME LEFT FOR THE AD OFFER TO THE NEAREST HOUR (80 HOURS LEFT) << NEED TO CALL TIME AND GET THE RTIME
-	// 3. NEED THE VALUE TO MUTLIPLY FROM THE ACTIVITY TABLE (1.22 )
-	// 3.1. GET NUMBER OF OFFERS LEFT
-	// 3.2. LOCATE VALUE ON Y-AXIS; GET THE INDEX NUMBER
-	// 3.4. MULTIPLY Y-AXIS INDEX AND X-AXIS.LENGTH
-	// 3.5. USE INDEX NUMBER TO LOCATE MULTIPLIER. APPLY TO AD
-	
-	function adOccuranceFactor() {
-		var yIndex;
-		var xIndex = x1Activity.length;
-		var cIndex;
-		var adOccuranceMultiplier = [];
-		
-		function calculate(ao, ct, et, sd ) {
-			var t = formatTimeIntoDate(et, ct);
-			var rt = parseInt(t.total/(1000 * 60 * 60));
-			
-			for (var y1 = 0; y1 < yAdActivity.length; y1++ ) {
-				if ( y1 == ao ) {
-					yIndex = y1;
-				}
-			}
-			
-			cIndex = (yIndex * xIndex) - (xIndex - rt);
-//			console.log(cIndex);
-			adOccuranceMultiplier.push(parseFloat(activityTable[cIndex]));
-		}
-		
-		
-		for (var i in stores ) {
-			calculate(stores[i].adOffers, stores[i].adCreateTime, stores[i].adEndTime, stores[i].discount );
-		}
-		
-		return adOccuranceMultiplier;
-		
-	}
-	
-	
-	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
-	//=**********************************************************************************************************************************************************\\
-	//=*************************************************************** END SECTION B ***********************************************************************\\
-	
-	//=========================================================\\
-					//=== START TABLE FOR RANK TABLES  ===//
-  //=========================================================//
-	
-	//=========================================================\\
+		//=========================================================\\
 	//=== CREATING OBJECT TO HOLD MEASUREMENT VALUES FOR ADVERTISER  ===//
   //=========================================================//
 	
-	//== ID-16 ==\\
+	//== ID-2 ==\\
 	
-	var setMTableAdver = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
+	var rankMeasurementSettingsForAdvertiserObject = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
 		// ATTEMPTED TO ADD TO "SETRANK" OBJECT BUT TOO LARGE. DECIDED TO SEPERATE CONCERNS BECAUSE THERE'S EXPECTED TO BE OVER 40 RANK LEVELS.
 		
 		lv1: {
@@ -1825,6 +825,749 @@ $(document).ready(function() {
 	
 	
 	//=========================================================\\
+	//=== CALCUALATE THE TIME AND TIMER FOR ADS  ===//
+  //=========================================================\\
+	
+	//== ID-3 ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
+	
+	function formatTimeIntoDate(endTime, createTime, currentTime) {
+		
+		var time = Date.parse(endTime) - Date.parse(new Date());
+		var sTime = Date.parse(createTime) - Date.parse(new Date());
+		var rTime = time - sTime; // required to determine # of days 
+
+		var seconds = Math.floor( (time/1000) % 60 );
+		var minutes = Math.floor( (time/1000/60) % 60 );
+		var hours = Math.floor( (time/(1000*60*60)) % 24 );
+		var days = Math.floor( time/(1000*60*60*24) );
+
+		return {
+			'cTime': currentTime,
+			'total': time,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
+	
+	
+	//== ID-4 ==\\
+	
+	function calculateTime(s) {
+	
+		
+		function intializeClock(et, ct, nt, id, c ) {
+			var clock = $('.js-timeLeft-'+ c);
+			// console.log(clock);
+			var timeInterval = setInterval(function() {
+				
+				var t = formatTimeIntoDate(et, ct, ct); // this is the function calling the new time
+				if (t.minutes <= 9) {
+					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':' + t.seconds );
+				} 
+				if (t.seconds <= 9) {
+						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
+					}
+				if (t.seconds <= 9) {
+						clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':0' + t.seconds );
+					} 
+				
+				if (t.minutes <= 9 && t.seconds <= 9) {
+					clock.text( t.days + ' days ' + t.hours + ':0' + t.minutes + ':0' + t.seconds );
+				} 
+				if (t.minutes > 9 && t.seconds > 9) {
+					clock.text( t.days + ' days ' + t.hours + ':' + t.minutes + ':' + t.seconds );
+				}
+				
+				if(t.total <=0 ) {
+					clearInterval(timeInterval);
+				}
+			}, 1000); // 1000 is equal to 1 second // 
+		}
+		
+		var count = 1;
+		for (var i in stores ) {
+			intializeClock(stores[i].adEndTime, stores[i].adCreateTime, stores[i].currentTime, 'clock', count );
+			count++;
+		}
+		
+	}
+	
+	calculateTime(stores);
+	
+		//==========================================================================================\\
+	//  ||=== GETTER FUNCTIONS FOR STORES, SETRANK AND MPARAM  ===||
+	//  ||===           RETURNS OBJECTS OR PROPERTY            ===||
+  //==========================================================================================//
+	
+	//=*******************************************************************************************************************************************************\\
+	//=*************************************************************** GET OBJECT FUNCTIONS ***********************************************************************\\
+	
+	//== ID-5 ==\\
+	function getStoresObj() {
+		var storesObj = [];
+		for ( var p1 in stores) {
+			var pass1 = stores[p1]
+			storesObj.push(pass1);
+		}
+		return storesObj;
+	}
+	
+	//== ID-6 ==\\
+	function getStoresProp() {
+		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
+		for ( var p1 in stores) {
+			var pass1 = stores[p1]
+			storesProp.push(p1);
+		}
+		return storesProp;
+	}
+	
+	//== ID-7 ==\\
+	function getRankXyTableConfigSettingsForAdvertiserObject() {
+		var rankTableConfigObj = [];
+		for ( var p1 in rankXyTableConfigSettingsForAdvertiserObject) {
+			var pass1 = rankXyTableConfigSettingsForAdvertiserObject[p1]
+			rankTableConfigObj.push(pass1);
+		}
+		return rankTableConfigObj;
+	}
+	
+	//== ID-8 ==\\
+	function getRankSettingsProp() {
+		var rankSettingsProp = [];
+		for ( var p1 in rankXyTableConfigSettingsForAdvertiserObject) {
+			var pass1 = rankXyTableConfigSettingsForAdvertiserObject[p1]
+			rankSettingsProp.push(p1);
+		}
+		return rankSettingsProp;
+	}
+	
+	//== ID-9 ==\\
+	function getTimeMeasureRankSetObj() {
+		var setMParamObj = [];
+		for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject) {
+			var pass1 = rankTimeMeasurementSettingsForAdvertiserObject[p1]
+			setMParamObj.push(pass1);
+		}
+		return setMParamObj;
+	}
+	
+	//== ID-10 ==\\
+	function getTimeMeasureRankSetProp() {
+		var setMParamProp = [];
+		for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject) {
+			var pass1 = rankTimeMeasurementSettingsForAdvertiserObject[p1]
+			setMParamProp.push(p1);
+		}
+		return setMParamProp;
+	}
+	
+	//=*******************************************************************************************************************************************************\\
+	//=*************************************************************** GET OBJECT FUNCTIONS  ***********************************************************************\\
+	
+
+	//=========================================================\\
+	//=== START GENERATE VALUES FOR AD POINT DISCOUNT CONVERSION ALGORITHM ===//
+  //=========================================================\\
+	
+	//=************************************************* NEW BLOCK OF IMPROVED AD-LEDGER TABLE FUNCTIONS *****************************************************\\
+	//=*******************************************************************************************************************************************************\\
+	//=*************************************************************** START SECTION A ***********************************************************************\\
+	
+		
+	//== ID-11 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
+	var baseAdDiscountConvertParamObject = {
+		
+		set_1: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.50,
+			baseAdPointAvgDiscount: 0.20,
+			lastPeriodLedgerPercent: 0,
+		},
+		set_2: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.60,
+			baseAdPointAvgDiscount: 0.30,
+			lastPeriodLedgerPercent: 0,
+		},	
+		set_3: {
+			baseAdPointMax: 1000,
+			baseAdPointPivotPercent: 0.70,
+			baseAdPointAvgDiscount: 0.40,
+			lastPeriodLedgerPercent: 0,
+		},
+	}
+	
+	//== ID-12 ==\\
+	//****************************** THIS IS NOT BEING USED FOR 
+	var adLedgerDivviationParamObject = {
+		
+		adLedgerPivotPercent_group1: {
+			grocery1: 0.1433,
+			grocery2: 0.1796,
+			grocery3: 0.1931,
+			grocery4: 0.2375,
+		},
+		adLedgerPivotPercent_group2: {
+			clothing1: 0.2121,
+			clothing2: 0.2450,
+			clothing3: 0.2780,
+			clothing4: 0.3500,
+		},
+		adLedgerPivotPercent_group3: {
+			quickServeFood1: 0.243,
+			quickServeFood2: 0.243,
+			quickServeFood3: 0.243,
+			quickServeFood4: 0.243,
+		},
+		adLedgerPivotPercent_group4: {
+			sport1: 0.183,
+			sport2: 0.183,
+			sport3: 0.183,
+			sport4: 0.183,
+		}
+		
+	}
+	
+	//== ID-13 ==\\
+	function getBaseAdDiscountConvertParamObject() {
+		var adLedgerBaseDiscountObj = [];
+		
+		for (var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			adLedgerBaseDiscountObj.push(pass1);
+		}
+		
+		return adLedgerBaseDiscountObj;
+	}
+	
+	//****************************** INPUT BOX GET FUNCTIONS FOR RETRIEVING VALUES FROM INPUT BOXES ************************\\
+	//**********************************************************************************************************************\\
+	//== ID-14 ==\\
+	function getInputBoxAdLedgerStoreNumber() {
+		var storeNumber = $('#setStoreDiscountConvertRate').val();
+		return storeNumber;
+	}
+	
+	//== ID-15 ==\\	
+	function getInputBoxToChangeAdLedgerDivviationPercent() {
+		var inputBoxDivviationPercent, inputBoxConfigNumber, formatInputDP, baseAdDiscountConvertObj, dcrPivotPercent;
+		
+		inputBoxDivviationPercent = $('#setAdDivviationPercent').val();
+		inputBoxConfigNumber = $('#setConfigNumber').val();
+		formatInputDP = Number((inputBoxDivviationPercent/100).toFixed(4))
+		baseAdDiscountConvertObj = [];
+		dcrPivotPercent = 0;
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			baseAdDiscountConvertObj.push(baseAdDiscountConvertParamObject[p1])
+		}
+		
+		if ( formatInputDP <= baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
+			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount - formatInputDP) );
+		} else if ( formatInputDP > baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent ) {
+			dcrPivotPercent = (baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount + (formatInputDP - baseAdDiscountConvertObj[inputBoxConfigNumber].baseAdPointAvgDiscount) );
+		}
+		
+		baseAdDiscountConvertObj[inputBoxConfigNumber].lastPeriodLedgerPercent = dcrPivotPercent;
+		
+		return dcrPivotPercent;
+	}
+	
+	//== ID-16 ==\\
+	function getInputBoxAdLedgerConfigNumber() {
+		var adLedgerConfigNumber = $('#setConfigNumber').val();
+		return adLedgerConfigNumber;
+	}
+	
+	//**************************************** SET FUNCTIONS FOR SETTING VALUES ********************************************\\
+	//**********************************************************************************************************************\\
+	
+	//== ID-17 ==\\
+	//== SETS GENERAL/BASE DISCOUNT CONVERT RATE FOR A DEFINED SET << STORE NUMBER IS NOT A REQURIED PARAMETER
+	function setGeneralBaseAdDiscountConvertRate() {
+		var stores, whichConfigSet, baseDcrObj, baseDCR, adPointMax, adPointPivot, adAvgDiscount, lastPeriodAdLedgerPercent;
+		
+		stores = getStoresObj();
+		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== GETS THE CONFIG SETTINGS FROM baseAdDiscountConvertParamObject OBJECT
+		baseDcrObj = [];
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			baseDcrObj.push(pass1);
+		}
+		
+		if (whichConfigSet || whichConfigSet === 0 ) {
+			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
+			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
+			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
+			baseDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
+		}
+		
+		for ( var p2 = 0; p2 < stores.length; p2++ ) {
+			stores[p2].baseAdConvertRate = baseDCR;
+		}
+		
+		return baseDCR;		
+		
+	}
+	
+	//== ID-18 ==\\
+	//== SET STORE GENERAL/BASE DISCOUNT CONVERT RATE
+	function setAdvertiserBaseAdDiscountRate( ) {
+		var storeNumber, whichConfigSet, storeObj, aIndex, baseDcrObj, calculatedDCR, adPointMax, adPointPivot, adAvgDiscount;
+		
+		storeNumber = getInputBoxAdLedgerStoreNumber(); //== THIS RETURNS THE STORE NUMBER TO IDENTIFY WHICH STORE TO UPDATE THE BASEDCR
+		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== THIS RETURNS THE CONFIG SET TO USE ON BASEDCROBJ
+		storeObj = getStoresObj();
+		aIndex = storeNumber - 1;
+		baseDcrObj = [];
+		
+		for ( var p1 in baseAdDiscountConvertParamObject ) {
+			var pass1 = baseAdDiscountConvertParamObject[p1];
+			baseDcrObj.push(pass1);
+		}
+		
+		if (whichConfigSet || whichConfigSet === 0 ) {
+			adPointMax = baseDcrObj[whichConfigSet].baseAdPointMax;
+			adPointPivot = baseDcrObj[whichConfigSet].baseAdPointPivotPercent;
+			adAvgDiscount = baseDcrObj[whichConfigSet].baseAdPointAvgDiscount;
+			calculatedDCR = ( (adPointPivot * adPointMax)/( adAvgDiscount * adPointMax ));
+		}
+		
+		storeObj[aIndex].baseAdConvertRate = calculatedDCR;
+		return storeObj[aIndex].baseAdConvertRate;	
+	}
+	
+	//== ID-19 ==\\
+	//** GENERATE & SET X-AXIS HEADER VALUES FOR AD LEDGER DIVVIATION
+	function setXAxisAdLedgerDiscountPercentHeader() {
+		var xAxisHeader, xAxisDiscountPercentMin, xAxisDiscountPercentMax, index;
+		
+		xAxisHeader = [];
+		xAxisDiscountPercentMin = 0.0001;
+		xAxisDiscountPercentMax = 1.0000;
+		index = 0;
+		
+		for (var p1 = xAxisDiscountPercentMin; p1 <= xAxisDiscountPercentMax; p1 = Number(parseFloat(p1 + xAxisDiscountPercentMin).toFixed(4)) ) {
+			xAxisHeader.push(p1);
+		}
+		return xAxisHeader;
+		
+	}
+	
+	//== ID-20 ==\\
+	//** GENERATE & SET Y-AXIS VALUES FOR Y-AXIS MULTIPLIER USE
+	function setYAxisLedgerDiscountPercentDivviationRange() {
+		var yAxisSidebar, yAxisAdLedgerPercentMin, yAxisAdLedgerPercentMax, index;
+		
+		yAxisSidebar = [];
+		yAxisAdLedgerPercentMin = 0.0001;
+		yAxisAdLedgerPercentMax = 1.0000;
+		index = 0;
+		
+		for (var p1 = yAxisAdLedgerPercentMin; p1 <= yAxisAdLedgerPercentMax; p1 = Number(parseFloat(p1 + yAxisAdLedgerPercentMin).toFixed(4)) ) {
+			yAxisSidebar.push(p1);
+		}
+		
+		return yAxisSidebar;
+	}
+	
+	//== ID-21 ==\\ 
+	//** GENERATE Y-AXIS MULTIPLIER FOR X-AXIS USE
+	function setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
+		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex, baseDCR, baseDCRconvert, yAxisBaseMultiplierSidebar, pivotMultiplierIndex, pivotMultiplier;
+		
+		//****** COMPILE FIRST Y-AXIS SIDEBAR VALUES  ***************************************************************\\ 
+		yAxisPivotSidebar = []; //== STEP THREE
+		pivotPercent = getInputBoxToChangeAdLedgerDivviationPercent();  //== STEP ONE >> THIS RETURNS THE PIVOT POINT PERCENT DETERMINED BY THE AD-LEDGERS CURRENT VALUE  <<<<<<<<<<<<   COME BACK, THIS NEEDS TO BE DETEMINED AUTONOMOUSLY
+		pivotPercentIndex = Number(((pivotPercent/100) * yAxisDivviationSidebar.length).toFixed(4)); //==STEP TWO >> THE RETURN VALUE IS THE PIVOT INDEX FOR FIRST Y-AXIS
+		baseDCR = setGeneralBaseAdDiscountConvertRate(); //== STEP FOUR >> THE BASE DCR IS RETURNED USING CONFIG PARAMETERS
+		
+		for ( var p1 = 0; p1 < yAxisDivviationSidebar.length; p1++ ) {
+			if ( p1 < pivotPercentIndex ) {
+				yAxisPivotSidebar.unshift(Number(( 1 - parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
+			}
+			else {
+				yAxisPivotSidebar.push(Number(( (1 - (pivotPercent/100)) + parseFloat(yAxisDivviationSidebar[p1])).toFixed(4)));
+			}
+		}
+		
+		//========== COMPILE SECOND Y-AXIS SIDEBAR -- TABLE MULTIPLIER VALUES RETURNED FOR USE  ====================================================\\
+		//=== IF MULTIPLIER NEEDS TO BE INCREASED OR DECREASED AT A PIVOT POINT, ADD A MODIFIER VALUE TO A SECOND PIVOT POINT \\
+		//=== FINAL CHANGES ADD TO ADLEDGERPARAM OBJECT ===\\
+		yAxisBaseMultiplierSidebar = []; //== STEP FIVE
+		baseDCRconvert = baseDCR; //== STEP 6
+		pivotMultiplierIndex = (yAxisPivotSidebar.length * 0.40); //== STEP 7
+		pivotMultiplier = 0.25; //==STEP 8
+		
+		for (var p2 = 0; p2 < yAxisDivviationSidebar.length; p2++ ) {
+			if  (p2 < pivotPercentIndex ) {
+				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
+			} else if ( p2 > pivotPercentIndex && p2 < pivotMultiplierIndex ) {
+				yAxisBaseMultiplierSidebar.push(Number(((pivotMultiplier + yAxisPivotSidebar[p2]) * baseDCRconvert).toFixed(4)));
+			} else {
+				yAxisBaseMultiplierSidebar.push(Number((yAxisPivotSidebar[p2] * baseDCRconvert).toFixed(4)));
+			}
+		}
+		
+//		console.log([baseDCR, yAxisPivotSidebar, yAxisBaseMultiplierSidebar ]);
+		return yAxisBaseMultiplierSidebar;
+	} 
+	
+	//******************* FUNCTION FOR GENERATING AD-LEDGER DIVVIATION SIDEBAR MULTIPLER VALUES ********************************\\
+	//**************************************************************************************************************************\\
+	
+	//== ID-22 ==\\   //== THIS NEEDS TO SET THE GENERAL BASE AD POINT CONVERT FOR EVERY STORE
+	function generateYAxisAdLedgerDiviationSidebar() {
+		var xAxisHeader, yAxisDivviationSidebar, yAxisPivot, adLedgerDivviation;
+		
+		yAxisDivviationSidebar = setYAxisLedgerDiscountPercentDivviationRange();  //== STEP ONE  >> USES ID-13
+		yAxisPivot = setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar);   //== STEP TWO  >> USES ID-14
+		
+		return yAxisPivot; //== RETURNS MULTIPLIER VALUES TO USE FOR ADJUSTING THE "GENERAL/GLOBAL" BASE AD-POINT VALUE
+		//=== THIS WILL BE SUBDIVIDED BY STORE CATEGORIES/SUB-SECTIONS { USING OBJECT ID-5 }
+		
+	}
+	
+	//****************************** GET VALUES THAT WILL BE USED BY AD-LEDGER  ************************************************\\
+	//**************************************************************************************************************************\\
+	
+	//== ID-23 ==\\	 GETS THE AVERAGE DISCOUNT PERCENT OF ALL OFFERS; UPDATE THE LASTPERIOD LEDGER VALUE AND RETURNS THE PERCENT
+	function getCombinedDiscountTotalofAllStoreAdOffers() {
+		var avgDiscount, dcrParamObj, totalActiveOffers, stores, adLedgerCurrentDcrRateForPeriod, inputBoxConfigNumber, value1, value2;
+
+		stores = getStoresObj();
+		dcrParamObj = getBaseAdDiscountConvertParamObject();
+		
+		avgDiscount = 0;
+		totalActiveOffers = 0;
+		value1 = 0;
+		value2 = 0;
+		// adLedgerCurrentDcrRateForPeriod = 0; //  Number(( avgDiscount / totalActiveOffers ).toFixed(4)); 
+		inputBoxConfigNumber = getInputBoxAdLedgerConfigNumber();
+		
+		for ( var p1 in stores ) {
+			value1 = Number(parseFloat(stores[p1].discount).toFixed(4));
+			value2 = parseInt(stores[p1].adOffers);
+			avgDiscount = avgDiscount + ( value1 * value2 );
+			totalActiveOffers += Number(stores[p1].adOffers);
+		}
+		
+		adLedgerCurrentDcrRateForPeriod = Number(( avgDiscount / totalActiveOffers ).toFixed(4)); 
+		
+		dcrParamObj[inputBoxConfigNumber].lastPeriodLedgerPercent;
+		
+//		return Number(( avgDiscount / totalActiveOffers ).toFixed(4));
+		return adLedgerCurrentDcrRateForPeriod;
+	} 
+	
+	//== ID-24 ==\\  GET DISCOUNT-CONVERT MULTIPLIER UTILIZING Y-AXIS AD-LEDGER DIVVIATION TABLE
+	function getDCRUtilizingAdLedgerTable() {
+		var stores, offerCombinedAvg, xHeader, ySidebar, dcrIndex, addDcrValue;
+		
+		stores = getStoresObj();
+		offerCombinedAvg = getCombinedDiscountTotalofAllStoreAdOffers();
+		xHeader = setXAxisAdLedgerDiscountPercentHeader();
+		ySidebar = generateYAxisAdLedgerDiviationSidebar();
+		dcrIndex = (offerCombinedAvg * ySidebar.length ); //== ( 0.30 x 10,000 == 3,000) 
+		addDcrValue = ySidebar[dcrIndex];
+		
+		console.log([offerCombinedAvg, 'offerCombined Avg', ySidebar, 'y-SideBar', addDcrValue, 'Add Value To BASE Discount Convert Rate' ]);
+		return addDcrValue;
+		
+	}
+	
+	//== ID-25 ==\\  
+	function updateStoreInfoOnOffers() {
+		var stores, storeNumber;
+		
+		stores = getStoresObj();
+		storeNumber = 1;
+		
+		for ( var p1 = 0; p1 < stores.length; p1++ ){
+			$('.js-storeName-' + storeNumber).text(stores[p1].name);
+			$('.js-storeAddress-' + storeNumber).text(stores[p1].address);
+			$('.js-storeCity-' + storeNumber).text(stores[p1].city);
+			$('.js-distance-' + storeNumber).text("12.44 miles");
+			$('.js-numberOfOffers-' + storeNumber).text(stores[p1].adOffers);
+			storeNumber++;
+		}
+		
+	}
+	
+	//== ID-26 ==\\
+	function setXAxisHeaderForAdPerformanceTable() {
+		var xAxisHeader, rankLevel, aIndex, rankSettingsObj, xMaxTimeScale;
+		
+		xAxisHeader = [];
+		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
+		aIndex = rankLevel - 1;
+		rankSettingsObj = getRankXyTableConfigSettingsForAdvertiserObject();
+		xMaxTimeScale = rankSettingsObj[aIndex].xTimeScale;
+		
+		for ( var p1 = 0; p1 < xMaxTimeScale; p1++ ) {
+			xAxisHeader.push(p1);
+		}
+		
+		return xAxisHeader;
+		
+	}
+	
+	//== ID-27 ==\\
+	function setYAxisSidebarForAdPerformanceTable() {
+		var yAxisSidebar, rankSettingsObj, rankLevel, aIndex, yPivot, preVal_y1, preVal_y2 ;
+		
+		yAxisSidebar = [];
+		rankSettingsObj = getRankXyTableConfigSettingsForAdvertiserObject();
+		rankLevel = getInputBoxSelectedRankLevel(); 	//== WILL USE THE RANK LEVEL SELECTOR ON TOP OF WEB-SITE
+		aIndex = rankLevel - 1;
+		yPivot = (rankSettingsObj[aIndex].estAdRedemptionAvg * rankSettingsObj[aIndex].adLimit)
+		preVal_y1 = rankSettingsObj[aIndex].y1;
+		preVal_y2 = rankSettingsObj[aIndex].y2;
+		
+		for ( var p1 = 0; p1 < rankSettingsObj[aIndex].adLimit; p1++ ) {
+			if ( p1 < yPivot ) {
+				var pass1 = rankSettingsObj[aIndex].maxScale + preVal_y1;
+				yAxisSidebar.unshift( parseFloat( pass1 ).toFixed(4) );
+				preVal_y1 += rankSettingsObj[aIndex].y1;
+			} else {
+				var pass2 = rankSettingsObj[aIndex].maxScale - preVal_y2;
+				yAxisSidebar.push( parseFloat( pass2 ).toFixed(4) );
+				preVal_y2 += rankSettingsObj[aIndex].y2;
+			}
+		}
+		
+		return yAxisSidebar;
+	}
+	
+	//== ID-28 ==\\
+	function generateAdPerformanceTable() {
+		var  rankSettingsObj, rankLevel, aIndex, xAxisHeader, yAxisSidebar, adLedgerDCR, xValue, adPerformanceTable;
+		
+		rankSettingsObj = getRankXyTableConfigSettingsForAdvertiserObject();
+		rankLevel = getInputBoxSelectedRankLevel();
+		aIndex = rankLevel - 1;
+		xAxisHeader = setXAxisHeaderForAdPerformanceTable();
+		yAxisSidebar = setYAxisSidebarForAdPerformanceTable();
+//		adLedgerDCR = getCombinedDiscountTotalofAllStoreAdOffers(); //== THIS IS NOT REQUIRED FOR GENERATING TABLE; THEREFORE NOT USED << REMOVE
+		
+		xValue = Number((rankSettingsObj[aIndex].x1).toFixed(4));
+		adPerformanceTable = [];
+		
+		for (var p1 = 0; p1 < yAxisSidebar.length; p1++ ) {
+			var pass1 = parseFloat(yAxisSidebar[p1]);
+			for (var p2 = 0; p2 < xAxisHeader.length; p2++ ) {
+				adPerformanceTable.push(Number(parseFloat(pass1 + (yAxisSidebar[p1] * xValue)).toFixed(4)));
+				pass1 = (pass1 + (yAxisSidebar[p1] * xValue));
+			}
+		}
+		
+		return adPerformanceTable;
+	}
+	
+	//== ID-29 ==\\
+	function getTimeRemainingForAllOffersInHourFormat() {
+		var timeMeasureRankSetObj, storesObj, timeToday, timeLeft, storeRankLevel, aIndex, createTime, endTime, xTimeMax;
+		
+		
+		timeMeasureRankSetObj = getTimeMeasureRankSetObj();
+		storesObj = getStoresObj();
+		timeToday = (new Date().getTime())/1000/60;
+		timeLeft = [];
+		createTime = 0;
+		endTime = 0;		
+		
+		for ( var p1 in storesObj ) {
+			storeRankLevel = storesObj[p1].rankLv;
+			aIndex = storeRankLevel - 1;
+			
+			createTime = ((new Date(storesObj[p1].adCreateTime).getTime())/1000/60);
+			endTime = createTime + ((timeMeasureRankSetObj[aIndex].adEndTimeForOffers) * 24 * 60);
+			timeLeft.push(((( endTime - createTime ) - ( timeToday - createTime ))/60) );
+		}
+		
+		return timeLeft;
+		
+	}
+	
+	//== ID-30 ==\\
+	function getRemainingTimeSegmentsForAllOffersForAdPerformanceUse() {
+		var timeMeasureRankSetObj, storesObj, timeRemaning, xTimeSegmentForEachOffer, storeRankLevel, aIndex, xTimeMax; 		
+		
+		timeMeasureRankSetObj = getTimeMeasureRankSetObj();
+		storesObj = getStoresObj(); 
+		timeRemaning = getTimeRemainingForAllOffersInHourFormat();
+		xTimeSegmentForEachOffer = [];
+		
+		for ( var p1 in storesObj ) {
+			storeRankLevel = storesObj[p1].rankLv;
+			aIndex = storeRankLevel - 1;
+			
+			xTimeMax = ((timeMeasureRankSetObj[aIndex].adEndTimeForOffers) * 24); 
+			xTimeSegmentForEachOffer.push( parseInt(xTimeMax - timeRemaning[p1] ));
+		}
+		
+		return xTimeSegmentForEachOffer;
+		
+	}
+	
+	//== ID-31 ==\\
+	function getDiscountPercentSetWhenAdCreatedForAllOffers() {
+		var storesObj, setDiscountForAllStores;
+		
+		storesObj = getStoresObj();
+		setDiscountForAllStores = [];
+		
+		for ( var p1 = 0; p1 < storesObj.length; p1++ ) {
+			setDiscountForAllStores.push(storesObj[p1].discount);
+		}
+		return setDiscountForAllStores;
+		
+	}
+	
+	//== ID-32 ==\\
+	function getQtyRemainingForAllOffers() {
+		var storesObj, offerQtyForAllOffers;
+		
+		storesObj = getStoresObj();
+		offerQtyForAllOffers = [];
+		
+		for ( var p1 = 0; p1 < storesObj.length; p1++ ) {
+			offerQtyForAllOffers.push(storesObj[p1].adOffers);
+		}
+		
+		return offerQtyForAllOffers;
+		
+	}
+	
+	//== ID-33 ==\\
+	function getAdPerformanceIndexNumberForAllOffers() {
+		var currentTimeSegmentForAllOffers, currentQtyRemainForAllOffers, performanceIndex;
+		
+		currentTimeSegmentForAllOffers = getRemainingTimeSegmentsForAllOffersForAdPerformanceUse();
+		currentQtyRemainForAllOffers = getQtyRemainingForAllOffers();
+		performanceIndex = [];
+		
+		for ( var p1 = 0; p1 < currentQtyRemainForAllOffers.length; p1++ ) {
+			performanceIndex.push( currentTimeSegmentForAllOffers[p1] * currentQtyRemainForAllOffers[p1] );
+		}
+		
+		return performanceIndex;
+		
+	}
+	
+	//== ID-34 ==\\ =========================================================================================================================	      WORKING ON RIGHT HERE  !!!!!!!!  ===========================================!!!!!!!!!
+	function getMultiplierValueFromPerformanceTableForAllOffers() {
+		var  storeObj, offerIndexNumber, adPerformanceTable, offerMultiplierForOffers ; 
+		
+		//== WILL NEED TO GET DISCOUNT MULTIPLER FOR EACH ADD OFFER << REQUIRES QTY, TIME-SEGMENT, X-TABLE, DISCOUNT-PERCENT, Y-AXIS SIDEBAR
+		storeObj = getStoresObj();
+		offerIndexNumber = getAdPerformanceIndexNumberForAllOffers();
+		adPerformanceTable = generateAdPerformanceTable();
+		offerMultiplierForOffers = [];
+		
+		for (var p1 = 0; p1 < offerIndexNumber.length; p1++ ) {
+			offerMultiplierForOffers.push(adPerformanceTable[offerIndexNumber[p1]]);
+		}
+		
+//		console.log([offerIndexNumber, 'Performance-Index #', adPerformanceTable, 'Ad-Performance Table'])
+		return offerMultiplierForOffers;
+	}
+	
+
+	//== ID-35 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
+
+	function updateOfferPointUtilizingMultiplier() {
+		var stores, addAdjustedDcr, count, updatePoints, updatedAdjDCR, adPerformanceMultiplierForAllOffers, calculatedAdPointWithDCR, calculatedAdPointWithPerformance;
+		
+		stores = getStoresObj();
+		addAdjustedDcr = getDCRUtilizingAdLedgerTable(); //+++ ID-24 { RETURNS DCR FOR ALL OFFERS; THIS IS AD LEDGER || THIS IS FOR ALL STORES; ROLLING-AD LEDGER TIMER NOT IMPLEMENTED || ALL OFFER POINT VALUES SHOULD CHANGE IF OFFERS CHANGE }
+		adPerformanceMultiplierForAllOffers = getMultiplierValueFromPerformanceTableForAllOffers(); //++ ID-28 { RETURNS AN INDEXED ARRAY OF MULTIPLIERS FOR AD-PEFORMANCE || THIS IS UNIQUE TO EACH STORE OFFER }
+		updatePoints = [];
+		updatedAdjDCR = [];
+		
+		count = 1;
+		
+		for (var p1 = 0; p1 < stores.length; p1++ ) {
+			var pass1 = stores[p1];
+			updatedAdjDCR.push((pass1.baseAdConvertRate + addAdjustedDcr).toFixed(2)); 
+			calculatedAdPointWithDCR = Number(parseFloat((pass1.discount * 100) * (pass1.baseAdConvertRate + addAdjustedDcr)).toFixed(2)); //== THE MULTIPLIER NEEDS THE BASE DISCOUNT CONVERT RATE TO MULTIPLY BEFORE MULTIPLYING THE DISCOUNT PERCENT OF OFFER
+			calculatedAdPointWithPerformance = (calculatedAdPointWithDCR * adPerformanceMultiplierForAllOffers[p1]).toFixed(2);
+			updatePoints.push(calculatedAdPointWithPerformance);
+			$('.js-pointValue-' + count).text(calculatedAdPointWithPerformance);
+			count++;
+		}
+		
+		console.log([updatedAdjDCR, 'Updated DCR w/Adjust', adPerformanceMultiplierForAllOffers, 'Ad-Performance-Multiplier', calculatedAdPointWithDCR, 'calculated with DCR', calculatedAdPointWithPerformance, 'calculated with Performance']);
+		return updatePoints;
+	}
+	
+	
+	//*******************  FUNCTIONAL BUTTONS FOR INVOKING FUNCTIONS OF SECTION A  *********************************************\\
+	//**************************************************************************************************************************\\
+	
+	//== BTN-ID-1 ==\\
+	$('.submitMParams').on('click', function() {
+		var returnTotalCurrentRankPoint = setAdvertiserMParamValues();
+		console.log(returnTotalCurrentRankPoint); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
+	
+	//== BTN-ID-2 ==\\
+	$('.submitSetDate').on('click', function() {
+		var time = setAdvertiserTimeMeasureParamValues();
+		console.log(time);
+	});
+	
+	//== BTN-ID-3 ==\\
+	$('.submitOfferDetails').on('click', function() {
+		var discount = setAdvertiserDiscountAndQty();
+		console.log(discount);
+	});	
+	
+					//== BTN-ID-4 ==\\
+					$('.js-setAdDiscountConfigCategory').on('click', function() {
+						var generalDCR = setGeneralBaseAdDiscountConvertRate();
+						console.log(generalDCR); //== RETURNS THE GENERAL DISCOUNT CONVERT RATE (DCR);
+					});
+
+					//== BTN-ID-5 ==\\
+					$('.js-setStoreDiscountConvertRate').on('click', function() {
+						var storeDCRconvertRate = setAdvertiserBaseAdDiscountRate();
+						console.log(storeDCRconvertRate); //== RETURNS THE STORES SET DISCOUNT CONVERT RATE (DCR);
+					});
+	
+	//== BTN-ID-6 ==\\
+	$('.js-testingBtnSectionB').on('click', function() {
+		var test = updateOfferPointUtilizingMultiplier(); //=== UPDATES POINT VALUE OF OFFERS
+		updateStoreInfoOnOffers();
+		console.log(test); 
+	});
+	
+//	//== BTN-ID-9 ==\\
+//	$('.js-testingBtnSectionC').on('click', function() {
+//		var test = getMultiplierValueFromPerformanceTableForAllOffers(); //== 
+//		console.log(test); 
+//	});
+	
+	//== BTN-ID-7 ==\\
+	$('.js-generateAdLedgerDiviationTable').on('click', function() {
+		var adLedgerTable = generateYAxisAdLedgerDiviationSidebar();
+		console.log(adLedgerTable); //== RETURNS THE STORES ACCUMULATED RANK POINTS
+	});
+	
+	
+	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** END SECTION A ***********************************************************************\\
+
+	//=========================================================\\
+	//=== BEGIN CODE FOR AD | ACTIVITY OCCURANCE ALGORITHM ===//
+  //=========================================================//
+	
+	//=========================================================\\
 	//=== CALCULATE ADVERTISERS RANK USING MEASUREMENT TABLE ===//
 	//=== NOTES OF FLAWS >> NEED TO REDO USING FOR LOOPS FOR DIRECTING VALUES INTO AN ARRAY ===\\
   //=========================================================//
@@ -1854,7 +1597,7 @@ $(document).ready(function() {
 	}
 	
 	function getInputBoxTimePeriodStoreNumber() {
-		var storeNumber = $('#setStoreDate').text();
+		var storeNumber = $('#setStoreDate').val();
 		return Number(storeNumber);
 	}
 	
@@ -1908,12 +1651,13 @@ $(document).ready(function() {
 	
 	//== ID-A2 ==\\
 	//== GETS THE RANKS LEVELS TOTAL TIME SEGMENTS  
-	function getRankLevelTimeSegment(rankLvl) {
-		var rankObject, mParamObject, aIndex, rLevelTimeSegment ;
+	function getRankLevelTimeSegment() {
+		var rankLevel, rankObject, mParamObject, aIndex, rLevelTimeSegment ;
 		
-		rankObject = getRankSettingsObject();
-		mParamObject= getMParamObj();
-		aIndex = rankLvl - 1;
+		rankLevel = getInputBoxSelectedRankLevel();
+		rankObject = getRankXyTableConfigSettingsForAdvertiserObject();
+		mParamObject= getTimeMeasureRankSetObj();
+		aIndex = rankLevel - 1;
 		rLevelTimeSegment = rankObject[aIndex].mTimeSegments(); //== RETURNS 3360 || TOTAL 3 MINUTES SEGMENTS
 		
 		return Number(rLevelTimeSegment);
@@ -1926,7 +1670,7 @@ $(document).ready(function() {
 		var storeObject, mParamObject, aIndex, rankLevel, rLevelTimeSegment, timeNow, endStoreRankPeriod, timeDifference, calcCurrentTimeSegment, storeCurrentTimeSegment;
 		
 		storeObject = getStoresObj();
-		mParamObject = getMParamObj();
+		mParamObject = getTimeMeasureRankSetObj();
 		aIndex = storeNum - 1;
 		rankLevel = getCurrentRankLevel(storeNum); //== RETURNS STORES RANK LEVEL 
 		rLevelTimeSegment = getRankLevelTimeSegment(rankLevel); //== RETURNS 3360 || TOTAL 3 MIN SEGMENTS
@@ -1948,35 +1692,35 @@ $(document).ready(function() {
 	
 	//== ID-A4 ==\\
 	//== GETS & RETURNS MEASUREMENT OBJECT [ KEY:VALUE ]
-	function getMTableAdverObj() {
-		var mTableAdverObj = [];
+	function getRankMeasurementSettingsForAdvertiserObject() {
+		var rankMeasurementObj = [];
 		
-		for ( var p1 in setMTableAdver) {
-			var pass1 = setMTableAdver[p1]
+		for ( var p1 in rankMeasurementSettingsForAdvertiserObject) {
+			var pass1 = rankMeasurementSettingsForAdvertiserObject[p1]
 			for ( var p2 in pass1 ) {
-				mTableAdverObj.push(pass1[p2]);
+				rankMeasurementObj.push(pass1[p2]);
 			}
 //			console.log(mTableAdverObj);
-			return mTableAdverObj;
+			return rankMeasurementObj;
 		} 
 	}
 	
 	//== GETS & RETURNS MREASUREMENT OBJECT KEY
 	function getMTableAdverProp() {
-		var mTableAdverProp = [];
+		var rankMeasurementProp = [];
 		
-		for ( var p1 in setMTableAdver) {
-			var pass1 = setMTableAdver[p1];
+		for ( var p1 in rankMeasurementSettingsForAdvertiserObject) {
+			var pass1 = rankMeasurementSettingsForAdvertiserObject[p1];
 			for ( var p2 in pass1 ) {
 				var pass2 = pass1[p2];
 //				mTableAdverProp.push(p2);
 				for ( var p3 in pass2 ) {
 					var pass3 = pass2[p3];
-					mTableAdverProp.push(p3);
+					rankMeasurementProp.push(p3);
 //					console.log(p3);
 				}
 			}
-			return mTableAdverProp;
+			return rankMeasurementProp;
 		}
 	}
 	
@@ -2154,7 +1898,7 @@ $(document).ready(function() {
 	function setRankMeasurementThresholdMinimumForCurrentTimeSegment(storeNumber, aIndex, measurementType, currentTimeSegment) {
 		var mTableObject, mTableProp, mTableMinThresholdValue;
 		
-		mTableObject = getMTableAdverObj();
+		mTableObject = getRankMeasurementSettingsForAdvertiserObject();
 		mTableProp = getMTableAdverProp();
 		
 		for ( var p1 = 0; p1 < mTableProp.length; p1++ ) {
@@ -2168,345 +1912,9 @@ $(document).ready(function() {
 	}
 	
 	
-	//===================== TESTING FUNCTIONS TO GET VALUES ==================================\\
-	//========================================================================================\\
-	
-	$('.submitMParams').on('click', function() {
-		var returnTotalCurrentRankPoint = setAdvertiserMParamValues();
-		console.log(returnTotalCurrentRankPoint); //== RETURNS THE STORES ACCUMULATED RANK POINTS
-	});
-	
-	$('.submitSetDate').on('click', function() {
-		var time = setAdvertiserTimeMeasureParamValues();
-		console.log(time);
-	});
-	
-	$('.submitOfferDetails').on('click', function() {
-		
-		var discount = setAdvertiserDiscountAndQty();
-		console.log(discount);
-	});
-	
-	
 	//=***************************************************************** END BLOCK OF IMPROVED FUNCTIONS *****************************************************\\
 	//=*******************************************************************************************************************************************************\\
-	
-	
-	//========================================================================================\\
-	//========================================================================================\\
-	
-	//== ID-18 ==\\    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------------------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
-//  $('.js-measurementBtn').on('click', function() {
-//  $('.submitMParams').on('click', function() {
-//		var actType = $(this).attr('id');
-////		var activeMeasurement = getInputBoxSelectedMeasurementParam();
-////		var activeStoreNumber = getInputBoxSelectedStore();
-////		var activeRankLevel = getInputBoxSelectedRankLevel();
-////		var activeIncreaseDecrease = getInputBoxMeasurementIncreaseOrDecreaseAmount();
-//		
-//		var storesObject = getStoresObj();
-//		var mParamObject = getMParamObj();
-//		var setRankObject = getRankSettingsObject();
-//		console.log(activeMeasurement);
-//		console.log(activeStoreNumber);
-//		console.log(activeRankLevel);
-//		console.log(activeIncreaseDecrease);
-	
-		
-//		function calculateStoreValues(cs, trp, rtp, rlv, cc, crtp, rhr, segr, aseg, cmin, vc, rc, sc, pc, dc, apc, addOn ) {  <<<<<<<<<<<<<--------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
-//			//  ============================ LEVEL 1 ================  \\
-//			var getlv1Click = (setMTableAdver.lv1.shopperActivity.clicks * aseg).toFixed(4);
-//			var getlv1Views = (setMTableAdver.lv1.shopperActivity.views  * aseg).toFixed(4);
-//			var getlv1Reviews = (setMTableAdver.lv1.shopperActivity.reviews  * aseg).toFixed(4);
-//			var getlv1Saves = (setMTableAdver.lv1.advertiserPerformance.savedAdOccurences * aseg).toFixed(4);
-//			var getlv1Purchases = (setMTableAdver.lv1.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);;
-//			var getlv1CompoundPercents = (setMTableAdver.lv1.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
-//			var getlv1AccumulatedPoints = (setMTableAdver.lv1.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
-//			var getlv1 = 1;
-//			//  ============================ LEVEL 2 ================  \\
-//			var getlv2Click = (setMTableAdver.lv2.shopperActivity.clicks * aseg).toFixed(4);
-//			var getlv2Views = (setMTableAdver.lv2.shopperActivity.views  * aseg).toFixed(4);
-//			var getlv2Reviews = (setMTableAdver.lv2.shopperActivity.reviews  * aseg).toFixed(4);
-//			var getlv2Saves = (setMTableAdver.lv2.advertiserPerformance.savedAdOccurences  * aseg).toFixed(4);
-//			var getlv2Purchases = (setMTableAdver.lv2.advertiserPerformance.purchaseOccurences  * aseg).toFixed(4);
-//			var getlv2CompoundPercents = (setMTableAdver.lv2.advertiserPerformance.compoundDiscountOfferPercent  * aseg).toFixed(4);
-//			var getlv2AccumulatedPoints = (setMTableAdver.lv2.advertiserPerformance.accumulatedAdPoint  * aseg).toFixed(4);
-//			
-//			for ( var k1 in setMTableAdver ) {
-//				var cMProp = setMTableAdver[k1];
-//				for ( var k2 in cMProp ) {
-//					var c2MProp = cMProp[k2];
-//					for ( var k3 in c2MProp ) {
-//						//** BEGIN OF RANK LVL1 IF STATEMENTS **\\
-//						if ( rlv == 1 ) { 
-//							if (cs == 'store_1' && actType == 'click-btn') {
-////								console.log(getlv1Click + ' == ' + cc);
-//								if ( cc >= getlv1Click ) {
-//									console.log(cc + ' > ' + parseInt(getlv1Click) + ' == last Count > ' + stores.store_1.lastClickCountMin + ' === preClicks ' + stores.store_1.preClicksCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( cc == stores.store_1.preClicksCount && parseInt(getlv1Click) == stores.store_1.lastClickCountMin ) {
-//										console.log(stores.store_1.lastClickCountMin + ' === lastCountMin');
-//										return;
-//									}
-//									stores.store_1.clicksCount += 1;
-//									stores.store_1.preClicksCount = stores.store_1.clicksCount;
-//									stores.store_1.lastClickCountMin = parseInt(getlv1Click);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> CLICK-BTN **\\
-//							if (cs == 'store_1' && actType == 'view-btn') {
-//								if ( vc >= getlv1Views ) {
-//									console.log(vc + ' > ' + parseInt(getlv1Views) + ' == last Count > ' + stores.store_1.lastViewsCountMin + ' === pre ' + stores.store_1.preViewsCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( vc == stores.store_1.preViewsCount && parseInt(getlv1Views) == stores.store_1.lastViewsCountMin ) {
-//										return;
-//									}
-//									stores.store_1.viewsCount += 1;
-//									stores.store_1.preViewsCount = stores.store_1.viewsCount;
-//									stores.store_1.lastViewsCountMin = parseInt(getlv1Views);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> VIEW-BTN **\\
-//							if (cs == 'store_1' && actType == 'review-btn') {
-//								if ( rc >= getlv1Reviews ) {
-//									console.log(rc + ' > ' + parseInt(getlv1Reviews) + ' == last Count > ' + stores.store_1.lastReviewsCount + ' === pre ' + stores.store_1.preReviewsCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( rc == stores.store_1.preReviewsCount && parseInt(getlv1Reviews) == stores.store_1.lastReviewsCount ) {
-//										return;
-//									}
-//									stores.store_1.reviewsCount += 1;
-//									stores.store_1.preReviewsCount = stores.store_1.reviewsCount;
-//									stores.store_1.lastReviewsCount = parseInt(getlv1Reviews);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> REVIEW-BTN **\\
-//							if (cs == 'store_1' && actType == 'saved-occurences-btn') {
-//								if ( sc >= getlv1Saves ) {
-//									console.log(sc + ' > ' + parseInt(getlv1Saves) + ' == last Count > ' + stores.store_1.lastSavedAdOccurencesCount + ' === pre ' + stores.store_1.preSavedAdOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( sc == stores.store_1.preSavedAdOccurencesCount && parseInt(getlv1Saves) == stores.store_1.lastSavedAdOccurencesCount ) {
-//										return;
-//									}
-//									stores.store_1.savedAdOccurencesCount += 1;
-//									stores.store_1.preSavedAdOccurencesCount = stores.store_1.savedAdOccurencesCount;
-//									stores.store_1.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> SAVED-OCCURENCES-BTN **\\
-//							if (cs == 'store_1' && actType == 'purchase-occurences-btn') {
-//								if ( pc >= getlv1Purchases ) {
-//									if ( pc == stores.store_1.prePurchaseOccurencesCount && parseInt(getlv1Purchases) == stores.store_1.lastPurchaseOccurencesCount ) {
-//										console.log(pc + ' > ' + parseInt(getlv1Purchases) + ' == last Count > ' + stores.store_1.lastPurchaseOccurencesCount + ' === pre ' + stores.store_1.prePurchaseOccurencesCount + ' === ' + stores.store_1.totalRankPoints ); 
-//										return;
-//									}
-//									stores.store_1.purchaseOccurencesCount += 1;
-//									stores.store_1.prePurchaseOccurencesCount = stores.store_1.purchaseOccurencesCount;
-//									stores.store_1.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> PURCHASE-OCCURENCES-BTN **\\
-//							if (cs == 'store_1' && actType == 'compound-discount-btn') {
-////								console.log(sc + ' ==> ' + getlv1CompoundPercents );
-//								if ( dc >= getlv1CompoundPercents ) {
-//									console.log(dc + ' > ' + parseInt(getlv1CompoundPercents) + ' == last Count > ' + stores.store_1.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_1.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( dc == stores.store_1.preCompoundDiscountOfferPercentCount && parseInt(getlv1CompoundPercents) == stores.store_1.lastCompoundDiscountOfferPercentCount ) {
-//										return;
-//									}
-//									stores.store_1.compoundDiscountOfferPercentCount += 1;
-//									stores.store_1.preCompoundDiscountOfferPercentCount = stores.store_1.compoundDiscountOfferPercentCount;
-//									stores.store_1.lastCompoundDiscountOfferPercentCount = parseInt(getlv1CompoundPercents);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> COMPOUND-DISCOUNT BTN **\\
-//							if (cs == 'store_1' && actType == 'accumulated-point-btn') {
-////								console.log(apc + ' ==> ' + getlv1AccumulatedPoints );
-//								if ( apc >= getlv1AccumulatedPoints ) {
-//									
-//									console.log(apc + ' > ' + parseInt(getlv1AccumulatedPoints) + ' == last Count > ' + stores.store_1.lastAccumulatedAdPointCount + ' === pre ' + stores.store_1.preAccumulatedAdPointCount + ' === ' + stores.store_1.totalRankPoints ); 
-//									if ( apc == stores.store_1.preAccumulatedAdPointCount && parseInt(getlv1AccumulatedPoints) == stores.store_1.lastAccumulatedAdPointCount ) {
-//										
-//										console.log(stores.store_1.lastAccumulatedAdPointCount + ' === lastCountMin');
-//										return;
-//									}
-//									stores.store_1.accumulatedAdPointCount += 1;
-//									stores.store_1.preAccumulatedAdPointCount = stores.store_1.accumulatedAdPointCount;
-//									stores.store_1.lastAccumulatedAdPointCount = parseInt(getlv1AccumulatedPoints);
-//									stores.store_1.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_1 >> ACCUMULATED-POINT BTN **\\
-//						} //** END RANK_LV1 >> IF STATEMENTS **\\
-//						//** BEGIN OF RANK-LVL2 IF STATEMENTS **\\
-//						if ( rlv == 2 ) {
-//							if (cs == 'store_2' && actType == 'click-btn') {
-////								console.log(cc + ' == ' + getlv2Click);
-//								if ( cc >= getlv2Click ) {
-//									console.log(cc + ' > ' + parseInt(getlv2Click) + ' == last Count > ' + stores.store_2.lastClickCountMin + ' === preClicks ' + stores.store_2.preClicksCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( cc == stores.store_2.preClicksCount && parseInt(getlv2Click) == stores.store_2.lastClickCountMin ) {
-//										console.log(stores.store_2.lastClickCountMin + ' === lastCountMin');
-//										return;
-//									}
-//									stores.store_2.clicksCount += 1;
-//									stores.store_2.preClicksCount = stores.store_2.clicksCount;
-//									stores.store_2.lastClickCountMin = parseInt(getlv2Click);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> CLICK-BTN **\\
-//							if (cs == 'store_2' && actType == 'view-btn') {
-////								console.log(cc + ' == ' + getlv2Views + ' == in rLvl2');
-//								if ( vc >= getlv2Views ) {
-//									console.log(vc + ' > ' + parseInt(getlv2Views) + ' == last Count > ' + stores.store_2.lastViewsCountMin + ' === pre ' + stores.store_2.preViewsCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( vc == stores.store_2.preViewsCount && parseInt(getlv2Views) == stores.store_2.lastViewsCountMin ) {
-//										return;
-//									}
-//									stores.store_2.viewsCount += 1;
-//									stores.store_2.preViewsCount = stores.store_2.viewsCount;
-//									stores.store_2.lastViewsCountMin = parseInt(getlv2Views);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> VIEW-BTN **\\
-//							if (cs == 'store_2' && actType == 'review-btn') {
-//								if ( rc >= getlv2Reviews ) {
-//									console.log(rc + ' > ' + parseInt(getlv2Reviews) + ' == last Count > ' + stores.store_2.lastReviewsCount + ' === pre ' + stores.store_2.preReviewsCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( rc == stores.store_2.preReviewsCount && parseInt(getlv2Reviews) == stores.store_2.lastReviewsCount ) {
-//										return;
-//									}
-//									stores.store_2.reviewsCount += 1;
-//									stores.store_2.preReviewsCount = stores.store_2.reviewsCount;
-//									stores.store_2.lastReviewsCount = parseInt(getlv2Reviews);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> REVIEW-BTN **\\
-//							if (cs == 'store_2' && actType == 'saved-occurences-btn') {
-//								if ( sc >= getlv2Saves ) {
-//									console.log(sc + ' > ' + parseInt(getlv2Saves) + ' == last Count > ' + stores.store_2.lastSavedAdOccurencesCount + ' === pre ' + stores.store_2.preSavedAdOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( sc == stores.store_2.preSavedAdOccurencesCount && parseInt(getlv2Saves) == stores.store_2.lastSavedAdOccurencesCount ) {
-//										return;
-//									}
-//									stores.store_2.savedAdOccurencesCount += 1;
-//									stores.store_2.preSavedAdOccurencesCount = stores.store_2.savedAdOccurencesCount;
-//									stores.store_2.lastSavedAdOccurencesCount = parseInt(getlv1Saves);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> SAVED-OCCURENCES-BTN **\\
-//							if (cs == 'store_2' && actType == 'purchase-occurences-btn') {
-//								if ( pc >= getlv2Purchases ) {
-//									if ( pc == stores.store_2.prePurchaseOccurencesCount && parseInt(getlv2Purchases) == stores.store_2.lastPurchaseOccurencesCount ) {
-//										console.log(pc + ' > ' + parseInt(getlv2Purchases) + ' == last Count > ' + stores.store_2.lastPurchaseOccurencesCount + ' === pre ' + stores.store_2.prePurchaseOccurencesCount + ' === ' + stores.store_2.totalRankPoints ); 
-//										return;
-//									}
-//									stores.store_2.purchaseOccurencesCount += 1;
-//									stores.store_2.prePurchaseOccurencesCount = stores.store_2.purchaseOccurencesCount;
-//									stores.store_2.lastPurchaseOccurencesCount = parseInt(getlv1Purchases);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> PURCHASE-OCCURENCES-BTN **\\
-//							if (cs == 'store_2' && actType == 'compound-discount-btn') {
-//								if ( dc >= getlv2CompoundPercents ) {
-//									console.log(dc + ' > ' + parseInt(getlv2CompoundPercents) + ' == last Count > ' + stores.store_2.lastCompoundDiscountOfferPercentCount + ' === pre ' + stores.store_2.preCompoundDiscountOfferPercentCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( dc == stores.store_2.preCompoundDiscountOfferPercentCount && parseInt(getlv2CompoundPercents) == stores.store_2.lastCompoundDiscountOfferPercentCount ) {
-//										return;
-//									}
-//									stores.store_2.compoundDiscountOfferPercentCount += 1;
-//									stores.store_2.preCompoundDiscountOfferPercentCount = stores.store_2.compoundDiscountOfferPercentCount;
-//									stores.store_2.lastCompoundDiscountOfferPercentCount = parseInt(getlv2CompoundPercents);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> COMPOUND-DISCOUNT BTN **\\
-//							if (cs == 'store_2' && actType == 'accumulated-point-btn') {
-//								if ( apc >= getlv2AccumulatedPoints ) {
-//									
-//									console.log(apc + ' > ' + parseInt(getlv2AccumulatedPoints) + ' == last Count > ' + stores.store_2.lastAccumulatedAdPointCount + ' === pre ' + stores.store_2.preAccumulatedAdPointCount + ' === ' + stores.store_2.totalRankPoints ); 
-//									if ( apc == stores.store_2.preAccumulatedAdPointCount && parseInt(getlv2AccumulatedPoints) == stores.store_2.lastAccumulatedAdPointCount ) {
-//										
-//										console.log(stores.store_2.lastAccumulatedAdPointCount + ' === lastCountMin');
-//										return;
-//									}
-//									stores.store_2.accumulatedAdPointCount += 1;
-//									stores.store_2.preAccumulatedAdPointCount = stores.store_2.accumulatedAdPointCount;
-//									stores.store_2.lastAccumulatedAdPointCount = parseInt(getlv2AccumulatedPoints);
-//									stores.store_2.totalRankPoints += 1;
-//									return;
-//								}
-//							}  //** END OF STORE_2 >> ACCUMULATED-POINT BTN **\\
-//						} //** END RANK_LV2 >> IF STATEMENTS **\\
-//						//** END OF IF STATEMENTS **\\
-//					}
-//				}
-//			}
-//		}
-		
-	//== ID-17 ==\\   <<<<<<<<<<<<<<<<<<<<<<<<<<<<------------------------------MARKED FOR POSSIBLE DELETION - IMPROVED FOR INDIVIDUAL STORE
-		
-		// (1). NEED TO KNOW STORE RANK LEVEL FIRST
-		// (2). NEED TO KNOW THE STORES NUMBER
-//		function calculateObjectValues() {
-//			
-//			for (var i in stores ) {
-//				
-//				//******************* CAN SET THROUGH FUNCTIONS FUNCTIONS  **************************\\
-////				var cStore = i;
-//				// (1). GET THE CURRENT AMOUNT OF ACCUMULATED RANK POINTS FROM STORE/ADVERTISER
-////				var tStoresRankPoints = stores[i].totalRankPoints;
-//				// (2). GET MEASUReEMENT PERIOD START TIME << THIS IS DIFFERENT FOR EACH ADVERTISER BASED ON REGISTRATION DATE
-////				var tStoresRankTimePeriod = stores[i].rankTimePeriod.getTime();
-//				// (3). GET RANK LEVEL OF ADVERTISER (STORE)
-////				var getStoresRankLv = stores[i].rankLv;	
-//				// (4). GET THE CURRENT COUNT OF THE REQUIRED MEASUREMENT PARAM OF ADVERTISER (STORE)
-////				var getStoresClickCount = stores[i].clicksCount;
-////				var getStoresViewCount = stores[i].viewsCount;
-////				var getStoresReviewsCount = stores[i].reviewsCount;
-////				var getStoresSavedCount = stores[i].savedAdOccurencesCount;
-////				var getStoresPurchaseCount = stores[i].purchaseOccurencesCount;
-////				var getStoresCompoundCount = stores[i].compoundDiscountOfferPercentCount;
-////				var getStoresAccumulatedPointCount = stores[i].accumulatedAdPointCount;
-//				
-//				// (5). GET THE VALUE FOR EACH MEASUREMENT TRACKED; FOR BUTTON
-//				// (6). CONVERT THE STORES RANKTIME INTO NUMERICAL FORMAT << NUMBER OF MINUTES >>
-////				var convertTRankTimePeriodToNumber = parseFloat(tStoresRankTimePeriod/1000/60/60/24).toFixed(4);
-////				console.log(convertTRankTimePeriodToNumber);
-////				
-////				if ( getStoresRankLv == 1 ) {
-////					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
-////					var setRankMSegments = setRank.lv1.mTimeSegments();
-////					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
-////					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv1.rankMTime;
-////				}
-////				if ( getStoresRankLv == 2 ) {
-////					// (7). GET THE "SET" TOTAL NUMBER OF TIME SEGMENTS FOR THE CURRENT RANK LEVEL
-////					var setRankMSegments = setRank.lv2.mTimeSegments();
-////					// (9). ADD THE M.PARAM DAYS TO THE RANK PERIOD TIME
-////					var currentTimeToMilliRemain =  Number(convertTRankTimePeriodToNumber)  + mParam.lv2.rankMTime;
-////				}
-////				
-////				// (8). GET THE TOTAL TIME UP TO NOW IN DAYS
-////				var timeNow = (new Date().getTime()/1000/60/60/24).toFixed(4);
-////			
-////				// (10). SUBTRACT THE TOTAL TIME NOW FROM THE RANK PERIODS TOTAL TIME AND MULTIPLY BY 60 MINUTES GET TO NUMBER OF HOURS REMAINING
-////				var currentNumberOfRankHoursRemain = (currentTimeToMilliRemain - timeNow) * 24;
-////				// (11). GET THE CURRENT NUMBER OF 3 MINUTE SEGMENTS REMAINING
-////				var currentSegmentsRemain = (currentNumberOfRankHoursRemain * 60) / 3;
-////				// (12). GET THE ACTIVE SEGMENT NOW
-////				var getActiveSegment = setRankMSegments - currentSegmentsRemain;
-//				// (13). CALCULATE THE CLICK THRESHOLD VALUE THAT THE STORE NEEDS TO SATISFY FOR THE TIME SEGMENT PERIOD
-//				var calcClickMin = parseFloat(getActiveSegment * 0.21).toFixed(4);
-//			
-////				calculateStoreValues(cStore, tStoresRankPoints, tStoresRankTimePeriod, getStoresRankLv, getStoresClickCount, convertTRankTimePeriodToNumber, currentNumberOfRankHoursRemain, currentSegmentsRemain, getActiveSegment, calcClickMin, getStoresViewCount, getStoresReviewsCount, getStoresSavedCount, getStoresPurchaseCount, getStoresCompoundCount, getStoresAccumulatedPointCount);
-//			}
-//			
-//		}
-		
-//		calculateObjectValues();
-		// updateRankAdvertiser(); //== LOCATED @ FUNCTION ID-30 ==\\
-		
+
 		
 		// (1). BREAK RANK START TIME DOWN INTO DURATION OF 3 MINUTE SEGMENTS OVER 15 DAYS 
 		// (2). DONT NEED Y-TABLE BECAUSE TIME INT VALUE SLOT IS MULITPLIED BY MEASUREMENT VALUE
@@ -2544,10 +1952,10 @@ $(document).ready(function() {
 			var activeMasurementValuesLv1 = [];
 			var totalMeasurementConditionsLv1Count = 0;
 
-			for ( var p1 in setMTableAdver ) {
-				setTableAdver_base.push(setMTableAdver);
+			for ( var p1 in rankMeasurementSettingsForAdvertiserObject ) {
+				setTableAdver_base.push(rankMeasurementSettingsForAdvertiserObject);
 				if ( p1 == 'lv1' ) {
-					var pass1 = setMTableAdver[p1];
+					var pass1 = rankMeasurementSettingsForAdvertiserObject[p1];
 					setTableAdverLv1_1deep.push(pass1);
 
 					for ( var p2 in pass1 ) {
@@ -2590,10 +1998,10 @@ $(document).ready(function() {
 			var activeMasurementValuesLv2 = [];
 			var totalMeasurementConditionsLv2Count = 0;
 			
-			for ( var p1 in setMTableAdver ) {
-				setTableAdver_base.push(setMTableAdver);
+			for ( var p1 in rankMeasurementSettingsForAdvertiserObject ) {
+				setTableAdver_base.push(rankMeasurementSettingsForAdvertiserObject);
 				if ( p1 == 'lv2' ) {
-					var pass1 = setMTableAdver[p1];
+					var pass1 = rankMeasurementSettingsForAdvertiserObject[p1];
 					setTableAdverLv2_1deep.push(pass1);
 
 					for ( var p2 in pass1 ) {
@@ -2645,10 +2053,10 @@ $(document).ready(function() {
 			var mParamLv1_1deep = [];
 			var mParamLv1_2deep = [];
 
-			for ( var p1 in mParam ) {
-				mParam_base.push(mParam );
+			for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject ) {
+				mParam_base.push(rankTimeMeasurementSettingsForAdvertiserObject );
 				if ( p1 == 'lv1' ) {
-					var pass1 = mParam[p1];
+					var pass1 = rankTimeMeasurementSettingsForAdvertiserObject[p1];
 					mParamLv1_1deep.push(pass1);
 					for ( var p2 in pass1 ) {
 						mParamLv1_2deep.push(pass1[p2]); //== GET THE NUMERICAL VALUES OF INNER OBJECT
@@ -2662,10 +2070,10 @@ $(document).ready(function() {
 			var mParamLv2_1deep = [];
 			var mParamLv2_2deep = [];
 
-			for ( var p1 in mParam ) {
-				mParam_base.push(mParam );
+			for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject ) {
+				mParam_base.push(rankTimeMeasurementSettingsForAdvertiserObject );
 				if ( p1 == 'lv2' ) {
-					var pass1 = mParam[p1];
+					var pass1 = rankTimeMeasurementSettingsForAdvertiserObject[p1];
 					mParamLv2_1deep.push(pass1);
 					
 					for ( var p2 in pass1 ) {
@@ -2729,11 +2137,11 @@ $(document).ready(function() {
 			var setRankLv1_base = [];
 			var setRankLv1_1deep = [];
 			
-			for (var p1 in setRank ) {
-				setRankLv1_base.push(setRank)
-				var pass1 = setRank[p1];
+			for (var p1 in rankXyTableConfigSettingsForAdvertiserObject ) {
+				setRankLv1_base.push(rankXyTableConfigSettingsForAdvertiserObject)
+				var pass1 = rankXyTableConfigSettingsForAdvertiserObject[p1];
 				for ( var p2 in pass1 ) {
-					setRankLv1_1deep.push(setRank[p1][p2]);
+					setRankLv1_1deep.push(rankXyTableConfigSettingsForAdvertiserObject[p1][p2]);
 				}
 			}
 			
@@ -2746,83 +2154,229 @@ $(document).ready(function() {
 //	console.log(t4[1][7]());
 	
 	
-	//==========================================================================================\\
-	//  ||=== CHECK WHICH STORE ADVERTISER LOGGED-IN ===||
-	//  ||=== CREATING TEMPORARY LOGIN OBJECT FOR STORE ==||
-	//         ||=== USE BUTTON TO ENTER INPUT AND CHANGE STORE STATUS ===||
-	//         ||===  ===||
-  //==========================================================================================//
 	
-	//== ID-23 ==\\
+
 	
-	var storeloginStatus = [
+//	//==========================================================================================\\
+//	//  ||=== CHECK WHICH STORE ADVERTISER LOGGED-IN ===||
+//	//  ||=== CREATING TEMPORARY LOGIN OBJECT FOR STORE ==||
+//	//         ||=== USE BUTTON TO ENTER INPUT AND CHANGE STORE STATUS ===||
+//  //==========================================================================================//
+//	
+//	//== ID-23 ==\\
+//	
+//	var storeloginStatus = [
+//		
+//		{ store_1: true },
+//		{	store_2: false },
+//		{	store_3: false },
+//		{	store_4: false },
+//		{	store_5: false },
+//		{	store_6: false },
+//		{	store_7: false },
+//		{	store_8: false },
+//		{	store_9: false },
+//		{	store_10: false },
+//		{	store_11: false },
+//		{	store_12: false }
+//		
+//	]
+//	
+//	
+//	//== ID-24 ==\\ 
+//	
+//	function whichStoreLoggedIn(cv, index, arr) {
+//		
+//		//== FOR-IN LOOP REQUIRED TO GET NAMED KEY VALUE ==\\
+//		for (var p1 in arr[index] ) {
+//			if ( arr[index][p1] == true ) {
+//				return arr[index][p1];
+//			}
+//		}
+//	}
+//	
+////	var t5 = storeloginStatus.find(whichStoreLoggedIn);	
+//	//	console.log(t5);
+//	
+//	//==========================================================================================\\
+//	//  ||=== GET STORE-IDENTIFIER FROM ID-24; 
+//  //==========================================================================================//
+//	
+//	//== ID-25 ==\\
+//	
+//	function checkStoreRankLv() {
+//		var storeArr = storeloginStatus.find(whichStoreLoggedIn);
+//		
+//		for (var p1 in storeArr ) {
+//			return p1;
+//		} 
+//		
+//	} 
+//	
+////	var t6 = checkStoreRankLv();
+////	console.log(t6);
+	
+	
+	//=***************************************************************** START BLOCK OF IMPROVED FUNCTIONS *************************************************************************\\
+	//=******************************************************** INNER-RANK LEVEL MEASUREMENT POINT THRESHOLD VALUES  *************************************************************************\\
+	//=*****************************************************************  *************************************************************************\\
+	//=*************************************************************************     SECTION B   ***********************************************************************************\\
+	
+	//== ==\\
+	
+	var innerRankLevelSidebarObject = {
 		
-		{ store_1: true },
-		{	store_2: false },
-		{	store_3: false },
-		{	store_4: false },
-		{	store_5: false },
-		{	store_6: false },
-		{	store_7: false },
-		{	store_8: false },
-		{	store_9: false },
-		{	store_10: false },
-		{	store_11: false },
-		{	store_12: false }
+		lvl_1: {
+			startingNumber: 0.30,
+			yAxisPivot_Point1: 0.35,
+			yAxisPivot_Point1Spread: 0.14,
+			yAxisPivot_Point2: 0.60,
+			yAxisPivot_Point2Spread: 0.31,
+			yAxisPivot_Point3: 0.80,
+			yAxisPivot_Point3Spread: 0.31,
+			numberOfInnerLevels: 40
+		}
 		
-	]
-	
-	
-	//== ID-24 ==\\ 
-	
-	function whichStoreLoggedIn(cv, index, arr) {
 		
-		//== FOR-IN LOOP REQUIRED TO GET NAMED KEY VALUE ==\\
-		for (var p1 in arr[index] ) {
-			if ( arr[index][p1] == true ) {
-				return arr[index][p1];
+	}
+	
+	//== ==\\
+	
+	function getInnerRankLevelSidebarObj(rankLevel) {
+		var innerRankLevelObj = [];
+		
+		for ( var p1 in innerRankLevelSidebarObject ) {
+			if (rankLevel) {
+				innerRankLevelObj.push(innerRankLevelSidebarObject[p1])
 			}
 		}
-	}
-	
-//	var t5 = storeloginStatus.find(whichStoreLoggedIn);	
-	//	console.log(t5);
-	
-	//==========================================================================================\\
-	//  ||=== GET THE STORE-IDENTIFIER FROM ID-24; 
-  //==========================================================================================//
-	
-	//== ID-25 ==\\
-	
-	function checkStoreRankLv() {
-		var storeArr = storeloginStatus.find(whichStoreLoggedIn);
 		
-		for (var p1 in storeArr ) {
-			return p1;
-		} 
-		
-	} 
-	
-//	var t6 = checkStoreRankLv();
-//	console.log(t6);
-	
-	//==========================================================================================\\
-	//  ||=== GET RANK LEVEL OF IDENTIFIED LOGGED-IN ADVERTISER/STORE ===||
-	//  ||=== USE KEY VALUE FROM FUNCTION ID-25 TO GET STORES CURRENT RANK LEVEL ===||
-  //==========================================================================================//
-	
-	//== ID-26 ==\\
-	
-	function getLoggedInStoresRankLv() {
-		var whatStore = checkStoreRankLv();
-		var storeRLv = stores[whatStore].rankLv;
-		
-		return storeRLv;
+		return innerRankLevelObj;
 		
 	}
 	
-//	var t7 = getLoggedInStoresRankLv();
-	//	console.log(t7);
+	//== ==\\
+	
+	function getActiveRankMeasurementValuesIntoAnArray() {
+		var extractMeasurementValues, rankMeasurementObj;
+		
+		rankMeasurementObj = getRankMeasurementSettingsForAdvertiserObject(); //=== { OBJECT FOR RANK MEASUREMENT PARAMETER SETTINGS AND VALUES } ==//
+		extractMeasurementValues = [];
+		
+		for ( var p1 in rankMeasurementObj ) {
+			var pass1 = rankMeasurementObj[p1];
+			
+			for ( var p2 in pass1 ) {
+				var pass2 = pass1[p2];
+				if ( pass2 > 0 && pass2 !== typeof object ) {
+					extractMeasurementValues.push(pass2);
+				}
+				
+				for ( var p3 in pass2 ) {
+					var pass3 = pass2[p3];
+					if ( pass3 > 0 && pass3 !== typeof object ) {
+						extractMeasurementValues.push(pass3);
+					}
+				}
+			}
+		}
+		return extractMeasurementValues;
+	}
+	
+	//== ==\\
+	
+	function getMaxRankMeasurementPointsForRankLevel() {
+		var  storeRankLevel, aIndex, extractedMeasurementValues, rankTimeSegments, maxPossibleRankPointsForPeriod;
+		
+		storeRankLevel = getInputBoxSelectedRankLevel();
+		aIndex = storeRankLevel - 1;
+		extractedMeasurementValues = getActiveRankMeasurementValuesIntoAnArray(); //== GETS MEASUREMENT VALUES THAT ARE GREATER THAN ZERO
+		rankTimeSegments = getRankLevelTimeSegment(); //=== RETURNS 2,400 { 2,400 3 MIN TIME SEGMENTS}
+		maxPossibleRankPointsForPeriod = extractedMeasurementValues.length * rankTimeSegments; //== { TOTAL NUMBER OF MEASUREMENT POINTS POSSIBLE }
+		
+//		console.log([extractedMeasurementValues, rankTimeSegments ]);
+		return maxPossibleRankPointsForPeriod;
+		
+	}	
+	
+	//== ID-28 ==\\
+	//== { ONE METHOD OF CREATING LEVELS OF GREATER VARIABILITY }
+	function generateYAxisSidebarForRankSublevel() {
+//		var rankLevel, aIndex, innerRankLevelObj, startNumber, yAxisPos, yAxisNeg, totalInnerLevels, count1, levelThreshold, rLevelPointSpread, levelThreshold, lastCount, lastPointValue, pointThresholdValues  ;
+		var rankLevel, aIndex, innerRankLevelObj, startNumber, yAxisPos, yAxisNeg, totalInnerLevels, count1, levelThreshold, rLevelPointSpread, levelThreshold, lastCount, lastPointValue, pointThresholdValues  ;
+		
+		rankLevel = getInputBoxSelectedRankLevel();
+		aIndex = rankLevel - 1;
+		innerRankLevelObj = getInnerRankLevelSidebarObj(rankLevel);
+		startNumber = innerRankLevelObj[aIndex].startingNumber;
+		yAxisPos = innerRankLevelObj[aIndex].yAxisPivot_Point1Spread;
+		yAxisNeg = innerRankLevelObj[aIndex].yAxisPivot_Point2Spread;
+		totalInnerLevels = innerRankLevelObj[aIndex].numberOfInnerLevels;
+		count1 = innerRankLevelObj[aIndex].numberOfInnerLevels;
+		levelThreshold = 0;
+		rLevelPointSpread = [];
+		
+
+		lastCount = 0;
+		lastPointValue = 0;
+		pointThresholdValues = [];
+		
+		for ( var p1 = totalInnerLevels; p1 !== 0; p1-- ) {
+			levelThreshold = Number(parseFloat( levelThreshold + ( count1 * (yAxisPos + startNumber)) ).toFixed(2));
+			count1--;
+			if (count1 > 27 ) {
+				startNumber = Number(parseFloat(startNumber + yAxisPos).toFixed(2));
+				rLevelPointSpread.push(levelThreshold);
+				if ( lastCount === 0 ) { 
+					pointThresholdValues.push( 0 );
+				}
+				if ( lastCount > 0 ) {
+					lastPointValue = Number(parseFloat(lastPointValue + rLevelPointSpread[lastCount-1]).toFixed(2));
+					pointThresholdValues.push( lastPointValue );
+				}
+				lastCount++;
+			}
+			else {
+				// decrement from the incremented numStart
+				startNumber = Number(parseFloat(startNumber - yAxisNeg).toFixed(2));
+				rLevelPointSpread.push(levelThreshold);
+				lastPointValue = Number(parseFloat(lastPointValue + rLevelPointSpread[lastCount-1]).toFixed(2));
+				pointThresholdValues.push( lastPointValue );
+				lastCount++;
+			}
+		}
+		
+		console.log([rLevelPointSpread, pointThresholdValues]);
+		
+		//=== REVERSE IN ORDER FOR INDEX TO ALIGN WITH Y-AXIS INNER-LEVEL INDEXING
+		return pointThresholdValues.reverse();
+		
+	}
+
+		
+	//== ID-29 ==\\
+	function setInnerRankLevelAfterCheckingIfCurrentPointsExceedPointRequirement() {
+		var yAxisRankSublevel, storeNumber, aIndex,  stores, rankLevel, currentRankPoints;
+		
+		yAxisRankSublevel = generateYAxisSidebarForRankSublevel();
+		storeNumber = getInputBoxSelectedStore();
+		aIndex = storeNumber - 1;
+		stores = getStoresObj();
+		rankLevel = stores[aIndex].rankLv_Inner;
+		currentRankPoints = stores[aIndex].totalRankPoints;
+		
+		for ( var p1 = 0; p1 < yAxisRankSublevel.length; p1++ ) {
+			if ( yAxisRankSublevel[p1] > currentRankPoints ) {
+				stores[aIndex].rankLv_Inner = p1 + 1;
+				return stores[aIndex].rankLv_Inner;
+			}
+		}
+		
+	}
+	
+	
+	//=***************************************************************** END BLOCK OF IMPROVED FUNCTIONS *************************************************************************\\
+	//=*************************************************************************   SECTION B   ***********************************************************************************\\
 	
 	//==========================================================================================\\
 	//  ||=== GET NUMBER OF TOTAL POSSIBLE POINTS FOR A MEASURED RANK PERIOD ===||
@@ -2831,7 +2385,7 @@ $(document).ready(function() {
 	//== ID-27 ==\\
 	
 	function calcTotalPossibleRankPoints() {
-		var storeRLv = getLoggedInStoresRankLv();
+		var storeRLv = 1;
 		
 		// (1). GET NUMBER OF GRADED MEASUREMENT CONDITIONS
 		// (2). GET TOTAL COUNT OF ACTIVE MEASUREMENT PARAMS
@@ -2843,8 +2397,7 @@ $(document).ready(function() {
 			var actMeasurementVal = getSetTableVal[getSetTableVal.length - 1 ];
 			var getMSegments = getObjectValuesFromSetRank.setRank_lv1();
 			var mSegments = getMSegments[1][7]() * actMeasurementVal;
-//			console.log(getMSegments);
-//			console.log(actMeasurementVal);
+//			console.log([getSetTableVal, actMeasurementVal, getMSegments, mSegments]);
 			return mSegments;
 		}
 		if (storeRLv === 2 ) {
@@ -2857,6 +2410,299 @@ $(document).ready(function() {
 	
 	} 
 	
+	
+	
+	//==========================================================================================\\
+	//  ||=== GET RANK LEVEL OF IDENTIFIED LOGGED-IN ADVERTISER/STORE ===||
+	//  ||=== USE KEY VALUE FROM FUNCTION ID-25 TO GET STORES CURRENT RANK LEVEL ===||
+  //==========================================================================================//
+	
+	//== ID-26 ==\\
+	
+	function getLoggedInStoresRankLv() {
+//		var whatStore = checkStoreRankLv();
+		var storeRLv = stores[whatStore].rankLv;
+		
+		return storeRLv;
+		
+	}
+	
+//	var t7 = getLoggedInStoresRankLv();
+	//	console.log(t7);
+	
+
+		
+	//=*************************************************************   NEW CODE BELOW    *******************************************************************\\
+	//=****************  THIS AFTER THE INNER-RANK LEVEL HAS BEEN DETERMINED; CAUSES THE POINTS OF INDIVIDUAL OFFER TO DEFLECT FROM ITS CURRENT VALUE *******************************\\
+	//=**************************  RANK-LEVEL MEASUREMENT TABLE FOR THE STORES CURRRENT INNER-RANK LEVEL  *******************************\\
+	//=*************************************************************** START SECTION C ***********************************************************************\\
+	
+	//== ID-31 ==\\
+	//## FOR ADJUSTED DCR 
+	var innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser = {
+		
+		adPointAddition_Lv1: {
+			y_top: 0.000020,
+			y_bottom: 0.000015,
+			x1_topLeft: 0.0015,
+			x1_bottomLeft: 0.0011,
+			x2_topRight: 0.0025,
+			x2_bottomRight: 0.0020,
+			xMeasureSegments: rankXyTableConfigSettingsForAdvertiserObject.lv1.mTimeSegments(),
+			yMeasureSegments: (calcTotalPossibleRankPoints() / rankTimeMeasurementSettingsForAdvertiserObject.lv1.rankMOccurences), //== relies on ID-27 & mParamObject
+			yPivotTop: 0.50, //== as a percentage of possible measurement segments
+			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
+			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
+			xPivotRight: 0.50, //== as a percentage of possible measurement segments
+			pivotStartVal: 2.5 ///== number in which increments and decrements start from == different for each rank level 
+			//== ^^ higher number means greater amount of point variation through higher x and y incremental values
+			
+		},	
+		adPointAddition_Lv2: {
+			y_top: 0.000020,
+			y_bottom: 0.000015,
+			x1_topRight: 0.00001,
+			x1_topLeft: 0.00027,
+			x2_bottomLeft: 0.00025,
+			x2_bottomRight: 0.000440,
+			xMeasureSegments: rankXyTableConfigSettingsForAdvertiserObject.lv2.mTimeSegments(),
+			yMeasureSegments: (calcTotalPossibleRankPoints() / rankTimeMeasurementSettingsForAdvertiserObject.lv2.rankMOccurences), //== relies on ID-27 & mParamObject
+			yPivotTop: 0.50, //== as a percentage of possible measurement segments
+			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
+			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
+			xPivotRight: 0.50, //== as a percentage of possible measurement segments
+			pivotStartVal: 2.5 ///== number in which increments and decrements start from == different for each rank level  
+		}
+		
+	}
+	
+	//==  ==\\
+	function getInnerRankLevelDCRMeasurementTableObject() {
+		var innerRankLevelDCRTableObj = [];
+		
+		for ( var p1 in innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser ) {
+			var pass1 = innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser[p1];
+			innerRankLevelDCRTableObj.push(pass1);
+		}
+		
+		return innerRankLevelDCRTableObj;
+		
+	}
+	
+	//== ==\\
+	//==  { REQUIRES THE INNER-RANK LEVEL OF STORE TO PASSED IN }
+	function getXAxisHeaderForInnerRankLevelMeasurementTable(innerRankLevel) {
+		var innerRankLevelDCRTableObj, aIndex, xAxisMeasureSegments, xAxisHeaderForInnerRankMeasurementTable;
+		
+		innerRankLevelDCRTableObj = getInnerRankLevelDCRMeasurementTableObject();
+		aIndex = innerRankLevel - 1;
+		xAxisMeasureSegments = innerRankLevelDCRTableObj[aIndex].xMeasureSegments;
+		xAxisHeaderForInnerRankMeasurementTable = [];
+		
+		for ( var p1 = 0; p1 < xAxisMeasureSegments; p1++ ) {
+			xAxisHeaderForInnerRankMeasurementTable.push(p1);
+		}
+		
+		//== REVERSING IN ORDER TO GET TABLE VALUES TO INDEX CORRECTLY WITH COUNTDOWN TIMER
+		return xAxisHeaderForInnerRankMeasurementTable.reverse();
+	}
+	
+	//== 
+	function getYAxisSidebarForLeftSideOfInnerRankLevelMeasurementTable(innerRankLevel) {
+		var innerRankLevelDCRTableObj, aIndex, yAxisMeasurementSegments, yAxisLength, yAxisPivotTop, yAxisPivotBottom, yAxisSidebarForInnerRankLevel, pivotStartValue, y1Top, y1Bottom, yAxisInnerRankLeftSidebar;
+		
+		innerRankLevelDCRTableObj = getInnerRankLevelDCRMeasurementTableObject();
+		aIndex = innerRankLevel - 1;
+		
+		yAxisLength = getMaxRankMeasurementPointsForRankLevel();
+		yAxisMeasurementSegments = getMaxRankMeasurementPointsForRankLevel(); //== RETURNS 8,400 { 16,800 POSSIBLE POINTS }
+		yAxisPivotTop = innerRankLevelDCRTableObj[aIndex].yPivotTop * yAxisMeasurementSegments;
+		yAxisPivotBottom = innerRankLevelDCRTableObj[aIndex].yPivotBottom * yAxisMeasurementSegments;
+		
+		pivotStartValue = innerRankLevelDCRTableObj[aIndex].pivotStartVal;
+		y1Top = innerRankLevelDCRTableObj[aIndex].y_top;
+		y1Bottom = innerRankLevelDCRTableObj[aIndex].y_bottom;
+		yAxisInnerRankLeftSidebar = [];
+		
+		var y1Total = 0;
+		var y2Total = 0;
+		for ( var p1 = yAxisLength; p1 !== 0; p1-- ) {
+			if ( p1 > yAxisPivotTop && p1 <= yAxisLength ) {
+				var pass1 = Number(parseFloat(pivotStartValue - ( pivotStartValue * y1Total) ).toFixed(4));
+				yAxisInnerRankLeftSidebar.unshift(pass1);
+				y1Total = y1Total + ( y1Top + y1Top );
+			}
+			if ( p1 <= yAxisPivotTop  ) {
+				var pass2 = Number(parseFloat(pivotStartValue + ( pivotStartValue * y2Total )).toFixed(4));
+				yAxisInnerRankLeftSidebar.push(pass2);
+				y2Total = y2Total + ( y1Bottom + y1Bottom );
+				
+			}
+		}
+		console.log([yAxisInnerRankLeftSidebar, 'Y-axis InnerRank Left Sidebar'])
+		return yAxisInnerRankLeftSidebar;
+	}
+	
+	//== 
+	function generateInnerRankLevelMeasurementTableForLeftSide(innerRankLevel) {
+		var innerRankDRCTableObj, aIndex, leftSideInnerRankTableValues, ySidebar, ySidebarLength, xHeader, yPivot, xPivot, xRow, x1Top, x1Bottom;
+		
+		innerRankDRCTableObj = getInnerRankLevelDCRMeasurementTableObject();
+		aIndex = innerRankLevel - 1;
+		ySidebar = getYAxisSidebarForLeftSideOfInnerRankLevelMeasurementTable(innerRankLevel);
+		xHeader = getXAxisHeaderForInnerRankLevelMeasurementTable(innerRankLevel);
+		
+		ySidebarLength = ySidebar.length;
+		yPivot = ySidebar.length * innerRankDRCTableObj[aIndex].yPivotTop;
+		xPivot = xHeader.length * innerRankDRCTableObj[aIndex].xPivotLeft;
+		x1Top = innerRankDRCTableObj[aIndex].x1_topLeft;
+		x1Bottom = innerRankDRCTableObj[aIndex].x1_bottomLeft;
+		leftSideInnerRankTableValues = [];
+		
+		for ( var p1 = 0; p1 < ySidebarLength; p1++ ) {
+			var xRow = ySidebar[p1];
+			if ( p1 < xPivot ) {
+				for ( var p2 = 0; p2 < xPivot; p2++ ) {
+					var pass2 = ( xRow + ( xRow * x1Top ));
+					leftSideInnerRankTableValues.push(pass2);
+					xRow = xRow + ( x1Top + x1Top );
+				} 
+			}
+			if ( p1 >= xPivot && p1 < ySidebarLength ) {
+				for ( var p3 = 0; p3 < xPivot; p3++ ) {
+					var pass3 = ( xRow + ( xRow * x1Bottom ));
+					leftSideInnerRankTableValues.push(pass3);
+					xRow = xRow + ( x1Bottom + x1Bottom );
+				}
+			}
+		}
+		
+		console.log([leftSideInnerRankTableValues.length, 'Left-side/Section1 InnerRank Table'])
+		return leftSideInnerRankTableValues;
+		
+	}
+	
+	//== ==\\
+	function getYAxisSideBarForRightSideOfInnerRankLevelMeasurementTable(innerRankLevel) {
+		var yAxisTableLeftTable, rightSidebarYAxisForInnerRankTable, aIndex, innerRankLevelDCRTableObj, xPivotHeader, xPivotBreakPoint, yLeftTableLength, xHeaderLength ;
+		
+		yAxisTableLeftTable = generateInnerRankLevelMeasurementTableForLeftSide(innerRankLevel);
+		xPivotHeader = getXAxisHeaderForInnerRankLevelMeasurementTable(innerRankLevel);
+		innerRankLevelDCRTableObj = getInnerRankLevelDCRMeasurementTableObject(innerRankLevel);
+		
+		aIndex = innerRankLevel - 1;
+		xPivotBreakPoint = xPivotHeader.length * innerRankLevelDCRTableObj[aIndex].xPivotRight;
+		rightSidebarYAxisForInnerRankTable = [];
+		yLeftTableLength = yAxisTableLeftTable.length;
+		xHeaderLength = xPivotHeader.length;
+		
+		for ( var p1 = 1; p1 < yLeftTableLength; p1++ ) {
+			if ( p1 % xPivotBreakPoint === 0 ) {
+				rightSidebarYAxisForInnerRankTable.push(yAxisTableLeftTable[p1-1]);
+			}
+		}
+		rightSidebarYAxisForInnerRankTable.unshift(yAxisTableLeftTable[xPivotBreakPoint-1])
+		
+		console.log([rightSidebarYAxisForInnerRankTable, 'Right-side/ section2 Y-Axis sidebar for Inner Rank Table']);
+		return rightSidebarYAxisForInnerRankTable;
+	}
+	
+	//== ==\\  
+	function generateInnerRankLevelMeasurementTableForRightSide(innerRankLevel) {
+		var innerRankDRCTableObj, aIndex, rightSideInnerRankTableValues, ySidebar, ySidebarLength, xHeader, yPivot, xPivot, xRow, x2Top, x2Bottom;
+		
+		innerRankDRCTableObj = getInnerRankLevelDCRMeasurementTableObject();
+		aIndex = innerRankLevel - 1;
+		ySidebar = getYAxisSideBarForRightSideOfInnerRankLevelMeasurementTable(innerRankLevel);
+		xHeader = getXAxisHeaderForInnerRankLevelMeasurementTable(innerRankLevel);
+		
+		ySidebarLength = ySidebar.length;
+		yPivot = ySidebar.length * innerRankDRCTableObj[aIndex].yPivotBottom;
+		xPivot = xHeader.length * innerRankDRCTableObj[aIndex].xPivotRight;
+		x2Top = innerRankDRCTableObj[aIndex].x2_topRight;
+		x2Bottom = innerRankDRCTableObj[aIndex].x2_bottomRight;
+		rightSideInnerRankTableValues = [];
+		
+		for ( var p1 = 0; p1 < ySidebarLength; p1++ ) {
+			var xRow = ySidebar[p1];
+			if ( p1 >= xPivot && p1 < ySidebarLength ) {
+				for ( var p2 = 0; p2 < xPivot; p2++ ) {
+					var pass2 = ( xRow + ( xRow * x2Top ));
+					rightSideInnerRankTableValues.push(pass2);
+					xRow = xRow + ( x2Top + x2Top );
+				} 
+			}
+			if ( p1 < xPivot ) {
+				for ( var p3 = 0; p3 < xPivot; p3++ ) {
+					var pass3 = ( xRow + ( xRow * x2Bottom ));
+					rightSideInnerRankTableValues.push(pass3);
+					xRow = xRow + ( x2Bottom + x2Bottom );
+				}   
+			}
+		}
+		
+		console.log([rightSideInnerRankTableValues.length, 'Right-side/Section2 InnerRank Table'])
+		return rightSideInnerRankTableValues;
+		
+	}
+		
+	function concatLeftAndRightInnerRankMeasurementTables(innerRankLevel) {
+		var leftSide, rightSide, innerRankLevelMeasurementTable;
+		
+		leftSide = generateInnerRankLevelMeasurementTableForLeftSide(innerRankLevel);
+		rightSide = generateInnerRankLevelMeasurementTableForRightSide(innerRankLevel);
+		
+		innerRankLevelMeasurementTable = leftSide.concat(rightSide);
+		
+		console.log([innerRankLevelMeasurementTable.length, 'Complete table - Inner Rank Level'])
+		return innerRankLevelMeasurementTable;
+		
+	}
+	
+	
+	//=*************************************************************   NEW CODE ABOVE    *******************************************************************\\
+	//=**********************************************************************************************************************************************************\\
+	//=*************************************************************** END SECTION C ***********************************************************************\\
+		
+	
+				
+//			function compileY1Top() { 
+//				var y1Total = 0;
+//				for ( var p1 = yPivotTop; p1 != 0; p1-- ) {
+//					var pass1 = (pivotStartVal - ( pivotStartVal * y1Total )); 
+//					yTopAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+//					y1Total = y1Total + (y1_top + y1_top);
+//				}
+//			}
+//			
+//			//== ID-34 ==\\
+			
+//			function compileY1Bottom() {
+//				var y1Total = 0;
+//				for ( var p1 = yPivotBottom; p1 != 0; p1-- ) {
+//					var pass1 = (pivotStartVal + ( pivotStartVal * y1Total )); 
+//					yBottomAxisAddOnPointTable.push( pass1 ); //== Returns 8,400 index records
+//					y1Total = y1Total + (y1_bottom + y1_bottom);
+//				}
+//			}
+			
+	
+	
+		//== BTN-ID-7 ==\\
+	$('.js-testingBtnSectionC').on('click', function() {
+		var test20 = concatLeftAndRightInnerRankMeasurementTables(1); //== REQUIRES RANK LEVEL AS PARAMETER
+//		console.log([test20]);
+	});
+	
+	$('.js-testingBtnSectionD').on('click', function() {
+		var test20 = concatLeftAndRightInnerRankMeasurementTables(1);
+		console.log([test20]);
+	});
+	
+	
+	
+	
+
 //  var t8 = calcTotalPossibleRankPoints();
 //	console.log(t8);
 	
@@ -2864,41 +2710,7 @@ $(document).ready(function() {
 	//  ||=== GENERATE TABLE FOR RANK LEVEL > ADVERTISER ===||
   //==========================================================================================//
 
-	//== ID-28 ==\\
-	
-	function genAdvertiserRankLevelTable() {
-		var getMSegments = calcTotalPossibleRankPoints(); //
-		
-		// attempt to increment first; then decrement after pivot point 
-		var numStart = 0.3;
-		var numPos = 0.14;
-		var numNeg = 0.31;
-		var count = 40; //== total number of level values required
-		var rLevelPointSpread = []
 
-		var p1 = 0;
-		for ( var i = 40; i !== 0; i-- ) {
-			p1 = parseInt(p1 + (count * (numPos + numStart)));
-			count--;
-			if (count > 27 ) {
-				// increment from the numStart number
-				numStart = numStart + numPos;
-				rLevelPointSpread.push(p1);
-				// console.log(numStart);
-			}
-			else {
-				// decrement from the incremented numStart
-				numStart = numStart - numNeg;
-				rLevelPointSpread.push(p1);
-			}
-		//	console.log(p1); //== results in a calculated number of point values per Level >> total == 40
-		}
-		
-		//console.log(getMSegments); //== 50,400 ;
-		//console.log(rLevelPointSpread);
-		return rLevelPointSpread;
-		
-	}
 	
 //	var t9 = genAdvertiserRankLevelTable();
 //	console.log(t9);
@@ -3091,47 +2903,9 @@ $(document).ready(function() {
 	//  ||=== SET AD-POINT ADDITION XY TABLE VALUES WITHIN AN OBJECT ===||
   //==========================================================================================//
 	
-	//== ID-31 ==\\
-	//## FOR ADJUSTED DCR 
-	var discountConvertRateMeasurementParamObject = {
-		
-		adPointAddition_Lv1: {
-			y_top: 0.000020,
-			y_bottom: 0.000015,
-			x1_topRight: 0.0015,
-			x1_topLeft: 0.0012,
-			x2_bottomLeft: 0.0009,
-			x2_bottomRight: 0.00020,
-			xMeasureSegments: setRank.lv1.mTimeSegments(),
-			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv1.rankMOccurences), //== relies on ID-27 & mParamObject
-			yPivotTop: 0.50, //== as a percentage of possible measurement segments
-			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
-			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
-			xPivotRight: 0.50, //== as a percentage of possible measurement segments
-			pivotStartVal: 2.5 ///== number in which increments and decrements start from == different for each rank level 
-			//== ^^ higher number means greater amount of point variation through higher x and y incremental values
-			
-		},
-		
-		adPointAddition_Lv2: {
-			y_top: 0.000020,
-			y_bottom: 0.000015,
-			x1_topRight: 0.00001,
-			x1_topLeft: 0.00027,
-			x2_bottomLeft: 0.00025,
-			x2_bottomRight: 0.000440,
-			xMeasureSegments: setRank.lv2.mTimeSegments(),
-			yMeasureSegments: (calcTotalPossibleRankPoints() / mParam.lv2.rankMOccurences), //== relies on ID-27 & mParamObject
-			yPivotTop: 0.50, //== as a percentage of possible measurement segments
-			yPivotBottom: 0.50, //== as a percentage of possible measurement segments
-			xPivotLeft: 0.50, //== as a percentage of possible measurement segments
-			xPivotRight: 0.50, //== as a percentage of possible measurement segments
-			pivotStartVal: 2.5 ///== number in which increments and decrements start from == different for each rank level  
-		}
-		
-	}
+
 	
-//	var t12 = discountConvertRateMeasurementParamObject.adPointAddition_Lv1.mPointSegments;
+//	var t12 = innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser.adPointAddition_Lv1.mPointSegments;
 //	console.log(t12);
 	
 	//==========================================================================================\\
@@ -3160,7 +2934,7 @@ $(document).ready(function() {
 		
 		//== there should be four divisions/block of values
 		if ( lvl === 1 ) {
-			var addOnObject = discountConvertRateMeasurementParamObject.adPointAddition_Lv1;
+			var addOnObject = innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser.adPointAddition_Lv1;
 			var y1_top = addOnObject.y_top;
 			var y1_bottom = addOnObject.y_bottom;
 			
@@ -3335,9 +3109,8 @@ $(document).ready(function() {
 			combineYTable = yTopAxisAddOnPointTable.concat(yBottomAxisAddOnPointTable);
 			//=======================================================================\\
 		}
-		
 		if ( lvl === 2 ) {
-			var addOnObject = discountConvertRateMeasurementParamObject.adPointAddition_Lv2;
+			var addOnObject = innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser.adPointAddition_Lv2;
 			var y1_top = addOnObject.y_top;
 			var y1_bottom = addOnObject.y_bottom;
 			
@@ -3510,7 +3283,6 @@ $(document).ready(function() {
 			//=======================================================================\\
 		}
 		
-		
 //		return [ y1AddOnPointTable, y2AddOnPointTable, y3AddOnPointTable, y4AddOnPointTable, combinedXYDrcTable, yAxisY1, yAxisY3 ]; 
 		return [ combineYTable, combinedXYDrcTable, xMeasureSegmentsHeader ]; 
 		
@@ -3519,8 +3291,6 @@ $(document).ready(function() {
 //	var t13 = getAdPointAdditionValues(2); //=== THIS FUNCTION REQUIRES LEVEL NUMBER TO BE PASSED AS A PARAMETER
 //	console.log(t13);
 	
-	
-
 	//==========================================================================================\\
 	//  ||=== SETS THE ADJUSTED DISCOUNT POINT CONVERT RATE FOR ADVERTISER ===||
 	//  ||===        IS ABLE TO SET EACH STORES ADJDRC PROPERTY #          ===||
@@ -3552,9 +3322,9 @@ $(document).ready(function() {
 		//== ID-50 ==\\
 		var storesObj = getStoresObj();
 		//== ID-51 ==\\
-		var setRankObj = getRankSettingsObject();
+		var setRankObj = getRankXyTableConfigSettingsForAdvertiserObject();
 		//== ID-52 ==\\
-		var mParamObj = getMParamObj();
+		var mParamObj = getTimeMeasureRankSetObj();
 		//== ID-53 ==\\
 		var rankLvl = 0;
 		
@@ -3872,34 +3642,6 @@ $(document).ready(function() {
 	// NEED TO CREATE USER PODS
 	// NEED TO CREATE TABLE FOR USER PODS
 	// NEED TO ADD CREDIT CARD FORM
-	
-	
-	
-	
-	//=========================================================\\
-	//=== START CODE FOR INSERTIN STORE VALUES WITHIN DISPLAYED AD ===\\
-	//=== NEED TO KEEP LAST BECAUSE ALGORITHM COMPONENTS NEED TO BE GENERATED ===//
-	        //=== OTHERWISE UNDEFINED ERRORS WILL OCCURS ===//
-  //=========================================================//
-	
-	//== ID-1 ==\\
-	function compileAdList(st) {
-		
-		function updateList(c, sn, sa, sc, sz, so, sd ) {
-			$('.js-storeName-' + c).text(sn);
-			$('.js-storeAddress-' + c).text(sa);
-			$('.js-storeCity-' + c).text(sc);
-			$('.js-distance-' + c).text("12.44 miles");
-			$('.js-numberOfOffers-' + c).text(so);
-		}
-		
-		var count = 1;
-		for (var i in stores) {
-			updateList(count, stores[i].name, stores[i].address, stores[i].city, stores[i].zip, stores[i].adOffers, stores[i].discount );
-			count++;
-		}
-		
-	}
 	
 	
 	//************************************************************************************\\
