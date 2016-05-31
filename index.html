@@ -55,13 +55,13 @@
 				<label for="rank-level">Rank Lvl </label><input type="number" min="1" max="2" id="rankLevel" value="1">
 				<form action="" id="measurements">
 					<select name="measurementOptions" form="measurements" >				
-						<option value="clicks">Clicks</option>					
-						<option value="views">Views</option>					
-						<option value="reviews">Reviews</option>					
-						<option value="saves">Saves</option>					
-						<option value="purchases">Purchases</option>					
-						<option value="discount">Compounded Discount</option>					
-						<option value="accumulatePoints">Accumulated Points</option>
+						<option value="clicks">clicks</option>					
+						<option value="views">views</option>					
+						<option value="reviews">reviews</option>					
+						<option value="savedAdOccurences">savedAdOccurences</option>					
+						<option value="purchaseOccurences">purchaseOccurences</option>					
+						<option value="compoundDiscountOfferPercent">compoundDiscountOfferPercent</option>					
+						<option value="accumulatedAdPoint">accumulatedAdPoint</option>
 					</select>
 					<label class="increase-label" for="change-set-value">Increase Or decrease</label>
 					<input type="number" id="changeMSetValue" value="1" >
@@ -118,25 +118,14 @@
 						<option value="quickServeFood4">quickServeFood4</option>
 					</select>
 -->
-
+				<button class="btn xy-drc-table js-testingBtnSectionA" id="1"> UPDATE STORE INFO AND POINTS <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionB" id="1"> UPDATE INNER-RANK LEVEL OF SELECTED STORE <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionC" id="1"> UPDATES DCR W/MODIFIER OF SELECTED STORE <br></button>
 <!--
-				<button class="btn click-btn js-measurementBtn" id="click-btn"> (1). Click Measurement </button>
-				<button class="btn view-btn js-measurementBtn" id="view-btn"> (2). View Measurement </button>
-				<button class="btn review-btn js-measurementBtn" id="review-btn"> (3). Review Measurement </button>
-				<button class="btn saved-occurences-btn js-measurementBtn" id="saved-occurences-btn"> (4). savedAdOccurences Measurement </button>
-				<button class="btn purchase-occurences-btn js-measurementBtn" id="purchase-occurences-btn"> (5). purchaseOccurences Measurement </button>
-				<button class="btn compound-discount-btn js-measurementBtn" id="compound-discount-btn"> (6). compoundDiscount OfferPercent Measurement</button>
-				<button class="btn accumulated-point-btn js-measurementBtn" id="accumulated-point-btn"> (7). accumulatedAdPoint Measurement </button>
+				<button class="btn xy-drc-table js-testingBtnSectionD" id="1"> INACTIVE <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionE" id="1"> INACTIVE <br></button>
 -->
-				<button class="btn xy-drc-table js-testingBtnSectionB" id="1"> UPDATE DISPLAYED OFFERS <br></button>
-				<button class="btn xy-drc-table js-testingBtnSectionC" id="1"> GENERATE INNER-RANK MEASUREMENT TABLE <br></button>
-				<button class="btn xy-drc-table js-testingBtnSectionD" id="1"> FUNCTION TEST BUTTON [SEC-C]<br></button>
-				
-				<button class="btn xy-drc-table js-generateAdLedgerDiviationTable" id="1"> (1). Generate Ad Divviation Table <br></button>
-				<button class="btn xy-drc-table js-generateDrcTable" id="1"> (1). Generate xyDRC table <br></button>
-				<button class="btn js-updateDcr" id="1"> (2). Update stores DCR; <br>Use after 1. </button>
-				<button class="btn xy-drc-table js-drc-PointBtn1" id="1"> (3). Calculate points <br> Offers 1 - 12 </button>
-				<button class="btn compile-ad-btn js-compileAdBtn" id="1"> (4). Compile store info </button>
+			
 			</div>
 		</section> <!-- Categories and search functionality will go here -->
 		
