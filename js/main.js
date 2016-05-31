@@ -667,7 +667,7 @@ $(document).ready(function() {
 	//=********************************************************************************************************************************************************\\
 	//=*************************************************************** START SECTION A ************************************************************************\\
 	
-	//== ID-00 ==\\
+	//== A-00 ==\\
 	var rankTimeMeasurementSettingsForAdvertiserObject = {
 		
 		lv1: {
@@ -691,7 +691,7 @@ $(document).ready(function() {
 		}
 	};
 	
-	//== ID-01 ==\\	
+	//== A-01 ==\\	
 	var adPerformanceTableConfigurationSettingsForAdvertiserObject = {
 		
 		lv1: { 
@@ -726,7 +726,7 @@ $(document).ready(function() {
 		
 	};
 	
-	//== ID-2 ==\\
+	//== A-02 ==\\
 	var rankConfigMeasurementSettingsForAdvertiserObject = { // EACH RANK WILL HAVE ITS OWN RANK MEASUREMENT VALUES << POSSIBLY INSERT INTO SETRANK OBJECT UNDER CORRESPONDING LEVEL NUMBER
 		// ATTEMPTED TO ADD TO "SETRANK" OBJECT BUT TOO LARGE. DECIDED TO SEPERATE CONCERNS BECAUSE THERE'S EXPECTED TO BE OVER 40 RANK LEVELS.
 		
@@ -851,7 +851,7 @@ $(document).ready(function() {
 		
 	};
 	
-	//== ID-15 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
+	//== A-03 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
 	var baseAdDiscountConvertParamObject = {
 		
 		set_1: {
@@ -874,7 +874,7 @@ $(document).ready(function() {
 		},
 	}
 	
-	//== ID-16 ==\\
+	//== A-04 ==\\
 	//****************************** THIS IS NOT BEING USED FOR 
 	var adLedgerDivviationParamObject = {
 		
@@ -905,7 +905,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-58 ==\\
+	//== A-05 ==\\
 	var innerRankLevelSidebarObject = {
 		
 		lvl_1: {
@@ -921,8 +921,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-65 ==\\
-	//## FOR ADJUSTED DCR 
+	//== A-06 ==\\
 	var innerRankLevelDCRMeasurementAdjustmentTableObjectForAdvertiser = {
 		
 		adPointAddition_Lv1: {
@@ -966,7 +965,7 @@ $(document).ready(function() {
 	//=*************************************************************** START SECTION B ************************************************************************\\
 	
 	
-	//== ID-03 ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
+	//== B-00 ==\\ ** MOVED FUNCTION FROM WITHIN THE CALCULATETIME FUNCTION **
 	function getOfferEndTimeInNumberFormat() {
 		var storeObj, storeNumber, aIndex, offerEndTime;
 		
@@ -978,7 +977,7 @@ $(document).ready(function() {
 		return offerEndTime;
 	}
 	
-	//== ID-04 ==\\
+	//== B-01 ==\\
 	function getTimeNowInNumberFormat() {
 		var timeNow;
 		
@@ -986,7 +985,7 @@ $(document).ready(function() {
 		return timeNow;
 	}
 	
-	//== ID-05 ==\\
+	//== B-02 ==\\
 	function formatCurrentTimeIntoDate() {
 		var timeNow, seconds, minutes, hours, days;
 		
@@ -1007,7 +1006,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-06 ==\\
+	//== B-03 ==\\
   function formatOfferEndTimeIntoDate() {
 		var offerEndTime, seconds, minutes, hours, days;
 		
@@ -1028,7 +1027,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-07 ==\\
+	//== B-04 ==\\
 	function getTimeDurationForRankLevelPeriod(rankLevel) {
 		var rankTimeMeasureObj, rankTimeDuration, rIndex;
 		
@@ -1045,7 +1044,7 @@ $(document).ready(function() {
 	//=********************************************************************************************************************************************************\\
 	//=*************************************************************** START SECTION C ************************************************************************\\
 	
-		//== ID-09 ==\\
+	//== C-00 ==\\
 	function getStoresObj() {
 		var storesObj = [];
 		for ( var p1 in stores) {
@@ -1055,7 +1054,7 @@ $(document).ready(function() {
 		return storesObj;
 	}
 	
-	//== ID-10 ==\\
+	//== C-01 ==\\
 	function getStoresProp() {
 		var storesProp = []; //== GET STORE NUMBER ( STORE_1, sTORE_2, ETC )
 		for ( var p1 in stores) {
@@ -1065,7 +1064,7 @@ $(document).ready(function() {
 		return storesProp;
 	}
 	
-	//== ID-11 ==\\
+	//== C-02 ==\\
 	function getAdPerformanceTableConfigurationSettingsForAdvertiserObj() {
 		var adPerformanceObj = [];
 		for ( var p1 in adPerformanceTableConfigurationSettingsForAdvertiserObject) {
@@ -1075,7 +1074,7 @@ $(document).ready(function() {
 		return adPerformanceObj;
 	}
 	
-	//== ID-12 ==\\
+	//== C-03 ==\\
 	function getAdPerformanceTableConfigurationSettingsForAdvertiserProp() {
 		var rankSettingsProp = [];
 		for ( var p1 in adPerformanceTableConfigurationSettingsForAdvertiserObject) {
@@ -1085,7 +1084,7 @@ $(document).ready(function() {
 		return rankSettingsProp;
 	}
 	
-	//== ID-13 ==\\
+	//== C-04 ==\\
 	function getRankTimeMeasurementSettingsForAdvertiserObj() {
 		var setMParamObj = [];
 		for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject) {
@@ -1095,7 +1094,7 @@ $(document).ready(function() {
 		return setMParamObj;
 	}
 	
-	//== ID-14 ==\\
+	//== C-05 ==\\
 	function getRankTimeMeasurementSettingsForAdvertiserProp() {
 		var setMParamProp = [];
 		for ( var p1 in rankTimeMeasurementSettingsForAdvertiserObject) {
@@ -1105,7 +1104,7 @@ $(document).ready(function() {
 		return setMParamProp;
 	}
 	
-		//== ID-53 ==\\
+	//== C-06 ==\\
 	//== GETS & RETURNS MEASUREMENT OBJECT [ KEY:VALUE ]
 	function getRankConfigMeasurementSettingsForAdvertiserObj() {
 		var rankMeasurementObj = [];
@@ -1120,6 +1119,7 @@ $(document).ready(function() {
 		} 
 	}
 	
+	//== C-07 ==\\
 	//== GETS & RETURNS MREASUREMENT OBJECT KEY
 	function getRankConfigMeasurementSettingsForAdvertiserProp() {
 		var rankMeasurementProp = [];
@@ -1139,7 +1139,7 @@ $(document).ready(function() {
 		}
 	}
 	
-	//== ID-17 ==\\
+	//== C-08 ==\\
 	function getBaseAdDiscountConvertParamObj() {
 		var adLedgerBaseDiscountObj = [];
 		
@@ -1151,7 +1151,7 @@ $(document).ready(function() {
 		return adLedgerBaseDiscountObj;
 	}
 	
-		//== ID-59 ==\\
+	//== C-09 ==\\
 	function getInnerRankLevelSidebarObj(rankLevel) {
 		var innerRankLevelObj = [];
 		
@@ -1164,7 +1164,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-60 ==\\
+	//== C-10 ==\\
 	function getActiveRankMeasurementValuesIntoAnArray() {
 		var extractMeasurementValues, rankMeasurementObj;
 		
@@ -1191,7 +1191,7 @@ $(document).ready(function() {
 		return extractMeasurementValues;
 	}
 	
-	//== ID-61 ==\\ //== ACTIVE MEANS ITS MEASURED; HAS A VALUE GREATER THAN 0
+	//== C-11 ==\\ //== ACTIVE MEANS ITS MEASURED; HAS A VALUE GREATER THAN 0
 	function getActiveRankMeasurementPropertiesIntoAnArray() {
 		var extractedProperty, rankMeasurementObj;
 		
@@ -1219,7 +1219,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-66 ==\\
+	//== C-12 ==\\
 	function getInnerRankLevelDCRMeasurementTableObject() {
 		var innerRankLevelDCRTableObj = [];
 		
@@ -1237,45 +1237,45 @@ $(document).ready(function() {
 	//=*******************************************************************************************************************************************************\\
 	//=****************************************************************START SECTION D ***********************************************************************\\
 	
-		//== ID-40 ==\\
+	//== D-00 ==\\
 	//== GETS THE SELECTED MEASUREMENT PARAM
 	function getInputBoxSelectedMeasurementParam() {
 		var selectMeasurement = $('#measurements option:selected').text();
 		return (selectMeasurement).toLowerCase();
 	}
 	
-	//== ID-41 ==\\
+	//== D-01 ==\\
 	function getInputBoxSelectedStore() {
 		var selectStore = document.getElementById('storeNumber').value;
 		return Number(selectStore);
 	}
 	
-	//== ID-42 ==\\
+	//== D-02 ==\\
 	function getInputBoxSelectedRankLevel() {
 		var selectRankLevel = document.getElementById('rankLevel').value;
 		return Number(selectRankLevel);
 	}
 	
-	//== ID-43 ==\\
+	//== D-03 ==\\
 	function getInputBoxMeasurementIncreaseOrDecreaseAmount() {
 		var value = document.getElementById('changeMSetValue').value;
 		return Number(value);
 	}
 	
-	//== ID-44 ==\\
+	//== D-04 ==\\
 	function getInputBoxTimePeriodStoreNumber() {
 		var storeNumber = $('#setStoreDate').val();
 		return Number(storeNumber);
 	}
 	
-	//== ID-45 ==\\
+	//== D-05 ==\\
 	function getInputBoxSelectionForTimePeriod() {
 		var selected;
 		selected = $('#setDate option:selected').text();
 		return (selected).toLowerCase();
 	}
 	
-	//== ID-46 ==\\
+	//== D-06 ==\\
 	//== RETURNS DATE IN NUMBER FORMAT
 	function getInputBoxTimePeriod() {
 		var month, day, year, time, monthName, monthID;
@@ -1290,33 +1290,33 @@ $(document).ready(function() {
 		return time;
 	}
 	
-	//== ID-47 ==\\
+	//== D-07 ==\\
 	function getInputBoxDiscountQtyStoreNumber() {
 		var storeNumber = $('#setStoreDiscountQty').val();
 		return Number(storeNumber);
 	}
 	
-	//== ID-48 ==\\
+	//== D-08 ==\\
 	function getInputBoxQty() {
 		var qty;
 		qty = $('#quantity').val();
 		return Number(qty);
 	}
 	
-	//== ID-49 ==\\
+	//== D-09 ==\\
 	function getInputBoxDiscountPercent() {
 		var discount; 
 		discount = $('#discountPercent').val();
 		return Number(parseFloat(discount/100).toFixed(4));
 	}
 	
-	//== ID-50 ==\\
+	//== D-10 ==\\
 	function getInputBoxAdLedgerStoreNumber() {
 		var storeNumber = $('#setStoreDiscountConvertRate').val();
 		return storeNumber;
 	}
 	
-	//== ID-19 ==\\	
+	//== D-11 ==\\	
 	function getInputBoxToChangeAdLedgerDivviationPercent() {
 		var inputBoxDivviationPercent, inputBoxConfigNumber, formatInputDP, baseAdDiscountConvertObj, dcrPivotPercent;
 		
@@ -1341,7 +1341,7 @@ $(document).ready(function() {
 		return dcrPivotPercent;
 	}
 	
-	//== ID-20 ==\\
+	//== D-12 ==\\
 	function getInputBoxAdLedgerConfigNumber() {
 		var adLedgerConfigNumber = $('#setConfigNumber').val();
 		return adLedgerConfigNumber;
@@ -1353,7 +1353,7 @@ $(document).ready(function() {
 	//=*******************************************************************************************************************************************************\\
 	//=****************************************************************START SECTION E ***********************************************************************\\
 	
-	//== ID-21 ==\\
+	//== E-00 ==\\
 	//== SETS GENERAL/BASE DISCOUNT CONVERT RATE FOR A DEFINED SET << STORE NUMBER IS NOT A REQURIED PARAMETER
 	function setGeneralBaseAdDiscountConvertRate() {
 		var stores, whichConfigSet, baseDcrObj, baseDCR, adPointMax, adPointPivot, adAvgDiscount, lastPeriodAdLedgerPercent;
@@ -1382,7 +1382,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-22 ==\\
+	//== E-01 ==\\
 	//== SET STORE GENERAL/BASE DISCOUNT CONVERT RATE
 	function setAdvertiserBaseAdDiscountRate( ) {
 		var storeNumber, whichConfigSet, storeObj, aIndex, baseDcrObj, calculatedDCR, adPointMax, adPointPivot, adAvgDiscount;
@@ -1409,7 +1409,7 @@ $(document).ready(function() {
 		return storeObj[aIndex].baseAdConvertRate;	
 	}
 	
-	//== ID-54 ==\\
+	//== E-02 ==\\
 	//== PRIMARY FUNCTION GETS VALUES FROM INPUT-BOX == HOW THE STORE IS IDENTIFIED
 	//== SETS THE MEASUREMENT VALUE; RETURNS THE TOTAL ACCUMULATED RANK POINTS 
 	function setMeasurementParameterValuesUtilizingInputBoxValues() {
@@ -1526,7 +1526,7 @@ $(document).ready(function() {
 		
 	}
 	
-		//== ID-55 ==\\
+	//== E-03 ==\\
 	//== SETS THE TIME FOR THE SELECTED PARAM; RETURNS THE TIME IN NUMBER FORMAT
 	function setAdvertiserTimeMeasureParamValues() {
 		var timePropToUpdate, time, storeNumber, storeObject, aIndex;
@@ -1552,7 +1552,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-56 ==\\
+	//== E-04 ==\\
 	//== SETS THE AD OFFER QTY & DISCOUNT PERCENT
 	function setAdvertiserDiscountAndQty() {
 		var activeDiscount, activeQty, storeNumber, storeObject, index;
@@ -1580,7 +1580,7 @@ $(document).ready(function() {
 	
 	//**************************** FOR AD-LEDGER ALGORITHM ***************************************\\
 	//********************************** SECTION F1 **********************************************\\
-	//== ID-23 ==\\
+	//== F-00 ==\\
 	//** GENERATE & SET X-AXIS HEADER VALUES FOR AD LEDGER DIVVIATION
 	function setXAxisAdLedgerDiscountPercentHeader() {
 		var xAxisHeader, xAxisDiscountPercentMin, xAxisDiscountPercentMax, index;
@@ -1597,7 +1597,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-24 ==\\
+	//== F-01 ==\\
 	//** GENERATE & SET Y-AXIS VALUES FOR Y-AXIS MULTIPLIER USE
 	function setYAxisLedgerDiscountPercentDivviationRange() {
 		var yAxisSidebar, yAxisAdLedgerPercentMin, yAxisAdLedgerPercentMax, index;
@@ -1614,7 +1614,7 @@ $(document).ready(function() {
 		return yAxisSidebar;
 	}
 	
-	//== ID-25 ==\\ 
+	//== F-02 ==\\ 
 	//** GENERATE Y-AXIS MULTIPLIER FOR X-AXIS USE
 	function setYAxisAdLedgerDiscountPivotSidebar(yAxisDivviationSidebar) {
 		var yAxisPivotSidebar, pivotPercent, pivotPercentIndex, baseDCR, baseDCRconvert, yAxisBaseMultiplierSidebar, pivotMultiplierIndex, pivotMultiplier;
@@ -1659,7 +1659,7 @@ $(document).ready(function() {
 	//**************************** FOR RANK MEASUREMENT ALGORITHM ***************************************\\
 	//********************************** SECTION F2 **********************************************\\
 	
-	//== ID-67 ==\\
+	//== F-03 ==\\
 	//==  { REQUIRES THE INNER-RANK LEVEL OF STORE TO PASSED IN }
 	function getXAxisHeaderForInnerRankLevelMeasurementTable(innerRankLevel) {
 		var innerRankLevelDCRTableObj, aIndex, xAxisMeasureSegments, xAxisHeaderForInnerRankMeasurementTable;
@@ -1681,7 +1681,7 @@ $(document).ready(function() {
 	//**************************** FOR LIVE AD PERFORMANCE ALGORITHM ***************************************\\
 	//********************************** SECTION F3 **********************************************\\
 	
-	//== ID-30 ==\\
+	//== F-04 ==\\
 	function setXAxisHeaderForAdPerformanceTable() {
 		var xAxisHeader, rankLevel, aIndex, rankSettingsObj, xMaxTimeScale;
 		
@@ -1699,7 +1699,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-31 ==\\
+	//== F-05 ==\\
 	function setYAxisSidebarForAdPerformanceTable() {
 		var yAxisSidebar, rankSettingsObj, rankLevel, aIndex, yPivot, preVal_y1, preVal_y2 ;
 		
@@ -1738,7 +1738,7 @@ $(document).ready(function() {
 	//**************************** FOR AD-LEDGER ALGORITHM ***************************************\\
 	//********************************** SECTION G1 **********************************************\\
 	
-	//== ID-26 ==\\   //== THIS NEEDS TO SET THE GENERAL BASE AD POINT CONVERT FOR EVERY STORE
+	//== G-00 ==\\   //== THIS NEEDS TO SET THE GENERAL BASE AD POINT CONVERT FOR EVERY STORE
 	function generateYAxisAdLedgerDiviationSidebar() {
 		var xAxisHeader, yAxisDivviationSidebar, yAxisPivot, adLedgerDivviation;
 		
@@ -1754,7 +1754,7 @@ $(document).ready(function() {
 	//************ FOR RANK MEASUREMENT ALGORITHM ***************************************\\
 	//********************************** SECTION G2 **********************************************\\
 	
-	//== ID-63 ==\\
+	//== G-01 ==\\
 	//== { ONE METHOD OF CREATING LEVELS OF GREATER VARIABILITY }
 	function generateYAxisSidebarForRankSublevel() {
 //		var rankLevel, aIndex, innerRankLevelObj, startNumber, yAxisPos, yAxisNeg, totalInnerLevels, count1, levelThreshold, rLevelPointSpread, levelThreshold, lastCount, lastPointValue, pointThresholdValues  ;
@@ -1818,7 +1818,7 @@ $(document).ready(function() {
 	//=*******************************************************************************************************************************************************\\
 	//=****************************************************************START SECTION H ***********************************************************************\\
 	
-		//== ID-27 ==\\	 GETS THE AVERAGE DISCOUNT PERCENT OF ALL OFFERS; UPDATE THE LASTPERIOD LEDGER VALUE AND RETURNS THE PERCENT
+	//== H-00 ==\\	 GETS THE AVERAGE DISCOUNT PERCENT OF ALL OFFERS; UPDATE THE LASTPERIOD LEDGER VALUE AND RETURNS THE PERCENT
 	function getCombinedDiscountTotalofAllStoreAdOffers() {
 		var avgDiscount, dcrParamObj, totalActiveOffers, stores, adLedgerCurrentDcrRateForPeriod, inputBoxConfigNumber, value1, value2;
 
@@ -1847,7 +1847,7 @@ $(document).ready(function() {
 		return adLedgerCurrentDcrRateForPeriod;
 	} 
 	
-		//== ID-33 ==\\
+	//== H-01 ==\\
 	function getTimeRemainingForAllOffersInHourFormat() {
 		var timeMeasureRankSetObj, storesObj, timeToday, timeLeft, storeRankLevel, aIndex, createTime, endTime, xTimeMax;
 		
@@ -1872,7 +1872,7 @@ $(document).ready(function() {
 		
 	}
 	
-		//== ID-34 ==\\
+	//== H-02 ==\\
 	function getRemainingTimeSegmentsForAllOffersForAdPerformanceUse() {
 		var timeMeasureRankSetObj, storesObj, timeRemaning, xTimeSegmentForEachOffer, storeRankLevel, aIndex, xTimeMax; 		
 		
@@ -1897,7 +1897,7 @@ $(document).ready(function() {
 		
 	}
 	
-		//== ID-35 ==\\
+	//== H-03 ==\\
 	function getDiscountPercentSetWhenAdCreatedForAllOffers() {
 		var storesObj, setDiscountForAllStores;
 		
@@ -1911,7 +1911,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-36 ==\\
+	//== H-04 ==\\
 	function getQtyRemainingForAllOffers() {
 		var storesObj, offerQtyForAllOffers;
 		
@@ -1926,7 +1926,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-50 ==\\
+	//== H-05 ==\\
 	//== GETS THE SET RANK LEVEL OF STORE & RETURNS THE RANK LEVEL
 	function getCurrentRankLevel(storeNum) {
 		var rankLevel, storesObject;
@@ -1937,7 +1937,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-51 ==\\
+	//== H-06 ==\\
 	//== GETS THE RANKS LEVELS TOTAL TIME SEGMENTS  
 	function getRankLevelTimeSegment() {
 		var rankLevel, rankObject, mParamObject, aIndex, rLevelTimeSegment ;
@@ -1952,7 +1952,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-52 ==\\
+	//== H-07 ==\\
 	//== GETS THE STORES CURRENT TIME SEGMENT
 	function getStoresCurrentTimeSegment(storeNum) {
 		var storeObject, mParamObject, aIndex, rankLevel, rLevelTimeSegment, timeNow, endStoreRankPeriod, timeDifference, calcCurrentTimeSegment, storeCurrentTimeSegment;
@@ -1975,7 +1975,7 @@ $(document).ready(function() {
 		return Number(storeCurrentTimeSegment.toFixed(2));
 	}
 	
-	//== ID-57 ==\\
+	//== H-08 ==\\
 	//== SETS THE ACTIVE RANK MEASUREMENT POINT THRESHOLD MINIMUMS
 	//== { REQUIRES ( AINDEX - STORE # ) & MEASUREMENT TYPE }
 	function setRankMeasurementThresholdMinimumForCurrentTimeSegment(storeNumber, aIndex, measurementType, currentTimeSegment) {
@@ -1993,7 +1993,7 @@ $(document).ready(function() {
 		}
 	}
 	
-	//== ID-62 ==\\
+	//== H-09 ==\\
 	function getMaxRankMeasurementPointsForRankLevel() {
 		var  storeRankLevel, aIndex, extractedMeasurementValues, rankTimeSegments, maxPossibleRankPointsForPeriod;
 		
@@ -2008,7 +2008,7 @@ $(document).ready(function() {
 		
 	}	
 	
-	//== ID-63 ==\\
+	//== H-10 ==\\
 	function getStoreRankLevel(storeNumber) {
 		var storeIndex = storeNumber - 1, storesObj = getStoresObj(), rankLvl;
 		if(storeNumber || storeNumber === 0 ) {
@@ -2033,7 +2033,7 @@ $(document).ready(function() {
 	//********************************** SECTION I2 **********************************************\\
 	
 		
-	//== ID-68 ==\\
+	//== I-00 ==\\
 	function getYAxisSidebarForLeftSideOfInnerRankLevelMeasurementTable(innerRankLevel) {
 		var innerRankLevelDCRTableObj, aIndex, yAxisMeasurementSegments, yAxisLength, yAxisPivotTop, yAxisPivotBottom, yAxisSidebarForInnerRankLevel, pivotStartValue, y1Top, y1Bottom, yAxisInnerRankLeftSidebar;
 		
@@ -2069,7 +2069,7 @@ $(document).ready(function() {
 		return yAxisInnerRankLeftSidebar;
 	}
 	
-	//== ID-70 ==\\
+	//== I-01 ==\\
 	function getYAxisSideBarForRightSideOfInnerRankLevelMeasurementTable(innerRankLevel) {
 		var yAxisTableLeftTable, rightSidebarYAxisForInnerRankTable, aIndex, innerRankLevelDCRTableObj, xPivotHeader, xPivotBreakPoint, yLeftTableLength, xHeaderLength ;
 		
@@ -2094,8 +2094,7 @@ $(document).ready(function() {
 		return rightSidebarYAxisForInnerRankTable;
 	}
 	
-	
-	//== ID-69 ==\\
+	//== I-02 ==\\
 	function generateInnerRankLevelMeasurementTableForLeftSide(innerRankLevel) {
 		var innerRankDRCTableObj, aIndex, leftSideInnerRankTableValues, ySidebar, ySidebarLength, xHeader, yPivot, xPivot, xRow, x1Top, x1Bottom;
 		
@@ -2134,7 +2133,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-71 ==\\  
+	//== I-03 ==\\  
 	function generateInnerRankLevelMeasurementTableForRightSide(innerRankLevel) {
 		var innerRankDRCTableObj, aIndex, rightSideInnerRankTableValues, ySidebar, ySidebarLength, xHeader, yPivot, xPivot, xRow, x2Top, x2Bottom;
 		
@@ -2173,7 +2172,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-72 ==\\
+	//== I-04 ==\\
 	function concatLeftAndRightInnerRankMeasurementTables(innerRankLevel) {
 		var leftSide, rightSide, innerRankLevelMeasurementTable;
 		
@@ -2191,7 +2190,7 @@ $(document).ready(function() {
 	//**************************** FOR LIVE AD-PERFORMANCE ALGORITHM ***************************************\\
 	//********************************** SECTION I3 **********************************************\\
 	
-		//== ID-32 ==\\
+	//== I-05 ==\\
 	function generateAdPerformanceTable() {
 		var  rankSettingsObj, rankLevel, aIndex, xAxisHeader, yAxisSidebar, adLedgerDCR, xValue, adPerformanceTable;
 		
@@ -2216,9 +2215,7 @@ $(document).ready(function() {
 		return adPerformanceTable;
 	}
 	
-	
-	
-	
+
 	//== BTN-ID-7 ==\\
 	$('.js-testingBtnSectionE').on('click', function() {
 //			var test20 = getStoreData(1);
@@ -2237,6 +2234,7 @@ $(document).ready(function() {
 	//**************************** FOR AD-LEDGER ALGORITHM ***************************************\\
 	//********************************** SECTION J1 **********************************************\\
 	
+	//== J-00 ==\\
 	function getIndexNumberForAdLedger() {
 		var combinedDiscountAverage, ySidebar, adLedgerIndex;
 		
@@ -2256,7 +2254,7 @@ $(document).ready(function() {
 	//************************ FOR LIVE AD-PERFORMANCE ALGORITHM ***************************************\\
 	//********************************** SECTION J3 **********************************************\\
 	
-		//== ID-37 ==\\
+	//== J-01 ==\\
 	function getAdPerformanceIndexNumberForAllOffers() {
 		var currentTimeSegmentForAllOffers, currentQtyRemainForAllOffers, performanceIndex;
 		
@@ -2269,9 +2267,7 @@ $(document).ready(function() {
 		}
 		
 		return performanceIndex;
-		
 	}
-	
 	
 	
 	
@@ -2285,7 +2281,7 @@ $(document).ready(function() {
 	//**************************** FOR AD-LEDGER ALGORITHM ***************************************\\
 	//********************************** SECTION K1 **********************************************\\
 	
-	//== ID-28 ==\\  GET DISCOUNT-CONVERT MULTIPLIER UTILIZING Y-AXIS AD-LEDGER DIVVIATION TABLE
+	//== K-00 ==\\  GET DISCOUNT-CONVERT MULTIPLIER UTILIZING Y-AXIS AD-LEDGER DIVVIATION TABLE
 	function getModifierForDiscountConvertRateFromAdLedgerTable() {
 		var stores, offerCombinedAvg, xHeader, ySidebar, adLedgerIndex, adLedgerModifier;
 		
@@ -2308,7 +2304,7 @@ $(document).ready(function() {
 	//************************ FOR LIVE AD-PERFORMANCE ALGORITHM ***************************************\\
 	//********************************** SECTION K3 **********************************************\\
 	
-	//== ID-29 ==\\
+	//== K-01 ==\\
 	function getMultiplierValueFromPerformanceTableForAllOffers() {
 		var  storeObj, offerIndexNumber, adPerformanceTable, offerMultiplierForOffers ; 
 		
@@ -2333,7 +2329,7 @@ $(document).ready(function() {
 	//=******************************************************************************************************************************************************\\
 	//=******************************************************** START SECTION L ******************************************************************************\\
 	
-	//== ID-29 ==\\  
+	//== L-00 ==\\  
 	function updateStoreInfoOnOffers() {
 		var stores, storeNumber;
 		
@@ -2351,7 +2347,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-39 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
+	//== L-01 ==\\  \\== DCR MULTIPLIER IS EXPECTED TO BE SAME THROUGHOUT IN THIS CASE; WHEN CATEGORIES ARE ADDED, THAT WILL CHANGE FOR EACH
 	function updateOfferPointUtilizingAdPerformanceMultiplier() {
 		var stores, modifierValue, count, updatePoints, updatedAdjDCR, adPerformanceMultiplierForAllOffers, calculatedAdPointWithDCR, calculatedAdPointWithPerformance;
 		
@@ -2378,7 +2374,7 @@ $(document).ready(function() {
 		return updatePoints;
 	}
 	
-	//== ID-64 ==\\
+	//== L-02 ==\\
 	function updateInnerRankLevelAfterCheckingIfCurrentPointsExceedPointRequirement() {
 		var yAxisRankSublevel, storeNumber, aIndex,  stores, rankLevel, currentRankPoints;
 		
@@ -2398,7 +2394,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-65 ==\\
+	//== L-03 ==\\
 	function updateDiscountConvertRateUtilizingAdLedgerModifier() {
 		var storeNumber, storeObj, storeIndex, adLedgerAdjustRate, modifierValue;
 		
@@ -2415,7 +2411,7 @@ $(document).ready(function() {
 		
 	}
 	
-	//== ID-66 ==\\
+	//== L-04 ==\\
 	function calculateTime() {
 		var endTime;
 		
