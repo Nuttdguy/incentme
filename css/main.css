@@ -515,85 +515,154 @@ header {
 }
 
 
-/*==================================*/
-/*--- FOR TESTING MENU
-/*==================================*/
-
-.btn {
-	display: block;
-	height: 60px;
-	width: 100%;
-	background-color: #634f9b;
-	
-	color: aliceblue;
-	font-size: 14px;
-}
-
-.btn:hover {
-	background-color: #181a1a;
-}
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | GENERAL STYLES
+/*==============================================================================================*/
 
 input {
-/*	position: relative;*/
 	height: 27px;
-	width: 15%;
-	text-align: right;
-	margin: 0 5px;
+	width: 30%;
+	
+	text-align: center;
+	font-size: 21px;
+	
+	padding: 2px;
+	margin: 12px auto 0;
 }
 
-#changeMSetValue {
-	width: 30%;
+form {
+	display: block;
+	width: 100%;
 }
 
 select {
 	display: block;
-	height: 27px;
-	width: 90%;
-	margin: 5px auto;
+	height: 32px;
+	width: 80%;
+	margin: 8px auto;
+	
+	font-size: 21px;
+	font-family: sans-serif;
 }
 
-.increase-label {
-text-align: center;
+.label {
+	margin: 12px;	
+	width: 50%;
+	float: left;
+	
+	font-size: 21px;
+	font-family: sans-serif;
+	font-weight: 400;
+	font-variant: small-caps;
 }
 
-.submit {
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | SELECTING STORE AND RANK LEVEL 
+/*==============================================================================================*/
+
+.label-title {
+	margin: 16px 6px 8px;
+	text-align: center;
+	
+	font-size: 21px;
+	font-family: sans-serif;
+}
+
+.store-rank-selector:after {
+	content: "";
+	display: block;
+	width: 100%;
+	
+	padding-bottom: 8px;
+	border-bottom: 1px solid #fff;
+}
+
+.store-rank-selector input {
+	width: 30%;
+	float: left;
+}
+
+
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | SELECTING MEASUREMENT PARAMETERS
+/*==============================================================================================*/
+
+.submit-btn {
 	display: block;
 	width: 80%;
-	text-align: center;
-	margin: 5px auto;
+	height: 36px;
+	
+	color: #fff;
+	background-color: transparent;
+	border: 1px solid rgba(255, 162, 13, 0.85);
 }
 
-#setDate {
+
+.submit-btn:hover {
+	background-color: rgb(222, 139, 5);
+	transition: all .5s;
+}
+
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | SELECTING CALENDAR DATE
+/*==============================================================================================*/
+
+.date {
 	display: block;
 	text-align: center;
 }
 
-#setDate input {
-	width: 20%;
+.date input {
+	margin: auto;
+	width: 25%;
 }
 
-#setDate input:last-child {
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | SELECTING OFFER DETAILS
+/*==============================================================================================*/
+
+.discount-qty-selector input {
 	width: 30%;
+	float: left;
+	margin-bottom: 12px;
 }
 
-#storeOffers {
-	text-align: center;
+/*==============================================================================================*/
+/*    FOR INPUT-BOX | SELECTING OFFER DETAILS
+/*==============================================================================================*/
+
+.adLedger-selector input {
+	width: 30%;
+	float: left;
+	margin-bottom: 12px;
 }
 
-#storeOffers input {
-	display: inline-block;
-	width: 45%;
-	margin: 2%;
+
+/*==============================================================================================*/
+/*    FOR UPDATE BUTTONS
+/*==============================================================================================*/
+
+.btn { 
+	display: block;
+	margin: 12px auto 0;
+	
+	font-family: sans-serif;
+	font-size: 21px;
+	font-variant: small-caps;
+	
+	color: #fff;
+	background-color: #e30909;
+	border: 1px solid #c63636;
+	
+	height: 60px;
+	width: 80%;
 }
 
-#storeOffers p {
-	text-align: center;
+.btn:hover {
+	background-color: #270c0c;
+	transition: all .5s;
 }
 
-#setStoreDiscountConvertRate,
-#setAdDivviationPercent, 
-#setConfigNumber {
-	width: 50%;
-}
+
 
 

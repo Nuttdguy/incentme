@@ -51,10 +51,15 @@
 		
 		<section>
 			<div class="sidebar-menu">
-				<label for="store-number">Ad/Store #</label><input type="number" min="1" max="12" id="storeNumber" value="1">
-				<label for="rank-level">Rank Lvl </label><input type="number" min="1" max="2" id="rankLevel" value="1">
+			<p class="label-title">Use To Select Store &amp; Rank Level To Apply </p>
+				<div class="store-rank-selector cf">
+					<p class="label">Ad/Store #</p>
+					<input type="number" min="1" max="12" id="storeNumber" value="1">
+					<p class="label">Rank Lvl </p>
+					<input type="number" min="1" max="2" id="rankLevel" value="1">
+				</div>
 				<form action="" id="measurements">
-					<select name="measurementOptions" form="measurements" >				
+					<select class="input-selection-boxes" name="measurementOptions" form="measurements" >				
 						<option value="clicks">clicks</option>					
 						<option value="views">views</option>					
 						<option value="reviews">reviews</option>					
@@ -63,43 +68,54 @@
 						<option value="compoundDiscountOfferPercent">compoundDiscountOfferPercent</option>					
 						<option value="accumulatedAdPoint">accumulatedAdPoint</option>
 					</select>
-					<label class="increase-label" for="change-set-value">Increase Or decrease</label>
+					<p class="label" >Increase Or decrease</p>
 					<input type="number" id="changeMSetValue" value="1" >
 				</form>
-				<input class="submit submitMParams" type="button" value="Set MParams">
+				<input class="submit-btn submitMParams" type="button" title="Select to store to apply, the rank measurement parameter & the amount of points to increase or decrease" value="Set Measurement">
 				
 				<br>
+				<p class="label-title">Change Measure &amp; Offer Dates</p>
+<!--				<p class="label">Store #: <input type="number" id="setStoreDate" min="1" max="12" value="3"> </p>-->
 				<form action="" id="setDate">
-					<p>Change Measure &amp; Offer Dates</p>
-					<p>Store #: <input type="number" id="setStoreDate" min="1" max="12" value="3"> </p>
 					<select name="setDate" form="setDate">
 						<option value="rankPeriodStartTime">Set Rank Period Start Date</option>
 						<option value="offerCreateTime">Set Offer Create Date</option>
 						<option value="offerEndTime">Set Offer End Date</option>
 					</select>
-					<input type="number" id="getMonth" min="1" max="12" value="5">
-					<input type="number" name="day" id="getDay" min="1" max="31" value="27">
-					<input type="number" name="year" id="getYear" value="2016">
+					<div class="date">
+						<input type="number" id="getMonth" min="1" max="12" value="5">
+						<input type="number" name="day" id="getDay" min="1" max="31" value="27">
+						<input type="number" name="year" id="getYear" value="2016">
+					</div>
 				</form>
-				<input class="submit submitSetDate" type="button" value="Set Date">
+				<input class="submit-btn submitSetDate" type="button" title="Select store, rank-level, rank-period, calendar date" value="Set Date">
 				
 				<br>
+				<p class="label-title">Set Offer Details</p>
+<!--				<p>Store #: <input type="number" id="setStoreDiscountQty" min="1" max="12" value="1"> </p>-->
 				<form action="" id="storeOffers">
-					<p>Set Offer Details</p>
-					<p>Store #: <input type="number" id="setStoreDiscountQty" min="1" max="12" value="1"> </p>
-					<span>Offer QTY </span><input type="number" min="1" max="50" id="quantity" value="1">
-					<span>Discount %</span><input type="text" id="discountPercent" value="19.59">
+				<div class="discount-qty-selector">
+					<p class="label">Offer QTY </p>
+					<input type="number" min="1" max="50" id="quantity" value="1">
+					<p class="label">Discount %</p>
+					<input type="text" id="discountPercent" maxlength="4" value="1999">
+				</div>
 				</form>
-				<input class="submit submitOfferDetails" type="button" value="Set Offer Params">
+				<input class="submit-btn submitOfferDetails" type="button" title="Select store, quantity & discount percent  - use 4 integers; 1999 is 19.99%, 1579 is 15.79%, etc." value="Set Offer Parameters">
+				
 				<br>
 				<form action="" id="setAdCategory">
-					<p>Set Param: Ad-Ledger | DCR </p>
-					<p>Store #: <input type="number" id="setStoreDiscountConvertRate" min="1" max="12" value="1"> </p>
-					<p>Change Divviation % <input type="text" id="setAdDivviationPercent" maxlength="5" value="2951"> </p>
-					<p>Config # <input type="number" id="setConfigNumber" min="0" max="2" value="0"> </p>
+				<div class="adLedger-selector">
+					<p class="label-title">Set Param: Ad-Ledger | DCR </p>
+<!--					<input type="number" id="setStoreDiscountConvertRate" min="1" max="12" value="1"> -->
+					<p class="label">Change Divviation % </p>
+					<input type="text" id="setAdDivviationPercent" maxlength="5" value="2951"> 
+					<p class="label">Config #</p>
+					<input type="number" id="setConfigNumber" min="0" max="2" value="0"> 
+				</div>
 				</form>
-				<input class="submit js-setAdDiscountConfigCategory" type="button" value="Change General DCR">
-				<input class="submit js-setStoreDiscountConvertRate" type="button" value="Set Store Convert Rate">
+				<input class="submit-btn js-setAdDiscountConfigCategory" type="button" title="Select rank-level, choose the average discount percent to apply as general ad-ledger rate; applies to all offers" value="Change General DCR">
+				<input class="submit-btn js-setStoreDiscountConvertRate" type="button" title="Select store, rank-level, discount percent to apply as base convert; applies to selected store" value="Set Store Convert Rate">
 				
 				
 <!--
@@ -118,9 +134,9 @@
 						<option value="quickServeFood4">quickServeFood4</option>
 					</select>
 -->
-				<button class="btn xy-drc-table js-testingBtnSectionA" id="1"> UPDATE STORE INFO AND POINTS <br></button>
-				<button class="btn xy-drc-table js-testingBtnSectionB" id="1"> UPDATE INNER-RANK LEVEL OF SELECTED STORE <br></button>
-				<button class="btn xy-drc-table js-testingBtnSectionC" id="1"> UPDATES DCR W/MODIFIER OF SELECTED STORE <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionA" title="check console to verify updated values" id="1"> Update store info and points <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionB" title="check console to verify updated values" id="1"> Update inner-rank level of store <br></button>
+				<button class="btn xy-drc-table js-testingBtnSectionC" title="check console to verify updated values" id="1"> update DCR w/modifier of selected store <br></button>
 <!--
 				<button class="btn xy-drc-table js-testingBtnSectionD" id="1"> INACTIVE <br></button>
 				<button class="btn xy-drc-table js-testingBtnSectionE" id="1"> INACTIVE <br></button>
