@@ -1263,19 +1263,13 @@ $(document).ready(function() {
 	}
 	
 	//== D-04 ==\\
-	function getInputBoxTimePeriodStoreNumber() {
-		var storeNumber = $('#setStoreDate').val();
-		return Number(storeNumber);
-	}
-	
-	//== D-05 ==\\
 	function getInputBoxSelectionForTimePeriod() {
 		var selected;
 		selected = $('#setDate option:selected').text();
 		return (selected).toLowerCase();
 	}
 	
-	//== D-06 ==\\
+	//== D-05 ==\\
 	//== RETURNS DATE IN NUMBER FORMAT
 	function getInputBoxTimePeriod() {
 		var month, day, year, time, monthName, monthID;
@@ -1290,33 +1284,21 @@ $(document).ready(function() {
 		return time;
 	}
 	
-	//== D-07 ==\\
-	function getInputBoxDiscountQtyStoreNumber() {
-		var storeNumber = $('#setStoreDiscountQty').val();
-		return Number(storeNumber);
-	}
-	
-	//== D-08 ==\\
+	//== D-06 ==\\
 	function getInputBoxQty() {
 		var qty;
 		qty = $('#quantity').val();
 		return Number(qty);
 	}
 	
-	//== D-09 ==\\
+	//== D-07 ==\\
 	function getInputBoxDiscountPercent() {
 		var discount; 
 		discount = $('#discountPercent').val();
 		return Number(parseFloat(discount/100).toFixed(4));
 	}
 	
-	//== D-10 ==\\
-	function getInputBoxAdLedgerStoreNumber() {
-		var storeNumber = $('#setStoreDiscountConvertRate').val();
-		return storeNumber;
-	}
-	
-	//== D-11 ==\\	
+	//== D-08 ==\\	
 	function getInputBoxToChangeAdLedgerDivviationPercent() {
 		var inputBoxDivviationPercent, inputBoxConfigNumber, formatInputDP, baseAdDiscountConvertObj, dcrPivotPercent;
 		
@@ -1341,7 +1323,7 @@ $(document).ready(function() {
 		return dcrPivotPercent;
 	}
 	
-	//== D-12 ==\\
+	//== D-09 ==\\
 	function getInputBoxAdLedgerConfigNumber() {
 		var adLedgerConfigNumber = $('#setConfigNumber').val();
 		return adLedgerConfigNumber;
@@ -1387,7 +1369,7 @@ $(document).ready(function() {
 	function setAdvertiserBaseAdDiscountRate( ) {
 		var storeNumber, whichConfigSet, storeObj, aIndex, baseDcrObj, calculatedDCR, adPointMax, adPointPivot, adAvgDiscount;
 		
-		storeNumber = getInputBoxAdLedgerStoreNumber(); //== THIS RETURNS THE STORE NUMBER TO IDENTIFY WHICH STORE TO UPDATE THE BASEDCR
+		storeNumber = getInputBoxSelectedStore(); //== THIS RETURNS THE STORE NUMBER TO IDENTIFY WHICH STORE TO UPDATE THE BASEDCR
 		whichConfigSet = getInputBoxAdLedgerConfigNumber(); //== THIS RETURNS THE CONFIG SET TO USE ON BASEDCROBJ
 		storeObj = getStoresObj();
 		aIndex = storeNumber - 1;
@@ -1531,7 +1513,7 @@ $(document).ready(function() {
 	function setAdvertiserTimeMeasureParamValues() {
 		var timePropToUpdate, time, storeNumber, storeObject, aIndex;
 		
-		storeNumber = getInputBoxTimePeriodStoreNumber();
+		storeNumber = getInputBoxSelectedStore();
 		timePropToUpdate = getInputBoxSelectionForTimePeriod();
 		time = getInputBoxTimePeriod();
 		storeObject = getStoresObj();
@@ -1557,7 +1539,7 @@ $(document).ready(function() {
 	function setAdvertiserDiscountAndQty() {
 		var activeDiscount, activeQty, storeNumber, storeObject, index;
 		
-		storeNumber = getInputBoxDiscountQtyStoreNumber();
+		storeNumber = getInputBoxSelectedStore();
 		activeQty = getInputBoxQty();
 		activeDiscount = getInputBoxDiscountPercent();
 		storeObject = getStoresObj();
