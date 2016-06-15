@@ -851,7 +851,7 @@ $(document).ready(function() {
 		
 	};
 	
-	//== A-03 ==\\ OBJECT FOR AD DISCOUNT CONVERT RATE PARAMETERS
+	//== A-03 ==\\
 	var baseAdDiscountConvertParamObject = {
 		
 		set_1: {
@@ -875,7 +875,6 @@ $(document).ready(function() {
 	}
 	
 	//== A-04 ==\\
-	//****************************** THIS IS NOT BEING USED FOR 
 	var adLedgerDivviationParamObject = {
 		
 		adLedgerPivotPercent_group1: {
@@ -1295,7 +1294,7 @@ $(document).ready(function() {
 	function getInputBoxDiscountPercent() {
 		var discount; 
 		discount = $('#discountPercent').val();
-		return Number(parseFloat(discount/100).toFixed(4));
+		return Number(parseFloat(discount/100/100).toFixed(4));
 	}
 	
 	//== D-08 ==\\	
@@ -1739,7 +1738,6 @@ $(document).ready(function() {
 	//== G-01 ==\\
 	//== { ONE METHOD OF CREATING LEVELS OF GREATER VARIABILITY }
 	function generateYAxisSidebarForRankSublevel() {
-//		var rankLevel, aIndex, innerRankLevelObj, startNumber, yAxisPos, yAxisNeg, totalInnerLevels, count1, levelThreshold, rLevelPointSpread, levelThreshold, lastCount, lastPointValue, pointThresholdValues  ;
 		var rankLevel, aIndex, innerRankLevelObj, startNumber, yAxisPos, yAxisNeg, totalInnerLevels, count1, levelThreshold, rLevelPointSpread, levelThreshold, lastCount, lastPointValue, pointThresholdValues  ;
 		
 		rankLevel = getInputBoxSelectedRankLevel();
@@ -1753,7 +1751,6 @@ $(document).ready(function() {
 		levelThreshold = 0;
 		rLevelPointSpread = [];
 		
-
 		lastCount = 0;
 		lastPointValue = 0;
 		pointThresholdValues = [];
@@ -1786,7 +1783,7 @@ $(document).ready(function() {
 		console.log([rLevelPointSpread, pointThresholdValues]);
 		
 		//=== REVERSE IN ORDER FOR INDEX TO ALIGN WITH Y-AXIS INNER-LEVEL INDEXING
-		return pointThresholdValues.reverse();
+		return pointThresholdValues // .reverse();
 		
 	}
 

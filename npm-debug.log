@@ -1,0 +1,600 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Nuttdguy\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'node-windows' ]
+2 info using npm@3.9.5
+3 info using node@v4.2.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData node-windows
+8 silly fetchNamedPackageData node-windows
+9 silly mapToRegistry name node-windows
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'node-windows',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   name: 'node-windows',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/node-windows
+14 verbose request uri https://registry.npmjs.org/node-windows
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 12:45:20 PM
+17 verbose request id 8d2ad38cec80564f
+18 http request GET https://registry.npmjs.org/node-windows
+19 http 200 https://registry.npmjs.org/node-windows
+20 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"212X5ZG9A5QBGPU9JWP55JMVH"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '10534',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-ord1748-ORD',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1465235117.988666,VS0,VE337',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+21 silly get     etag: '"212X5ZG9A5QBGPU9JWP55JMVH"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '10534',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-ord1748-ORD',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1465235117.988666,VS0,VE337',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving node-windows to C:\Users\Nuttdguy\AppData\Roaming\npm-cache\registry.npmjs.org\node-windows\.cache.json
+23 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule node-windows@0.1.11 checking installable status
+37 silly cache add args [ 'node-windows', null ]
+38 verbose cache add spec node-windows
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'node-windows',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'node-windows',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed node-windows@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for node-windows
+42 info addNameTag [ 'node-windows', 'latest' ]
+43 silly mapToRegistry name node-windows
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'node-windows',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   name: 'node-windows',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/node-windows
+48 verbose addNameTag registry:https://registry.npmjs.org/node-windows not in flight; fetching
+49 verbose get https://registry.npmjs.org/node-windows not expired, no request
+50 silly addNameTag next cb for node-windows with tag latest
+51 silly addNamed node-windows@0.1.11
+52 verbose addNamed "0.1.11" is a plain semver version for node-windows
+53 silly mapToRegistry name node-windows
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'node-windows',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   name: 'node-windows',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/node-windows
+58 verbose addRemoteTarball https://registry.npmjs.org/node-windows/-/node-windows-0.1.11.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-windows/-/node-windows-0.1.11.tgz',
+59 verbose addRemoteTarball   'ec8c2aa78742bbd5c7b72677da7d75f446d63c83' ]
+60 info retry fetch attempt 1 at 12:45:21 PM
+61 info attempt registry request try #1 at 12:45:21 PM
+62 http fetch GET https://registry.npmjs.org/node-windows/-/node-windows-0.1.11.tgz
+63 http fetch 200 https://registry.npmjs.org/node-windows/-/node-windows-0.1.11.tgz
+64 silly fetchAndShaCheck shasum ec8c2aa78742bbd5c7b72677da7d75f446d63c83
+65 verbose addTmpTarball C:\Users\Nuttdguy\AppData\Local\Temp\npm-180-613a5d63\registry.npmjs.org\node-windows\-\node-windows-0.1.11.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for node-windows@0.1.11
+67 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+68 silly cache afterAdd node-windows@0.1.11
+69 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\node-windows\0.1.11\package\package.json not in flight; writing
+70 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+71 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\node-windows\0.1.11\package\package.json written
+72 silly fetchNamedPackageData optimist
+73 silly mapToRegistry name optimist
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'optimist',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   name: 'optimist',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/optimist
+78 verbose request uri https://registry.npmjs.org/optimist
+79 verbose request no auth needed
+80 info attempt registry request try #1 at 12:45:21 PM
+81 http request GET https://registry.npmjs.org/optimist
+82 http 200 https://registry.npmjs.org/optimist
+83 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+83 verbose headers   etag: '"28OT6TDNWBYMITUW3J8LR37RB"',
+83 verbose headers   'content-type': 'application/json',
+83 verbose headers   'content-encoding': 'gzip',
+83 verbose headers   'cache-control': 'max-age=300',
+83 verbose headers   'content-length': '9257',
+83 verbose headers   'accept-ranges': 'bytes',
+83 verbose headers   date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+83 verbose headers   via: '1.1 varnish',
+83 verbose headers   age: '249',
+83 verbose headers   connection: 'keep-alive',
+83 verbose headers   'x-served-by': 'cache-ord1740-ORD',
+83 verbose headers   'x-cache': 'HIT',
+83 verbose headers   'x-cache-hits': '13',
+83 verbose headers   'x-timer': 'S1465235118.663808,VS0,VE0',
+83 verbose headers   vary: 'Accept-Encoding' }
+84 silly get cb [ 200,
+84 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+84 silly get     etag: '"28OT6TDNWBYMITUW3J8LR37RB"',
+84 silly get     'content-type': 'application/json',
+84 silly get     'content-encoding': 'gzip',
+84 silly get     'cache-control': 'max-age=300',
+84 silly get     'content-length': '9257',
+84 silly get     'accept-ranges': 'bytes',
+84 silly get     date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+84 silly get     via: '1.1 varnish',
+84 silly get     age: '249',
+84 silly get     connection: 'keep-alive',
+84 silly get     'x-served-by': 'cache-ord1740-ORD',
+84 silly get     'x-cache': 'HIT',
+84 silly get     'x-cache-hits': '13',
+84 silly get     'x-timer': 'S1465235118.663808,VS0,VE0',
+84 silly get     vary: 'Accept-Encoding' } ]
+85 verbose get saving optimist to C:\Users\Nuttdguy\AppData\Roaming\npm-cache\registry.npmjs.org\optimist\.cache.json
+86 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+87 silly resolveWithNewModule optimist@0.6.1 checking installable status
+88 silly cache add args [ 'optimist@~0.6.0', null ]
+89 verbose cache add spec optimist@~0.6.0
+90 silly cache add parsed spec Result {
+90 silly cache add   raw: 'optimist@~0.6.0',
+90 silly cache add   scope: null,
+90 silly cache add   name: 'optimist',
+90 silly cache add   rawSpec: '~0.6.0',
+90 silly cache add   spec: '>=0.6.0 <0.7.0',
+90 silly cache add   type: 'range' }
+91 silly addNamed optimist@>=0.6.0 <0.7.0
+92 verbose addNamed ">=0.6.0 <0.7.0" is a valid semver range for optimist
+93 silly addNameRange { name: 'optimist', range: '>=0.6.0 <0.7.0', hasData: false }
+94 silly mapToRegistry name optimist
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry https://registry.npmjs.org/
+97 silly mapToRegistry data Result {
+97 silly mapToRegistry   raw: 'optimist',
+97 silly mapToRegistry   scope: null,
+97 silly mapToRegistry   name: 'optimist',
+97 silly mapToRegistry   rawSpec: '',
+97 silly mapToRegistry   spec: 'latest',
+97 silly mapToRegistry   type: 'tag' }
+98 silly mapToRegistry uri https://registry.npmjs.org/optimist
+99 verbose addNameRange registry:https://registry.npmjs.org/optimist not in flight; fetching
+100 verbose get https://registry.npmjs.org/optimist not expired, no request
+101 silly addNameRange number 2 { name: 'optimist', range: '>=0.6.0 <0.7.0', hasData: true }
+102 silly addNameRange versions [ 'optimist',
+102 silly addNameRange   [ '0.0.1',
+102 silly addNameRange     '0.0.2',
+102 silly addNameRange     '0.0.4',
+102 silly addNameRange     '0.0.5',
+102 silly addNameRange     '0.0.6',
+102 silly addNameRange     '0.0.7',
+102 silly addNameRange     '0.1.0',
+102 silly addNameRange     '0.1.1',
+102 silly addNameRange     '0.1.2',
+102 silly addNameRange     '0.1.3',
+102 silly addNameRange     '0.1.4',
+102 silly addNameRange     '0.1.5',
+102 silly addNameRange     '0.1.6',
+102 silly addNameRange     '0.1.7',
+102 silly addNameRange     '0.1.8',
+102 silly addNameRange     '0.1.9',
+102 silly addNameRange     '0.0.3',
+102 silly addNameRange     '0.2.0',
+102 silly addNameRange     '0.2.1',
+102 silly addNameRange     '0.2.2',
+102 silly addNameRange     '0.2.3',
+102 silly addNameRange     '0.2.4',
+102 silly addNameRange     '0.2.5',
+102 silly addNameRange     '0.2.6',
+102 silly addNameRange     '0.2.7',
+102 silly addNameRange     '0.2.8',
+102 silly addNameRange     '0.3.0',
+102 silly addNameRange     '0.3.1',
+102 silly addNameRange     '0.3.3',
+102 silly addNameRange     '0.3.4',
+102 silly addNameRange     '0.3.5',
+102 silly addNameRange     '0.3.6',
+102 silly addNameRange     '0.3.7',
+102 silly addNameRange     '0.4.0',
+102 silly addNameRange     '0.5.0',
+102 silly addNameRange     '0.5.1',
+102 silly addNameRange     '0.5.2',
+102 silly addNameRange     '0.6.0',
+102 silly addNameRange     '0.6.1' ] ]
+103 silly addNamed optimist@0.6.1
+104 verbose addNamed "0.6.1" is a plain semver version for optimist
+105 silly mapToRegistry name optimist
+106 silly mapToRegistry using default registry
+107 silly mapToRegistry registry https://registry.npmjs.org/
+108 silly mapToRegistry data Result {
+108 silly mapToRegistry   raw: 'optimist',
+108 silly mapToRegistry   scope: null,
+108 silly mapToRegistry   name: 'optimist',
+108 silly mapToRegistry   rawSpec: '',
+108 silly mapToRegistry   spec: 'latest',
+108 silly mapToRegistry   type: 'tag' }
+109 silly mapToRegistry uri https://registry.npmjs.org/optimist
+110 verbose addRemoteTarball https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz not in flight; adding
+111 verbose addRemoteTarball [ 'https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz',
+111 verbose addRemoteTarball   'da3ea74686fa21a19a111c326e90eb15a0196686' ]
+112 info retry fetch attempt 1 at 12:45:21 PM
+113 info attempt registry request try #1 at 12:45:21 PM
+114 http fetch GET https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+115 http fetch 200 https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+116 silly fetchAndShaCheck shasum da3ea74686fa21a19a111c326e90eb15a0196686
+117 verbose addTmpTarball C:\Users\Nuttdguy\AppData\Local\Temp\npm-180-613a5d63\registry.npmjs.org\optimist\-\optimist-0.6.1.tgz not in flight; adding
+118 verbose addTmpTarball already have metadata; skipping unpack for optimist@0.6.1
+119 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+120 silly cache afterAdd optimist@0.6.1
+121 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\optimist\0.6.1\package\package.json not in flight; writing
+122 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+123 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\optimist\0.6.1\package\package.json written
+124 silly fetchNamedPackageData wordwrap
+125 silly mapToRegistry name wordwrap
+126 silly mapToRegistry using default registry
+127 silly mapToRegistry registry https://registry.npmjs.org/
+128 silly mapToRegistry data Result {
+128 silly mapToRegistry   raw: 'wordwrap',
+128 silly mapToRegistry   scope: null,
+128 silly mapToRegistry   name: 'wordwrap',
+128 silly mapToRegistry   rawSpec: '',
+128 silly mapToRegistry   spec: 'latest',
+128 silly mapToRegistry   type: 'tag' }
+129 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+130 silly fetchNamedPackageData minimist
+131 silly mapToRegistry name minimist
+132 silly mapToRegistry using default registry
+133 silly mapToRegistry registry https://registry.npmjs.org/
+134 silly mapToRegistry data Result {
+134 silly mapToRegistry   raw: 'minimist',
+134 silly mapToRegistry   scope: null,
+134 silly mapToRegistry   name: 'minimist',
+134 silly mapToRegistry   rawSpec: '',
+134 silly mapToRegistry   spec: 'latest',
+134 silly mapToRegistry   type: 'tag' }
+135 silly mapToRegistry uri https://registry.npmjs.org/minimist
+136 verbose request uri https://registry.npmjs.org/wordwrap
+137 verbose request no auth needed
+138 info attempt registry request try #1 at 12:45:22 PM
+139 http request GET https://registry.npmjs.org/wordwrap
+140 verbose request uri https://registry.npmjs.org/minimist
+141 verbose request no auth needed
+142 info attempt registry request try #1 at 12:45:22 PM
+143 http request GET https://registry.npmjs.org/minimist
+144 http 200 https://registry.npmjs.org/wordwrap
+145 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+145 verbose headers   etag: '"18ZMVFL4XQSNT8JYI76ECE9BV"',
+145 verbose headers   'content-type': 'application/json',
+145 verbose headers   'content-encoding': 'gzip',
+145 verbose headers   'cache-control': 'max-age=300',
+145 verbose headers   'content-length': '1908',
+145 verbose headers   'accept-ranges': 'bytes',
+145 verbose headers   date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+145 verbose headers   via: '1.1 varnish',
+145 verbose headers   age: '127',
+145 verbose headers   connection: 'keep-alive',
+145 verbose headers   'x-served-by': 'cache-ord1750-ORD',
+145 verbose headers   'x-cache': 'HIT',
+145 verbose headers   'x-cache-hits': '4',
+145 verbose headers   'x-timer': 'S1465235118.973066,VS0,VE0',
+145 verbose headers   vary: 'Accept-Encoding' }
+146 silly get cb [ 200,
+146 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+146 silly get     etag: '"18ZMVFL4XQSNT8JYI76ECE9BV"',
+146 silly get     'content-type': 'application/json',
+146 silly get     'content-encoding': 'gzip',
+146 silly get     'cache-control': 'max-age=300',
+146 silly get     'content-length': '1908',
+146 silly get     'accept-ranges': 'bytes',
+146 silly get     date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+146 silly get     via: '1.1 varnish',
+146 silly get     age: '127',
+146 silly get     connection: 'keep-alive',
+146 silly get     'x-served-by': 'cache-ord1750-ORD',
+146 silly get     'x-cache': 'HIT',
+146 silly get     'x-cache-hits': '4',
+146 silly get     'x-timer': 'S1465235118.973066,VS0,VE0',
+146 silly get     vary: 'Accept-Encoding' } ]
+147 verbose get saving wordwrap to C:\Users\Nuttdguy\AppData\Roaming\npm-cache\registry.npmjs.org\wordwrap\.cache.json
+148 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+149 silly resolveWithNewModule wordwrap@0.0.3 checking installable status
+150 silly cache add args [ 'wordwrap@~0.0.2', null ]
+151 verbose cache add spec wordwrap@~0.0.2
+152 silly cache add parsed spec Result {
+152 silly cache add   raw: 'wordwrap@~0.0.2',
+152 silly cache add   scope: null,
+152 silly cache add   name: 'wordwrap',
+152 silly cache add   rawSpec: '~0.0.2',
+152 silly cache add   spec: '>=0.0.2 <0.1.0',
+152 silly cache add   type: 'range' }
+153 silly addNamed wordwrap@>=0.0.2 <0.1.0
+154 verbose addNamed ">=0.0.2 <0.1.0" is a valid semver range for wordwrap
+155 silly addNameRange { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: false }
+156 silly mapToRegistry name wordwrap
+157 silly mapToRegistry using default registry
+158 silly mapToRegistry registry https://registry.npmjs.org/
+159 silly mapToRegistry data Result {
+159 silly mapToRegistry   raw: 'wordwrap',
+159 silly mapToRegistry   scope: null,
+159 silly mapToRegistry   name: 'wordwrap',
+159 silly mapToRegistry   rawSpec: '',
+159 silly mapToRegistry   spec: 'latest',
+159 silly mapToRegistry   type: 'tag' }
+160 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+161 verbose addNameRange registry:https://registry.npmjs.org/wordwrap not in flight; fetching
+162 verbose get https://registry.npmjs.org/wordwrap not expired, no request
+163 silly addNameRange number 2 { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: true }
+164 silly addNameRange versions [ 'wordwrap', [ '0.0.1', '0.0.2', '0.0.3', '1.0.0' ] ]
+165 silly addNamed wordwrap@0.0.3
+166 verbose addNamed "0.0.3" is a plain semver version for wordwrap
+167 silly mapToRegistry name wordwrap
+168 silly mapToRegistry using default registry
+169 silly mapToRegistry registry https://registry.npmjs.org/
+170 silly mapToRegistry data Result {
+170 silly mapToRegistry   raw: 'wordwrap',
+170 silly mapToRegistry   scope: null,
+170 silly mapToRegistry   name: 'wordwrap',
+170 silly mapToRegistry   rawSpec: '',
+170 silly mapToRegistry   spec: 'latest',
+170 silly mapToRegistry   type: 'tag' }
+171 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+172 verbose addRemoteTarball https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz not in flight; adding
+173 verbose addRemoteTarball [ 'https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz',
+173 verbose addRemoteTarball   'a3d5da6cd5c0bc0008d37234bbaf1bed63059107' ]
+174 info retry fetch attempt 1 at 12:45:22 PM
+175 info attempt registry request try #1 at 12:45:22 PM
+176 http fetch GET https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz
+177 http 200 https://registry.npmjs.org/minimist
+178 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+178 verbose headers   etag: '"6WYQRB61MFPPSGGUX40OUX4JM"',
+178 verbose headers   'content-type': 'application/json',
+178 verbose headers   'content-encoding': 'gzip',
+178 verbose headers   'cache-control': 'max-age=300',
+178 verbose headers   'content-length': '5533',
+178 verbose headers   'accept-ranges': 'bytes',
+178 verbose headers   date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+178 verbose headers   via: '1.1 varnish',
+178 verbose headers   age: '88',
+178 verbose headers   connection: 'keep-alive',
+178 verbose headers   'x-served-by': 'cache-ord1730-ORD',
+178 verbose headers   'x-cache': 'HIT',
+178 verbose headers   'x-cache-hits': '16',
+178 verbose headers   'x-timer': 'S1465235118.975122,VS0,VE0',
+178 verbose headers   vary: 'Accept-Encoding' }
+179 silly get cb [ 200,
+179 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+179 silly get     etag: '"6WYQRB61MFPPSGGUX40OUX4JM"',
+179 silly get     'content-type': 'application/json',
+179 silly get     'content-encoding': 'gzip',
+179 silly get     'cache-control': 'max-age=300',
+179 silly get     'content-length': '5533',
+179 silly get     'accept-ranges': 'bytes',
+179 silly get     date: 'Mon, 06 Jun 2016 17:45:18 GMT',
+179 silly get     via: '1.1 varnish',
+179 silly get     age: '88',
+179 silly get     connection: 'keep-alive',
+179 silly get     'x-served-by': 'cache-ord1730-ORD',
+179 silly get     'x-cache': 'HIT',
+179 silly get     'x-cache-hits': '16',
+179 silly get     'x-timer': 'S1465235118.975122,VS0,VE0',
+179 silly get     vary: 'Accept-Encoding' } ]
+180 verbose get saving minimist to C:\Users\Nuttdguy\AppData\Roaming\npm-cache\registry.npmjs.org\minimist\.cache.json
+181 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+182 silly resolveWithNewModule minimist@0.0.10 checking installable status
+183 silly cache add args [ 'minimist@~0.0.1', null ]
+184 verbose cache add spec minimist@~0.0.1
+185 silly cache add parsed spec Result {
+185 silly cache add   raw: 'minimist@~0.0.1',
+185 silly cache add   scope: null,
+185 silly cache add   name: 'minimist',
+185 silly cache add   rawSpec: '~0.0.1',
+185 silly cache add   spec: '>=0.0.1 <0.1.0',
+185 silly cache add   type: 'range' }
+186 silly addNamed minimist@>=0.0.1 <0.1.0
+187 verbose addNamed ">=0.0.1 <0.1.0" is a valid semver range for minimist
+188 silly addNameRange { name: 'minimist', range: '>=0.0.1 <0.1.0', hasData: false }
+189 silly mapToRegistry name minimist
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry data Result {
+192 silly mapToRegistry   raw: 'minimist',
+192 silly mapToRegistry   scope: null,
+192 silly mapToRegistry   name: 'minimist',
+192 silly mapToRegistry   rawSpec: '',
+192 silly mapToRegistry   spec: 'latest',
+192 silly mapToRegistry   type: 'tag' }
+193 silly mapToRegistry uri https://registry.npmjs.org/minimist
+194 verbose addNameRange registry:https://registry.npmjs.org/minimist not in flight; fetching
+195 verbose get https://registry.npmjs.org/minimist not expired, no request
+196 silly addNameRange number 2 { name: 'minimist', range: '>=0.0.1 <0.1.0', hasData: true }
+197 silly addNameRange versions [ 'minimist',
+197 silly addNameRange   [ '0.0.0',
+197 silly addNameRange     '0.0.1',
+197 silly addNameRange     '0.0.2',
+197 silly addNameRange     '0.0.3',
+197 silly addNameRange     '0.0.4',
+197 silly addNameRange     '0.0.5',
+197 silly addNameRange     '0.0.6',
+197 silly addNameRange     '0.0.7',
+197 silly addNameRange     '0.0.8',
+197 silly addNameRange     '0.0.9',
+197 silly addNameRange     '0.0.10',
+197 silly addNameRange     '0.1.0',
+197 silly addNameRange     '0.2.0',
+197 silly addNameRange     '1.0.0',
+197 silly addNameRange     '1.1.0',
+197 silly addNameRange     '1.1.1',
+197 silly addNameRange     '1.1.2',
+197 silly addNameRange     '1.1.3',
+197 silly addNameRange     '1.2.0' ] ]
+198 silly addNamed minimist@0.0.10
+199 verbose addNamed "0.0.10" is a plain semver version for minimist
+200 silly mapToRegistry name minimist
+201 silly mapToRegistry using default registry
+202 silly mapToRegistry registry https://registry.npmjs.org/
+203 silly mapToRegistry data Result {
+203 silly mapToRegistry   raw: 'minimist',
+203 silly mapToRegistry   scope: null,
+203 silly mapToRegistry   name: 'minimist',
+203 silly mapToRegistry   rawSpec: '',
+203 silly mapToRegistry   spec: 'latest',
+203 silly mapToRegistry   type: 'tag' }
+204 silly mapToRegistry uri https://registry.npmjs.org/minimist
+205 verbose addRemoteTarball https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz not in flight; adding
+206 verbose addRemoteTarball [ 'https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz',
+206 verbose addRemoteTarball   'de3f98543dbf96082be48ad1a0c7cda836301dcf' ]
+207 info retry fetch attempt 1 at 12:45:22 PM
+208 info attempt registry request try #1 at 12:45:22 PM
+209 http fetch GET https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+210 http fetch 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz
+211 http fetch 200 https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+212 silly fetchAndShaCheck shasum de3f98543dbf96082be48ad1a0c7cda836301dcf
+213 verbose addTmpTarball C:\Users\Nuttdguy\AppData\Local\Temp\npm-180-613a5d63\registry.npmjs.org\minimist\-\minimist-0.0.10.tgz not in flight; adding
+214 verbose addTmpTarball already have metadata; skipping unpack for minimist@0.0.10
+215 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+216 silly cache afterAdd minimist@0.0.10
+217 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\minimist\0.0.10\package\package.json not in flight; writing
+218 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+219 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\minimist\0.0.10\package\package.json written
+220 silly fetchAndShaCheck shasum a3d5da6cd5c0bc0008d37234bbaf1bed63059107
+221 verbose addTmpTarball C:\Users\Nuttdguy\AppData\Local\Temp\npm-180-613a5d63\registry.npmjs.org\wordwrap\-\wordwrap-0.0.3.tgz not in flight; adding
+222 verbose addTmpTarball already have metadata; skipping unpack for wordwrap@0.0.3
+223 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+224 silly cache afterAdd wordwrap@0.0.3
+225 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\wordwrap\0.0.3\package\package.json not in flight; writing
+226 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+227 verbose afterAdd C:\Users\Nuttdguy\AppData\Roaming\npm-cache\wordwrap\0.0.3\package\package.json written
+228 silly loadAllDepsIntoIdealTree Finishing
+229 silly idealTree:prePrune nodejs
+229 silly idealTree:prePrune `-- node-windows@0.1.11
+229 silly idealTree:prePrune   +-- minimist@0.0.10
+229 silly idealTree:prePrune   +-- optimist@0.6.1
+229 silly idealTree:prePrune   `-- wordwrap@0.0.3
+230 silly loadIdealTree Finishing
+231 silly currentTree nodejs
+232 silly idealTree nodejs
+232 silly idealTree `-- node-windows@0.1.11
+232 silly idealTree   +-- minimist@0.0.10
+232 silly idealTree   +-- optimist@0.6.1
+232 silly idealTree   `-- wordwrap@0.0.3
+233 silly generateActionsToTake Starting
+234 silly install generateActionsToTake
+235 silly generateActionsToTake Finishing
+236 silly diffTrees action count 4
+237 silly diffTrees add minimist@0.0.10
+238 silly diffTrees add wordwrap@0.0.3
+239 silly diffTrees add optimist@0.6.1
+240 silly diffTrees add node-windows@0.1.11
+241 silly decomposeActions action count 32
+242 silly decomposeActions fetch minimist@0.0.10
+243 silly decomposeActions extract minimist@0.0.10
+244 silly decomposeActions test minimist@0.0.10
+245 silly decomposeActions preinstall minimist@0.0.10
+246 silly decomposeActions build minimist@0.0.10
+247 silly decomposeActions install minimist@0.0.10
+248 silly decomposeActions postinstall minimist@0.0.10
+249 silly decomposeActions finalize minimist@0.0.10
+250 silly decomposeActions fetch wordwrap@0.0.3
+251 silly decomposeActions extract wordwrap@0.0.3
+252 silly decomposeActions test wordwrap@0.0.3
+253 silly decomposeActions preinstall wordwrap@0.0.3
+254 silly decomposeActions build wordwrap@0.0.3
+255 silly decomposeActions install wordwrap@0.0.3
+256 silly decomposeActions postinstall wordwrap@0.0.3
+257 silly decomposeActions finalize wordwrap@0.0.3
+258 silly decomposeActions fetch optimist@0.6.1
+259 silly decomposeActions extract optimist@0.6.1
+260 silly decomposeActions test optimist@0.6.1
+261 silly decomposeActions preinstall optimist@0.6.1
+262 silly decomposeActions build optimist@0.6.1
+263 silly decomposeActions install optimist@0.6.1
+264 silly decomposeActions postinstall optimist@0.6.1
+265 silly decomposeActions finalize optimist@0.6.1
+266 silly decomposeActions fetch node-windows@0.1.11
+267 silly decomposeActions extract node-windows@0.1.11
+268 silly decomposeActions test node-windows@0.1.11
+269 silly decomposeActions preinstall node-windows@0.1.11
+270 silly decomposeActions build node-windows@0.1.11
+271 silly decomposeActions install node-windows@0.1.11
+272 silly decomposeActions postinstall node-windows@0.1.11
+273 silly decomposeActions finalize node-windows@0.1.11
+274 silly executeActions Starting
+275 silly install executeActions
+276 silly doSerial global-install 0
+277 silly doParallel fetch 4
+278 verbose correctMkdir C:\Users\Nuttdguy\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+279 verbose lock using C:\Users\Nuttdguy\AppData\Roaming\npm-cache\_locks\staging-64c461511ddedb71.lock for C:\Program Files (x86)\nodejs\node_modules\.staging
+280 verbose unlock done using C:\Users\Nuttdguy\AppData\Roaming\npm-cache\_locks\staging-64c461511ddedb71.lock for C:\Program Files (x86)\nodejs\node_modules\.staging
+281 silly rollbackFailedOptional Starting
+282 silly rollbackFailedOptional Finishing
+283 silly runTopLevelLifecycles Starting
+284 silly runTopLevelLifecycles Finishing
+285 silly install printInstalled
+286 verbose stack Error: EPERM: operation not permitted, mkdir 'C:\Program Files (x86)\nodejs\node_modules\.staging'
+286 verbose stack     at Error (native)
+287 verbose cwd C:\Users\Nuttdguy\Desktop\project_files\incentme
+288 error Windows_NT 6.1.7601
+289 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Users\\Nuttdguy\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "node-windows"
+290 error node v4.2.4
+291 error npm  v3.9.5
+292 error path C:\Program Files (x86)\nodejs\node_modules\.staging
+293 error code EPERM
+294 error errno -4048
+295 error syscall mkdir
+296 error Error: EPERM: operation not permitted, mkdir 'C:\Program Files (x86)\nodejs\node_modules\.staging'
+296 error     at Error (native)
+296 error  { [Error: EPERM: operation not permitted, mkdir 'C:\Program Files (x86)\nodejs\node_modules\.staging']
+296 error   errno: -4048,
+296 error   code: 'EPERM',
+296 error   syscall: 'mkdir',
+296 error   path: 'C:\\Program Files (x86)\\nodejs\\node_modules\\.staging' }
+297 error Please try running this command again as root/Administrator.
+298 verbose exit [ -4048, true ]
